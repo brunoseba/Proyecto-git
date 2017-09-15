@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NNeumaticosModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="NNeumaticosModelStoreContainer">
+    <EntitySet Name="Cliente" EntityType="NNeumaticosModel.Store.Cliente" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Datos_Tecnicos" EntityType="NNeumaticosModel.Store.Datos_Tecnicos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Detalle" EntityType="NNeumaticosModel.Store.Detalle" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Empresa" EntityType="NNeumaticosModel.Store.Empresa" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Factura" EntityType="NNeumaticosModel.Store.Factura" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Producto" EntityType="NNeumaticosModel.Store.Producto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario" EntityType="NNeumaticosModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__Detalle__factura__6B24EA82" Association="NNeumaticosModel.Store.FK__Detalle__factura__6B24EA82">
+      <End Role="Factura" EntitySet="Factura" />
+      <End Role="Detalle" EntitySet="Detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Detalle__product__6C190EBB" Association="NNeumaticosModel.Store.FK__Detalle__product__6C190EBB">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="Detalle" EntitySet="Detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Factura__cliente__5CD6CB2B" Association="NNeumaticosModel.Store.FK__Factura__cliente__5CD6CB2B">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Factura" EntitySet="Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Factura__empresa__5DCAEF64" Association="NNeumaticosModel.Store.FK__Factura__empresa__5DCAEF64">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Factura" EntitySet="Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Producto__Datos___66603565" Association="NNeumaticosModel.Store.FK__Producto__Datos___66603565">
+      <End Role="Datos_Tecnicos" EntitySet="Datos_Tecnicos" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="cliente_cuil" />
+    </Key>
+    <Property Name="cliente_cuil" Type="bigint" Nullable="false" />
+    <Property Name="cliente_NomYape" Type="varchar" MaxLength="50" />
+    <Property Name="cliente_Direccion" Type="varchar" MaxLength="30" />
+    <Property Name="cliente_Telefono" Type="varchar" MaxLength="30" />
+    <Property Name="cliente_Email" Type="varchar" MaxLength="40" />
+    <Property Name="cliente_estado" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Datos_Tecnicos">
+    <Key>
+      <PropertyRef Name="Datos_cod" />
+    </Key>
+    <Property Name="Datos_cod" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Datos_Medida" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Datos_IndCarga" Type="int" Nullable="false" />
+    <Property Name="Datos_Velocidad" Type="varchar" MaxLength="6" />
+    <Property Name="Datos_RevPorKm" Type="int" Nullable="false" />
+    <Property Name="Datos_AnchoLLanta" Type="float" Nullable="false" />
+    <Property Name="Datos_AnchoSecion" Type="int" Nullable="false" />
+    <Property Name="Datos_Diametro" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Detalle">
+    <Key>
+      <PropertyRef Name="detalle_id" />
+      <PropertyRef Name="factura_num" />
+    </Key>
+    <Property Name="detalle_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="factura_num" Type="int" Nullable="false" />
+    <Property Name="producto_id" Type="int" Nullable="false" />
+    <Property Name="detalle_cantidad" Type="int" Nullable="false" />
+    <Property Name="detalle_precio" Type="float" />
+  </EntityType>
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="empresa_cuit" />
+    </Key>
+    <Property Name="empresa_cuit" Type="bigint" Nullable="false" />
+    <Property Name="empresa_nombre" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="empresa_direccion" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="empresa_email" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="empresa_telefono" Type="varchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="factura_num" />
+    </Key>
+    <Property Name="factura_num" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cliente_cuil" Type="bigint" Nullable="false" />
+    <Property Name="empresa_cuit" Type="bigint" Nullable="false" />
+    <Property Name="factura_Fecha" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="factura_tipoPago" Type="varchar" MaxLength="30" />
+    <Property Name="factura_estado" Type="char" MaxLength="1" />
+    <Property Name="factura_Total" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="producto_id" />
+    </Key>
+    <Property Name="producto_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="producto_nombre" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="producto_rodado" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="producto_medida" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="producto_precio" Type="float" Nullable="false" />
+    <Property Name="Datos_cod" Type="int" Nullable="false" />
+    <Property Name="producto_stock" Type="int" Nullable="false" />
+    <Property Name="producto_imagen" Type="varchar" MaxLength="60" />
+    <Property Name="producto_estado" Type="char" MaxLength="1" />
+    <Property Name="tipoVehi_descripcion" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="usu_Dni" />
+    </Key>
+    <Property Name="usu_Dni" Type="int" Nullable="false" />
+    <Property Name="usu_nomYape" Type="varchar" MaxLength="50" />
+    <Property Name="usu_Direccon" Type="varchar" MaxLength="50" />
+    <Property Name="usu_Localidad" Type="varchar" MaxLength="50" />
+    <Property Name="usu_Provincia" Type="varchar" MaxLength="50" />
+    <Property Name="usu_Telefono" Type="varchar" MaxLength="30" />
+    <Property Name="usu_Email" Type="varchar" MaxLength="100" />
+    <Property Name="usu_Contraseña" Type="varchar" MaxLength="50" />
+    <Property Name="usu_Estado" Type="char" MaxLength="1" />
+    <Property Name="usu_TipoUsu" Type="char" MaxLength="1" />
+    <Property Name="usu_Fecha" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <Association Name="FK__Detalle__factura__6B24EA82">
+    <End Role="Factura" Type="NNeumaticosModel.Store.Factura" Multiplicity="1" />
+    <End Role="Detalle" Type="NNeumaticosModel.Store.Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Factura">
+        <PropertyRef Name="factura_num" />
+      </Principal>
+      <Dependent Role="Detalle">
+        <PropertyRef Name="factura_num" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Detalle__product__6C190EBB">
+    <End Role="Producto" Type="NNeumaticosModel.Store.Producto" Multiplicity="1" />
+    <End Role="Detalle" Type="NNeumaticosModel.Store.Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="producto_id" />
+      </Principal>
+      <Dependent Role="Detalle">
+        <PropertyRef Name="producto_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Factura__cliente__5CD6CB2B">
+    <End Role="Cliente" Type="NNeumaticosModel.Store.Cliente" Multiplicity="1" />
+    <End Role="Factura" Type="NNeumaticosModel.Store.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="cliente_cuil" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="cliente_cuil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Factura__empresa__5DCAEF64">
+    <End Role="Empresa" Type="NNeumaticosModel.Store.Empresa" Multiplicity="1" />
+    <End Role="Factura" Type="NNeumaticosModel.Store.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="empresa_cuit" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="empresa_cuit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Producto__Datos___66603565">
+    <End Role="Datos_Tecnicos" Type="NNeumaticosModel.Store.Datos_Tecnicos" Multiplicity="1" />
+    <End Role="Producto" Type="NNeumaticosModel.Store.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Datos_Tecnicos">
+        <PropertyRef Name="Datos_cod" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="Datos_cod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

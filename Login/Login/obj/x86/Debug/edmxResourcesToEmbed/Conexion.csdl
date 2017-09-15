@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NNeumaticosModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="NNeumaticosEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cliente" EntityType="NNeumaticosModel.Cliente" />
+    <EntitySet Name="Datos_Tecnicos" EntityType="NNeumaticosModel.Datos_Tecnicos" />
+    <EntitySet Name="Detalle" EntityType="NNeumaticosModel.Detalle" />
+    <EntitySet Name="Factura" EntityType="NNeumaticosModel.Factura" />
+    <EntitySet Name="Producto" EntityType="NNeumaticosModel.Producto" />
+    <EntitySet Name="Usuario" EntityType="NNeumaticosModel.Usuario" />
+    <AssociationSet Name="FK__Factura__cliente__3D5E1FD2" Association="NNeumaticosModel.FK__Factura__cliente__3D5E1FD2">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Factura" EntitySet="Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Producto__Datos___46E78A0C" Association="NNeumaticosModel.FK__Producto__Datos___46E78A0C">
+      <End Role="Datos_Tecnicos" EntitySet="Datos_Tecnicos" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Detalle__factura__4BAC3F29" Association="NNeumaticosModel.FK__Detalle__factura__4BAC3F29">
+      <End Role="Factura" EntitySet="Factura" />
+      <End Role="Detalle" EntitySet="Detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Detalle__product__4CA06362" Association="NNeumaticosModel.FK__Detalle__product__4CA06362">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="Detalle" EntitySet="Detalle" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="cliente_cuil" />
+    </Key>
+    <Property Name="cliente_cuil" Type="Int64" Nullable="false" />
+    <Property Name="cliente_NomYape" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="cliente_Direccion" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="cliente_Telefono" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="cliente_Email" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Factura" Relationship="NNeumaticosModel.FK__Factura__cliente__3D5E1FD2" FromRole="Cliente" ToRole="Factura" />
+    <Property Type="String" Name="cliente_estado" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Datos_Tecnicos">
+    <Key>
+      <PropertyRef Name="Datos_cod" />
+    </Key>
+    <Property Name="Datos_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Datos_Medida" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Datos_IndCarga" Type="Int32" Nullable="false" />
+    <Property Name="Datos_Velocidad" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="Datos_RevPorKm" Type="Int32" Nullable="false" />
+    <Property Name="Datos_AnchoLLanta" Type="Double" Nullable="false" />
+    <Property Name="Datos_AnchoSecion" Type="Int32" Nullable="false" />
+    <Property Name="Datos_Diametro" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Producto" Relationship="NNeumaticosModel.FK__Producto__Datos___46E78A0C" FromRole="Datos_Tecnicos" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Detalle">
+    <Key>
+      <PropertyRef Name="detalle_id" />
+      <PropertyRef Name="factura_num" />
+    </Key>
+    <Property Name="detalle_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="factura_num" Type="Int32" Nullable="false" />
+    <Property Name="producto_id" Type="Int32" Nullable="false" />
+    <Property Name="detalle_cantidad" Type="Int32" Nullable="false" />
+    <Property Name="detalle_precio" Type="Double" />
+    <NavigationProperty Name="Factura" Relationship="NNeumaticosModel.FK__Detalle__factura__4BAC3F29" FromRole="Detalle" ToRole="Factura" />
+    <NavigationProperty Name="Producto" Relationship="NNeumaticosModel.FK__Detalle__product__4CA06362" FromRole="Detalle" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="factura_num" />
+    </Key>
+    <Property Name="factura_num" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="factura_NombreEmp" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="cliente_cuil" Type="Int64" Nullable="false" />
+    <Property Name="factura_Direccion" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="factura_Fecha" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="factura_Email" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="factura_tipoPago" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="factura_telefono" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="factura_cuit" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="factura_Total" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Cliente" Relationship="NNeumaticosModel.FK__Factura__cliente__3D5E1FD2" FromRole="Factura" ToRole="Cliente" />
+    <NavigationProperty Name="Detalle" Relationship="NNeumaticosModel.FK__Detalle__factura__4BAC3F29" FromRole="Factura" ToRole="Detalle" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="producto_id" />
+    </Key>
+    <Property Name="producto_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="producto_nombre" Type="String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="producto_rodado" Type="String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="producto_medida" Type="String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="producto_precio" Type="Double" Nullable="false" />
+    <Property Name="Datos_cod" Type="Int32" Nullable="false" />
+    <Property Name="producto_stock" Type="Int32" Nullable="false" />
+    <Property Name="producto_imagen" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="tipoVehi_descripcion" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Datos_Tecnicos" Relationship="NNeumaticosModel.FK__Producto__Datos___46E78A0C" FromRole="Producto" ToRole="Datos_Tecnicos" />
+    <NavigationProperty Name="Detalle" Relationship="NNeumaticosModel.FK__Detalle__product__4CA06362" FromRole="Producto" ToRole="Detalle" />
+    <Property Type="String" Name="producto_estado" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="usu_Dni" />
+    </Key>
+    <Property Name="usu_Dni" Type="Int32" Nullable="false" />
+    <Property Name="usu_nomYape" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="usu_Direccon" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="usu_Localidad" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="usu_Provincia" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="usu_Telefono" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="usu_Email" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="usu_Contraseña" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="usu_Estado" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="usu_TipoUsu" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="usu_Fecha" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK__Factura__cliente__3D5E1FD2">
+    <End Role="Cliente" Type="NNeumaticosModel.Cliente" Multiplicity="1" />
+    <End Role="Factura" Type="NNeumaticosModel.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="cliente_cuil" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="cliente_cuil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Producto__Datos___46E78A0C">
+    <End Role="Datos_Tecnicos" Type="NNeumaticosModel.Datos_Tecnicos" Multiplicity="1" />
+    <End Role="Producto" Type="NNeumaticosModel.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Datos_Tecnicos">
+        <PropertyRef Name="Datos_cod" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="Datos_cod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Detalle__factura__4BAC3F29">
+    <End Role="Factura" Type="NNeumaticosModel.Factura" Multiplicity="1" />
+    <End Role="Detalle" Type="NNeumaticosModel.Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Factura">
+        <PropertyRef Name="factura_num" />
+      </Principal>
+      <Dependent Role="Detalle">
+        <PropertyRef Name="factura_num" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Detalle__product__4CA06362">
+    <End Role="Producto" Type="NNeumaticosModel.Producto" Multiplicity="1" />
+    <End Role="Detalle" Type="NNeumaticosModel.Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="producto_id" />
+      </Principal>
+      <Dependent Role="Detalle">
+        <PropertyRef Name="producto_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

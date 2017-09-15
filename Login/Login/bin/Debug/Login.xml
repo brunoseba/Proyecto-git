@@ -1,0 +1,450 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Login
+</name>
+</assembly>
+<members>
+<member name="M:Login.NNeumaticosEntities1.#ctor">
+	<summary>
+ Inicializa un nuevo objeto NNeumaticosEntities1 usando la cadena de conexión encontrada en la sección 'NNeumaticosEntities1' del archivo de configuración de la aplicación.
+ </summary>
+</member><member name="M:Login.NNeumaticosEntities1.#ctor(System.String)">
+	<summary>
+ Inicializar un nuevo objeto NNeumaticosEntities1.
+ </summary>
+</member><member name="M:Login.NNeumaticosEntities1.#ctor(System.Data.EntityClient.EntityConnection)">
+	<summary>
+ Inicializar un nuevo objeto NNeumaticosEntities1.
+ </summary>
+</member><member name="P:Login.NNeumaticosEntities1.Cliente">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.NNeumaticosEntities1.Datos_Tecnicos">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.NNeumaticosEntities1.Detalle">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.NNeumaticosEntities1.Empresa">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.NNeumaticosEntities1.Factura">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.NNeumaticosEntities1.Producto">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.NNeumaticosEntities1.Usuario">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="M:Login.NNeumaticosEntities1.AddToCliente(Login.Cliente)">
+	<summary>
+ Método desusado para agregar un nuevo objeto al EntitySet Cliente. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member><member name="M:Login.NNeumaticosEntities1.AddToDatos_Tecnicos(Login.Datos_Tecnicos)">
+	<summary>
+ Método desusado para agregar un nuevo objeto al EntitySet Datos_Tecnicos. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member><member name="M:Login.NNeumaticosEntities1.AddToDetalle(Login.Detalle)">
+	<summary>
+ Método desusado para agregar un nuevo objeto al EntitySet Detalle. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member><member name="M:Login.NNeumaticosEntities1.AddToEmpresa(Login.Empresa)">
+	<summary>
+ Método desusado para agregar un nuevo objeto al EntitySet Empresa. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member><member name="M:Login.NNeumaticosEntities1.AddToFactura(Login.Factura)">
+	<summary>
+ Método desusado para agregar un nuevo objeto al EntitySet Factura. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member><member name="M:Login.NNeumaticosEntities1.AddToProducto(Login.Producto)">
+	<summary>
+ Método desusado para agregar un nuevo objeto al EntitySet Producto. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member><member name="M:Login.NNeumaticosEntities1.AddToUsuario(Login.Usuario)">
+	<summary>
+ Método desusado para agregar un nuevo objeto al EntitySet Usuario. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet(Of T) asociada.
+ </summary>
+</member><member name="T:Login.NNeumaticosEntities1">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="M:Login.Cliente.CreateCliente(System.Int64)">
+	<summary>
+ Crear un nuevo objeto Cliente.
+ </summary>
+	<param name="cliente_cuil">Valor inicial de la propiedad cliente_cuil.</param>
+</member><member name="P:Login.Cliente.cliente_cuil">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Cliente.cliente_NomYape">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Cliente.cliente_Direccion">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Cliente.cliente_Telefono">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Cliente.cliente_Email">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Cliente.cliente_estado">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Cliente.Factura">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="T:Login.Cliente">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="M:Login.Datos_Tecnicos.CreateDatos_Tecnicos(System.Int32,System.String,System.Int32,System.Int32,System.Double,System.Int32,System.Int32)">
+	<summary>
+ Crear un nuevo objeto Datos_Tecnicos.
+ </summary>
+	<param name="datos_cod">Valor inicial de la propiedad Datos_cod.</param>
+	<param name="datos_Medida">Valor inicial de la propiedad Datos_Medida.</param>
+	<param name="datos_IndCarga">Valor inicial de la propiedad Datos_IndCarga.</param>
+	<param name="datos_RevPorKm">Valor inicial de la propiedad Datos_RevPorKm.</param>
+	<param name="datos_AnchoLLanta">Valor inicial de la propiedad Datos_AnchoLLanta.</param>
+	<param name="datos_AnchoSecion">Valor inicial de la propiedad Datos_AnchoSecion.</param>
+	<param name="datos_Diametro">Valor inicial de la propiedad Datos_Diametro.</param>
+</member><member name="P:Login.Datos_Tecnicos.Datos_cod">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Datos_Tecnicos.Datos_Medida">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Datos_Tecnicos.Datos_IndCarga">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Datos_Tecnicos.Datos_Velocidad">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Datos_Tecnicos.Datos_RevPorKm">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Datos_Tecnicos.Datos_AnchoLLanta">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Datos_Tecnicos.Datos_AnchoSecion">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Datos_Tecnicos.Datos_Diametro">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Datos_Tecnicos.Producto">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="T:Login.Datos_Tecnicos">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="M:Login.Detalle.CreateDetalle(System.Int32,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Crear un nuevo objeto Detalle.
+ </summary>
+	<param name="detalle_id">Valor inicial de la propiedad detalle_id.</param>
+	<param name="factura_num">Valor inicial de la propiedad factura_num.</param>
+	<param name="producto_id">Valor inicial de la propiedad producto_id.</param>
+	<param name="detalle_cantidad">Valor inicial de la propiedad detalle_cantidad.</param>
+</member><member name="P:Login.Detalle.detalle_id">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Detalle.factura_num">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Detalle.producto_id">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Detalle.detalle_cantidad">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Detalle.detalle_precio">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Detalle.Factura">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Detalle.FacturaReference">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Detalle.Producto">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Detalle.ProductoReference">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="T:Login.Detalle">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="M:Login.Empresa.CreateEmpresa(System.Int64,System.String,System.String,System.String,System.String)">
+	<summary>
+ Crear un nuevo objeto Empresa.
+ </summary>
+	<param name="empresa_cuit">Valor inicial de la propiedad empresa_cuit.</param>
+	<param name="empresa_nombre">Valor inicial de la propiedad empresa_nombre.</param>
+	<param name="empresa_direccion">Valor inicial de la propiedad empresa_direccion.</param>
+	<param name="empresa_email">Valor inicial de la propiedad empresa_email.</param>
+	<param name="empresa_telefono">Valor inicial de la propiedad empresa_telefono.</param>
+</member><member name="P:Login.Empresa.empresa_cuit">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Empresa.empresa_nombre">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Empresa.empresa_direccion">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Empresa.empresa_email">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Empresa.empresa_telefono">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Empresa.Factura">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="T:Login.Empresa">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="M:Login.Factura.CreateFactura(System.Int32,System.Int64,System.Int64,System.String,System.Double)">
+	<summary>
+ Crear un nuevo objeto Factura.
+ </summary>
+	<param name="factura_num">Valor inicial de la propiedad factura_num.</param>
+	<param name="cliente_cuil">Valor inicial de la propiedad cliente_cuil.</param>
+	<param name="empresa_cuit">Valor inicial de la propiedad empresa_cuit.</param>
+	<param name="factura_Fecha">Valor inicial de la propiedad factura_Fecha.</param>
+	<param name="factura_Total">Valor inicial de la propiedad factura_Total.</param>
+</member><member name="P:Login.Factura.factura_num">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Factura.cliente_cuil">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Factura.empresa_cuit">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Factura.factura_Fecha">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Factura.factura_tipoPago">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Factura.factura_estado">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Factura.factura_Total">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Factura.Cliente">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Factura.ClienteReference">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Factura.Detalle">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Factura.Empresa">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Factura.EmpresaReference">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="T:Login.Factura">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="M:Login.Producto.CreateProducto(System.Int32,System.String,System.String,System.String,System.Double,System.Int32,System.Int32)">
+	<summary>
+ Crear un nuevo objeto Producto.
+ </summary>
+	<param name="producto_id">Valor inicial de la propiedad producto_id.</param>
+	<param name="producto_nombre">Valor inicial de la propiedad producto_nombre.</param>
+	<param name="producto_rodado">Valor inicial de la propiedad producto_rodado.</param>
+	<param name="producto_medida">Valor inicial de la propiedad producto_medida.</param>
+	<param name="producto_precio">Valor inicial de la propiedad producto_precio.</param>
+	<param name="datos_cod">Valor inicial de la propiedad Datos_cod.</param>
+	<param name="producto_stock">Valor inicial de la propiedad producto_stock.</param>
+</member><member name="P:Login.Producto.producto_id">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Producto.producto_nombre">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Producto.producto_rodado">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Producto.producto_medida">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Producto.producto_precio">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Producto.Datos_cod">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Producto.producto_stock">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Producto.producto_imagen">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Producto.producto_estado">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Producto.tipoVehi_descripcion">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Producto.Datos_Tecnicos">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Producto.Datos_TecnicosReference">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Producto.Detalle">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="T:Login.Producto">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="M:Login.Usuario.CreateUsuario(System.Int32)">
+	<summary>
+ Crear un nuevo objeto Usuario.
+ </summary>
+	<param name="usu_Dni">Valor inicial de la propiedad usu_Dni.</param>
+</member><member name="P:Login.Usuario.usu_Dni">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Usuario.usu_nomYape">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Usuario.usu_Direccon">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Usuario.usu_Localidad">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Usuario.usu_Provincia">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Usuario.usu_Telefono">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Usuario.usu_Email">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Usuario.usu_Contraseña">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Usuario.usu_Estado">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Usuario.usu_TipoUsu">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.Usuario.usu_Fecha">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="T:Login.Usuario">
+	<summary>
+ No hay documentación de metadatos disponible.
+ </summary>
+</member><member name="P:Login.My.Resources.Resources.ResourceManager">
+	<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member><member name="P:Login.My.Resources.Resources.Culture">
+	<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso con establecimiento inflexible de tipos.
+</summary>
+</member><member name="T:Login.My.Resources.Resources">
+	<summary>
+  Clase de recurso con establecimiento inflexible de tipos, para buscar cadenas traducidas, etc.
+</summary>
+</member>
+</members>
+</doc>
