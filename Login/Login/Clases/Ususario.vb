@@ -171,7 +171,7 @@ Public Class Ususario
 
 
     '---agrega usuario---
-    Public Sub AgregarUsuario() 'ByVal dni As Integer, ByVal nomYape As String, ByVal direc As String, ByVal local As String, ByVal prov As String, ByVal tel As String, ByVal email As String, ByVal contra As String, ByVal estado As Char, ByVal tipoUsu As Char, ByVal fecha As String)
+    Public Function AgregarUsuario() 'ByVal dni As Integer, ByVal nomYape As String, ByVal direc As String, ByVal local As String, ByVal prov As String, ByVal tel As String, ByVal email As String, ByVal contra As String, ByVal estado As Char, ByVal tipoUsu As Char, ByVal fecha As String)
         Try
             Using Base As New NNeumaticosEntities1
 
@@ -183,7 +183,7 @@ Public Class Ususario
                 .usu_Localidad = GetLocalidad(),
                 .usu_Provincia = GetProvincia(),
                 .usu_Telefono = GetTelefono(),
-                .usu_Email = GetTelefono(),
+                .usu_Email = GetEmail(),
                 .usu_Contraseña = GetContraseña(),
                 .usu_Estado = GetEstado(),
                 .usu_TipoUsu = GetTipoUsu(),
@@ -192,11 +192,12 @@ Public Class Ususario
                 Base.Usuario.AddObject(consulta)
                 Base.SaveChanges()
             End Using
+            Return True
         Catch ex As Exception
-
+            Return False
         End Try
 
-    End Sub
+    End Function
 
 
     '---Verifica si esta en la base de datos---

@@ -88,7 +88,6 @@
         'Dim res As MsgBoxResult
         comprueba()
 
-
     End Sub
 
     Private Sub BSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BSalir.Click
@@ -110,7 +109,7 @@
         TContra.Focus()
         'ingresamos el texto que queremos que figure como imagen al agua
 
-        Tusuario.Text = "Dni 11223344"
+        Tusuario.Text = "11223344"
         TContra.Text = "*********"
         'Textbox3.text = "Salario Mensual"
 

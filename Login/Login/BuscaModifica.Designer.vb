@@ -23,16 +23,17 @@ Partial Class BuscaModifica
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.CBEstado = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.CBUsuario = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TNombre = New System.Windows.Forms.TextBox()
         Me.TDni = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.CBUsuario = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.CBEstado = New System.Windows.Forms.ComboBox()
+        Me.Modificar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -54,6 +55,42 @@ Partial Class BuscaModifica
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Buscar Usuario"
+        '
+        'CBEstado
+        '
+        Me.CBEstado.FormattingEnabled = True
+        Me.CBEstado.Items.AddRange(New Object() {"Activos", "Inactivos"})
+        Me.CBEstado.Location = New System.Drawing.Point(889, 34)
+        Me.CBEstado.Name = "CBEstado"
+        Me.CBEstado.Size = New System.Drawing.Size(121, 21)
+        Me.CBEstado.TabIndex = 8
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(804, 37)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(54, 13)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "ESTADO:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(560, 37)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(59, 13)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "USUARIO:"
+        '
+        'CBUsuario
+        '
+        Me.CBUsuario.FormattingEnabled = True
+        Me.CBUsuario.Items.AddRange(New Object() {"Administrador", "Supervisor", "Vendedor"})
+        Me.CBUsuario.Location = New System.Drawing.Point(639, 34)
+        Me.CBUsuario.Name = "CBUsuario"
+        Me.CBUsuario.Size = New System.Drawing.Size(121, 21)
+        Me.CBUsuario.TabIndex = 5
         '
         'Button1
         '
@@ -99,46 +136,17 @@ Partial Class BuscaModifica
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Modificar})
         Me.DataGridView1.Location = New System.Drawing.Point(12, 162)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(1034, 150)
         Me.DataGridView1.TabIndex = 1
         '
-        'CBUsuario
+        'Modificar
         '
-        Me.CBUsuario.FormattingEnabled = True
-        Me.CBUsuario.Items.AddRange(New Object() {"Administrador", "Supervisor", "Vendedor"})
-        Me.CBUsuario.Location = New System.Drawing.Point(639, 34)
-        Me.CBUsuario.Name = "CBUsuario"
-        Me.CBUsuario.Size = New System.Drawing.Size(121, 21)
-        Me.CBUsuario.TabIndex = 5
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(560, 37)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(59, 13)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "USUARIO:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(804, 37)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(54, 13)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "ESTADO:"
-        '
-        'CBEstado
-        '
-        Me.CBEstado.FormattingEnabled = True
-        Me.CBEstado.Items.AddRange(New Object() {"Activos", "Inactivos"})
-        Me.CBEstado.Location = New System.Drawing.Point(889, 34)
-        Me.CBEstado.Name = "CBEstado"
-        Me.CBEstado.Size = New System.Drawing.Size(121, 21)
-        Me.CBEstado.TabIndex = 8
+        Me.Modificar.HeaderText = "Modificar"
+        Me.Modificar.Name = "Modificar"
+        Me.Modificar.Text = "Modificar"
         '
         'BuscaModifica
         '
@@ -166,4 +174,5 @@ Partial Class BuscaModifica
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents CBUsuario As System.Windows.Forms.ComboBox
+    Friend WithEvents Modificar As System.Windows.Forms.DataGridViewButtonColumn
 End Class

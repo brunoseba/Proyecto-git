@@ -61,6 +61,7 @@ Partial Class Ventana
         Me.MenuUsuarioSupervisorModificar = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuUsuarioSupervisorMostrar = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuUsuarioSupervisorEliminar = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BuscarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuFacturas = New System.Windows.Forms.ToolStripMenuItem()
         Me.GenerarInformeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CancelarFacturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -70,9 +71,9 @@ Partial Class Ventana
         Me.MenuEmpresaModificarDatos = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarSeesion = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.BarraEstado = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.BuscarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BarraMenu.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -81,7 +82,7 @@ Partial Class Ventana
         '
         Me.MenuUsuarioVendedor.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuUsuarioVendedorAlta, Me.MenuUsuarioVendedorModificar, Me.MenuUsuarioVendedorMostrar, Me.MenuUsuarioVendedorEliminar})
         Me.MenuUsuarioVendedor.Name = "MenuUsuarioVendedor"
-        Me.MenuUsuarioVendedor.Size = New System.Drawing.Size(152, 22)
+        Me.MenuUsuarioVendedor.Size = New System.Drawing.Size(150, 22)
         Me.MenuUsuarioVendedor.Text = "Vendedor"
         '
         'MenuUsuarioVendedorAlta
@@ -110,7 +111,7 @@ Partial Class Ventana
         '
         'BarraMenu
         '
-        Me.BarraMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuProductos, Me.MenuClientes, Me.MenuUsuarios, Me.MenuFacturas, Me.MenuEmpresa, Me.CerrarSeesion})
+        Me.BarraMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarSeesion, Me.MenuProductos, Me.MenuClientes, Me.MenuUsuarios, Me.MenuFacturas, Me.MenuEmpresa})
         Me.BarraMenu.Location = New System.Drawing.Point(0, 0)
         Me.BarraMenu.Name = "BarraMenu"
         Me.BarraMenu.Size = New System.Drawing.Size(991, 24)
@@ -244,7 +245,7 @@ Partial Class Ventana
         '
         Me.MenuUsuarioAdministrador.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuUsuarioAdministradorAlta, Me.MenuUsuarioAdministradorModificar, Me.MenuUsuarioAdministradorMostrar, Me.MenuUsuarioAdministradorEliminar})
         Me.MenuUsuarioAdministrador.Name = "MenuUsuarioAdministrador"
-        Me.MenuUsuarioAdministrador.Size = New System.Drawing.Size(152, 22)
+        Me.MenuUsuarioAdministrador.Size = New System.Drawing.Size(150, 22)
         Me.MenuUsuarioAdministrador.Text = "Administrador"
         '
         'MenuUsuarioAdministradorAlta
@@ -275,7 +276,7 @@ Partial Class Ventana
         '
         Me.MenuUsuarioSupervisor.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuUsuarioSupervisorAlta, Me.MenuUsuarioSupervisorModificar, Me.MenuUsuarioSupervisorMostrar, Me.MenuUsuarioSupervisorEliminar})
         Me.MenuUsuarioSupervisor.Name = "MenuUsuarioSupervisor"
-        Me.MenuUsuarioSupervisor.Size = New System.Drawing.Size(152, 22)
+        Me.MenuUsuarioSupervisor.Size = New System.Drawing.Size(150, 22)
         Me.MenuUsuarioSupervisor.Text = "Supervisor"
         '
         'MenuUsuarioSupervisorAlta
@@ -301,6 +302,12 @@ Partial Class Ventana
         Me.MenuUsuarioSupervisorEliminar.Name = "MenuUsuarioSupervisorEliminar"
         Me.MenuUsuarioSupervisorEliminar.Size = New System.Drawing.Size(183, 22)
         Me.MenuUsuarioSupervisorEliminar.Text = "Eliminar Supervisor"
+        '
+        'BuscarToolStripMenuItem
+        '
+        Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
+        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
+        Me.BuscarToolStripMenuItem.Text = "Buscar"
         '
         'MenuFacturas
         '
@@ -348,30 +355,31 @@ Partial Class Ventana
         '
         'CerrarSeesion
         '
+        Me.CerrarSeesion.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarSesiónToolStripMenuItem})
         Me.CerrarSeesion.Name = "CerrarSeesion"
-        Me.CerrarSeesion.Size = New System.Drawing.Size(88, 20)
-        Me.CerrarSeesion.Text = "Cerrar Sesión"
+        Me.CerrarSeesion.Size = New System.Drawing.Size(59, 20)
+        Me.CerrarSeesion.Text = "Usuario"
         '
         'StatusStrip
         '
-        Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel})
+        Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BarraEstado})
         Me.StatusStrip.Location = New System.Drawing.Point(0, 427)
         Me.StatusStrip.Name = "StatusStrip"
         Me.StatusStrip.Size = New System.Drawing.Size(991, 22)
         Me.StatusStrip.TabIndex = 10
         Me.StatusStrip.Text = "StatusStrip"
         '
-        'ToolStripStatusLabel
+        'BarraEstado
         '
-        Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
-        Me.ToolStripStatusLabel.Size = New System.Drawing.Size(42, 17)
-        Me.ToolStripStatusLabel.Text = "Estado"
+        Me.BarraEstado.Name = "BarraEstado"
+        Me.BarraEstado.Size = New System.Drawing.Size(42, 17)
+        Me.BarraEstado.Text = "Estado"
         '
-        'BuscarToolStripMenuItem
+        'CerrarSesiónToolStripMenuItem
         '
-        Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
-        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.BuscarToolStripMenuItem.Text = "Buscar"
+        Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
         'Ventana
         '
@@ -439,8 +447,9 @@ Partial Class Ventana
     Friend WithEvents MenuEmpresaModificarDatos As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CerrarSeesion As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StatusStrip As System.Windows.Forms.StatusStrip
-    Friend WithEvents ToolStripStatusLabel As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents BarraEstado As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents BuscarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CerrarSesiónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

@@ -2,11 +2,6 @@
 
 Public Class Ventana
 
-    Private Sub AyudaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CerrarSeesion.Click
-        Form1.Show()
-        Me.Close()
-    End Sub
-
     Private Sub Ventana_Principal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim usu As New Ususario(Form1.Tusuario.Text)
         usu.Dato(usu.GetDni(), usu.GetNomYape())
@@ -53,7 +48,7 @@ Public Class Ventana
     Private Sub MenuProductosAgregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuProductosAgregar.Click
         Principal.PanelProductos.Visible = True
         Principal.PanelAgregarProductos.Visible = True
-        Principal.PanelBuscarProducto.Visible = False
+        Principal.PanelBuscarProducto.Visible = True
 
     End Sub
 
@@ -63,7 +58,14 @@ Public Class Ventana
     End Sub
 
     Private Sub BuscarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarToolStripMenuItem.Click
+
         BuscaModifica.Show()
 
+    End Sub
+
+    
+    Private Sub CerrarSesiónToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
+        Form1.Show()
+        Me.Close()
     End Sub
 End Class
