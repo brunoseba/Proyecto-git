@@ -3,15 +3,19 @@
     
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BGuardar.Click
         Dim usus As New Ususario(Val(TDni.Text), TNomApe.Text, TDire.Text, TLocal.Text, TProv.Text, TTelef.Text, TEmail.Text, TContra.Text, estado(), usuario(), DateTime.Value.Date())
+        Dim res As MsgBoxResult
 
-        If usus.AgregarUsuario() Then 'Val(TDni.Text), TNomApe.Text, TDire.Text, TLocal.Text, TProv.Text, TTelef.Text, TEmail.Text, TContra.Text, TEstado.Text, TUsu.Text, TFecha.Text)
-            MsgBox("Cliente agregado")
+        res = MsgBox("Desea Agregar un nuevo usuario?", 4 + 0 + 32, "Aviso")
+        If res = vbYes Then
 
-        Else
-            MsgBox("Ocurrio un error!!")
+            If usus.AgregarUsuario() Then 'Val(TDni.Text), TNomApe.Text, TDire.Text, TLocal.Text, TProv.Text, TTelef.Text, TEmail.Text, TContra.Text, TEstado.Text, TUsu.Text, TFecha.Text)
+                MsgBox("Cliente agregado", 0 + 0 + 64)
+
+            Else
+                MsgBox("Ocurrio un error!!")
+            End If
+
         End If
-
-
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BSalir.Click

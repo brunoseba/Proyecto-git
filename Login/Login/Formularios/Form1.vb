@@ -153,8 +153,24 @@
 
     End Sub
 
+    Private Sub TContra_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TContra.KeyDown
+        If e.KeyCode = 13 Then
+            Call Button1_Click(sender, e)
+        End If
+    End Sub
 
+    Private Sub Tusuario_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Tusuario.KeyPress
 
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+
+        Else
+            e.Handled = True
+        End If
+        With Tusuario
+            .MaxLength = 8
+        End With
+    End Sub
 
 
 
@@ -207,4 +223,7 @@
     'End Sub
 
 
+    Private Sub Tusuario_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tusuario.TextChanged
+
+    End Sub
 End Class

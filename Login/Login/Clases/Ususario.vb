@@ -258,14 +258,16 @@ Public Class Ususario
     End Sub
 
 
-    Public Sub muestra(ByVal tabla As DataGridView, ByVal u_dni As Integer, ByVal nombre As String, ByVal usu As Char, ByVal esta As Char)
+    Public Sub muestra(ByVal tabla As DataGridView, ByVal u_dni As Integer, ByVal nombre As String, ByVal usu As Char)
 
         Try
             Using Base As New NNeumaticosEntities1
-                Dim mues = (From u In Base.Usuario Where (u.usu_Dni = u_dni Or u.usu_nomYape = nombre Or u.usu_Estado = estado Or u.usu_TipoUsu = usu)
+
+                Dim mues = (From u In Base.Usuario Where (u.usu_Dni = u_dni Or u.usu_nomYape = nombre Or u.usu_TipoUsu = usu)
                             Select Dni = u.usu_Dni, NombreyApellido = u.usu_nomYape, Direccion = u.usu_Direccon, Localidad = u.usu_Localidad, Telefono = u.usu_Telefono, Email = u.usu_Email, Contraseña = u.usu_Contraseña, Estado = u.usu_Estado, TipoUsuario = u.usu_TipoUsu).ToList
 
                 tabla.DataSource = mues
+
             End Using
         Catch ex As Exception
 

@@ -40,3 +40,5 @@ D:\Bruno\Proyecto-git\Login\Login\obj\x86\Debug\Login.Registro.resources
 D:\Bruno\Proyecto-git\Login\Login\obj\x86\Debug\Login.SplashScreen1.resources
 D:\Bruno\Proyecto-git\Login\Login\obj\x86\Debug\GenerateResource.read.1.tlog
 D:\Bruno\Proyecto-git\Login\Login\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Bruno\Proyecto-git\Login\Login\obj\x86\Debug\Login.CuadroUsu.resources
+D:\Bruno\Proyecto-git\Login\Login\obj\x86\Debug\Login.Vendedor.resources
