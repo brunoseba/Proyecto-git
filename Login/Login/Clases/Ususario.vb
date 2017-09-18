@@ -21,9 +21,11 @@ Public Class Ususario
     Private fecha As String
 
 #Region "Constructores"
+    
 
     Public Sub New()
     End Sub
+
 
     Public Sub New(ByVal u_dni As Integer)
         SetDni(u_dni)
@@ -204,7 +206,7 @@ Public Class Ususario
     Public Function Verifica(ByVal u_dni As Integer, ByVal u_contra As String)
         Try
             Using Consulta As New NNeumaticosEntities1
-                Dim objMostrar = (From q In Consulta.Usuario Where (q.usu_Dni = u_dni And q.usu_Contraseña = u_contra)
+                Dim objMostrar = (From q In Consulta.Usuario Where (q.usu_Dni = u_dni And q.usu_Contraseña = u_contra And q.usu_Estado = "a")
                                   Select q).First
 
             End Using

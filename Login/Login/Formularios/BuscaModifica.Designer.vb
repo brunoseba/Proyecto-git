@@ -381,20 +381,23 @@ Partial Class BuscaModifica
         '
         'BModifica
         '
-        Me.BModifica.Location = New System.Drawing.Point(742, 570)
+        Me.BModifica.Location = New System.Drawing.Point(742, 542)
         Me.BModifica.Name = "BModifica"
-        Me.BModifica.Size = New System.Drawing.Size(138, 23)
+        Me.BModifica.Size = New System.Drawing.Size(117, 51)
         Me.BModifica.TabIndex = 53
         Me.BModifica.Text = "MODIFICAR USUARIO"
         Me.BModifica.UseVisualStyleBackColor = True
         '
         'BBaja
         '
-        Me.BBaja.Location = New System.Drawing.Point(539, 570)
+        Me.BBaja.Image = Global.Login.My.Resources.Resources.usuario_Baja
+        Me.BBaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BBaja.Location = New System.Drawing.Point(514, 542)
         Me.BBaja.Name = "BBaja"
-        Me.BBaja.Size = New System.Drawing.Size(116, 23)
+        Me.BBaja.Size = New System.Drawing.Size(136, 51)
         Me.BBaja.TabIndex = 52
         Me.BBaja.Text = "BAJA USUARIO"
+        Me.BBaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BBaja.UseVisualStyleBackColor = True
         '
         'GroupBox2
@@ -663,11 +666,14 @@ Partial Class BuscaModifica
         '
         'BAlta
         '
-        Me.BAlta.Location = New System.Drawing.Point(334, 570)
+        Me.BAlta.Image = Global.Login.My.Resources.Resources.usuario_Alta1
+        Me.BAlta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BAlta.Location = New System.Drawing.Point(283, 542)
         Me.BAlta.Name = "BAlta"
-        Me.BAlta.Size = New System.Drawing.Size(116, 23)
+        Me.BAlta.Size = New System.Drawing.Size(135, 51)
         Me.BAlta.TabIndex = 0
         Me.BAlta.Text = "ALTA USUARIO"
+        Me.BAlta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BAlta.UseVisualStyleBackColor = True
         '
         'PanelRegistro
@@ -923,9 +929,9 @@ Partial Class BuscaModifica
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1330, 644)
         Me.ControlBox = False
-        Me.Controls.Add(Me.PanelRegistro)
         Me.Controls.Add(Me.PanelVer)
         Me.Controls.Add(Me.PanelBusca)
+        Me.Controls.Add(Me.PanelRegistro)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "BuscaModifica"

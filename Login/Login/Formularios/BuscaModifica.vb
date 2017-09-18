@@ -193,4 +193,48 @@
         Me.Close()
     End Sub
 
+    Private Sub BBaja_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BBaja.Click
+        Dim res As MsgBoxResult
+        Dim esta As Char
+        esta = "b"
+        Dim usu As New Ususario
+        If Lesta.Text <> "BAJA" Then
+
+            res = MsgBox("Desea dar de Baja al Usuario " + Lnom.Text + " ?", 4 + 256 + 32, "Baja")
+            If res = vbYes Then
+                usu.EliminaUsuario(Val(Ldni.Text), esta)
+                MsgBox("El Usuario " + Lnom.Text + "se ha dado de Baja", 0 + 0 + 16, "BAJA")
+
+                PanelBusca.Visible = True
+                DataGridView1.Rows.Clear()
+                PanelVer.Visible = False
+
+            End If
+
+        Else
+            MsgBox("El Usuario ya esta de BAJA", 0 + 0 + 64, "Info")
+        End If
+    End Sub
+
+    Private Sub BAlta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BAlta.Click
+        Dim res As MsgBoxResult
+        Dim esta As Char
+        esta = "a"
+        Dim usu As New Ususario
+        If Lesta.Text <> "ALTA" Then
+            res = MsgBox("Desea dar de Alta al Usuario " + Lnom.Text + " ?", 4 + 256 + 32, "Alta")
+            If res = vbYes Then
+                usu.EliminaUsuario(Val(Ldni.Text), esta)
+                MsgBox("El Usuario " + Lnom.Text + "se ha dado de Alta", 0 + 0 + 48, "ALTA")
+
+                PanelBusca.Visible = True
+                DataGridView1.Rows.Clear()
+                PanelVer.Visible = False
+
+            End If
+
+        Else
+            MsgBox("El Usuario ya esta de ALTA", 0 + 0 + 64, "Info")
+        End If
+    End Sub
 End Class
