@@ -31,7 +31,6 @@ D:\Bruno\Proyecto-git\Login\Login\bin\Debug\itextsharp.xml
 D:\Bruno\Proyecto-git\Login\Login\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\Bruno\Proyecto-git\Login\Login\obj\x86\Debug\Login.BuscaModifica.resources
 D:\Bruno\Proyecto-git\Login\Login\obj\x86\Debug\Login.Form1.resources
-D:\Bruno\Proyecto-git\Login\Login\obj\x86\Debug\Login.Form2.resources
 D:\Bruno\Proyecto-git\Login\Login\obj\x86\Debug\Login.Principal.resources
 D:\Bruno\Proyecto-git\Login\Login\obj\x86\Debug\Login.LoginForm1.resources
 D:\Bruno\Proyecto-git\Login\Login\obj\x86\Debug\Login.Ventana.resources
@@ -42,3 +41,4 @@ D:\Bruno\Proyecto-git\Login\Login\obj\x86\Debug\GenerateResource.read.1.tlog
 D:\Bruno\Proyecto-git\Login\Login\obj\x86\Debug\GenerateResource.write.1.tlog
 D:\Bruno\Proyecto-git\Login\Login\obj\x86\Debug\Login.CuadroUsu.resources
 D:\Bruno\Proyecto-git\Login\Login\obj\x86\Debug\Login.Vendedor.resources
+D:\Bruno\Proyecto-git\Login\Login\obj\x86\Debug\Login.ClienteCu.resources

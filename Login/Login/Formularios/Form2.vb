@@ -1,4 +1,4 @@
-﻿Public Class Form2
+﻿Public Class ClienteCu
 
     Private Sub Form2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 

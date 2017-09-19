@@ -18,11 +18,11 @@
         Me.DataGridViewBuscadorProducto.Rows.Add("88", "Potenza GII", "175x7", "15", "Automovil", 23, "$600")
     End Sub
 
-    Private Sub ButtonCarrito_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        PanelResultadosProductos.Visible = False
-        PanelCarrito.Visible = True
+    'Private Sub BCarrito_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BCarrito.Click
+    'PanelResultadosProductos.Visible = False
+    'PanelCarrito.Visible = True
 
-    End Sub
+    'End Sub
 
     Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
         Dim cell As DataGridViewButtonCell = TryCast(Me.DataGridViewBuscadorProducto.CurrentCell, DataGridViewButtonCell)
@@ -103,5 +103,17 @@
 
     Private Sub BSalir0_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BSalir0.Click
         Me.Close()
+    End Sub
+
+
+
+    Private Sub BProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BProducto.Click
+        PanelBuscarProducto.Visible = True
+        PanelCarrito.Visible = False
+    End Sub
+
+    Private Sub ButtonCarrito_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonCarrito.Click
+        PanelResultadosProductos.Visible = False
+        PanelCarrito.Visible = True
     End Sub
 End Class

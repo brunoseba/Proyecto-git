@@ -158,6 +158,20 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property carrito4() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("carrito4", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property carrito4_1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("carrito4-1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property delete_square16() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("delete_square16", resourceCulture)

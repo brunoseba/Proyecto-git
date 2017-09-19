@@ -132,7 +132,7 @@ Partial Class BuscaModifica
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.GroupBox1.Location = New System.Drawing.Point(10, 7)
+        Me.GroupBox1.Location = New System.Drawing.Point(10, 8)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(1307, 106)
         Me.GroupBox1.TabIndex = 0
@@ -929,8 +929,8 @@ Partial Class BuscaModifica
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1330, 644)
         Me.ControlBox = False
-        Me.Controls.Add(Me.PanelVer)
         Me.Controls.Add(Me.PanelBusca)
+        Me.Controls.Add(Me.PanelVer)
         Me.Controls.Add(Me.PanelRegistro)
         Me.MaximizeBox = False
         Me.MinimizeBox = False

@@ -124,14 +124,11 @@
   <data name="group_user16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\group_user161.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user_add161" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user_add162.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bricks" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bricks1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="usuario-modifica" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\usuario-modifica.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user_edit16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_edit161.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user_suit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user_suit1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -141,9 +138,6 @@
   </data>
   <data name="BridgestonVendedor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BridgestonVendedor.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bridgestone-wallpapers-163" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bridgestone-wallpapers-1631.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="search16_h1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search16_h2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,11 +154,11 @@
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ususario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ususario.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="building" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\building1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="delete_square16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete_square161.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bridgestone-potenza" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bridgestone-potenza.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,8 +178,8 @@
   <data name="brick_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brick_add1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BRIDGESTONE-MOTOGP (7)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BRIDGESTONE-MOTOGP (7)1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="usuario-modifica" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usuario-modifica.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="search16_h" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search16_h1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,14 +190,23 @@
   <data name="brick_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brick_edit1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BRIDGESTONE-MOTOGP (7)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BRIDGESTONE-MOTOGP (7)1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Bridgestone-BATTLAX-MotoGP-slick-tyre" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bridgestone-BATTLAX-MotoGP-slick-tyre1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usuario-Alta1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usuario-Alta1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="16 (Zoom)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16 (Zoom)2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="16 (Zoom)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\16 (Zoom)1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ususario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ususario.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bridgestone-wallpapers-163" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bridgestone-wallpapers-1631.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="building_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\building_edit2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,8 +214,8 @@
   <data name="logo-inicio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo-inicio.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="16 (Zoom)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\16 (Zoom)2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user_add161" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_add162.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="16 (Edit-3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\16 (Edit-3)1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,10 +226,13 @@
   <data name="print_preview16_h" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\print_preview16_h1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user_edit16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user_edit161.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="delete_square16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete_square161.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="usuario-Alta1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\usuario-Alta1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="carrito4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carrito41.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="carrito4-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carrito4-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -22,24 +22,13 @@ Partial Class Vendedor
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelBuscarProducto = New System.Windows.Forms.Panel()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.ButtonBuscar = New System.Windows.Forms.Button()
-        Me.ComboBoxTipoVehiculo = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.BSalir0 = New System.Windows.Forms.Button()
         Me.PanelResultadosProductos = New System.Windows.Forms.Panel()
         Me.LabelBuscadorProductos = New System.Windows.Forms.Label()
         Me.DataGridViewBuscadorProducto = New System.Windows.Forms.DataGridView()
@@ -53,7 +42,20 @@ Partial Class Vendedor
         Me.Imagen = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Carrito = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.ButtonCarrito = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ButtonBuscar = New System.Windows.Forms.Button()
+        Me.ComboBoxTipoVehiculo = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.PanelCarrito = New System.Windows.Forms.Panel()
+        Me.BProducto = New System.Windows.Forms.Button()
         Me.ButtonVerificarCuil = New System.Windows.Forms.Button()
         Me.ComboBoxTipoPago = New System.Windows.Forms.ComboBox()
         Me.TextBoxCuilCliente = New System.Windows.Forms.TextBox()
@@ -73,11 +75,10 @@ Partial Class Vendedor
         Me.Total_Carrito = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Imagen_Carrito = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Eliminar_Carrito = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.BSalir0 = New System.Windows.Forms.Button()
         Me.PanelBuscarProducto.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.PanelResultadosProductos.SuspendLayout()
         CType(Me.DataGridViewBuscadorProducto, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.PanelCarrito.SuspendLayout()
         CType(Me.DataGridViewCarrito, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -93,8 +94,141 @@ Partial Class Vendedor
         Me.PanelBuscarProducto.Controls.Add(Me.GroupBox1)
         Me.PanelBuscarProducto.Location = New System.Drawing.Point(0, 0)
         Me.PanelBuscarProducto.Name = "PanelBuscarProducto"
-        Me.PanelBuscarProducto.Size = New System.Drawing.Size(1367, 511)
+        Me.PanelBuscarProducto.Size = New System.Drawing.Size(1367, 560)
         Me.PanelBuscarProducto.TabIndex = 14
+        '
+        'BSalir0
+        '
+        Me.BSalir0.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.BSalir0.Location = New System.Drawing.Point(642, 502)
+        Me.BSalir0.Name = "BSalir0"
+        Me.BSalir0.Size = New System.Drawing.Size(75, 23)
+        Me.BSalir0.TabIndex = 16
+        Me.BSalir0.Text = "Salir"
+        Me.BSalir0.UseVisualStyleBackColor = True
+        '
+        'PanelResultadosProductos
+        '
+        Me.PanelResultadosProductos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PanelResultadosProductos.BackColor = System.Drawing.Color.Ivory
+        Me.PanelResultadosProductos.Controls.Add(Me.LabelBuscadorProductos)
+        Me.PanelResultadosProductos.Controls.Add(Me.DataGridViewBuscadorProducto)
+        Me.PanelResultadosProductos.Controls.Add(Me.ButtonCarrito)
+        Me.PanelResultadosProductos.Location = New System.Drawing.Point(0, 95)
+        Me.PanelResultadosProductos.Name = "PanelResultadosProductos"
+        Me.PanelResultadosProductos.Size = New System.Drawing.Size(1361, 376)
+        Me.PanelResultadosProductos.TabIndex = 15
+        '
+        'LabelBuscadorProductos
+        '
+        Me.LabelBuscadorProductos.AutoSize = True
+        Me.LabelBuscadorProductos.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelBuscadorProductos.Location = New System.Drawing.Point(574, 31)
+        Me.LabelBuscadorProductos.Name = "LabelBuscadorProductos"
+        Me.LabelBuscadorProductos.Size = New System.Drawing.Size(236, 25)
+        Me.LabelBuscadorProductos.TabIndex = 12
+        Me.LabelBuscadorProductos.Text = "Buscador de Productos"
+        '
+        'DataGridViewBuscadorProducto
+        '
+        Me.DataGridViewBuscadorProducto.AllowUserToAddRows = False
+        Me.DataGridViewBuscadorProducto.AllowUserToOrderColumns = True
+        Me.DataGridViewBuscadorProducto.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridViewBuscadorProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridViewBuscadorProducto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DataGridViewBuscadorProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewBuscadorProducto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.Nombre, Me.Medida, Me.Rodado, Me.TipoVehiculo, Me.Stock, Me.Precio_Unit, Me.Imagen, Me.Carrito})
+        Me.DataGridViewBuscadorProducto.Location = New System.Drawing.Point(3, 90)
+        Me.DataGridViewBuscadorProducto.Name = "DataGridViewBuscadorProducto"
+        Me.DataGridViewBuscadorProducto.Size = New System.Drawing.Size(1355, 273)
+        Me.DataGridViewBuscadorProducto.TabIndex = 2
+        '
+        'Id
+        '
+        Me.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Id.DefaultCellStyle = DataGridViewCellStyle6
+        Me.Id.FillWeight = 55.3934!
+        Me.Id.HeaderText = "Id "
+        Me.Id.Name = "Id"
+        '
+        'Nombre
+        '
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Nombre.DefaultCellStyle = DataGridViewCellStyle7
+        Me.Nombre.FillWeight = 55.3934!
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        '
+        'Medida
+        '
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Medida.DefaultCellStyle = DataGridViewCellStyle8
+        Me.Medida.FillWeight = 55.3934!
+        Me.Medida.HeaderText = "Medida"
+        Me.Medida.Name = "Medida"
+        '
+        'Rodado
+        '
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Rodado.DefaultCellStyle = DataGridViewCellStyle9
+        Me.Rodado.FillWeight = 55.3934!
+        Me.Rodado.HeaderText = "Rodado"
+        Me.Rodado.Name = "Rodado"
+        '
+        'TipoVehiculo
+        '
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TipoVehiculo.DefaultCellStyle = DataGridViewCellStyle10
+        Me.TipoVehiculo.FillWeight = 55.3934!
+        Me.TipoVehiculo.HeaderText = "Tipo Vehiculo"
+        Me.TipoVehiculo.Name = "TipoVehiculo"
+        '
+        'Stock
+        '
+        Me.Stock.FillWeight = 55.3934!
+        Me.Stock.HeaderText = "Stock Disponible"
+        Me.Stock.Name = "Stock"
+        '
+        'Precio_Unit
+        '
+        Me.Precio_Unit.FillWeight = 55.3934!
+        Me.Precio_Unit.HeaderText = "Precio Unit."
+        Me.Precio_Unit.Name = "Precio_Unit"
+        '
+        'Imagen
+        '
+        Me.Imagen.FillWeight = 55.3934!
+        Me.Imagen.HeaderText = "Imagen"
+        Me.Imagen.Name = "Imagen"
+        '
+        'Carrito
+        '
+        Me.Carrito.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Carrito.HeaderText = "Agregar al Carrito"
+        Me.Carrito.Name = "Carrito"
+        Me.Carrito.Text = "Agregar al Carrito"
+        Me.Carrito.UseColumnTextForButtonValue = True
+        '
+        'ButtonCarrito
+        '
+        Me.ButtonCarrito.Image = Global.Login.My.Resources.Resources.carrito4_1
+        Me.ButtonCarrito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonCarrito.Location = New System.Drawing.Point(1288, 31)
+        Me.ButtonCarrito.Name = "ButtonCarrito"
+        Me.ButtonCarrito.Size = New System.Drawing.Size(43, 39)
+        Me.ButtonCarrito.TabIndex = 6
+        Me.ButtonCarrito.UseVisualStyleBackColor = True
+        Me.ButtonCarrito.Visible = False
         '
         'GroupBox1
         '
@@ -209,130 +343,10 @@ Partial Class Vendedor
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Nombre del Producto"
         '
-        'PanelResultadosProductos
-        '
-        Me.PanelResultadosProductos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PanelResultadosProductos.BackColor = System.Drawing.Color.Ivory
-        Me.PanelResultadosProductos.Controls.Add(Me.LabelBuscadorProductos)
-        Me.PanelResultadosProductos.Controls.Add(Me.DataGridViewBuscadorProducto)
-        Me.PanelResultadosProductos.Controls.Add(Me.ButtonCarrito)
-        Me.PanelResultadosProductos.Location = New System.Drawing.Point(0, 95)
-        Me.PanelResultadosProductos.Name = "PanelResultadosProductos"
-        Me.PanelResultadosProductos.Size = New System.Drawing.Size(1361, 327)
-        Me.PanelResultadosProductos.TabIndex = 15
-        '
-        'LabelBuscadorProductos
-        '
-        Me.LabelBuscadorProductos.AutoSize = True
-        Me.LabelBuscadorProductos.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelBuscadorProductos.Location = New System.Drawing.Point(574, 31)
-        Me.LabelBuscadorProductos.Name = "LabelBuscadorProductos"
-        Me.LabelBuscadorProductos.Size = New System.Drawing.Size(236, 25)
-        Me.LabelBuscadorProductos.TabIndex = 12
-        Me.LabelBuscadorProductos.Text = "Buscador de Productos"
-        '
-        'DataGridViewBuscadorProducto
-        '
-        Me.DataGridViewBuscadorProducto.AllowUserToAddRows = False
-        Me.DataGridViewBuscadorProducto.AllowUserToOrderColumns = True
-        Me.DataGridViewBuscadorProducto.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridViewBuscadorProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridViewBuscadorProducto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.DataGridViewBuscadorProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewBuscadorProducto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.Nombre, Me.Medida, Me.Rodado, Me.TipoVehiculo, Me.Stock, Me.Precio_Unit, Me.Imagen, Me.Carrito})
-        Me.DataGridViewBuscadorProducto.Location = New System.Drawing.Point(3, 90)
-        Me.DataGridViewBuscadorProducto.Name = "DataGridViewBuscadorProducto"
-        Me.DataGridViewBuscadorProducto.Size = New System.Drawing.Size(1355, 224)
-        Me.DataGridViewBuscadorProducto.TabIndex = 2
-        '
-        'Id
-        '
-        Me.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Id.DefaultCellStyle = DataGridViewCellStyle1
-        Me.Id.FillWeight = 55.3934!
-        Me.Id.HeaderText = "Id "
-        Me.Id.Name = "Id"
-        '
-        'Nombre
-        '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Nombre.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Nombre.FillWeight = 55.3934!
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        '
-        'Medida
-        '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Medida.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Medida.FillWeight = 55.3934!
-        Me.Medida.HeaderText = "Medida"
-        Me.Medida.Name = "Medida"
-        '
-        'Rodado
-        '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Rodado.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Rodado.FillWeight = 55.3934!
-        Me.Rodado.HeaderText = "Rodado"
-        Me.Rodado.Name = "Rodado"
-        '
-        'TipoVehiculo
-        '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TipoVehiculo.DefaultCellStyle = DataGridViewCellStyle5
-        Me.TipoVehiculo.FillWeight = 55.3934!
-        Me.TipoVehiculo.HeaderText = "Tipo Vehiculo"
-        Me.TipoVehiculo.Name = "TipoVehiculo"
-        '
-        'Stock
-        '
-        Me.Stock.FillWeight = 55.3934!
-        Me.Stock.HeaderText = "Stock Disponible"
-        Me.Stock.Name = "Stock"
-        '
-        'Precio_Unit
-        '
-        Me.Precio_Unit.FillWeight = 55.3934!
-        Me.Precio_Unit.HeaderText = "Precio Unit."
-        Me.Precio_Unit.Name = "Precio_Unit"
-        '
-        'Imagen
-        '
-        Me.Imagen.FillWeight = 55.3934!
-        Me.Imagen.HeaderText = "Imagen"
-        Me.Imagen.Name = "Imagen"
-        '
-        'Carrito
-        '
-        Me.Carrito.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Carrito.HeaderText = "Agregar al Carrito"
-        Me.Carrito.Name = "Carrito"
-        Me.Carrito.Text = "Agregar al Carrito"
-        Me.Carrito.UseColumnTextForButtonValue = True
-        '
-        'ButtonCarrito
-        '
-        Me.ButtonCarrito.Location = New System.Drawing.Point(1266, 11)
-        Me.ButtonCarrito.Name = "ButtonCarrito"
-        Me.ButtonCarrito.Size = New System.Drawing.Size(87, 71)
-        Me.ButtonCarrito.TabIndex = 6
-        Me.ButtonCarrito.UseVisualStyleBackColor = True
-        Me.ButtonCarrito.Visible = False
-        '
         'PanelCarrito
         '
         Me.PanelCarrito.BackColor = System.Drawing.Color.Teal
+        Me.PanelCarrito.Controls.Add(Me.BProducto)
         Me.PanelCarrito.Controls.Add(Me.ButtonVerificarCuil)
         Me.PanelCarrito.Controls.Add(Me.ComboBoxTipoPago)
         Me.PanelCarrito.Controls.Add(Me.TextBoxCuilCliente)
@@ -342,10 +356,19 @@ Partial Class Vendedor
         Me.PanelCarrito.Controls.Add(Me.LabelTotal)
         Me.PanelCarrito.Controls.Add(Me.MontoTotal)
         Me.PanelCarrito.Controls.Add(Me.DataGridViewCarrito)
-        Me.PanelCarrito.Location = New System.Drawing.Point(7, -26)
+        Me.PanelCarrito.Location = New System.Drawing.Point(0, 0)
         Me.PanelCarrito.Name = "PanelCarrito"
-        Me.PanelCarrito.Size = New System.Drawing.Size(1356, 555)
+        Me.PanelCarrito.Size = New System.Drawing.Size(1367, 555)
         Me.PanelCarrito.TabIndex = 16
+        '
+        'BProducto
+        '
+        Me.BProducto.Location = New System.Drawing.Point(1206, 17)
+        Me.BProducto.Name = "BProducto"
+        Me.BProducto.Size = New System.Drawing.Size(75, 23)
+        Me.BProducto.TabIndex = 16
+        Me.BProducto.Text = "Productos"
+        Me.BProducto.UseVisualStyleBackColor = True
         '
         'ButtonVerificarCuil
         '
@@ -434,7 +457,7 @@ Partial Class Vendedor
         Me.DataGridViewCarrito.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id_carrito, Me.Nombre_Carrito, Me.Medida_carrito, Me.Rodado_Carrito, Me.Tipo_Vehi_Carrito, Me.PrecioUnitCarrito, Me.Cantidad_Carrito, Me.Total_Carrito, Me.Imagen_Carrito, Me.Eliminar_Carrito})
         Me.DataGridViewCarrito.Location = New System.Drawing.Point(0, 59)
         Me.DataGridViewCarrito.Name = "DataGridViewCarrito"
-        Me.DataGridViewCarrito.Size = New System.Drawing.Size(1356, 426)
+        Me.DataGridViewCarrito.Size = New System.Drawing.Size(1367, 426)
         Me.DataGridViewCarrito.TabIndex = 11
         '
         'Id_carrito
@@ -493,22 +516,12 @@ Partial Class Vendedor
         Me.Eliminar_Carrito.Text = "Eliminar del Carrito"
         Me.Eliminar_Carrito.UseColumnTextForButtonValue = True
         '
-        'BSalir0
-        '
-        Me.BSalir0.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.BSalir0.Location = New System.Drawing.Point(642, 453)
-        Me.BSalir0.Name = "BSalir0"
-        Me.BSalir0.Size = New System.Drawing.Size(75, 23)
-        Me.BSalir0.TabIndex = 16
-        Me.BSalir0.Text = "Salir"
-        Me.BSalir0.UseVisualStyleBackColor = True
-        '
         'Vendedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1370, 503)
+        Me.ClientSize = New System.Drawing.Size(1370, 552)
         Me.ControlBox = False
         Me.Controls.Add(Me.PanelBuscarProducto)
         Me.Controls.Add(Me.PanelCarrito)
@@ -519,11 +532,11 @@ Partial Class Vendedor
         Me.Text = "Vendedor"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PanelBuscarProducto.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.PanelResultadosProductos.ResumeLayout(False)
         Me.PanelResultadosProductos.PerformLayout()
         CType(Me.DataGridViewBuscadorProducto, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.PanelCarrito.ResumeLayout(False)
         Me.PanelCarrito.PerformLayout()
         CType(Me.DataGridViewCarrito, System.ComponentModel.ISupportInitialize).EndInit()
@@ -577,4 +590,5 @@ Partial Class Vendedor
     Friend WithEvents Imagen_Carrito As System.Windows.Forms.DataGridViewImageColumn
     Friend WithEvents Eliminar_Carrito As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents BSalir0 As System.Windows.Forms.Button
+    Friend WithEvents BProducto As System.Windows.Forms.Button
 End Class

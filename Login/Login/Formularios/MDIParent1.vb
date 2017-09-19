@@ -19,7 +19,7 @@ Public Class Ventana
 
         ElseIf usu.GetTipoUsu = "s" And usu.GetEstado = "a" Then
             'Principal.Show()
-            'Me.BackgroundImage = My.Resources.bridgestone_potenza
+            Me.BackgroundImage = My.Resources.bridgestone_wallpapers_163
             Me.usuario.Text = ("Supervisor :  " + usu.GetNomYape())
             Me.usuario.Image = My.Resources.user_suit
             'Principal.MdiParent = Me
@@ -116,6 +116,10 @@ Public Class Ventana
         Vendedor.PanelBuscarProducto.Visible = True
         Vendedor.PanelResultadosProductos.Visible = True
         Vendedor.MdiParent = Me
+
+    End Sub
+
+    Private Sub BuscarProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarProductosToolStripMenuItem.Click
 
     End Sub
 End Class

@@ -178,7 +178,7 @@ Partial Class Ventana
         Me.BuscarToolStripMenuItem.Image = Global.Login.My.Resources.Resources.search16_h
         Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
         Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
-        Me.BuscarToolStripMenuItem.Text = "Buscar"
+        Me.BuscarToolStripMenuItem.Text = "Buscar Usuarios"
         '
         'MenuFacturas
         '
@@ -254,7 +254,7 @@ Partial Class Ventana
         '
         Me.CerrarSesiónToolStripMenuItem.Image = Global.Login.My.Resources.Resources.delete_square16
         Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
         'StatusStrip
