@@ -237,4 +237,55 @@
             MsgBox("El Usuario ya esta de ALTA", 0 + 0 + 64, "Info")
         End If
     End Sub
+
+  
+    
+    Private Sub BGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BGuardar.Click
+        Dim usus As New Ususario(Val(TDni1.Text), TNomA.Text, TDire.Text, TLocal.Text, TProv1.Text, TTelef.Text, TEmail.Text, TContra.Text, estado1(), usu(), DateTime.Value.Date())
+        Dim res As MsgBoxResult
+
+        res = MsgBox("Desea Agregar un nuevo usuario?", 4 + 0 + 32, "Aviso")
+        If res = vbYes Then
+
+            If usus.AgregarUsuario() Then 'Val(TDni.Text), TNomApe.Text, TDire.Text, TLocal.Text, TProv.Text, TTelef.Text, TEmail.Text, TContra.Text, TEstado.Text, TUsu.Text, TFecha.Text)
+                MsgBox("Cliente agregado", 0 + 0 + 64)
+
+            Else
+                MsgBox("Ocurrio un error!!")
+            End If
+
+        End If
+    End Sub
+
+
+    Private Function estado1() As Char
+        Dim var As Char
+        If CBEstado.SelectedItem = "Activo" Then
+            var = "a"
+
+        Else
+            var = "b"
+
+        End If
+        Return var
+    End Function
+
+
+    Private Function usu()
+        Dim var As Char
+        If CBUsu.SelectedItem = "Administrador" Then
+            var = "a"
+
+        ElseIf CBUsu.SelectedItem = "Supervisor" Then
+            var = "s"
+
+        Else
+            var = "v"
+
+        End If
+        Return var
+    End Function
+
+
+
 End Class
