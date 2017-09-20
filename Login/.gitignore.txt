@@ -1,4 +1,7 @@
 .gitignore
+*.suo
+.suo
 *.[suo]
 Login.suo
 Login/Login.suo
+Proyecto-git/Login
