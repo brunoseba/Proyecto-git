@@ -349,8 +349,8 @@ Partial Class Empresa
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1324, 606)
-        Me.Controls.Add(Me.Panel_Ver_Datos_Empresa)
         Me.Controls.Add(Me.Panel_modificar_Empresa)
+        Me.Controls.Add(Me.Panel_Ver_Datos_Empresa)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimizeBox = False
         Me.Name = "Empresa"
