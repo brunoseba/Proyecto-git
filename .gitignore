@@ -1,0 +1,7 @@
+*.suo
+*.edmx
+*.config
+Login/Login.suo
+Login/Login/bin
+Login/Login/obj
+Login/Login/My Project
