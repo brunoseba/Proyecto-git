@@ -55,7 +55,6 @@ Partial Class Ventana
         Me.BarraEstado = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolTip2 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BarraMenu.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -245,7 +244,7 @@ Partial Class Ventana
         '
         'usuario
         '
-        Me.usuario.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarSesiónToolStripMenuItem, Me.ReportesToolStripMenuItem})
+        Me.usuario.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarSesiónToolStripMenuItem})
         Me.usuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.usuario.Name = "usuario"
         Me.usuario.Size = New System.Drawing.Size(59, 20)
@@ -255,7 +254,7 @@ Partial Class Ventana
         '
         Me.CerrarSesiónToolStripMenuItem.Image = Global.Login.My.Resources.Resources.delete_square16
         Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
         'StatusStrip
@@ -272,12 +271,6 @@ Partial Class Ventana
         Me.BarraEstado.Name = "BarraEstado"
         Me.BarraEstado.Size = New System.Drawing.Size(42, 17)
         Me.BarraEstado.Text = "Estado"
-        '
-        'ReportesToolStripMenuItem
-        '
-        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
         'Ventana
         '
@@ -342,6 +335,5 @@ Partial Class Ventana
     Friend WithEvents CargarStockToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EliminarProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VerProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ReportesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

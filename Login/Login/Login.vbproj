@@ -79,18 +79,13 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\Cliente.Designer.vb">
-      <DependentUpon>Cliente.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Cliente.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Formularios\BuscaModifica.Designer.vb">
       <DependentUpon>BuscaModifica.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\BuscaModifica.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Clases\Cliente.vb" />
     <Compile Include="Formularios\CuadroUsu.Designer.vb">
       <DependentUpon>CuadroUsu.vb</DependentUpon>
     </Compile>
@@ -164,9 +159,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Formularios\Cliente.resx">
-      <DependentUpon>Cliente.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\BuscaModifica.resx">
       <DependentUpon>BuscaModifica.vb</DependentUpon>
     </EmbeddedResource>
