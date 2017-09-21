@@ -79,6 +79,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Empresas.vb" />
     <Compile Include="Formularios\BuscaModifica.Designer.vb">
       <DependentUpon>BuscaModifica.vb</DependentUpon>
     </Compile>
