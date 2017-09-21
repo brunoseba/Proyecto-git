@@ -49,10 +49,14 @@ Public Class Ventana
 
 
     Private Sub MenuClientesAgregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuClientesAgregar.Click
-        Principal.PanelBuscarClientes.Visible = False
-        Principal.PanelClientes.Visible = True
-        Principal.PanelMostrarCliente.Visible = False
-        Principal.PanelAgregarModificarCliente.Visible = True
+        CuadroUsu.MaximizeBox = True
+        CuadroUsu.Show()
+        CuadroUsu.MdiParent = Me
+
+        'Principal.PanelBuscarClientes.Visible = False
+        'Principal.PanelClientes.Visible = True
+        'Principal.PanelMostrarCliente.Visible = False
+        'Principal.PanelAgregarModificarCliente.Visible = True
 
 
     End Sub

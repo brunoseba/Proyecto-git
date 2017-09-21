@@ -19,6 +19,8 @@ Public Class Ususario
     Private estado As Char
     Private tipoUsu As Char
     Private fecha As String
+    Private ape As String
+
 
 #Region "Constructores"
     
@@ -55,7 +57,7 @@ Public Class Ususario
         SetFecha("")
     End Sub
 
-    Public Sub New(ByVal u_dni As Integer, ByVal u_nomYape As String, ByVal u_direccion As String, ByVal u_localidad As String, ByVal u_provincia As String, ByVal u_telefono As String, ByVal u_email As String, ByVal u_contraseña As String, ByVal u_estado As Char, ByVal u_tipoUsu As Char, ByVal u_fecha As String)
+    Public Sub New(ByVal u_dni As Integer, ByVal u_nomYape As String, ByVal u_direccion As String, ByVal u_localidad As String, ByVal u_provincia As String, ByVal u_telefono As String, ByVal u_email As String, ByVal u_contraseña As String, ByVal u_estado As Char, ByVal u_tipoUsu As Char, ByVal u_fecha As String, ByVal u_ape As String)
         SetDni(u_dni)
         SetNomYape(u_nomYape)
         SetDireccion(u_direccion)
@@ -67,6 +69,7 @@ Public Class Ususario
         SetEstado(u_estado)
         SetTipoUsu(u_tipoUsu)
         SetFecha(u_fecha)
+        SetFecha(u_ape)
     End Sub
 #End Region
 
@@ -118,6 +121,10 @@ Public Class Ususario
         Return fecha
     End Function
 
+    Public Function GetApe()
+        Return ape
+    End Function
+
 #End Region
 #Region "Set"
 
@@ -163,6 +170,10 @@ Public Class Ususario
 
     Private Sub SetFecha(ByVal u_fecha As String)
         fecha = u_fecha
+    End Sub
+
+    Private Sub SetApe(ByVal u_ape As String)
+        ape = u_ape
     End Sub
 #End Region
 
@@ -266,7 +277,7 @@ Public Class Ususario
             Using Base As New NNeumaticosEntities1
 
                 Dim mues = (From u In Base.Usuario Where (u.usu_Dni = u_dni Or u.usu_nomYape = nombre Or u.usu_TipoUsu = usu)
-                            Select Dni = u.usu_Dni, NombreyApellido = u.usu_nomYape, Direccion = u.usu_Direccon, Localidad = u.usu_Localidad, Telefono = u.usu_Telefono, Email = u.usu_Email, Contraseña = u.usu_Contraseña, Estado = u.usu_Estado, TipoUsuario = u.usu_TipoUsu).ToList
+                            Select Dni = u.usu_Dni, NombreyApellido = u.usu_nomYape & u.usu_ape, Direccion = u.usu_Direccon, Localidad = u.usu_Localidad, Telefono = u.usu_Telefono, Email = u.usu_Email, Contraseña = u.usu_Contraseña, Estado = u.usu_Estado, TipoUsuario = u.usu_TipoUsu).ToList
 
                 tabla.DataSource = mues
 
