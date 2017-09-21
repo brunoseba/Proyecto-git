@@ -122,4 +122,11 @@ Public Class Ventana
     Private Sub BuscarProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarProductosToolStripMenuItem.Click
 
     End Sub
+
+    Private Sub MenuEmpresaVerDatos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuEmpresaVerDatos.Click
+        Empresa.MaximizeBox = True
+        Empresa.Show()
+        Empresa.Panel_Ver_Datos_Empresa.Visible = True
+        Empresa.MdiParent = Me
+    End Sub
 End Class

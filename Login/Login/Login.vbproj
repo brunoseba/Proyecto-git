@@ -92,6 +92,12 @@
     <Compile Include="Formularios\CuadroUsu.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Empresa.Designer.vb">
+      <DependentUpon>Empresa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Empresa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -103,12 +109,6 @@
       <DependentUpon>Form3.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Form3.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\LoginForm1.Designer.vb">
-      <DependentUpon>LoginForm1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\LoginForm1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\MDIParent1.Designer.vb">
@@ -165,14 +165,14 @@
     <EmbeddedResource Include="Formularios\CuadroUsu.resx">
       <DependentUpon>CuadroUsu.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Empresa.resx">
+      <DependentUpon>Empresa.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form3.resx">
       <DependentUpon>Form3.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\LoginForm1.resx">
-      <DependentUpon>LoginForm1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\MDIParent1.resx">
       <DependentUpon>MDIParent1.vb</DependentUpon>
