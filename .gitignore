@@ -1,0 +1,8 @@
+*.sou
+*.config
+*.edmx
+Login/Login/bin
+Login/Login/'My Project'
+Login/Login/obj
+Login/Login/Model1.Designer.vb
+
