@@ -1,8 +1,13 @@
-*.sou
-*.config
+*.suo
 *.edmx
-Login/Login/bin
-Login/Login/'My Project'
-Login/Login/obj
+*.config
 Login/Login/Model1.Designer.vb
+Login/Login/Model1.edmx
+Login/Login.suo
+Login/Login/bin
+Login/Login/bin/
+Login/Login/obj
+Login/Login/obj/
+Login/Login/My Project
+Login/Login/'My Project'/
 
