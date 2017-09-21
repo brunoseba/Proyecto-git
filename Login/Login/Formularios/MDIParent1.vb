@@ -119,7 +119,5 @@ Public Class Ventana
 
     End Sub
 
-    Private Sub BuscarProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarProductosToolStripMenuItem.Click
-
-    End Sub
+  
 End Class

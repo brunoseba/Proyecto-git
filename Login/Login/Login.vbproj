@@ -157,10 +157,10 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Clases\Ususario.vb" />
-    <Compile Include="Vendedor.Designer.vb">
+    <Compile Include="Formularios\Vendedor.Designer.vb">
       <DependentUpon>Vendedor.vb</DependentUpon>
     </Compile>
-    <Compile Include="Vendedor.vb">
+    <Compile Include="Formularios\Vendedor.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -198,7 +198,7 @@
     <EmbeddedResource Include="Formularios\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vendedor.resx">
+    <EmbeddedResource Include="Formularios\Vendedor.resx">
       <DependentUpon>Vendedor.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
