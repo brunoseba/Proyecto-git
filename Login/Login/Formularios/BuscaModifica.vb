@@ -76,7 +76,7 @@
             Try
                 Using Base As New NNeumaticosEntities1
 
-                    Dim mues = (From u In Base.Usuario Where (u.usu_Dni = dni Or u.usu_nomYape = nom Or u.usu_TipoUsu = tipo Or u.usu_Estado = esta) Select u).ToList
+                    Dim mues = (From u In Base.Usuario Where (u.usu_Dni = dni Or u.usu_nomYape Like nom Or u.usu_TipoUsu = tipo Or u.usu_Estado = esta) Select u).ToList
 
                     'Dni = u.usu_Dni, NombreyApellido = u.usu_nomYape, Direccion = u.usu_Direccon, Localidad = u.usu_Localidad, Telefono = u.usu_Telefono, Email = u.usu_Email, Contraseña = u.usu_Contraseña, Estado = u.usu_Estado, TipoUsuario = u.usu_TipoUsu).ToList
 

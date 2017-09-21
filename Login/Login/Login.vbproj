@@ -79,13 +79,18 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\Cliente.Designer.vb">
+      <DependentUpon>Cliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\BuscaModifica.Designer.vb">
       <DependentUpon>BuscaModifica.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\BuscaModifica.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clases\Cliente.vb" />
     <Compile Include="Formularios\CuadroUsu.Designer.vb">
       <DependentUpon>CuadroUsu.vb</DependentUpon>
     </Compile>
@@ -97,12 +102,6 @@
     </Compile>
     <Compile Include="Formularios\Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Form2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Form3.Designer.vb">
@@ -165,6 +164,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formularios\Cliente.resx">
+      <DependentUpon>Cliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\BuscaModifica.resx">
       <DependentUpon>BuscaModifica.vb</DependentUpon>
     </EmbeddedResource>
@@ -173,9 +175,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form3.resx">
       <DependentUpon>Form3.vb</DependentUpon>
