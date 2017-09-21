@@ -126,7 +126,16 @@ Public Class Ventana
     Private Sub MenuEmpresaVerDatos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuEmpresaVerDatos.Click
         Empresa.MaximizeBox = True
         Empresa.Show()
+        Empresa.Panel_modificar_Empresa.Visible = False
         Empresa.Panel_Ver_Datos_Empresa.Visible = True
+        Empresa.MdiParent = Me
+    End Sub
+
+    Private Sub MenuEmpresaModificarDatos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuEmpresaModificarDatos.Click
+        Empresa.MaximizeBox = True
+        Empresa.Show()
+        Empresa.Panel_Ver_Datos_Empresa.Visible = False
+        Empresa.Panel_modificar_Empresa.Visible = True
         Empresa.MdiParent = Me
     End Sub
 End Class
