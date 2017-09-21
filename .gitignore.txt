@@ -1,4 +1,0 @@
-.gitignore
-Login.suo
-Login/Login.suo
-*.[suo]
