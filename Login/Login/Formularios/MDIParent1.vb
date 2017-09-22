@@ -149,7 +149,16 @@ Public Class Ventana
     Private Sub VerFacturasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VerFacturasToolStripMenuItem.Click
         V_Factura.MaximizeBox = True
         V_Factura.Show()
+        V_Factura.Panel_Informe_Factura.Visible = False
         V_Factura.Panel_VerFacturas.Visible = True
+        V_Factura.MdiParent = Me
+    End Sub
+
+    Private Sub GenerarInformeToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarInformeToolStripMenuItem.Click
+        V_Factura.MaximizeBox = True
+        V_Factura.Show()
+        V_Factura.Panel_VerFacturas.Visible = False
+        V_Factura.Panel_Informe_Factura.Visible = True
         V_Factura.MdiParent = Me
     End Sub
 End Class

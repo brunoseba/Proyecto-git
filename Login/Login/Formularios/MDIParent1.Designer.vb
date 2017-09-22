@@ -42,9 +42,9 @@ Partial Class Ventana
         Me.AgregarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuFacturas = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VerFacturasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GenerarInformeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CancelarFacturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VerFacturasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuEmpresa = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuEmpresaVerDatos = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuEmpresaModificarDatos = New System.Windows.Forms.ToolStripMenuItem()
@@ -182,13 +182,20 @@ Partial Class Ventana
         '
         'MenuFacturas
         '
-        Me.MenuFacturas.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GenerarInformeToolStripMenuItem, Me.CancelarFacturaToolStripMenuItem, Me.VerFacturasToolStripMenuItem})
+        Me.MenuFacturas.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VerFacturasToolStripMenuItem, Me.GenerarInformeToolStripMenuItem, Me.CancelarFacturaToolStripMenuItem})
         Me.MenuFacturas.Image = Global.Login.My.Resources.Resources._16__Edit_3_
         Me.MenuFacturas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.MenuFacturas.Name = "MenuFacturas"
         Me.MenuFacturas.Size = New System.Drawing.Size(79, 20)
         Me.MenuFacturas.Text = "Facturas"
         Me.MenuFacturas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'VerFacturasToolStripMenuItem
+        '
+        Me.VerFacturasToolStripMenuItem.Image = Global.Login.My.Resources.Resources._16__Zoom_
+        Me.VerFacturasToolStripMenuItem.Name = "VerFacturasToolStripMenuItem"
+        Me.VerFacturasToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.VerFacturasToolStripMenuItem.Text = "Ver Facturas"
         '
         'GenerarInformeToolStripMenuItem
         '
@@ -203,13 +210,6 @@ Partial Class Ventana
         Me.CancelarFacturaToolStripMenuItem.Name = "CancelarFacturaToolStripMenuItem"
         Me.CancelarFacturaToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.CancelarFacturaToolStripMenuItem.Text = "Cancelar Factura"
-        '
-        'VerFacturasToolStripMenuItem
-        '
-        Me.VerFacturasToolStripMenuItem.Image = Global.Login.My.Resources.Resources._16__Zoom_
-        Me.VerFacturasToolStripMenuItem.Name = "VerFacturasToolStripMenuItem"
-        Me.VerFacturasToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
-        Me.VerFacturasToolStripMenuItem.Text = "Ver Facturas"
         '
         'MenuEmpresa
         '
