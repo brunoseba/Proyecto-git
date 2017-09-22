@@ -30,36 +30,27 @@ Partial Class V_Factura
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(V_Factura))
         Me.Panel_VerFacturas = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.ButtonAceptar = New System.Windows.Forms.Button()
         Me.DataGridVerFacturas = New System.Windows.Forms.DataGridView()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.DateTimePickerHasta = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePickerDesde = New System.Windows.Forms.DateTimePicker()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Vendedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Monto_Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Tipo_Pago = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.detalles_Ventas = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.ButtonBuscarFactura = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.DateTimePickerHasta = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePickerDesde = New System.Windows.Forms.DateTimePicker()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel_Informe_Factura = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.DateTimeFDesde = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimeFHasta = New System.Windows.Forms.DateTimePicker()
-        Me.ComboBoxDniVendedor = New System.Windows.Forms.ComboBox()
-        Me.ComboBoxTipoPago = New System.Windows.Forms.ComboBox()
-        Me.TextBoxInformeNFactura = New System.Windows.Forms.TextBox()
-        Me.ComboBoxCuilCliente = New System.Windows.Forms.ComboBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.ButtonBuscarFacturas = New System.Windows.Forms.Button()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.ButtonAceptarF = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.N_Factura = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CUIL_Cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -68,12 +59,45 @@ Partial Class V_Factura
         Me.Fecha_F = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Ver_detalles = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.ButtonAceptarF = New System.Windows.Forms.Button()
+        Me.ButtonBuscarFacturas = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TextBoxInformeNFactura = New System.Windows.Forms.TextBox()
+        Me.ComboBoxTipoPago = New System.Windows.Forms.ComboBox()
+        Me.ComboBoxCuilCliente = New System.Windows.Forms.ComboBox()
+        Me.DateTimeFHasta = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimeFDesde = New System.Windows.Forms.DateTimePicker()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.ComboBoxDniVendedor = New System.Windows.Forms.ComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Panel_Cancelar_Factura = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.ButtonAceptarCF = New System.Windows.Forms.Button()
+        Me.DataGridCFProductos = New System.Windows.Forms.DataGridView()
+        Me.NroFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CF_Cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CF_Vendedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CF_Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CF_Tipo_PAgo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CF_Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CF_Producto = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBoxBuscarFacturaCancelar = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.Panel_VerFacturas.SuspendLayout()
         CType(Me.DataGridVerFacturas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Informe_Factura.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        Me.Panel_Cancelar_Factura.SuspendLayout()
+        CType(Me.DataGridCFProductos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel_VerFacturas
@@ -94,6 +118,34 @@ Partial Class V_Factura
         Me.Panel_VerFacturas.Name = "Panel_VerFacturas"
         Me.Panel_VerFacturas.Size = New System.Drawing.Size(1300, 582)
         Me.Panel_VerFacturas.TabIndex = 0
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Image = Global.Login.My.Resources.Resources._16__Help_2_
+        Me.Label5.Location = New System.Drawing.Point(388, 163)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(28, 13)
+        Me.Label5.TabIndex = 10
+        Me.Label5.Text = "       "
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(207, 156)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(175, 26)
+        Me.TextBox1.TabIndex = 9
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Georgia", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(43, 158)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(158, 23)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "Nº de Factura: "
         '
         'ButtonAceptar
         '
@@ -120,48 +172,6 @@ Partial Class V_Factura
         Me.DataGridVerFacturas.ReadOnly = True
         Me.DataGridVerFacturas.Size = New System.Drawing.Size(1144, 297)
         Me.DataGridVerFacturas.TabIndex = 6
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Georgia", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(751, 155)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(74, 23)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Hasta:"
-        '
-        'DateTimePickerHasta
-        '
-        Me.DateTimePickerHasta.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePickerHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePickerHasta.Location = New System.Drawing.Point(850, 152)
-        Me.DateTimePickerHasta.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
-        Me.DateTimePickerHasta.MinDate = New Date(2000, 1, 1, 0, 0, 0, 0)
-        Me.DateTimePickerHasta.Name = "DateTimePickerHasta"
-        Me.DateTimePickerHasta.Size = New System.Drawing.Size(161, 26)
-        Me.DateTimePickerHasta.TabIndex = 2
-        '
-        'DateTimePickerDesde
-        '
-        Me.DateTimePickerDesde.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePickerDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePickerDesde.Location = New System.Drawing.Point(546, 155)
-        Me.DateTimePickerDesde.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
-        Me.DateTimePickerDesde.MinDate = New Date(2000, 1, 1, 0, 0, 0, 0)
-        Me.DateTimePickerDesde.Name = "DateTimePickerDesde"
-        Me.DateTimePickerDesde.Size = New System.Drawing.Size(161, 26)
-        Me.DateTimePickerDesde.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Georgia", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(495, 37)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(304, 38)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Mostrar Facturas"
         '
         'Fecha
         '
@@ -217,6 +227,25 @@ Partial Class V_Factura
         Me.detalles_Ventas.ToolTipText = "Detalles"
         Me.detalles_Ventas.UseColumnTextForButtonValue = True
         '
+        'ButtonBuscarFactura
+        '
+        Me.ButtonBuscarFactura.Image = Global.Login.My.Resources.Resources.search16_h
+        Me.ButtonBuscarFactura.Location = New System.Drawing.Point(1031, 150)
+        Me.ButtonBuscarFactura.Name = "ButtonBuscarFactura"
+        Me.ButtonBuscarFactura.Size = New System.Drawing.Size(72, 37)
+        Me.ButtonBuscarFactura.TabIndex = 5
+        Me.ButtonBuscarFactura.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Georgia", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(751, 155)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(74, 23)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Hasta:"
+        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -229,46 +258,43 @@ Partial Class V_Factura
         Me.Label2.Text = "Desde:"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label4
+        'DateTimePickerHasta
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Georgia", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(43, 158)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(158, 23)
-        Me.Label4.TabIndex = 8
-        Me.Label4.Text = "Nº de Factura: "
+        Me.DateTimePickerHasta.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePickerHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePickerHasta.Location = New System.Drawing.Point(850, 152)
+        Me.DateTimePickerHasta.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
+        Me.DateTimePickerHasta.MinDate = New Date(2000, 1, 1, 0, 0, 0, 0)
+        Me.DateTimePickerHasta.Name = "DateTimePickerHasta"
+        Me.DateTimePickerHasta.Size = New System.Drawing.Size(161, 26)
+        Me.DateTimePickerHasta.TabIndex = 2
         '
-        'TextBox1
+        'DateTimePickerDesde
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(207, 156)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(175, 26)
-        Me.TextBox1.TabIndex = 9
+        Me.DateTimePickerDesde.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePickerDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePickerDesde.Location = New System.Drawing.Point(546, 155)
+        Me.DateTimePickerDesde.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
+        Me.DateTimePickerDesde.MinDate = New Date(2000, 1, 1, 0, 0, 0, 0)
+        Me.DateTimePickerDesde.Name = "DateTimePickerDesde"
+        Me.DateTimePickerDesde.Size = New System.Drawing.Size(161, 26)
+        Me.DateTimePickerDesde.TabIndex = 1
         '
-        'Label5
+        'Label1
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Image = Global.Login.My.Resources.Resources._16__Help_2_
-        Me.Label5.Location = New System.Drawing.Point(388, 163)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(28, 13)
-        Me.Label5.TabIndex = 10
-        Me.Label5.Text = "       "
-        '
-        'ButtonBuscarFactura
-        '
-        Me.ButtonBuscarFactura.Image = Global.Login.My.Resources.Resources.search16_h
-        Me.ButtonBuscarFactura.Location = New System.Drawing.Point(1031, 150)
-        Me.ButtonBuscarFactura.Name = "ButtonBuscarFactura"
-        Me.ButtonBuscarFactura.Size = New System.Drawing.Size(72, 37)
-        Me.ButtonBuscarFactura.TabIndex = 5
-        Me.ButtonBuscarFactura.UseVisualStyleBackColor = True
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Georgia", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(495, 37)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(304, 38)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Mostrar Facturas"
         '
         'Panel_Informe_Factura
         '
         Me.Panel_Informe_Factura.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Panel_Informe_Factura.Controls.Add(Me.DataGridView2)
+        Me.Panel_Informe_Factura.Controls.Add(Me.Button3)
         Me.Panel_Informe_Factura.Controls.Add(Me.ButtonAceptarF)
         Me.Panel_Informe_Factura.Controls.Add(Me.DataGridView1)
         Me.Panel_Informe_Factura.Controls.Add(Me.ButtonBuscarFacturas)
@@ -279,137 +305,31 @@ Partial Class V_Factura
         Me.Panel_Informe_Factura.Size = New System.Drawing.Size(1324, 610)
         Me.Panel_Informe_Factura.TabIndex = 11
         '
-        'Label6
+        'DataGridView2
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Georgia", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label6.Location = New System.Drawing.Point(484, 12)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(353, 38)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Informe de Facturas"
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Location = New System.Drawing.Point(69, 438)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.Size = New System.Drawing.Size(1229, 118)
+        Me.DataGridView2.TabIndex = 18
         '
-        'Label7
+        'Button3
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Georgia", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label7.Location = New System.Drawing.Point(57, 29)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(153, 23)
-        Me.Label7.TabIndex = 1
-        Me.Label7.Text = "Nº de Factura:"
+        Me.Button3.Location = New System.Drawing.Point(626, 562)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(111, 31)
+        Me.Button3.TabIndex = 17
+        Me.Button3.Text = "Generar Informe"
+        Me.Button3.UseVisualStyleBackColor = True
         '
-        'Label11
+        'ButtonAceptarF
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Georgia", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label11.Location = New System.Drawing.Point(453, 92)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(78, 23)
-        Me.Label11.TabIndex = 5
-        Me.Label11.Text = "Desde:"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Georgia", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label12.Location = New System.Drawing.Point(830, 94)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(74, 23)
-        Me.Label12.TabIndex = 6
-        Me.Label12.Text = "Hasta:"
-        '
-        'DateTimeFDesde
-        '
-        Me.DateTimeFDesde.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimeFDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimeFDesde.Location = New System.Drawing.Point(540, 94)
-        Me.DateTimeFDesde.Name = "DateTimeFDesde"
-        Me.DateTimeFDesde.Size = New System.Drawing.Size(136, 26)
-        Me.DateTimeFDesde.TabIndex = 7
-        '
-        'DateTimeFHasta
-        '
-        Me.DateTimeFHasta.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimeFHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimeFHasta.Location = New System.Drawing.Point(913, 94)
-        Me.DateTimeFHasta.Name = "DateTimeFHasta"
-        Me.DateTimeFHasta.Size = New System.Drawing.Size(136, 26)
-        Me.DateTimeFHasta.TabIndex = 8
-        '
-        'ComboBoxDniVendedor
-        '
-        Me.ComboBoxDniVendedor.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBoxDniVendedor.FormattingEnabled = True
-        Me.ComboBoxDniVendedor.Items.AddRange(New Object() {"33657542", "28765345", "16543267", "39876543"})
-        Me.ComboBoxDniVendedor.Location = New System.Drawing.Point(1028, 25)
-        Me.ComboBoxDniVendedor.Name = "ComboBoxDniVendedor"
-        Me.ComboBoxDniVendedor.Size = New System.Drawing.Size(156, 26)
-        Me.ComboBoxDniVendedor.TabIndex = 9
-        Me.ComboBoxDniVendedor.Text = "DNI Vendedor"
-        '
-        'ComboBoxTipoPago
-        '
-        Me.ComboBoxTipoPago.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBoxTipoPago.FormattingEnabled = True
-        Me.ComboBoxTipoPago.Items.AddRange(New Object() {"Efectivo", "Tarjeta de Crédito", "Tarjeta de Débito", "Cheques"})
-        Me.ComboBoxTipoPago.Location = New System.Drawing.Point(102, 94)
-        Me.ComboBoxTipoPago.Name = "ComboBoxTipoPago"
-        Me.ComboBoxTipoPago.Size = New System.Drawing.Size(174, 26)
-        Me.ComboBoxTipoPago.TabIndex = 10
-        Me.ComboBoxTipoPago.Text = "Tipo Pago"
-        '
-        'TextBoxInformeNFactura
-        '
-        Me.TextBoxInformeNFactura.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxInformeNFactura.Location = New System.Drawing.Point(209, 25)
-        Me.TextBoxInformeNFactura.Name = "TextBoxInformeNFactura"
-        Me.TextBoxInformeNFactura.Size = New System.Drawing.Size(170, 26)
-        Me.TextBoxInformeNFactura.TabIndex = 11
-        '
-        'ComboBoxCuilCliente
-        '
-        Me.ComboBoxCuilCliente.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBoxCuilCliente.FormattingEnabled = True
-        Me.ComboBoxCuilCliente.Items.AddRange(New Object() {"20336575425", "27287653457", "25165432671", "20398765433"})
-        Me.ComboBoxCuilCliente.Location = New System.Drawing.Point(608, 25)
-        Me.ComboBoxCuilCliente.Name = "ComboBoxCuilCliente"
-        Me.ComboBoxCuilCliente.Size = New System.Drawing.Size(156, 26)
-        Me.ComboBoxCuilCliente.TabIndex = 12
-        Me.ComboBoxCuilCliente.Text = "CUIL Cliente"
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.TextBoxInformeNFactura)
-        Me.GroupBox1.Controls.Add(Me.ComboBoxTipoPago)
-        Me.GroupBox1.Controls.Add(Me.ComboBoxCuilCliente)
-        Me.GroupBox1.Controls.Add(Me.DateTimeFHasta)
-        Me.GroupBox1.Controls.Add(Me.DateTimeFDesde)
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.Label12)
-        Me.GroupBox1.Controls.Add(Me.ComboBoxDniVendedor)
-        Me.GroupBox1.Controls.Add(Me.Label11)
-        Me.GroupBox1.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.GroupBox1.Location = New System.Drawing.Point(18, 70)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1294, 138)
-        Me.GroupBox1.TabIndex = 13
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Búsqueda de Facturas"
-        '
-        'ButtonBuscarFacturas
-        '
-        Me.ButtonBuscarFacturas.Image = Global.Login.My.Resources.Resources.search16_h1
-        Me.ButtonBuscarFacturas.Location = New System.Drawing.Point(626, 223)
-        Me.ButtonBuscarFacturas.Name = "ButtonBuscarFacturas"
-        Me.ButtonBuscarFacturas.Size = New System.Drawing.Size(93, 28)
-        Me.ButtonBuscarFacturas.TabIndex = 14
-        Me.ButtonBuscarFacturas.UseVisualStyleBackColor = True
+        Me.ButtonAceptarF.Location = New System.Drawing.Point(1128, 565)
+        Me.ButtonAceptarF.Name = "ButtonAceptarF"
+        Me.ButtonAceptarF.Size = New System.Drawing.Size(93, 28)
+        Me.ButtonAceptarF.TabIndex = 16
+        Me.ButtonAceptarF.Text = "Salir"
+        Me.ButtonAceptarF.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
@@ -421,7 +341,7 @@ Partial Class V_Factura
         Me.DataGridView1.Location = New System.Drawing.Point(69, 274)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(1229, 282)
+        Me.DataGridView1.Size = New System.Drawing.Size(1229, 158)
         Me.DataGridView1.TabIndex = 15
         '
         'N_Factura
@@ -471,14 +391,295 @@ Partial Class V_Factura
         Me.Ver_detalles.ToolTipText = "Ver Productos"
         Me.Ver_detalles.UseColumnTextForButtonValue = True
         '
-        'ButtonAceptarF
+        'ButtonBuscarFacturas
         '
-        Me.ButtonAceptarF.Location = New System.Drawing.Point(626, 565)
-        Me.ButtonAceptarF.Name = "ButtonAceptarF"
-        Me.ButtonAceptarF.Size = New System.Drawing.Size(93, 28)
-        Me.ButtonAceptarF.TabIndex = 16
-        Me.ButtonAceptarF.Text = "Aceptar"
-        Me.ButtonAceptarF.UseVisualStyleBackColor = True
+        Me.ButtonBuscarFacturas.Image = Global.Login.My.Resources.Resources.search16_h1
+        Me.ButtonBuscarFacturas.Location = New System.Drawing.Point(626, 223)
+        Me.ButtonBuscarFacturas.Name = "ButtonBuscarFacturas"
+        Me.ButtonBuscarFacturas.Size = New System.Drawing.Size(93, 28)
+        Me.ButtonBuscarFacturas.TabIndex = 14
+        Me.ButtonBuscarFacturas.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.TextBoxInformeNFactura)
+        Me.GroupBox1.Controls.Add(Me.ComboBoxTipoPago)
+        Me.GroupBox1.Controls.Add(Me.ComboBoxCuilCliente)
+        Me.GroupBox1.Controls.Add(Me.DateTimeFHasta)
+        Me.GroupBox1.Controls.Add(Me.DateTimeFDesde)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.Label12)
+        Me.GroupBox1.Controls.Add(Me.ComboBoxDniVendedor)
+        Me.GroupBox1.Controls.Add(Me.Label11)
+        Me.GroupBox1.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.GroupBox1.Location = New System.Drawing.Point(18, 70)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(1294, 138)
+        Me.GroupBox1.TabIndex = 13
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Búsqueda de Facturas"
+        '
+        'TextBoxInformeNFactura
+        '
+        Me.TextBoxInformeNFactura.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxInformeNFactura.Location = New System.Drawing.Point(209, 25)
+        Me.TextBoxInformeNFactura.Name = "TextBoxInformeNFactura"
+        Me.TextBoxInformeNFactura.Size = New System.Drawing.Size(170, 26)
+        Me.TextBoxInformeNFactura.TabIndex = 11
+        '
+        'ComboBoxTipoPago
+        '
+        Me.ComboBoxTipoPago.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBoxTipoPago.FormattingEnabled = True
+        Me.ComboBoxTipoPago.Items.AddRange(New Object() {"Efectivo", "Tarjeta de Crédito", "Tarjeta de Débito", "Cheques"})
+        Me.ComboBoxTipoPago.Location = New System.Drawing.Point(102, 94)
+        Me.ComboBoxTipoPago.Name = "ComboBoxTipoPago"
+        Me.ComboBoxTipoPago.Size = New System.Drawing.Size(174, 26)
+        Me.ComboBoxTipoPago.TabIndex = 10
+        Me.ComboBoxTipoPago.Text = "Tipo Pago"
+        '
+        'ComboBoxCuilCliente
+        '
+        Me.ComboBoxCuilCliente.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBoxCuilCliente.FormattingEnabled = True
+        Me.ComboBoxCuilCliente.Items.AddRange(New Object() {"20336575425", "27287653457", "25165432671", "20398765433"})
+        Me.ComboBoxCuilCliente.Location = New System.Drawing.Point(608, 25)
+        Me.ComboBoxCuilCliente.Name = "ComboBoxCuilCliente"
+        Me.ComboBoxCuilCliente.Size = New System.Drawing.Size(156, 26)
+        Me.ComboBoxCuilCliente.TabIndex = 12
+        Me.ComboBoxCuilCliente.Text = "CUIL Cliente"
+        '
+        'DateTimeFHasta
+        '
+        Me.DateTimeFHasta.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimeFHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimeFHasta.Location = New System.Drawing.Point(913, 94)
+        Me.DateTimeFHasta.Name = "DateTimeFHasta"
+        Me.DateTimeFHasta.Size = New System.Drawing.Size(136, 26)
+        Me.DateTimeFHasta.TabIndex = 8
+        '
+        'DateTimeFDesde
+        '
+        Me.DateTimeFDesde.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimeFDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimeFDesde.Location = New System.Drawing.Point(540, 94)
+        Me.DateTimeFDesde.Name = "DateTimeFDesde"
+        Me.DateTimeFDesde.Size = New System.Drawing.Size(136, 26)
+        Me.DateTimeFDesde.TabIndex = 7
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Georgia", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label7.Location = New System.Drawing.Point(57, 29)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(153, 23)
+        Me.Label7.TabIndex = 1
+        Me.Label7.Text = "Nº de Factura:"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Georgia", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label12.Location = New System.Drawing.Point(830, 94)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(74, 23)
+        Me.Label12.TabIndex = 6
+        Me.Label12.Text = "Hasta:"
+        '
+        'ComboBoxDniVendedor
+        '
+        Me.ComboBoxDniVendedor.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBoxDniVendedor.FormattingEnabled = True
+        Me.ComboBoxDniVendedor.Items.AddRange(New Object() {"33657542", "28765345", "16543267", "39876543"})
+        Me.ComboBoxDniVendedor.Location = New System.Drawing.Point(1028, 25)
+        Me.ComboBoxDniVendedor.Name = "ComboBoxDniVendedor"
+        Me.ComboBoxDniVendedor.Size = New System.Drawing.Size(156, 26)
+        Me.ComboBoxDniVendedor.TabIndex = 9
+        Me.ComboBoxDniVendedor.Text = "DNI Vendedor"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Georgia", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label11.Location = New System.Drawing.Point(453, 92)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(78, 23)
+        Me.Label11.TabIndex = 5
+        Me.Label11.Text = "Desde:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Georgia", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label6.Location = New System.Drawing.Point(484, 12)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(353, 38)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "Informe de Facturas"
+        '
+        'Panel_Cancelar_Factura
+        '
+        Me.Panel_Cancelar_Factura.BackColor = System.Drawing.Color.Teal
+        Me.Panel_Cancelar_Factura.Controls.Add(Me.DataGridView3)
+        Me.Panel_Cancelar_Factura.Controls.Add(Me.Button2)
+        Me.Panel_Cancelar_Factura.Controls.Add(Me.ButtonAceptarCF)
+        Me.Panel_Cancelar_Factura.Controls.Add(Me.DataGridCFProductos)
+        Me.Panel_Cancelar_Factura.Controls.Add(Me.GroupBox2)
+        Me.Panel_Cancelar_Factura.Controls.Add(Me.Label8)
+        Me.Panel_Cancelar_Factura.Location = New System.Drawing.Point(0, 0)
+        Me.Panel_Cancelar_Factura.Name = "Panel_Cancelar_Factura"
+        Me.Panel_Cancelar_Factura.Size = New System.Drawing.Size(1321, 607)
+        Me.Panel_Cancelar_Factura.TabIndex = 17
+        '
+        'Button2
+        '
+        Me.Button2.Image = Global.Login.My.Resources.Resources.table_delete
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.Location = New System.Drawing.Point(501, 532)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(106, 44)
+        Me.Button2.TabIndex = 13
+        Me.Button2.Text = "Baja Factura"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'ButtonAceptarCF
+        '
+        Me.ButtonAceptarCF.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonAceptarCF.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.ButtonAceptarCF.Location = New System.Drawing.Point(947, 537)
+        Me.ButtonAceptarCF.Name = "ButtonAceptarCF"
+        Me.ButtonAceptarCF.Size = New System.Drawing.Size(111, 33)
+        Me.ButtonAceptarCF.TabIndex = 12
+        Me.ButtonAceptarCF.Text = "Aceptar"
+        Me.ButtonAceptarCF.UseVisualStyleBackColor = True
+        '
+        'DataGridCFProductos
+        '
+        Me.DataGridCFProductos.AllowUserToAddRows = False
+        Me.DataGridCFProductos.AllowUserToDeleteRows = False
+        Me.DataGridCFProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridCFProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
+        Me.DataGridCFProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridCFProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NroFactura, Me.CF_Cliente, Me.CF_Vendedor, Me.CF_Fecha, Me.CF_Tipo_PAgo, Me.CF_Total, Me.CF_Producto})
+        Me.DataGridCFProductos.Location = New System.Drawing.Point(69, 200)
+        Me.DataGridCFProductos.Name = "DataGridCFProductos"
+        Me.DataGridCFProductos.ReadOnly = True
+        Me.DataGridCFProductos.Size = New System.Drawing.Size(1207, 69)
+        Me.DataGridCFProductos.TabIndex = 3
+        '
+        'NroFactura
+        '
+        Me.NroFactura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.NroFactura.HeaderText = "Nº Factura"
+        Me.NroFactura.Name = "NroFactura"
+        Me.NroFactura.ReadOnly = True
+        '
+        'CF_Cliente
+        '
+        Me.CF_Cliente.HeaderText = "Cliente"
+        Me.CF_Cliente.Name = "CF_Cliente"
+        Me.CF_Cliente.ReadOnly = True
+        '
+        'CF_Vendedor
+        '
+        Me.CF_Vendedor.HeaderText = "Vendedor"
+        Me.CF_Vendedor.Name = "CF_Vendedor"
+        Me.CF_Vendedor.ReadOnly = True
+        '
+        'CF_Fecha
+        '
+        Me.CF_Fecha.HeaderText = "Fecha"
+        Me.CF_Fecha.Name = "CF_Fecha"
+        Me.CF_Fecha.ReadOnly = True
+        '
+        'CF_Tipo_PAgo
+        '
+        Me.CF_Tipo_PAgo.HeaderText = "Tipo Pago"
+        Me.CF_Tipo_PAgo.Name = "CF_Tipo_PAgo"
+        Me.CF_Tipo_PAgo.ReadOnly = True
+        '
+        'CF_Total
+        '
+        Me.CF_Total.HeaderText = "Total"
+        Me.CF_Total.Name = "CF_Total"
+        Me.CF_Total.ReadOnly = True
+        '
+        'CF_Producto
+        '
+        Me.CF_Producto.HeaderText = "Productos"
+        Me.CF_Producto.Name = "CF_Producto"
+        Me.CF_Producto.ReadOnly = True
+        Me.CF_Producto.Text = "Ver Productos"
+        Me.CF_Producto.ToolTipText = "Ver Productos"
+        Me.CF_Producto.UseColumnTextForButtonValue = True
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.Button1)
+        Me.GroupBox2.Controls.Add(Me.TextBoxBuscarFacturaCancelar)
+        Me.GroupBox2.Controls.Add(Me.Label9)
+        Me.GroupBox2.Font = New System.Drawing.Font("Georgia", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.GroupBox2.Location = New System.Drawing.Point(28, 71)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(1284, 100)
+        Me.GroupBox2.TabIndex = 2
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Buscar Factura"
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button1.Image = Global.Login.My.Resources.Resources.search16_h1
+        Me.Button1.Location = New System.Drawing.Point(789, 37)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(74, 33)
+        Me.Button1.TabIndex = 3
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'TextBoxBuscarFacturaCancelar
+        '
+        Me.TextBoxBuscarFacturaCancelar.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxBuscarFacturaCancelar.Location = New System.Drawing.Point(566, 41)
+        Me.TextBoxBuscarFacturaCancelar.Name = "TextBoxBuscarFacturaCancelar"
+        Me.TextBoxBuscarFacturaCancelar.Size = New System.Drawing.Size(175, 26)
+        Me.TextBoxBuscarFacturaCancelar.TabIndex = 10
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Georgia", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(395, 40)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(153, 23)
+        Me.Label9.TabIndex = 11
+        Me.Label9.Text = "Nº de Factura:"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Georgia", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label8.Location = New System.Drawing.Point(494, 13)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(299, 38)
+        Me.Label8.TabIndex = 1
+        Me.Label8.Text = "Cancelar Factura"
+        '
+        'DataGridView3
+        '
+        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView3.Location = New System.Drawing.Point(69, 310)
+        Me.DataGridView3.Name = "DataGridView3"
+        Me.DataGridView3.Size = New System.Drawing.Size(1207, 159)
+        Me.DataGridView3.TabIndex = 14
         '
         'V_Factura
         '
@@ -486,6 +687,7 @@ Partial Class V_Factura
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1324, 606)
+        Me.Controls.Add(Me.Panel_Cancelar_Factura)
         Me.Controls.Add(Me.Panel_Informe_Factura)
         Me.Controls.Add(Me.Panel_VerFacturas)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -497,9 +699,16 @@ Partial Class V_Factura
         CType(Me.DataGridVerFacturas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_Informe_Factura.ResumeLayout(False)
         Me.Panel_Informe_Factura.PerformLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel_Cancelar_Factura.ResumeLayout(False)
+        Me.Panel_Cancelar_Factura.PerformLayout()
+        CType(Me.DataGridCFProductos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -543,4 +752,23 @@ Partial Class V_Factura
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents ComboBoxDniVendedor As System.Windows.Forms.ComboBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Panel_Cancelar_Factura As System.Windows.Forms.Panel
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents TextBoxBuscarFacturaCancelar As System.Windows.Forms.TextBox
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents DataGridCFProductos As System.Windows.Forms.DataGridView
+    Friend WithEvents ButtonAceptarCF As System.Windows.Forms.Button
+    Friend WithEvents NroFactura As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CF_Cliente As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CF_Vendedor As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CF_Fecha As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CF_Tipo_PAgo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CF_Total As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CF_Producto As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView
+    Friend WithEvents DataGridView3 As System.Windows.Forms.DataGridView
 End Class
