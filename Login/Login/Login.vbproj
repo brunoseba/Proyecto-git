@@ -93,12 +93,6 @@
     <Compile Include="Formularios\CuadroUsu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Empresa.Designer.vb">
-      <DependentUpon>Empresa.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Empresa.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Formularios\Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -159,9 +153,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\CuadroUsu.resx">
       <DependentUpon>CuadroUsu.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Empresa.resx">
-      <DependentUpon>Empresa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
