@@ -145,4 +145,11 @@ Public Class Ventana
         Empresa.Panel_modificar_Empresa.Visible = True
         Empresa.MdiParent = Me
     End Sub
+
+    Private Sub VerFacturasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VerFacturasToolStripMenuItem.Click
+        V_Factura.MaximizeBox = True
+        V_Factura.Show()
+        V_Factura.Panel_VerFacturas.Visible = True
+        V_Factura.MdiParent = Me
+    End Sub
 End Class

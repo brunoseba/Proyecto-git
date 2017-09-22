@@ -118,6 +118,12 @@
     <Compile Include="Formularios\MDIParent1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\V_Factura.Designer.vb">
+      <DependentUpon>V_Factura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\V_Factura.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Model1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\MDIParent1.resx">
       <DependentUpon>MDIParent1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\V_Factura.resx">
+      <DependentUpon>V_Factura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
