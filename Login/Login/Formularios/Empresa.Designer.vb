@@ -22,7 +22,7 @@ Partial Class Empresa
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empresa))
+        Me.Panel_modificar_Empresa = New System.Windows.Forms.Panel()
         Me.Panel_Ver_Datos_Empresa = New System.Windows.Forms.Panel()
         Me.ButtonEAceptar = New System.Windows.Forms.Button()
         Me.LabelTelefono = New System.Windows.Forms.Label()
@@ -36,7 +36,6 @@ Partial Class Empresa
         Me.LabelENombre = New System.Windows.Forms.Label()
         Me.LabelECuit = New System.Windows.Forms.Label()
         Me.LabelETitulo = New System.Windows.Forms.Label()
-        Me.Panel_modificar_Empresa = New System.Windows.Forms.Panel()
         Me.ButtonSalirEmpresa = New System.Windows.Forms.Button()
         Me.ButtonGuardarEmpresa = New System.Windows.Forms.Button()
         Me.TextBoxTelefonoEmpresa = New System.Windows.Forms.TextBox()
@@ -50,9 +49,30 @@ Partial Class Empresa
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel_Ver_Datos_Empresa.SuspendLayout()
         Me.Panel_modificar_Empresa.SuspendLayout()
+        Me.Panel_Ver_Datos_Empresa.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'Panel_modificar_Empresa
+        '
+        Me.Panel_modificar_Empresa.BackColor = System.Drawing.Color.Chocolate
+        Me.Panel_modificar_Empresa.Controls.Add(Me.ButtonSalirEmpresa)
+        Me.Panel_modificar_Empresa.Controls.Add(Me.ButtonGuardarEmpresa)
+        Me.Panel_modificar_Empresa.Controls.Add(Me.TextBoxTelefonoEmpresa)
+        Me.Panel_modificar_Empresa.Controls.Add(Me.TextBoxDireccionEmpresa)
+        Me.Panel_modificar_Empresa.Controls.Add(Me.TextBoxEmailEmpresa)
+        Me.Panel_modificar_Empresa.Controls.Add(Me.TextBoxNombreEmpresa)
+        Me.Panel_modificar_Empresa.Controls.Add(Me.TextBoxCuitEmpresa)
+        Me.Panel_modificar_Empresa.Controls.Add(Me.Label6)
+        Me.Panel_modificar_Empresa.Controls.Add(Me.Label5)
+        Me.Panel_modificar_Empresa.Controls.Add(Me.Label4)
+        Me.Panel_modificar_Empresa.Controls.Add(Me.Label3)
+        Me.Panel_modificar_Empresa.Controls.Add(Me.Label2)
+        Me.Panel_modificar_Empresa.Controls.Add(Me.Label1)
+        Me.Panel_modificar_Empresa.Location = New System.Drawing.Point(2, 1)
+        Me.Panel_modificar_Empresa.Name = "Panel_modificar_Empresa"
+        Me.Panel_modificar_Empresa.Size = New System.Drawing.Size(1370, 620)
+        Me.Panel_modificar_Empresa.TabIndex = 14
         '
         'Panel_Ver_Datos_Empresa
         '
@@ -69,9 +89,9 @@ Partial Class Empresa
         Me.Panel_Ver_Datos_Empresa.Controls.Add(Me.LabelENombre)
         Me.Panel_Ver_Datos_Empresa.Controls.Add(Me.LabelECuit)
         Me.Panel_Ver_Datos_Empresa.Controls.Add(Me.LabelETitulo)
-        Me.Panel_Ver_Datos_Empresa.Location = New System.Drawing.Point(12, 12)
+        Me.Panel_Ver_Datos_Empresa.Location = New System.Drawing.Point(2, 1)
         Me.Panel_Ver_Datos_Empresa.Name = "Panel_Ver_Datos_Empresa"
-        Me.Panel_Ver_Datos_Empresa.Size = New System.Drawing.Size(1300, 582)
+        Me.Panel_Ver_Datos_Empresa.Size = New System.Drawing.Size(1373, 623)
         Me.Panel_Ver_Datos_Empresa.TabIndex = 0
         '
         'ButtonEAceptar
@@ -200,27 +220,6 @@ Partial Class Empresa
         Me.LabelETitulo.TabIndex = 0
         Me.LabelETitulo.Text = "Datos de la Empresa"
         '
-        'Panel_modificar_Empresa
-        '
-        Me.Panel_modificar_Empresa.BackColor = System.Drawing.Color.Chocolate
-        Me.Panel_modificar_Empresa.Controls.Add(Me.ButtonSalirEmpresa)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.ButtonGuardarEmpresa)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.TextBoxTelefonoEmpresa)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.TextBoxDireccionEmpresa)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.TextBoxEmailEmpresa)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.TextBoxNombreEmpresa)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.TextBoxCuitEmpresa)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.Label6)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.Label5)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.Label4)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.Label3)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.Label2)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.Label1)
-        Me.Panel_modificar_Empresa.Location = New System.Drawing.Point(12, 12)
-        Me.Panel_modificar_Empresa.Name = "Panel_modificar_Empresa"
-        Me.Panel_modificar_Empresa.Size = New System.Drawing.Size(1300, 582)
-        Me.Panel_modificar_Empresa.TabIndex = 13
-        '
         'ButtonSalirEmpresa
         '
         Me.ButtonSalirEmpresa.Location = New System.Drawing.Point(705, 494)
@@ -290,9 +289,9 @@ Partial Class Empresa
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(893, 168)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(73, 24)
+        Me.Label6.Size = New System.Drawing.Size(68, 24)
         Me.Label6.TabIndex = 4
-        Me.Label6.Text = "E-mail :"
+        Me.Label6.Text = "E-mail:"
         '
         'Label5
         '
@@ -300,9 +299,9 @@ Partial Class Empresa
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(521, 166)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(89, 24)
+        Me.Label5.Size = New System.Drawing.Size(84, 24)
         Me.Label5.TabIndex = 3
-        Me.Label5.Text = "Nombre :"
+        Me.Label5.Text = "Nombre:"
         '
         'Label4
         '
@@ -310,9 +309,9 @@ Partial Class Empresa
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(62, 284)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(100, 24)
+        Me.Label4.Size = New System.Drawing.Size(95, 24)
         Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Dirección :"
+        Me.Label4.Text = "Dirección:"
         '
         'Label3
         '
@@ -320,9 +319,9 @@ Partial Class Empresa
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(521, 284)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(95, 24)
+        Me.Label3.Size = New System.Drawing.Size(90, 24)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Teléfono :"
+        Me.Label3.Text = "Teléfono:"
         '
         'Label2
         '
@@ -330,9 +329,9 @@ Partial Class Empresa
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(72, 168)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(77, 24)
+        Me.Label2.Size = New System.Drawing.Size(72, 24)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "C.U.I.T :"
+        Me.Label2.Text = "C.U.I.T:"
         '
         'Label1
         '
@@ -348,46 +347,44 @@ Partial Class Empresa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1324, 606)
-        Me.Controls.Add(Me.Panel_modificar_Empresa)
+        Me.ClientSize = New System.Drawing.Size(1370, 623)
         Me.Controls.Add(Me.Panel_Ver_Datos_Empresa)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MinimizeBox = False
+        Me.Controls.Add(Me.Panel_modificar_Empresa)
         Me.Name = "Empresa"
         Me.Text = "Empresa"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.Panel_Ver_Datos_Empresa.ResumeLayout(False)
-        Me.Panel_Ver_Datos_Empresa.PerformLayout()
         Me.Panel_modificar_Empresa.ResumeLayout(False)
         Me.Panel_modificar_Empresa.PerformLayout()
+        Me.Panel_Ver_Datos_Empresa.ResumeLayout(False)
+        Me.Panel_Ver_Datos_Empresa.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
+    Friend WithEvents Panel_modificar_Empresa As System.Windows.Forms.Panel
+    Friend WithEvents ButtonSalirEmpresa As System.Windows.Forms.Button
+    Friend WithEvents ButtonGuardarEmpresa As System.Windows.Forms.Button
+    Friend WithEvents TextBoxTelefonoEmpresa As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxDireccionEmpresa As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxEmailEmpresa As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxNombreEmpresa As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxCuitEmpresa As System.Windows.Forms.TextBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Panel_Ver_Datos_Empresa As System.Windows.Forms.Panel
+    Friend WithEvents ButtonEAceptar As System.Windows.Forms.Button
+    Friend WithEvents LabelTelefono As System.Windows.Forms.Label
+    Friend WithEvents LabelDireccion As System.Windows.Forms.Label
+    Friend WithEvents LabelEmail As System.Windows.Forms.Label
+    Friend WithEvents LabelNombre As System.Windows.Forms.Label
+    Friend WithEvents LabelCuit As System.Windows.Forms.Label
     Friend WithEvents LabelETelefono As System.Windows.Forms.Label
     Friend WithEvents LabelEDireccion As System.Windows.Forms.Label
     Friend WithEvents LabelEEmail As System.Windows.Forms.Label
     Friend WithEvents LabelENombre As System.Windows.Forms.Label
     Friend WithEvents LabelECuit As System.Windows.Forms.Label
     Friend WithEvents LabelETitulo As System.Windows.Forms.Label
-    Friend WithEvents LabelCuit As System.Windows.Forms.Label
-    Friend WithEvents LabelTelefono As System.Windows.Forms.Label
-    Friend WithEvents LabelDireccion As System.Windows.Forms.Label
-    Friend WithEvents LabelEmail As System.Windows.Forms.Label
-    Friend WithEvents LabelNombre As System.Windows.Forms.Label
-    Friend WithEvents ButtonEAceptar As System.Windows.Forms.Button
-    Friend WithEvents Panel_modificar_Empresa As System.Windows.Forms.Panel
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents TextBoxTelefonoEmpresa As System.Windows.Forms.TextBox
-    Friend WithEvents TextBoxDireccionEmpresa As System.Windows.Forms.TextBox
-    Friend WithEvents TextBoxEmailEmpresa As System.Windows.Forms.TextBox
-    Friend WithEvents TextBoxNombreEmpresa As System.Windows.Forms.TextBox
-    Friend WithEvents TextBoxCuitEmpresa As System.Windows.Forms.TextBox
-    Friend WithEvents ButtonSalirEmpresa As System.Windows.Forms.Button
-    Friend WithEvents ButtonGuardarEmpresa As System.Windows.Forms.Button
 End Class
