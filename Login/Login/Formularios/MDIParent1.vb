@@ -51,6 +51,9 @@ Public Class Ventana
     Private Sub MenuClientesAgregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuClientesAgregar.Click
         CuadroUsu.MaximizeBox = True
         CuadroUsu.Show()
+        CuadroUsu.PanelRegistro.Visible = True
+        CuadroUsu.PanelBusca.Visible = False
+        CuadroUsu.PanelVer.Visible = False
         CuadroUsu.MdiParent = Me
 
         'Principal.PanelBuscarClientes.Visible = False
@@ -62,24 +65,24 @@ Public Class Ventana
     End Sub
 
     Private Sub MenuClientesMostrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuClientesMostrar.Click
-        'BuscaModifica.Show()
-        'Principal.PanelBuscarClientes.Visible = True
-        'Principal.PanelClientes.Visible = True
-        'Principal.PanelMostrarCliente.Visible = True
-        'Principal.PanelAgregarModificarCliente.Visible = False
+        CuadroUsu.MaximizeBox = True
+        CuadroUsu.Show()
+        CuadroUsu.PanelBusca.Visible = True
+        CuadroUsu.PanelRegistro.Visible = False
+        CuadroUsu.MdiParent = Me
     End Sub
 
     Private Sub MenuClientesModificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Principal.PanelBuscarClientes.Visible = True
-        Principal.PanelClientes.Visible = True
-        Principal.PanelMostrarCliente.Visible = False
-        Principal.PanelAgregarModificarCliente.Visible = True
+        'Principal.PanelBuscarClientes.Visible = True
+        'Principal.PanelClientes.Visible = True
+        'Principal.PanelMostrarCliente.Visible = False
+        'Principal.PanelAgregarModificarCliente.Visible = True
     End Sub
 
     Private Sub MenuProductosAgregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Principal.PanelProductos.Visible = True
-        Principal.PanelAgregarProductos.Visible = True
-        Principal.PanelBuscarProducto.Visible = True
+        'Principal.PanelProductos.Visible = True
+        'Principal.PanelAgregarProductos.Visible = True
+        'Principal.PanelBuscarProducto.Visible = True
 
     End Sub
 

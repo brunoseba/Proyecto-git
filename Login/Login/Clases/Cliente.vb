@@ -66,27 +66,27 @@
         estado = c_estado
     End Sub
 
-    Private Sub SetApe(ByVal c_ape As Char)
+    Private Sub SetApe(ByVal c_ape As String)
         ape = c_ape
     End Sub
 
-    Private Sub SetLocalidad(ByVal c_local As Char)
+    Private Sub SetLocalidad(ByVal c_local As String)
         localidad = c_local
     End Sub
 
-    Private Sub SetProvincia(ByVal c_prov As Char)
+    Private Sub SetProvincia(ByVal c_prov As String)
         provincia = c_prov
     End Sub
 
-    Private Sub SetFecha(ByVal c_fecha As Char)
+    Private Sub SetFecha(ByVal c_fecha As String)
         fecha = c_fecha
     End Sub
 
-    Private Sub SetPostal(ByVal c_postal As Char)
+    Private Sub SetPostal(ByVal c_postal As String)
         postal = c_postal
     End Sub
 
-    Private Sub SetCelular(ByVal c_celu As Char)
+    Private Sub SetCelular(ByVal c_celu As String)
         celular = c_celu
     End Sub
 
@@ -167,6 +167,7 @@
             Using Base As New NNeumaticosEntities1
                 Dim altas = New Cliente With
                            {.cliente_cuil = GetID(),
+                            .cliente_NomYape = GetNomYape(),
                             .cliente_Direccion = GetDireccion(),
                             .cliente_Telefono = GetTelefono(),
                             .cliente_Email = GetEmail(),
