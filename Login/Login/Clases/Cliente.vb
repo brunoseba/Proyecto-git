@@ -1,6 +1,6 @@
 ﻿Public Class Cliente
 
-    Private cliente_id As Integer
+    Private cliente_id As Long
     Private nomYape As String
     Private direccion As String
     Private telefono As String
