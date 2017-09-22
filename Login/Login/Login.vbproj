@@ -139,12 +139,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Clases\Producto.vb" />
-    <Compile Include="Formularios\Registro.Designer.vb">
-      <DependentUpon>Registro.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Registro.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Formularios\SplashScreen1.Designer.vb">
       <DependentUpon>SplashScreen1.vb</DependentUpon>
     </Compile>
@@ -183,9 +177,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Registro.resx">
-      <DependentUpon>Registro.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.vb</DependentUpon>

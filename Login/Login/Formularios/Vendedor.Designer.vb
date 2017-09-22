@@ -220,7 +220,12 @@ Partial Class Vendedor
         Me.Carrito.UseColumnTextForButtonValue = True
         '
         'ButtonCarrito
+
         'Me.ButtonCarrito.Image = Global.Login.My.Resources.Resources.carrit
+
+        '
+
+
         Me.ButtonCarrito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ButtonCarrito.Location = New System.Drawing.Point(1288, 31)
         Me.ButtonCarrito.Name = "ButtonCarrito"
