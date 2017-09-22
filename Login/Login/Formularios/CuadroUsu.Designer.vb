@@ -22,16 +22,28 @@ Partial Class CuadroUsu
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle56 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle57 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle58 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle59 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle60 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelRegistro = New System.Windows.Forms.Panel()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TEmail = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.DateTime = New System.Windows.Forms.DateTimePicker()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.CBEstado = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.CBProvincia = New System.Windows.Forms.ComboBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TLocal = New System.Windows.Forms.TextBox()
+        Me.TPostal = New System.Windows.Forms.TextBox()
+        Me.TDire = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TCelular = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -45,18 +57,6 @@ Partial Class CuadroUsu
         Me.TTelef = New System.Windows.Forms.TextBox()
         Me.BSalir = New System.Windows.Forms.Button()
         Me.BGuardar = New System.Windows.Forms.Button()
-        Me.CBProvincia = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TPostal = New System.Windows.Forms.TextBox()
-        Me.TDire = New System.Windows.Forms.TextBox()
-        Me.CBEstado = New System.Windows.Forms.ComboBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.DateTime = New System.Windows.Forms.DateTimePicker()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TEmail = New System.Windows.Forms.TextBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.PanelVer = New System.Windows.Forms.Panel()
         Me.Llocal = New System.Windows.Forms.Label()
         Me.BModifica = New System.Windows.Forms.Button()
@@ -88,6 +88,7 @@ Partial Class CuadroUsu
         Me.PanelBusca = New System.Windows.Forms.Panel()
         Me.BSalir2 = New System.Windows.Forms.Button()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.TApellido2 = New System.Windows.Forms.TextBox()
         Me.CBEstaCli = New System.Windows.Forms.ComboBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
@@ -97,7 +98,6 @@ Partial Class CuadroUsu
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.DataGridCliente = New System.Windows.Forms.DataGridView()
-        Me.TApellido2 = New System.Windows.Forms.TextBox()
         Me.Dni = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NomApe = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Direc = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -105,9 +105,9 @@ Partial Class CuadroUsu
         Me.tipoUsu = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColVer = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.PanelRegistro.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
         Me.PanelVer.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.PanelBusca.SuspendLayout()
@@ -131,6 +131,86 @@ Partial Class CuadroUsu
         Me.PanelRegistro.Name = "PanelRegistro"
         Me.PanelRegistro.Size = New System.Drawing.Size(1370, 632)
         Me.PanelRegistro.TabIndex = 0
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox3.Controls.Add(Me.TEmail)
+        Me.GroupBox3.Controls.Add(Me.Label7)
+        Me.GroupBox3.Controls.Add(Me.DateTime)
+        Me.GroupBox3.Controls.Add(Me.Label11)
+        Me.GroupBox3.Controls.Add(Me.Label9)
+        Me.GroupBox3.Controls.Add(Me.CBEstado)
+        Me.GroupBox3.ForeColor = System.Drawing.Color.White
+        Me.GroupBox3.Location = New System.Drawing.Point(26, 428)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(1332, 100)
+        Me.GroupBox3.TabIndex = 42
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "DATOS COMPLEMENTARIOS"
+        '
+        'TEmail
+        '
+        Me.TEmail.Location = New System.Drawing.Point(123, 44)
+        Me.TEmail.Name = "TEmail"
+        Me.TEmail.Size = New System.Drawing.Size(243, 20)
+        Me.TEmail.TabIndex = 36
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(53, 47)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(47, 16)
+        Me.Label7.TabIndex = 32
+        Me.Label7.Text = "EMAIL"
+        '
+        'DateTime
+        '
+        Me.DateTime.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.DateTime.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTime.Location = New System.Drawing.Point(1004, 41)
+        Me.DateTime.Name = "DateTime"
+        Me.DateTime.Size = New System.Drawing.Size(116, 20)
+        Me.DateTime.TabIndex = 40
+        '
+        'Label11
+        '
+        Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(921, 47)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(53, 16)
+        Me.Label11.TabIndex = 33
+        Me.Label11.Text = "FECHA"
+        '
+        'Label9
+        '
+        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(575, 47)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(72, 16)
+        Me.Label9.TabIndex = 8
+        Me.Label9.Text = "ESTADO *"
+        '
+        'CBEstado
+        '
+        Me.CBEstado.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.CBEstado.FormattingEnabled = True
+        Me.CBEstado.Items.AddRange(New Object() {"Activo", "Inactivo"})
+        Me.CBEstado.Location = New System.Drawing.Point(681, 44)
+        Me.CBEstado.Name = "CBEstado"
+        Me.CBEstado.Size = New System.Drawing.Size(121, 21)
+        Me.CBEstado.TabIndex = 7
+        Me.CBEstado.Text = "Activo"
         '
         'GroupBox2
         '
@@ -163,6 +243,27 @@ Partial Class CuadroUsu
         Me.Label8.TabIndex = 7
         Me.Label8.Text = "CODIGO POSTAL *"
         '
+        'CBProvincia
+        '
+        Me.CBProvincia.FormattingEnabled = True
+        Me.CBProvincia.Items.AddRange(New Object() {"Corrientes", "Chaco", "Misiones", "Entre Rios", "Santa Fe"})
+        Me.CBProvincia.Location = New System.Drawing.Point(618, 36)
+        Me.CBProvincia.Name = "CBProvincia"
+        Me.CBProvincia.Size = New System.Drawing.Size(203, 21)
+        Me.CBProvincia.TabIndex = 6
+        Me.CBProvincia.Text = "Provincia.."
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(527, 39)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(88, 16)
+        Me.Label10.TabIndex = 9
+        Me.Label10.Text = "PROVINCIA *"
+        '
         'Label4
         '
         Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -182,6 +283,31 @@ Partial Class CuadroUsu
         Me.TLocal.Name = "TLocal"
         Me.TLocal.Size = New System.Drawing.Size(243, 20)
         Me.TLocal.TabIndex = 35
+        '
+        'TPostal
+        '
+        Me.TPostal.Location = New System.Drawing.Point(160, 97)
+        Me.TPostal.Name = "TPostal"
+        Me.TPostal.Size = New System.Drawing.Size(238, 20)
+        Me.TPostal.TabIndex = 3
+        '
+        'TDire
+        '
+        Me.TDire.Location = New System.Drawing.Point(128, 37)
+        Me.TDire.Name = "TDire"
+        Me.TDire.Size = New System.Drawing.Size(238, 20)
+        Me.TDire.TabIndex = 5
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(26, 40)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(89, 16)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "DIRECCION *"
         '
         'GroupBox1
         '
@@ -322,132 +448,6 @@ Partial Class CuadroUsu
         Me.BGuardar.TabIndex = 37
         Me.BGuardar.Text = "Guardar"
         Me.BGuardar.UseVisualStyleBackColor = True
-        '
-        'CBProvincia
-        '
-        Me.CBProvincia.FormattingEnabled = True
-        Me.CBProvincia.Items.AddRange(New Object() {"Corrientes", "Chaco", "Misiones", "Entre Rios", "Santa Fe"})
-        Me.CBProvincia.Location = New System.Drawing.Point(618, 36)
-        Me.CBProvincia.Name = "CBProvincia"
-        Me.CBProvincia.Size = New System.Drawing.Size(203, 21)
-        Me.CBProvincia.TabIndex = 6
-        Me.CBProvincia.Text = "Provincia.."
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(26, 40)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(89, 16)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "DIRECCION *"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(527, 39)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(88, 16)
-        Me.Label10.TabIndex = 9
-        Me.Label10.Text = "PROVINCIA *"
-        '
-        'TPostal
-        '
-        Me.TPostal.Location = New System.Drawing.Point(160, 97)
-        Me.TPostal.Name = "TPostal"
-        Me.TPostal.Size = New System.Drawing.Size(238, 20)
-        Me.TPostal.TabIndex = 3
-        '
-        'TDire
-        '
-        Me.TDire.Location = New System.Drawing.Point(128, 37)
-        Me.TDire.Name = "TDire"
-        Me.TDire.Size = New System.Drawing.Size(238, 20)
-        Me.TDire.TabIndex = 5
-        '
-        'CBEstado
-        '
-        Me.CBEstado.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.CBEstado.FormattingEnabled = True
-        Me.CBEstado.Items.AddRange(New Object() {"Activo", "Inactivo"})
-        Me.CBEstado.Location = New System.Drawing.Point(681, 44)
-        Me.CBEstado.Name = "CBEstado"
-        Me.CBEstado.Size = New System.Drawing.Size(121, 21)
-        Me.CBEstado.TabIndex = 7
-        Me.CBEstado.Text = "Activo"
-        '
-        'Label9
-        '
-        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(575, 47)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(72, 16)
-        Me.Label9.TabIndex = 8
-        Me.Label9.Text = "ESTADO *"
-        '
-        'Label11
-        '
-        Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(921, 47)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(53, 16)
-        Me.Label11.TabIndex = 33
-        Me.Label11.Text = "FECHA"
-        '
-        'DateTime
-        '
-        Me.DateTime.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.DateTime.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTime.Location = New System.Drawing.Point(1004, 41)
-        Me.DateTime.Name = "DateTime"
-        Me.DateTime.Size = New System.Drawing.Size(116, 20)
-        Me.DateTime.TabIndex = 40
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(53, 47)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(47, 16)
-        Me.Label7.TabIndex = 32
-        Me.Label7.Text = "EMAIL"
-        '
-        'TEmail
-        '
-        Me.TEmail.Location = New System.Drawing.Point(123, 44)
-        Me.TEmail.Name = "TEmail"
-        Me.TEmail.Size = New System.Drawing.Size(243, 20)
-        Me.TEmail.TabIndex = 36
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox3.Controls.Add(Me.TEmail)
-        Me.GroupBox3.Controls.Add(Me.Label7)
-        Me.GroupBox3.Controls.Add(Me.DateTime)
-        Me.GroupBox3.Controls.Add(Me.Label11)
-        Me.GroupBox3.Controls.Add(Me.Label9)
-        Me.GroupBox3.Controls.Add(Me.CBEstado)
-        Me.GroupBox3.ForeColor = System.Drawing.Color.White
-        Me.GroupBox3.Location = New System.Drawing.Point(26, 428)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(1332, 100)
-        Me.GroupBox3.TabIndex = 42
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "DATOS COMPLEMENTARIOS"
         '
         'PanelVer
         '
@@ -826,6 +826,13 @@ Partial Class CuadroUsu
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Buscar Usuario"
         '
+        'TApellido2
+        '
+        Me.TApellido2.Location = New System.Drawing.Point(717, 35)
+        Me.TApellido2.Name = "TApellido2"
+        Me.TApellido2.Size = New System.Drawing.Size(178, 24)
+        Me.TApellido2.TabIndex = 9
+        '
         'CBEstaCli
         '
         Me.CBEstaCli.FormattingEnabled = True
@@ -850,7 +857,7 @@ Partial Class CuadroUsu
         Me.Label25.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label25.AutoSize = True
         Me.Label25.ForeColor = System.Drawing.Color.White
-        Me.Label25.Location = New System.Drawing.Point(642, 38)
+        Me.Label25.Location = New System.Drawing.Point(612, 37)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(87, 18)
         Me.Label25.TabIndex = 6
@@ -913,18 +920,11 @@ Partial Class CuadroUsu
         Me.DataGridCliente.Size = New System.Drawing.Size(1291, 390)
         Me.DataGridCliente.TabIndex = 1
         '
-        'TApellido2
-        '
-        Me.TApellido2.Location = New System.Drawing.Point(717, 35)
-        Me.TApellido2.Name = "TApellido2"
-        Me.TApellido2.Size = New System.Drawing.Size(178, 24)
-        Me.TApellido2.TabIndex = 9
-        '
         'Dni
         '
         Me.Dni.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Dni.DefaultCellStyle = DataGridViewCellStyle56
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Dni.DefaultCellStyle = DataGridViewCellStyle1
         Me.Dni.FillWeight = 150.0!
         Me.Dni.HeaderText = "DNI"
         Me.Dni.Name = "Dni"
@@ -932,32 +932,32 @@ Partial Class CuadroUsu
         'NomApe
         '
         Me.NomApe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.NomApe.DefaultCellStyle = DataGridViewCellStyle57
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.NomApe.DefaultCellStyle = DataGridViewCellStyle2
         Me.NomApe.HeaderText = "Nombre y Apellido"
         Me.NomApe.Name = "NomApe"
         '
         'Direc
         '
         Me.Direc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Direc.DefaultCellStyle = DataGridViewCellStyle58
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Direc.DefaultCellStyle = DataGridViewCellStyle3
         Me.Direc.HeaderText = "Direccion"
         Me.Direc.Name = "Direc"
         '
         'Email
         '
         Me.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Email.DefaultCellStyle = DataGridViewCellStyle59
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Email.DefaultCellStyle = DataGridViewCellStyle4
         Me.Email.HeaderText = "Email"
         Me.Email.Name = "Email"
         '
         'tipoUsu
         '
         Me.tipoUsu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.tipoUsu.DefaultCellStyle = DataGridViewCellStyle60
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.tipoUsu.DefaultCellStyle = DataGridViewCellStyle5
         Me.tipoUsu.HeaderText = "Estado"
         Me.tipoUsu.Name = "tipoUsu"
         '
@@ -989,12 +989,12 @@ Partial Class CuadroUsu
         Me.Text = "Cliente"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PanelRegistro.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
         Me.PanelVer.ResumeLayout(False)
         Me.PanelVer.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)

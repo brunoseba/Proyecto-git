@@ -164,4 +164,29 @@
             End If
         End If
     End Sub
+
+    Private Sub TDniCli_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TDniCli.KeyDown
+        If e.KeyCode = 13 Then
+            Call Button2_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub TNombreCli_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TNombreCli.KeyDown
+        If e.KeyCode = 13 Then
+            Call Button2_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub TApellido2_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TApellido2.KeyDown
+        If e.KeyCode = 13 Then
+            Call Button2_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub CBEstaCli_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles CBEstaCli.KeyDown
+        If e.KeyCode = 13 Then
+            Call Button2_Click(sender, e)
+        End If
+    End Sub
+
 End Class
