@@ -290,9 +290,9 @@ Partial Class Empresa
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(893, 168)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(68, 24)
+        Me.Label6.Size = New System.Drawing.Size(73, 24)
         Me.Label6.TabIndex = 4
-        Me.Label6.Text = "E-mail:"
+        Me.Label6.Text = "E-mail :"
         '
         'Label5
         '
@@ -300,9 +300,9 @@ Partial Class Empresa
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(521, 166)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(84, 24)
+        Me.Label5.Size = New System.Drawing.Size(89, 24)
         Me.Label5.TabIndex = 3
-        Me.Label5.Text = "Nombre:"
+        Me.Label5.Text = "Nombre :"
         '
         'Label4
         '
@@ -310,9 +310,9 @@ Partial Class Empresa
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(62, 284)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(95, 24)
+        Me.Label4.Size = New System.Drawing.Size(100, 24)
         Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Dirección:"
+        Me.Label4.Text = "Dirección :"
         '
         'Label3
         '
@@ -320,9 +320,9 @@ Partial Class Empresa
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(521, 284)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(90, 24)
+        Me.Label3.Size = New System.Drawing.Size(95, 24)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Teléfono:"
+        Me.Label3.Text = "Teléfono :"
         '
         'Label2
         '
@@ -330,9 +330,9 @@ Partial Class Empresa
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(72, 168)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(72, 24)
+        Me.Label2.Size = New System.Drawing.Size(77, 24)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "C.U.I.T:"
+        Me.Label2.Text = "C.U.I.T :"
         '
         'Label1
         '
