@@ -68,7 +68,7 @@
     Function Mostrar()
         Try
             Using Base As New NNeumaticosEntities1
-                Dim empConsulta = (From q In Base.Cliente Select q).ToList
+                Dim empConsulta = (From e In Base.Empresa Select e).ToList
                 Return empConsulta
             End Using
         Catch ex As Exception
