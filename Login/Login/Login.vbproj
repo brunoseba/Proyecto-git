@@ -79,6 +79,13 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Empresa.vb" />
+    <Compile Include="Formularios\Empresa.designer.vb">
+      <DependentUpon>Empresa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Empresa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\BuscaModifica.Designer.vb">
       <DependentUpon>BuscaModifica.vb</DependentUpon>
     </Compile>
@@ -151,8 +158,20 @@
     <Compile Include="Formularios\Vendedor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\V_Factura.designer.vb">
+      <DependentUpon>V_Factura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\V_Factura.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Clases\Empresa.resx">
+      <DependentUpon>Empresa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Empresa.resx">
+      <DependentUpon>Empresa.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\BuscaModifica.resx">
       <DependentUpon>BuscaModifica.vb</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Vendedor.resx">
       <DependentUpon>Vendedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\V_Factura.resx">
+      <DependentUpon>V_Factura.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -319,6 +341,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\carrito4-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Help-2%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table_delete.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

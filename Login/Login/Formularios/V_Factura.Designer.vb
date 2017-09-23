@@ -539,7 +539,7 @@ Partial Class V_Factura
         '
         'Button2
         '
-        Me.Button2.Image = Global.Login.My.Resources.Resources.table_delete
+        Me.Button2.Image = Global.Login.My.Resources.table_delete
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button2.Location = New System.Drawing.Point(501, 532)
         Me.Button2.Name = "Button2"

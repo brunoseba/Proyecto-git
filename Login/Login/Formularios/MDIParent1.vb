@@ -126,11 +126,38 @@ Public Class Ventana
 
     End Sub
 
-    Private Sub BuscarProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarProductosToolStripMenuItem.Click
-
+    Private Sub MenuEmpresaVerDatos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuEmpresaVerDatos.Click
+        Empresas.MaximizeBox = True
+        Empresas.Show()
+        Empresas.Panel_modificar_Empresa.Visible = False
+        Empresas.Panel_Ver_Datos_Empresa.Visible = True
+        Empresas.MdiParent = Me
     End Sub
 
-    Private Sub MenuEmpresaVerDatos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuEmpresaVerDatos.Click
+ 
+    Private Sub GenerarInformeToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarInformeToolStripMenuItem.Click
+        V_Factura.MaximizeBox = True
+        V_Factura.Show()
+        V_Factura.Panel_Cancelar_Factura.Visible = False
+        V_Factura.Panel_VerFacturas.Visible = False
+        V_Factura.Panel_Informe_Factura.Visible = True
+        V_Factura.MdiParent = Me
+    End Sub
 
+    Private Sub VerFacturasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VerFacturasToolStripMenuItem.Click
+        V_Factura.MaximizeBox = True
+        V_Factura.Show()
+        V_Factura.Panel_Cancelar_Factura.Visible = False
+        V_Factura.Panel_Informe_Factura.Visible = False
+        V_Factura.Panel_VerFacturas.Visible = True
+        V_Factura.MdiParent = Me
+    End Sub
+
+    Private Sub MenuEmpresaModificarDatos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuEmpresaModificarDatos.Click
+        Empresas.MaximizeBox = True
+        Empresas.Show()
+        Empresas.Panel_Ver_Datos_Empresa.Visible = False
+        Empresas.Panel_modificar_Empresa.Visible = True
+        Empresas.MdiParent = Me
     End Sub
 End Class

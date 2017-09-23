@@ -60,7 +60,6 @@ Partial Class CuadroUsu
         Me.PanelVer = New System.Windows.Forms.Panel()
         Me.Llocal = New System.Windows.Forms.Label()
         Me.BModifica = New System.Windows.Forms.Button()
-        Me.BBaja = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Lesta = New System.Windows.Forms.Label()
         Me.Lusu = New System.Windows.Forms.Label()
@@ -84,15 +83,12 @@ Partial Class CuadroUsu
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.BAlta = New System.Windows.Forms.Button()
         Me.PanelBusca = New System.Windows.Forms.Panel()
-        Me.BSalir2 = New System.Windows.Forms.Button()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.TApellido2 = New System.Windows.Forms.TextBox()
         Me.CBEstaCli = New System.Windows.Forms.ComboBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.TNombreCli = New System.Windows.Forms.TextBox()
         Me.TDniCli = New System.Windows.Forms.TextBox()
         Me.Label26 = New System.Windows.Forms.Label()
@@ -104,6 +100,10 @@ Partial Class CuadroUsu
         Me.Email = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tipoUsu = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColVer = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.BSalir2 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.BBaja = New System.Windows.Forms.Button()
+        Me.BAlta = New System.Windows.Forms.Button()
         Me.PanelRegistro.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -492,18 +492,6 @@ Partial Class CuadroUsu
         Me.BModifica.Text = "MODIFICAR USUARIO"
         Me.BModifica.UseVisualStyleBackColor = True
         '
-        'BBaja
-        '
-        Me.BBaja.Image = Global.Login.My.Resources.Resources.usuario_Baja
-        Me.BBaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BBaja.Location = New System.Drawing.Point(514, 542)
-        Me.BBaja.Name = "BBaja"
-        Me.BBaja.Size = New System.Drawing.Size(136, 51)
-        Me.BBaja.TabIndex = 52
-        Me.BBaja.Text = "BAJA USUARIO"
-        Me.BBaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BBaja.UseVisualStyleBackColor = True
-        '
         'GroupBox4
         '
         Me.GroupBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -768,18 +756,6 @@ Partial Class CuadroUsu
         Me.Button1.Text = "Salir"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'BAlta
-        '
-        Me.BAlta.Image = Global.Login.My.Resources.Resources.usuario_Alta1
-        Me.BAlta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BAlta.Location = New System.Drawing.Point(283, 542)
-        Me.BAlta.Name = "BAlta"
-        Me.BAlta.Size = New System.Drawing.Size(135, 51)
-        Me.BAlta.TabIndex = 0
-        Me.BAlta.Text = "ALTA USUARIO"
-        Me.BAlta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BAlta.UseVisualStyleBackColor = True
-        '
         'PanelBusca
         '
         Me.PanelBusca.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -793,16 +769,6 @@ Partial Class CuadroUsu
         Me.PanelBusca.Name = "PanelBusca"
         Me.PanelBusca.Size = New System.Drawing.Size(1370, 627)
         Me.PanelBusca.TabIndex = 5
-        '
-        'BSalir2
-        '
-        Me.BSalir2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.BSalir2.Location = New System.Drawing.Point(675, 563)
-        Me.BSalir2.Name = "BSalir2"
-        Me.BSalir2.Size = New System.Drawing.Size(75, 36)
-        Me.BSalir2.TabIndex = 2
-        Me.BSalir2.Text = "Salir"
-        Me.BSalir2.UseVisualStyleBackColor = True
         '
         'GroupBox5
         '
@@ -862,17 +828,6 @@ Partial Class CuadroUsu
         Me.Label25.Size = New System.Drawing.Size(87, 18)
         Me.Label25.TabIndex = 6
         Me.Label25.Text = "APELLIDO :"
-        '
-        'Button2
-        '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.BackgroundImage = Global.Login.My.Resources.Resources.search16_h
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Button2.Location = New System.Drawing.Point(1212, 32)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 29)
-        Me.Button2.TabIndex = 4
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'TNombreCli
         '
@@ -971,6 +926,51 @@ Partial Class CuadroUsu
         Me.ColVer.Text = "Ver"
         Me.ColVer.ToolTipText = "Ver"
         Me.ColVer.UseColumnTextForButtonValue = True
+        '
+        'BSalir2
+        '
+        Me.BSalir2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.BSalir2.Location = New System.Drawing.Point(675, 563)
+        Me.BSalir2.Name = "BSalir2"
+        Me.BSalir2.Size = New System.Drawing.Size(75, 36)
+        Me.BSalir2.TabIndex = 2
+        Me.BSalir2.Text = "Salir"
+        Me.BSalir2.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.BackgroundImage = Global.Login.My.Resources.Resources.search16_h
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button2.Location = New System.Drawing.Point(1212, 32)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 29)
+        Me.Button2.TabIndex = 4
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'BBaja
+        '
+        Me.BBaja.Image = Global.Login.My.Resources.Resources.usuario_Baja
+        Me.BBaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BBaja.Location = New System.Drawing.Point(514, 542)
+        Me.BBaja.Name = "BBaja"
+        Me.BBaja.Size = New System.Drawing.Size(136, 51)
+        Me.BBaja.TabIndex = 52
+        Me.BBaja.Text = "BAJA USUARIO"
+        Me.BBaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BBaja.UseVisualStyleBackColor = True
+        '
+        'BAlta
+        '
+        Me.BAlta.Image = Global.Login.My.Resources.Resources.usuario_Alta1
+        Me.BAlta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BAlta.Location = New System.Drawing.Point(283, 542)
+        Me.BAlta.Name = "BAlta"
+        Me.BAlta.Size = New System.Drawing.Size(135, 51)
+        Me.BAlta.TabIndex = 0
+        Me.BAlta.Text = "ALTA USUARIO"
+        Me.BAlta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BAlta.UseVisualStyleBackColor = True
         '
         'CuadroUsu
         '
