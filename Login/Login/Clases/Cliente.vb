@@ -177,8 +177,7 @@
                             .cliente_Provincia = GetProvincia(),
                             .cliente_Fecha = GetFecha(),
                             .cliente_Cpostal = GetPostal(),
-                            .cliente_Celular = GetCelular()
-                           }
+                            .cliente_Celular = GetCelular()}
                 Base.Cliente.AddObject(altas)
                 Base.SaveChanges()
             End Using
