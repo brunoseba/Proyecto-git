@@ -86,7 +86,7 @@
 
                 'tabla.DataSource = mues
                 For Each c In mues
-                    DataGridCliente.Rows.Add(c.cliente_cuil, c.cliente_NomYape & " " & c.cliente_Ape, c.cliente_Direccion, c.cliente_Email, c.cliente_estado)
+                    DataGridCliente.Rows.Add(c.cliente_cuil, c.cliente_NomYape & " " & c.cliente_Ape, c.cliente_Direccion, c.cliente_Telefono, c.cliente_Email, c.cliente_estado, c.cliente_Ape, c.cliente_Localidad, c.cliente_Provincia, c.cliente_Fecha, c.cliente_Cpostal, c.cliente_Celular)
                 Next
 
             End Using
@@ -130,16 +130,22 @@
                         Ldni.Text = (DataGridCliente.Item(0, DataGridCliente.CurrentRow.Index).Value).ToString
                         Lnom.Text = (DataGridCliente.Item(1, DataGridCliente.CurrentRow.Index).Value).ToString
                         Ldirec.Text = (DataGridCliente.Item(2, DataGridCliente.CurrentRow.Index).Value).ToString
-                        Llocal.Text = (DataGridCliente.Item(3, DataGridCliente.CurrentRow.Index).Value).ToString
-                        Ltelef.Text = (DataGridCliente.Item(4, DataGridCliente.CurrentRow.Index).Value).ToString
-                        Lemail.Text = (DataGridCliente.Item(5, DataGridCliente.CurrentRow.Index).Value).ToString
+                        Ltelef.Text = (DataGridCliente.Item(3, DataGridCliente.CurrentRow.Index).Value).ToString
+                        Lemail.Text = (DataGridCliente.Item(4, DataGridCliente.CurrentRow.Index).Value).ToString
                         'Lcontra.Text = (DataGridCliente.Item(6, DataGridCliente.CurrentRow.Index).Value).ToString
 
-                        'If ((DataGridCliente.Item(7, DataGridCliente.CurrentRow.Index).Value).ToString) = "a" Then
-                        'Lesta.Text = "ALTA"
-                        'Else
-                        'Lesta.Text = "BAJA"
-                        'End If
+                        If ((DataGridCliente.Item(5, DataGridCliente.CurrentRow.Index).Value).ToString) = "a" Then
+                            Lesta.Text = "ALTA"
+                        Else
+                            Lesta.Text = "BAJA"
+                        End If
+
+                        Lape.Text = (DataGridCliente.Item(6, DataGridCliente.CurrentRow.Index).Value).ToString
+                        Lloca.Text = (DataGridCliente.Item(7, DataGridCliente.CurrentRow.Index).Value).ToString
+                        Lprov.Text = (DataGridCliente.Item(8, DataGridCliente.CurrentRow.Index).Value).ToString
+                        Lfecha.Text = (DataGridCliente.Item(9, DataGridCliente.CurrentRow.Index).Value).ToString
+                        LPostal.Text = (DataGridCliente.Item(10, DataGridCliente.CurrentRow.Index).Value).ToString
+                        Lcelu.Text = (DataGridCliente.Item(11, DataGridCliente.CurrentRow.Index).Value).ToString
 
                         'If ((DataGridCliente.Item(8, DataGridCliente.CurrentRow.Index).Value).ToString) = "a" Then
                         'Lusu.Text = "ADMINISTRADOR"
@@ -188,5 +194,32 @@
             Call Button2_Click(sender, e)
         End If
     End Sub
+  
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        PanelBusca.Visible = True
+        PanelVer.Visible = False
+
+    End Sub
+
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        PanelBusca.Visible = True
+        PanelModifica.Visible = False
+    End Sub
+
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+        TextBox1.Clear()
+        TextBox2.Clear()
+        TextBox3.Clear()
+        TextBox4.Clear()
+        TextBox5.Clear()
+        TextBox6.Clear()
+        TextBox7.Clear()
+        TextBox8.Clear()
+        TextBox9.Clear()
+        ComboBox1.Items.Clear()
+        ComboBox2.Items.Clear()
+    End Sub
+
 
 End Class
