@@ -33,10 +33,12 @@
         'Dim usu As New Ususario
         Dim dni As Integer
         Dim nom As String
+        Dim ape As String
         Dim tipo As Char
         Dim esta As Char
         dni = Val(TDni.Text)
         nom = TNombre.Text
+        ape = TApel.Text
         tipo = usuario()
         esta = estados()
         DataGridView1.RowTemplate.Height = 50
@@ -60,7 +62,7 @@
 
                     'tabla.DataSource = mues
                     For Each u In mues
-                        DataGridView1.Rows.Add(u.usu_Dni, u.usu_nomYape, u.usu_Direccon, u.usu_Localidad, u.usu_Telefono, u.usu_Email, u.usu_Contraseña, u.usu_Estado, u.usu_TipoUsu, ColVer)
+                        DataGridView1.Rows.Add(u.usu_Dni, u.usu_nomYape & " " & u.usu_ape, u.usu_Direccon, u.usu_Localidad, u.usu_Telefono, u.usu_Email, u.usu_Contraseña, u.usu_Estado, u.usu_TipoUsu, ColVer)
                     Next
 
                 End Using
@@ -76,13 +78,13 @@
             Try
                 Using Base As New NNeumaticosEntities1
 
-                    Dim mues = (From u In Base.Usuario Where (u.usu_Dni = dni Or u.usu_nomYape = nom Or u.usu_TipoUsu = tipo Or u.usu_Estado = esta) Select u).ToList
+                    Dim mues = (From u In Base.Usuario Where (u.usu_Dni = dni Or u.usu_nomYape = nom Or u.usu_ape = ape Or u.usu_TipoUsu = tipo Or u.usu_Estado = esta) Select u).ToList
 
                     'Dni = u.usu_Dni, NombreyApellido = u.usu_nomYape, Direccion = u.usu_Direccon, Localidad = u.usu_Localidad, Telefono = u.usu_Telefono, Email = u.usu_Email, Contraseña = u.usu_Contraseña, Estado = u.usu_Estado, TipoUsuario = u.usu_TipoUsu).ToList
 
                     'tabla.DataSource = mues
                     For Each u In mues
-                        DataGridView1.Rows.Add(u.usu_Dni, u.usu_nomYape, u.usu_Direccon, u.usu_Localidad, u.usu_Telefono, u.usu_Email, u.usu_Contraseña, u.usu_Estado, u.usu_TipoUsu, ColVer)
+                        DataGridView1.Rows.Add(u.usu_Dni, u.usu_nomYape & " " & u.usu_ape, u.usu_Direccon, u.usu_Localidad, u.usu_Telefono, u.usu_Email, u.usu_Contraseña, u.usu_Estado, u.usu_TipoUsu, ColVer)
                     Next
 
                 End Using

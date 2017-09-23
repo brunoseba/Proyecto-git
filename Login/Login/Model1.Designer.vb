@@ -16,7 +16,7 @@ Imports System.ComponentModel
 Imports System.Xml.Serialization
 Imports System.Runtime.Serialization
 
-<Assembly: EdmSchemaAttribute("016d1743-3171-448c-bf99-dec072299f0a")>
+<Assembly: EdmSchemaAttribute("b9cd2aa3-1056-41c5-9eb0-cc2ccef8e550")>
 #Region "Metadatos de relaciones en EDM"
 <Assembly: EdmRelationshipAttribute("NNeumaticosModel", "FK__Factura__cliente__5CD6CB2B", "Cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(Cliente), "Factura", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(Factura), True)>
 <Assembly: EdmRelationshipAttribute("NNeumaticosModel", "FK__Producto__Datos___66603565", "Datos_Tecnicos", System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(Datos_Tecnicos), "Producto", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(Producto), True)>
@@ -1100,17 +1100,17 @@ Public Partial Class Empresa
     ''' <summary>
     ''' No hay documentación de metadatos disponible.
     ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=True, IsNullable:=False)>
+    <EdmScalarPropertyAttribute(EntityKeyProperty:=true, IsNullable:=false)>
     <DataMemberAttribute()>
-    Public Property empresas_cuit() As Global.System.Int64
+    Public Property empresa_cuit() As Global.System.Int64
         Get
             Return _empresa_cuit
         End Get
-        Set(ByVal value As Global.System.Int64)
+        Set
             If (_empresa_cuit <> Value) Then
-                Onempresa_cuitChanging(Value)
+                Onempresa_cuitChanging(value)
                 ReportPropertyChanging("empresa_cuit")
-                _empresa_cuit = StructuralObject.SetValidValue(Value)
+                _empresa_cuit = StructuralObject.SetValidValue(value)
                 ReportPropertyChanged("empresa_cuit")
                 Onempresa_cuitChanged()
             End If
@@ -1127,16 +1127,16 @@ Public Partial Class Empresa
     ''' <summary>
     ''' No hay documentación de metadatos disponible.
     ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=False, IsNullable:=False)>
+    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
     <DataMemberAttribute()>
-    Public Property empresas_nombre() As Global.System.String
+    Public Property empresa_nombre() As Global.System.String
         Get
             Return _empresa_nombre
         End Get
-        Set(ByVal value As Global.System.String)
-            Onempresa_nombreChanging(Value)
+        Set
+            Onempresa_nombreChanging(value)
             ReportPropertyChanging("empresa_nombre")
-            _empresa_nombre = StructuralObject.SetValidValue(Value, False)
+            _empresa_nombre = StructuralObject.SetValidValue(value, false)
             ReportPropertyChanged("empresa_nombre")
             Onempresa_nombreChanged()
         End Set
@@ -1152,16 +1152,16 @@ Public Partial Class Empresa
     ''' <summary>
     ''' No hay documentación de metadatos disponible.
     ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=False, IsNullable:=False)>
+    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
     <DataMemberAttribute()>
-    Public Property empresas_direccion() As Global.System.String
+    Public Property empresa_direccion() As Global.System.String
         Get
             Return _empresa_direccion
         End Get
-        Set(ByVal value As Global.System.String)
-            Onempresa_direccionChanging(Value)
+        Set
+            Onempresa_direccionChanging(value)
             ReportPropertyChanging("empresa_direccion")
-            _empresa_direccion = StructuralObject.SetValidValue(Value, False)
+            _empresa_direccion = StructuralObject.SetValidValue(value, false)
             ReportPropertyChanged("empresa_direccion")
             Onempresa_direccionChanged()
         End Set
@@ -1177,16 +1177,16 @@ Public Partial Class Empresa
     ''' <summary>
     ''' No hay documentación de metadatos disponible.
     ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=False, IsNullable:=False)>
+    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
     <DataMemberAttribute()>
-    Public Property empresas_email() As Global.System.String
+    Public Property empresa_email() As Global.System.String
         Get
             Return _empresa_email
         End Get
-        Set(ByVal value As Global.System.String)
-            Onempresa_emailChanging(Value)
+        Set
+            Onempresa_emailChanging(value)
             ReportPropertyChanging("empresa_email")
-            _empresa_email = StructuralObject.SetValidValue(Value, False)
+            _empresa_email = StructuralObject.SetValidValue(value, false)
             ReportPropertyChanged("empresa_email")
             Onempresa_emailChanged()
         End Set
@@ -1202,16 +1202,16 @@ Public Partial Class Empresa
     ''' <summary>
     ''' No hay documentación de metadatos disponible.
     ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=False, IsNullable:=False)>
+    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
     <DataMemberAttribute()>
-    Public Property empresas_telefono() As Global.System.String
+    Public Property empresa_telefono() As Global.System.String
         Get
             Return _empresa_telefono
         End Get
-        Set(ByVal value As Global.System.String)
-            Onempresa_telefonoChanging(Value)
+        Set
+            Onempresa_telefonoChanging(value)
             ReportPropertyChanging("empresa_telefono")
-            _empresa_telefono = StructuralObject.SetValidValue(Value, False)
+            _empresa_telefono = StructuralObject.SetValidValue(value, false)
             ReportPropertyChanged("empresa_telefono")
             Onempresa_telefonoChanged()
         End Set

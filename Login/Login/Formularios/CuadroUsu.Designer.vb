@@ -101,6 +101,19 @@ Partial Class CuadroUsu
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.DataGridCliente = New System.Windows.Forms.DataGridView()
+        Me.Dni = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NomApe = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Direc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Telef = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Email = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipoUsu = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ape = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Local = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Prov = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cpostal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Celu = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColVer = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.PanelModifica = New System.Windows.Forms.Panel()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -131,19 +144,6 @@ Partial Class CuadroUsu
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.Dni = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NomApe = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Direc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Telef = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Email = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipoUsu = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ape = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Local = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Prov = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cpostal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Celu = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColVer = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.PanelRegistro.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -696,26 +696,22 @@ Partial Class CuadroUsu
         '
         'BModifica
         '
-        Me.BModifica.Image = Global.Login.My.Resources.Resources._16__Pencil_tool_
         Me.BModifica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BModifica.Location = New System.Drawing.Point(727, 555)
         Me.BModifica.Name = "BModifica"
         Me.BModifica.Size = New System.Drawing.Size(108, 38)
         Me.BModifica.TabIndex = 53
         Me.BModifica.Text = "MODIFICAR USUARIO"
-        Me.BModifica.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BModifica.UseVisualStyleBackColor = True
         '
         'BBaja
         '
-        Me.BBaja.Image = Global.Login.My.Resources.Resources.delete_square16
         Me.BBaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BBaja.Location = New System.Drawing.Point(514, 555)
         Me.BBaja.Name = "BBaja"
         Me.BBaja.Size = New System.Drawing.Size(114, 38)
         Me.BBaja.TabIndex = 52
         Me.BBaja.Text = "BAJA CLIENTE"
-        Me.BBaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BBaja.UseVisualStyleBackColor = True
         '
         'GroupBox4
@@ -861,14 +857,12 @@ Partial Class CuadroUsu
         '
         'BAlta
         '
-        Me.BAlta.Image = Global.Login.My.Resources.Resources._200_add
         Me.BAlta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BAlta.Location = New System.Drawing.Point(301, 555)
         Me.BAlta.Name = "BAlta"
         Me.BAlta.Size = New System.Drawing.Size(123, 38)
         Me.BAlta.TabIndex = 0
         Me.BAlta.Text = "ALTA CLIENTE"
-        Me.BAlta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BAlta.UseVisualStyleBackColor = True
         '
         'PanelBusca
@@ -957,7 +951,6 @@ Partial Class CuadroUsu
         'Button2
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.BackgroundImage = Global.Login.My.Resources.Resources.search16_h
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button2.Location = New System.Drawing.Point(1212, 32)
         Me.Button2.Name = "Button2"
@@ -1010,6 +1003,94 @@ Partial Class CuadroUsu
         Me.DataGridCliente.Name = "DataGridCliente"
         Me.DataGridCliente.Size = New System.Drawing.Size(1291, 390)
         Me.DataGridCliente.TabIndex = 1
+        '
+        'Dni
+        '
+        Me.Dni.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Dni.DefaultCellStyle = DataGridViewCellStyle1
+        Me.Dni.FillWeight = 150.0!
+        Me.Dni.HeaderText = "DNI"
+        Me.Dni.Name = "Dni"
+        '
+        'NomApe
+        '
+        Me.NomApe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.NomApe.DefaultCellStyle = DataGridViewCellStyle2
+        Me.NomApe.HeaderText = "Nombre y Apellido"
+        Me.NomApe.Name = "NomApe"
+        '
+        'Direc
+        '
+        Me.Direc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Direc.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Direc.HeaderText = "Direccion"
+        Me.Direc.Name = "Direc"
+        '
+        'Telef
+        '
+        Me.Telef.HeaderText = "Telefono"
+        Me.Telef.Name = "Telef"
+        Me.Telef.Visible = False
+        '
+        'Email
+        '
+        Me.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Email.DefaultCellStyle = DataGridViewCellStyle4
+        Me.Email.HeaderText = "Email"
+        Me.Email.Name = "Email"
+        '
+        'tipoUsu
+        '
+        Me.tipoUsu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.tipoUsu.DefaultCellStyle = DataGridViewCellStyle5
+        Me.tipoUsu.HeaderText = "Estado"
+        Me.tipoUsu.Name = "tipoUsu"
+        '
+        'Ape
+        '
+        Me.Ape.HeaderText = "Apellido"
+        Me.Ape.Name = "Ape"
+        '
+        'Local
+        '
+        Me.Local.HeaderText = "Localidad"
+        Me.Local.Name = "Local"
+        '
+        'Prov
+        '
+        Me.Prov.HeaderText = "Provincia"
+        Me.Prov.Name = "Prov"
+        '
+        'Fecha
+        '
+        Me.Fecha.HeaderText = "Fecha"
+        Me.Fecha.Name = "Fecha"
+        '
+        'Cpostal
+        '
+        Me.Cpostal.HeaderText = "Codigo Postal"
+        Me.Cpostal.Name = "Cpostal"
+        '
+        'Celu
+        '
+        Me.Celu.HeaderText = "Celular"
+        Me.Celu.Name = "Celu"
+        '
+        'ColVer
+        '
+        Me.ColVer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.ColVer.HeaderText = "Ver"
+        Me.ColVer.Name = "ColVer"
+        Me.ColVer.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ColVer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.ColVer.Text = "Ver"
+        Me.ColVer.ToolTipText = "Ver"
+        Me.ColVer.UseColumnTextForButtonValue = True
         '
         'PanelModifica
         '
@@ -1345,94 +1426,6 @@ Partial Class CuadroUsu
         Me.Button4.Text = "Guardar"
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'Dni
-        '
-        Me.Dni.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Dni.DefaultCellStyle = DataGridViewCellStyle1
-        Me.Dni.FillWeight = 150.0!
-        Me.Dni.HeaderText = "DNI"
-        Me.Dni.Name = "Dni"
-        '
-        'NomApe
-        '
-        Me.NomApe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.NomApe.DefaultCellStyle = DataGridViewCellStyle2
-        Me.NomApe.HeaderText = "Nombre y Apellido"
-        Me.NomApe.Name = "NomApe"
-        '
-        'Direc
-        '
-        Me.Direc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Direc.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Direc.HeaderText = "Direccion"
-        Me.Direc.Name = "Direc"
-        '
-        'Telef
-        '
-        Me.Telef.HeaderText = "Telefono"
-        Me.Telef.Name = "Telef"
-        Me.Telef.Visible = False
-        '
-        'Email
-        '
-        Me.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Email.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Email.HeaderText = "Email"
-        Me.Email.Name = "Email"
-        '
-        'tipoUsu
-        '
-        Me.tipoUsu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.tipoUsu.DefaultCellStyle = DataGridViewCellStyle5
-        Me.tipoUsu.HeaderText = "Estado"
-        Me.tipoUsu.Name = "tipoUsu"
-        '
-        'Ape
-        '
-        Me.Ape.HeaderText = "Apellido"
-        Me.Ape.Name = "Ape"
-        '
-        'Local
-        '
-        Me.Local.HeaderText = "Localidad"
-        Me.Local.Name = "Local"
-        '
-        'Prov
-        '
-        Me.Prov.HeaderText = "Provincia"
-        Me.Prov.Name = "Prov"
-        '
-        'Fecha
-        '
-        Me.Fecha.HeaderText = "Fecha"
-        Me.Fecha.Name = "Fecha"
-        '
-        'Cpostal
-        '
-        Me.Cpostal.HeaderText = "Codigo Postal"
-        Me.Cpostal.Name = "Cpostal"
-        '
-        'Celu
-        '
-        Me.Celu.HeaderText = "Celular"
-        Me.Celu.Name = "Celu"
-        '
-        'ColVer
-        '
-        Me.ColVer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.ColVer.HeaderText = "Ver"
-        Me.ColVer.Name = "ColVer"
-        Me.ColVer.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ColVer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.ColVer.Text = "Ver"
-        Me.ColVer.ToolTipText = "Ver"
-        Me.ColVer.UseColumnTextForButtonValue = True
-        '
         'CuadroUsu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1440,8 +1433,8 @@ Partial Class CuadroUsu
         Me.ClientSize = New System.Drawing.Size(1370, 623)
         Me.ControlBox = False
         Me.Controls.Add(Me.PanelBusca)
-        Me.Controls.Add(Me.PanelRegistro)
         Me.Controls.Add(Me.PanelVer)
+        Me.Controls.Add(Me.PanelRegistro)
         Me.Controls.Add(Me.PanelModifica)
         Me.MaximizeBox = False
         Me.MinimizeBox = False

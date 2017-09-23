@@ -22,15 +22,16 @@ Partial Class BuscaModifica
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle46 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle47 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle48 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle49 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle50 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle51 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle52 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle53 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle54 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BuscaModifica))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.CBEsta = New System.Windows.Forms.ComboBox()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -84,6 +85,8 @@ Partial Class BuscaModifica
         Me.BAlta = New System.Windows.Forms.Button()
         Me.PanelRegistro = New System.Windows.Forms.Panel()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TApellido = New System.Windows.Forms.TextBox()
+        Me.Label27 = New System.Windows.Forms.Label()
         Me.TDni1 = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -108,8 +111,8 @@ Partial Class BuscaModifica
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.TApellido = New System.Windows.Forms.TextBox()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.TApel = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBusca.SuspendLayout()
@@ -123,6 +126,8 @@ Partial Class BuscaModifica
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.TApel)
+        Me.GroupBox1.Controls.Add(Me.Label28)
         Me.GroupBox1.Controls.Add(Me.CBEsta)
         Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.Label3)
@@ -145,7 +150,7 @@ Partial Class BuscaModifica
         '
         Me.CBEsta.FormattingEnabled = True
         Me.CBEsta.Items.AddRange(New Object() {"", "Alta", "Baja"})
-        Me.CBEsta.Location = New System.Drawing.Point(726, 35)
+        Me.CBEsta.Location = New System.Drawing.Point(825, 35)
         Me.CBEsta.Name = "CBEsta"
         Me.CBEsta.Size = New System.Drawing.Size(121, 26)
         Me.CBEsta.TabIndex = 8
@@ -154,7 +159,7 @@ Partial Class BuscaModifica
         '
         Me.Label15.AutoSize = True
         Me.Label15.ForeColor = System.Drawing.Color.White
-        Me.Label15.Location = New System.Drawing.Point(646, 37)
+        Me.Label15.Location = New System.Drawing.Point(746, 38)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(73, 18)
         Me.Label15.TabIndex = 7
@@ -165,7 +170,7 @@ Partial Class BuscaModifica
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(900, 38)
+        Me.Label3.Location = New System.Drawing.Point(969, 40)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(79, 18)
         Me.Label3.TabIndex = 6
@@ -176,7 +181,7 @@ Partial Class BuscaModifica
         Me.CBUsuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CBUsuario.FormattingEnabled = True
         Me.CBUsuario.Items.AddRange(New Object() {"", "Todos", "Administrador", "Supervisor", "Vendedor"})
-        Me.CBUsuario.Location = New System.Drawing.Point(993, 35)
+        Me.CBUsuario.Location = New System.Drawing.Point(1054, 35)
         Me.CBUsuario.Name = "CBUsuario"
         Me.CBUsuario.Size = New System.Drawing.Size(121, 26)
         Me.CBUsuario.TabIndex = 5
@@ -186,7 +191,7 @@ Partial Class BuscaModifica
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.BackgroundImage = Global.Login.My.Resources.Resources.search16_h
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Button1.Location = New System.Drawing.Point(1182, 32)
+        Me.Button1.Location = New System.Drawing.Point(1215, 35)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 29)
         Me.Button1.TabIndex = 4
@@ -194,33 +199,33 @@ Partial Class BuscaModifica
         '
         'TNombre
         '
-        Me.TNombre.Location = New System.Drawing.Point(439, 34)
+        Me.TNombre.Location = New System.Drawing.Point(318, 35)
         Me.TNombre.Name = "TNombre"
-        Me.TNombre.Size = New System.Drawing.Size(153, 24)
+        Me.TNombre.Size = New System.Drawing.Size(125, 24)
         Me.TNombre.TabIndex = 3
         '
         'TDni
         '
-        Me.TDni.Location = New System.Drawing.Point(71, 34)
+        Me.TDni.Location = New System.Drawing.Point(58, 35)
         Me.TDni.Name = "TDni"
-        Me.TDni.Size = New System.Drawing.Size(165, 24)
+        Me.TDni.Size = New System.Drawing.Size(145, 24)
         Me.TDni.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(268, 37)
+        Me.Label2.Location = New System.Drawing.Point(229, 38)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(165, 18)
+        Me.Label2.Size = New System.Drawing.Size(83, 18)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "NOMBRE y APELLIDO:"
+        Me.Label2.Text = "NOMBRE :"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(27, 38)
+        Me.Label1.Location = New System.Drawing.Point(20, 38)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(37, 18)
         Me.Label1.TabIndex = 0
@@ -242,8 +247,8 @@ Partial Class BuscaModifica
         'Dni
         '
         Me.Dni.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Dni.DefaultCellStyle = DataGridViewCellStyle46
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Dni.DefaultCellStyle = DataGridViewCellStyle1
         Me.Dni.FillWeight = 150.0!
         Me.Dni.HeaderText = "DNI"
         Me.Dni.Name = "Dni"
@@ -251,64 +256,64 @@ Partial Class BuscaModifica
         'NomApe
         '
         Me.NomApe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.NomApe.DefaultCellStyle = DataGridViewCellStyle47
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.NomApe.DefaultCellStyle = DataGridViewCellStyle2
         Me.NomApe.HeaderText = "Nombre y Apellido"
         Me.NomApe.Name = "NomApe"
         '
         'Direc
         '
         Me.Direc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Direc.DefaultCellStyle = DataGridViewCellStyle48
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Direc.DefaultCellStyle = DataGridViewCellStyle3
         Me.Direc.HeaderText = "Direccion"
         Me.Direc.Name = "Direc"
         '
         'Local
         '
         Me.Local.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Local.DefaultCellStyle = DataGridViewCellStyle49
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Local.DefaultCellStyle = DataGridViewCellStyle4
         Me.Local.HeaderText = "Localidad"
         Me.Local.Name = "Local"
         '
         'Telef
         '
         Me.Telef.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Telef.DefaultCellStyle = DataGridViewCellStyle50
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Telef.DefaultCellStyle = DataGridViewCellStyle5
         Me.Telef.HeaderText = "Telefono"
         Me.Telef.Name = "Telef"
         '
         'Email
         '
         Me.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Email.DefaultCellStyle = DataGridViewCellStyle51
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Email.DefaultCellStyle = DataGridViewCellStyle6
         Me.Email.HeaderText = "Email"
         Me.Email.Name = "Email"
         '
         'contraseña
         '
         Me.contraseña.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.contraseña.DefaultCellStyle = DataGridViewCellStyle52
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.contraseña.DefaultCellStyle = DataGridViewCellStyle7
         Me.contraseña.HeaderText = "Contraseña"
         Me.contraseña.Name = "contraseña"
         '
         'estado
         '
         Me.estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.estado.DefaultCellStyle = DataGridViewCellStyle53
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.estado.DefaultCellStyle = DataGridViewCellStyle8
         Me.estado.HeaderText = "Estado"
         Me.estado.Name = "estado"
         '
         'tipoUsu
         '
         Me.tipoUsu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.tipoUsu.DefaultCellStyle = DataGridViewCellStyle54
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.tipoUsu.DefaultCellStyle = DataGridViewCellStyle9
         Me.tipoUsu.HeaderText = "TipoUsuario"
         Me.tipoUsu.Name = "tipoUsu"
         '
@@ -728,6 +733,22 @@ Partial Class BuscaModifica
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Campos Obligatorios"
         '
+        'TApellido
+        '
+        Me.TApellido.Location = New System.Drawing.Point(626, 135)
+        Me.TApellido.Name = "TApellido"
+        Me.TApellido.Size = New System.Drawing.Size(236, 20)
+        Me.TApellido.TabIndex = 11
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(495, 138)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(66, 13)
+        Me.Label27.TabIndex = 10
+        Me.Label27.Text = "APELLIDO *"
+        '
         'TDni1
         '
         Me.TDni1.Location = New System.Drawing.Point(145, 19)
@@ -930,31 +951,31 @@ Partial Class BuscaModifica
         Me.Label26.TabIndex = 31
         Me.Label26.Text = "PROVINCIA"
         '
-        'Label27
+        'Label28
         '
-        Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(495, 138)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(66, 13)
-        Me.Label27.TabIndex = 10
-        Me.Label27.Text = "APELLIDO *"
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(472, 38)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(87, 18)
+        Me.Label28.TabIndex = 9
+        Me.Label28.Text = "APELLIDO :"
         '
-        'TApellido
+        'TApel
         '
-        Me.TApellido.Location = New System.Drawing.Point(626, 135)
-        Me.TApellido.Name = "TApellido"
-        Me.TApellido.Size = New System.Drawing.Size(236, 20)
-        Me.TApellido.TabIndex = 11
+        Me.TApel.Location = New System.Drawing.Point(565, 35)
+        Me.TApel.Name = "TApel"
+        Me.TApel.Size = New System.Drawing.Size(154, 24)
+        Me.TApel.TabIndex = 10
         '
         'BuscaModifica
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1330, 644)
-        Me.ControlBox = False
         Me.Controls.Add(Me.PanelBusca)
         Me.Controls.Add(Me.PanelVer)
         Me.Controls.Add(Me.PanelRegistro)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "BuscaModifica"
@@ -1056,4 +1077,6 @@ Partial Class BuscaModifica
     Friend WithEvents Llocal As System.Windows.Forms.Label
     Friend WithEvents TApellido As System.Windows.Forms.TextBox
     Friend WithEvents Label27 As System.Windows.Forms.Label
+    Friend WithEvents TApel As System.Windows.Forms.TextBox
+    Friend WithEvents Label28 As System.Windows.Forms.Label
 End Class

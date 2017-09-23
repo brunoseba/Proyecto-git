@@ -79,13 +79,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\Empresa.vb" />
-    <Compile Include="Formularios\Empresa.designer.vb">
-      <DependentUpon>Empresa.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Empresa.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Clases\Empresas.vb" />
     <Compile Include="Formularios\BuscaModifica.Designer.vb">
       <DependentUpon>BuscaModifica.vb</DependentUpon>
     </Compile>
@@ -97,6 +91,12 @@
       <DependentUpon>CuadroUsu.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\CuadroUsu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Empresa.Designer.vb">
+      <DependentUpon>Empresa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Empresa.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Form1.vb">
@@ -112,16 +112,16 @@
     <Compile Include="Formularios\Form3.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\LoginForm1.Designer.vb">
-      <DependentUpon>LoginForm1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\LoginForm1.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Formularios\MDIParent1.Designer.vb">
       <DependentUpon>MDIParent1.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\MDIParent1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\V_Factura.Designer.vb">
+      <DependentUpon>V_Factura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\V_Factura.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Model1.Designer.vb">
@@ -158,25 +158,16 @@
     <Compile Include="Formularios\Vendedor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\V_Factura.designer.vb">
-      <DependentUpon>V_Factura.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\V_Factura.vb">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Clases\Empresa.resx">
-      <DependentUpon>Empresa.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Empresa.resx">
-      <DependentUpon>Empresa.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\BuscaModifica.resx">
       <DependentUpon>BuscaModifica.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\CuadroUsu.resx">
       <DependentUpon>CuadroUsu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Empresa.resx">
+      <DependentUpon>Empresa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
@@ -184,11 +175,11 @@
     <EmbeddedResource Include="Formularios\Form3.resx">
       <DependentUpon>Form3.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\LoginForm1.resx">
-      <DependentUpon>LoginForm1.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\MDIParent1.resx">
       <DependentUpon>MDIParent1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\V_Factura.resx">
+      <DependentUpon>V_Factura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -201,9 +192,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Vendedor.resx">
       <DependentUpon>Vendedor.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\V_Factura.resx">
-      <DependentUpon>V_Factura.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -343,19 +331,31 @@
     <None Include="Resources\carrito4-1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\date_add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\date_delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\date_edit.ico" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\16 %28Help-2%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table_add.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\table_delete.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\200-add.ico" />
+    <None Include="Resources\RE_050_RFT1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\user_edit16.ico" />
+    <None Include="Resources\RE_050_RFT.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\16 %28Pencil tool%29.ico" />
+    <None Include="Resources\Potenza_GIII.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,4 +1,4 @@
-﻿Public Class Empresas
+﻿Public Class Empresa
 
     Private Sub ButtonGuardarEmpresa_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonGuardarEmpresa.Click
         MsgBox("Los datos fueron modificados")
