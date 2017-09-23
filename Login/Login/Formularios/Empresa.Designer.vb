@@ -37,6 +37,7 @@ Partial Class Empresas
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel_Ver_Datos_Empresa = New System.Windows.Forms.Panel()
+        Me.ButtonEAceptar = New System.Windows.Forms.Button()
         Me.LabelTelefono = New System.Windows.Forms.Label()
         Me.LabelDireccion = New System.Windows.Forms.Label()
         Me.LabelEmail = New System.Windows.Forms.Label()
@@ -48,13 +49,15 @@ Partial Class Empresas
         Me.LabelENombre = New System.Windows.Forms.Label()
         Me.LabelECuit = New System.Windows.Forms.Label()
         Me.LabelETitulo = New System.Windows.Forms.Label()
-        Me.ButtonEAceptar = New System.Windows.Forms.Button()
         Me.Panel_modificar_Empresa.SuspendLayout()
         Me.Panel_Ver_Datos_Empresa.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel_modificar_Empresa
         '
+        Me.Panel_modificar_Empresa.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel_modificar_Empresa.BackColor = System.Drawing.Color.Chocolate
         Me.Panel_modificar_Empresa.Controls.Add(Me.ButtonSalirEmpresa)
         Me.Panel_modificar_Empresa.Controls.Add(Me.ButtonGuardarEmpresa)
@@ -199,6 +202,9 @@ Partial Class Empresas
         '
         'Panel_Ver_Datos_Empresa
         '
+        Me.Panel_Ver_Datos_Empresa.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel_Ver_Datos_Empresa.BackColor = System.Drawing.Color.Firebrick
         Me.Panel_Ver_Datos_Empresa.Controls.Add(Me.ButtonEAceptar)
         Me.Panel_Ver_Datos_Empresa.Controls.Add(Me.LabelTelefono)
@@ -216,6 +222,15 @@ Partial Class Empresas
         Me.Panel_Ver_Datos_Empresa.Name = "Panel_Ver_Datos_Empresa"
         Me.Panel_Ver_Datos_Empresa.Size = New System.Drawing.Size(1373, 623)
         Me.Panel_Ver_Datos_Empresa.TabIndex = 0
+        '
+        'ButtonEAceptar
+        '
+        Me.ButtonEAceptar.Location = New System.Drawing.Point(583, 494)
+        Me.ButtonEAceptar.Name = "ButtonEAceptar"
+        Me.ButtonEAceptar.Size = New System.Drawing.Size(127, 36)
+        Me.ButtonEAceptar.TabIndex = 11
+        Me.ButtonEAceptar.Text = "Aceptar"
+        Me.ButtonEAceptar.UseVisualStyleBackColor = True
         '
         'LabelTelefono
         '
@@ -334,22 +349,13 @@ Partial Class Empresas
         Me.LabelETitulo.TabIndex = 0
         Me.LabelETitulo.Text = "Datos de la Empresa"
         '
-        'ButtonEAceptar
-        '
-        Me.ButtonEAceptar.Location = New System.Drawing.Point(583, 494)
-        Me.ButtonEAceptar.Name = "ButtonEAceptar"
-        Me.ButtonEAceptar.Size = New System.Drawing.Size(127, 36)
-        Me.ButtonEAceptar.TabIndex = 11
-        Me.ButtonEAceptar.Text = "Aceptar"
-        Me.ButtonEAceptar.UseVisualStyleBackColor = True
-        '
         'Empresas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1370, 623)
-        Me.Controls.Add(Me.Panel_Ver_Datos_Empresa)
         Me.Controls.Add(Me.Panel_modificar_Empresa)
+        Me.Controls.Add(Me.Panel_Ver_Datos_Empresa)
         Me.Name = "Empresas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Empresa"

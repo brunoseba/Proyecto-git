@@ -72,6 +72,7 @@ Partial Class V_Factura
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel_Cancelar_Factura = New System.Windows.Forms.Panel()
+        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.ButtonAceptarCF = New System.Windows.Forms.Button()
         Me.DataGridCFProductos = New System.Windows.Forms.DataGridView()
@@ -87,7 +88,6 @@ Partial Class V_Factura
         Me.TextBoxBuscarFacturaCancelar = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.Panel_VerFacturas.SuspendLayout()
         CType(Me.DataGridVerFacturas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Informe_Factura.SuspendLayout()
@@ -95,13 +95,16 @@ Partial Class V_Factura
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.Panel_Cancelar_Factura.SuspendLayout()
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridCFProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel_VerFacturas
         '
+        Me.Panel_VerFacturas.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel_VerFacturas.BackColor = System.Drawing.Color.LightSeaGreen
         Me.Panel_VerFacturas.Controls.Add(Me.Label5)
         Me.Panel_VerFacturas.Controls.Add(Me.TextBox1)
@@ -114,9 +117,9 @@ Partial Class V_Factura
         Me.Panel_VerFacturas.Controls.Add(Me.DateTimePickerHasta)
         Me.Panel_VerFacturas.Controls.Add(Me.DateTimePickerDesde)
         Me.Panel_VerFacturas.Controls.Add(Me.Label1)
-        Me.Panel_VerFacturas.Location = New System.Drawing.Point(12, 12)
+        Me.Panel_VerFacturas.Location = New System.Drawing.Point(0, 12)
         Me.Panel_VerFacturas.Name = "Panel_VerFacturas"
-        Me.Panel_VerFacturas.Size = New System.Drawing.Size(1300, 582)
+        Me.Panel_VerFacturas.Size = New System.Drawing.Size(1167, 595)
         Me.Panel_VerFacturas.TabIndex = 0
         '
         'Label5
@@ -170,7 +173,7 @@ Partial Class V_Factura
         Me.DataGridVerFacturas.Location = New System.Drawing.Point(47, 222)
         Me.DataGridVerFacturas.Name = "DataGridVerFacturas"
         Me.DataGridVerFacturas.ReadOnly = True
-        Me.DataGridVerFacturas.Size = New System.Drawing.Size(1144, 297)
+        Me.DataGridVerFacturas.Size = New System.Drawing.Size(1072, 310)
         Me.DataGridVerFacturas.TabIndex = 6
         '
         'Fecha
@@ -292,6 +295,9 @@ Partial Class V_Factura
         '
         'Panel_Informe_Factura
         '
+        Me.Panel_Informe_Factura.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel_Informe_Factura.BackColor = System.Drawing.Color.DarkSlateGray
         Me.Panel_Informe_Factura.Controls.Add(Me.DataGridView2)
         Me.Panel_Informe_Factura.Controls.Add(Me.Button3)
@@ -302,15 +308,18 @@ Partial Class V_Factura
         Me.Panel_Informe_Factura.Controls.Add(Me.Label6)
         Me.Panel_Informe_Factura.Location = New System.Drawing.Point(0, 1)
         Me.Panel_Informe_Factura.Name = "Panel_Informe_Factura"
-        Me.Panel_Informe_Factura.Size = New System.Drawing.Size(1324, 610)
+        Me.Panel_Informe_Factura.Size = New System.Drawing.Size(1167, 610)
         Me.Panel_Informe_Factura.TabIndex = 11
         '
         'DataGridView2
         '
+        Me.DataGridView2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Location = New System.Drawing.Point(69, 438)
         Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(1229, 118)
+        Me.DataGridView2.Size = New System.Drawing.Size(1072, 118)
         Me.DataGridView2.TabIndex = 18
         '
         'Button3
@@ -334,6 +343,9 @@ Partial Class V_Factura
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -341,7 +353,7 @@ Partial Class V_Factura
         Me.DataGridView1.Location = New System.Drawing.Point(69, 274)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(1229, 158)
+        Me.DataGridView1.Size = New System.Drawing.Size(1072, 158)
         Me.DataGridView1.TabIndex = 15
         '
         'N_Factura
@@ -402,6 +414,8 @@ Partial Class V_Factura
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.TextBoxInformeNFactura)
         Me.GroupBox1.Controls.Add(Me.ComboBoxTipoPago)
         Me.GroupBox1.Controls.Add(Me.ComboBoxCuilCliente)
@@ -415,7 +429,7 @@ Partial Class V_Factura
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.GroupBox1.Location = New System.Drawing.Point(18, 70)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1294, 138)
+        Me.GroupBox1.Size = New System.Drawing.Size(1137, 138)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Búsqueda de Facturas"
@@ -525,6 +539,9 @@ Partial Class V_Factura
         '
         'Panel_Cancelar_Factura
         '
+        Me.Panel_Cancelar_Factura.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel_Cancelar_Factura.BackColor = System.Drawing.Color.Teal
         Me.Panel_Cancelar_Factura.Controls.Add(Me.DataGridView3)
         Me.Panel_Cancelar_Factura.Controls.Add(Me.Button2)
@@ -534,12 +551,23 @@ Partial Class V_Factura
         Me.Panel_Cancelar_Factura.Controls.Add(Me.Label8)
         Me.Panel_Cancelar_Factura.Location = New System.Drawing.Point(0, 0)
         Me.Panel_Cancelar_Factura.Name = "Panel_Cancelar_Factura"
-        Me.Panel_Cancelar_Factura.Size = New System.Drawing.Size(1321, 607)
+        Me.Panel_Cancelar_Factura.Size = New System.Drawing.Size(1164, 607)
         Me.Panel_Cancelar_Factura.TabIndex = 17
+        '
+        'DataGridView3
+        '
+        Me.DataGridView3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView3.Location = New System.Drawing.Point(69, 310)
+        Me.DataGridView3.Name = "DataGridView3"
+        Me.DataGridView3.Size = New System.Drawing.Size(1050, 159)
+        Me.DataGridView3.TabIndex = 14
         '
         'Button2
         '
-        Me.Button2.Image = Global.Login.My.Resources.table_delete
+        Me.Button2.Image = Global.Login.My.Resources.Resources.table_delete
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button2.Location = New System.Drawing.Point(501, 532)
         Me.Button2.Name = "Button2"
@@ -563,6 +591,9 @@ Partial Class V_Factura
         '
         Me.DataGridCFProductos.AllowUserToAddRows = False
         Me.DataGridCFProductos.AllowUserToDeleteRows = False
+        Me.DataGridCFProductos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridCFProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridCFProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.DataGridCFProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -570,7 +601,7 @@ Partial Class V_Factura
         Me.DataGridCFProductos.Location = New System.Drawing.Point(69, 200)
         Me.DataGridCFProductos.Name = "DataGridCFProductos"
         Me.DataGridCFProductos.ReadOnly = True
-        Me.DataGridCFProductos.Size = New System.Drawing.Size(1207, 69)
+        Me.DataGridCFProductos.Size = New System.Drawing.Size(1050, 69)
         Me.DataGridCFProductos.TabIndex = 3
         '
         'NroFactura
@@ -621,14 +652,16 @@ Partial Class V_Factura
         '
         'GroupBox2
         '
+        Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Controls.Add(Me.TextBoxBuscarFacturaCancelar)
         Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Font = New System.Drawing.Font("Georgia", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.GroupBox2.Location = New System.Drawing.Point(28, 71)
+        Me.GroupBox2.Location = New System.Drawing.Point(15, 72)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1284, 100)
+        Me.GroupBox2.Size = New System.Drawing.Size(1134, 100)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Buscar Factura"
@@ -673,22 +706,14 @@ Partial Class V_Factura
         Me.Label8.TabIndex = 1
         Me.Label8.Text = "Cancelar Factura"
         '
-        'DataGridView3
-        '
-        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Location = New System.Drawing.Point(69, 310)
-        Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.Size = New System.Drawing.Size(1207, 159)
-        Me.DataGridView3.TabIndex = 14
-        '
         'V_Factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1324, 606)
-        Me.Controls.Add(Me.Panel_Cancelar_Factura)
+        Me.ClientSize = New System.Drawing.Size(1167, 606)
         Me.Controls.Add(Me.Panel_Informe_Factura)
+        Me.Controls.Add(Me.Panel_Cancelar_Factura)
         Me.Controls.Add(Me.Panel_VerFacturas)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "V_Factura"
@@ -705,10 +730,10 @@ Partial Class V_Factura
         Me.GroupBox1.PerformLayout()
         Me.Panel_Cancelar_Factura.ResumeLayout(False)
         Me.Panel_Cancelar_Factura.PerformLayout()
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridCFProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
