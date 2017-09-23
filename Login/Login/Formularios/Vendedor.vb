@@ -8,31 +8,47 @@
         ComboBoxTipoVehiculo.SelectedIndex = 0
     End Sub
 
-
+    'Procedimiento cuando apreta en el boton buscar y carga el datagrid de los productos'
     Private Sub ButtonBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonBuscar.Click
         PanelConfirmarCompra.Visible = False
-        Me.DataGridViewBuscadorProducto.Rows.Add("AT-53", "175X6", "16", "Automovil", 125, "$300", PictureBox1.Image)
-        Me.DataGridViewBuscadorProducto.Rows.Add("Potenza GII", "175x7", "16", "Automovil", 23, "$500", PictureBox1.Image)
-        Me.DataGridViewBuscadorProducto.Rows.Add("Toranza", "155x9", "15", "Automovil", 23, "$700", PictureBox1.Image)
-        Me.DataGridViewBuscadorProducto.Rows.Add("Potenza GII", "175x7", "15", "Automovil", 23, "$600", PictureBox1.Image)
-    End Sub
+        Me.DataGridViewBuscadorProducto.Rows.Add("AT-53", "175X6", "16", "Automovil", 25, "$ 450", PictureBox1.Image)
+        Me.DataGridViewBuscadorProducto.Rows.Add("Potenza GII", "175x7", "16", "Automovil", 13, "$ 500", PictureBox1.Image)
+        Me.DataGridViewBuscadorProducto.Rows.Add("Toranza", "155x9", "15", "Automovil", 10, "$ 700", PictureBox1.Image)
+        Me.DataGridViewBuscadorProducto.Rows.Add("Potenza GII", "175x7", "15", "Automovil", 55, "$ 600", PictureBox1.Image)
+        Me.DataGridViewBuscadorProducto.Rows.Add("AT-53", "175X6", "16", "Automovil", 45, "$ 300", PictureBox1.Image)
+        Me.DataGridViewBuscadorProducto.Rows.Add("Potenza_RE_050A", "175x7", "16", "Automovil", 3, "$ 650", PictureBox1.Image)
+        Me.DataGridViewBuscadorProducto.Rows.Add("Toranza", "155x9", "15", "Automovil", 37, "$ 300", PictureBox1.Image)
+        Me.DataGridViewBuscadorProducto.Rows.Add("Potenza GII", "175x7", "15", "Automovil", 22, "$ 600", PictureBox1.Image)
 
-    Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
-        Dim cell As DataGridViewButtonCell = TryCast(Me.DataGridViewBuscadorProducto.CurrentCell, DataGridViewButtonCell)
-        If cell IsNot Nothing Then 'Verifica que la celdas tengan informacion
-            Dim bc As DataGridViewButtonColumn = TryCast(Me.DataGridViewBuscadorProducto.Columns(e.ColumnIndex), DataGridViewButtonColumn) 'Genero una variable que contiene el boton en el datagrid
-            If bc IsNot Nothing Then
-                Dim s As String = Convert.ToString(cell.Value)
-                Select Case bc.Name
-                    Case "Carrito"
-                        DataGridViewCarrito.Rows.Add("Potenza GII", "175x7", "15", "Automovil", "$600", 2, "$1200", PictureBox1.Image)
-                        Exit Select
-                End Select
-
+        For Each fila As DataGridViewRow In DataGridViewBuscadorProducto.Rows
+            If Val(fila.Cells("Stock").Value) < 20 Then
+                fila.Cells("Stock").Style.ForeColor = Color.Red
+            ElseIf Val(fila.Cells("Stock").Value) < 40 Then
+                fila.Cells("Stock").Style.ForeColor = Color.Orange
+            Else
+                fila.Cells("Stock").Style.ForeColor = Color.Green
             End If
-        End If
+        Next
     End Sub
 
+
+    ' Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
+    'Dim cell As DataGridViewButtonCell = TryCast(Me.DataGridViewBuscadorProducto.CurrentCell, DataGridViewButtonCell)
+    '   If cell IsNot Nothing Then 'Verifica que la celdas tengan informacion
+    'Dim bc As DataGridViewButtonColumn = TryCast(Me.DataGridViewBuscadorProducto.Columns(e.ColumnIndex), DataGridViewButtonColumn) 'Genero una variable que contiene el boton en el datagrid
+    '       If bc IsNot Nothing Then
+    'Dim s As String = Convert.ToString(cell.Value)
+    '           Select Case bc.Name
+    '              Case "Carrito"
+    '                 DataGridViewCarrito.Rows.Add("Potenza GII", "175x7", "15", "Automovil", "$600", 2, "$1200", PictureBox1.Image)
+    '                Exit Select
+    '       End Select
+
+    '        End If
+    '   End If
+    'End Sub
+
+    'Procedimiento para eliminar los productos del carrito en la ultima confirmacion de compra'
     Private Sub DataGridViewCarrito_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
         Dim cell As DataGridViewButtonCell = TryCast(DataGridViewCarrito.CurrentCell, DataGridViewButtonCell)
         Dim res As MsgBoxResult
@@ -57,6 +73,7 @@
         End If
     End Sub
 
+    'Boton confirmar compra'
     Private Sub ButtonConfirmarCompra_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         MsgBox("Compra realizada con exito")
         PanelConfirmarCompra.Visible = False
@@ -77,16 +94,11 @@
 
         'End If
     End Sub
-    Private Sub BSalir0_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Me.Close()
-    End Sub
 
-
-    Private Sub ButtonCarrito_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        PanelConfirmarCompra.Visible = True
-    End Sub
 
     Private Sub DataGridViewBuscadorProducto_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridViewBuscadorProducto.CellContentClick
+        Dim stock, unit, total As Integer
+        Dim nombre, medida, rodado, t_vehi, stringTotal, unitString As String
         Dim cantidad_Cubiertas As String
         Dim cell As DataGridViewButtonCell = TryCast(Me.DataGridViewBuscadorProducto.CurrentCell, DataGridViewButtonCell)
         If cell IsNot Nothing Then 'Verifica que la celdas tengan informacion
@@ -98,13 +110,28 @@
                         cantidad_Cubiertas = InputBox("Ingrese la cantidad de cubiertas", "Atención")
                         If IsNumeric(cantidad_Cubiertas) Then
                             If cantidad_Cubiertas > 0 Then
-                                DataGridCompra.Rows.Add("Potenza GII", "175x7", "15", "Automovil", "$600", cantidad_Cubiertas, "$1200", PictureBox1.Image)
-                                DataGridViewCarrito.Rows.Add("Potenza GII", "175x7", "15", "Automovil", "$600", cantidad_Cubiertas, "$1200", PictureBox1.Image)
+                                'Obtengo los datos de la fila del datagrid'
+                                stock = DataGridViewBuscadorProducto(4, DataGridViewBuscadorProducto.CurrentRow.Index).Value
+                                If cantidad_Cubiertas < stock Then
+                                    nombre = DataGridViewBuscadorProducto(0, DataGridViewBuscadorProducto.CurrentRow.Index).Value
+                                    medida = DataGridViewBuscadorProducto(1, DataGridViewBuscadorProducto.CurrentRow.Index).Value
+                                    rodado = DataGridViewBuscadorProducto(2, DataGridViewBuscadorProducto.CurrentRow.Index).Value
+                                    t_vehi = DataGridViewBuscadorProducto(3, DataGridViewBuscadorProducto.CurrentRow.Index).Value
+                                    unit = DataGridViewBuscadorProducto(5, DataGridViewBuscadorProducto.CurrentRow.Index).Value
+                                    total = unit * cantidad_Cubiertas
+                                    unitString = "$ " + Str(unit)
+                                    stringTotal = "$ " + Str(total)
+                                    DataGridCompra.Rows.Add(nombre, medida, rodado, t_vehi, unitString, cantidad_Cubiertas, stringTotal, PictureBox1.Image)
+                                    Me.calcularTotal()
+                                Else
+                                    MsgBox("No hay stock disponible para monto ingresado", 0 + 0 + 16, "Error stock")
+                                End If
+
                             Else
-                                MsgBox("El valor ingresado debe ser mayor a 0")
+                                MsgBox("El valor ingresado debe ser mayor a 0", 0 + 0 + 16, "Valor Incorrecto")
                             End If
                         Else
-                            MsgBox("El valor ingresado no es un número")
+                            MsgBox("El valor ingresado no es un Número", 0 + 0 + 16, "Valor Incorrecto")
                         End If
                         Exit Select
                 End Select
@@ -127,6 +154,7 @@
                         If res = 6 Then
                             DataGridCompra.Rows.RemoveAt(e.RowIndex)
                             MsgBox("Producto Eliminado", 0 + 0 + 16, "Eliminado")
+                            Me.calcularTotal()
                         End If
                         Exit Select
                 End Select
@@ -137,7 +165,7 @@
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Dim cantRegistros As Integer = DataGridCompra.Rows.Count
-
+        MsgBox(cantRegistros)
 
         For Each fila As DataGridViewRow In DataGridCompra.Rows
             'DataGridViewCarrito.Rows.Add(fila.Clone)
@@ -172,5 +200,13 @@
             DataGridCompra.Rows.Clear()
             'Next
         End If
+    End Sub
+
+    Private Sub calcularTotal()
+        Dim total As Integer
+        For Each fila As DataGridViewRow In DataGridCompra.Rows
+            total = (fila.Cells("pro_total").Value) + total
+        Next
+        totalCompra.Text = total
     End Sub
 End Class
