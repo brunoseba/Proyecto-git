@@ -164,17 +164,16 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Dim cantRegistros As Integer = DataGridCompra.Rows.Count
-        MsgBox(cantRegistros)
-
         For Each fila As DataGridViewRow In DataGridCompra.Rows
-            'DataGridViewCarrito.Rows.Add(fila.Clone)
             DataGridViewCarrito.Rows.Add(fila.Cells("pro_nombre").Value, fila.Cells("pro_medida").Value, fila.Cells("pro_rodado").Value, fila.Cells("pro_tipo_vehiculo").Value, fila.Cells("pro_precio_unitario").Value, fila.Cells("pro_cantidad").Value, fila.Cells("pro_total").Value, PictureBox1.Image)
-
         Next
         Dim res As MsgBoxResult
         res = MsgBox("¿Desea Confirmar la Compra?", 4 + 256 + 64, "Confirmar")
         If res = 6 Then
+            DataGridViewBuscadorProducto.Rows.Clear()
+            DataGridCompra.Rows.Clear()
+            MontoTotal.Text = Val(MontoTotal.Text) + Val(totalCompra.Text)
+            totalCompra.Text = "0"
             PanelBuscarProductoVendedor.Visible = False
             PanelConfirmarCompra.Visible = True
         End If
@@ -182,9 +181,16 @@
     End Sub
 
     Private Sub ButtonConfirmarCompra_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonConfirmarCompra.Click
-        MsgBox("Compra realizada con Exito")
-        PanelBuscarProductoVendedor.Visible = True
-        PanelConfirmarCompra.Visible = False
+        Dim res As MsgBoxResult
+        res = MsgBox("¿Desea Confirmar la Compra?", 4 + 256 + 64, "Confirmar")
+        If res = 6 Then
+            MsgBox("Compra realizada con Exito")
+            DataGridViewCarrito.Rows.Clear()
+            MontoTotal.Text = "0"
+            TextBoxCuilCliente.Text = ""
+            PanelBuscarProductoVendedor.Visible = True
+            PanelConfirmarCompra.Visible = False
+        End If
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
@@ -196,9 +202,7 @@
         Dim res As MsgBoxResult
         res = MsgBox("¿Desea cancelar la compra?", 4 + 256 + 64, "Eliminar")
         If res = 6 Then
-            'For Each fila As DataGridViewRow In DataGridCompra.Rows
             DataGridCompra.Rows.Clear()
-            'Next
         End If
     End Sub
 
@@ -209,4 +213,31 @@
         Next
         totalCompra.Text = total
     End Sub
+
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+        Dim res As MsgBoxResult
+        res = MsgBox("¿Desea Cancelar la Compra?", 4 + 256 + 64, "Confirmar")
+        If res = 6 Then
+            DataGridViewCarrito.Rows.Clear()
+            MontoTotal.Text = "0"
+        End If
+    End Sub
+
+    Private Sub ButtonVerificarCuil_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonVerificarCuil.Click
+        If TextBoxCuilCliente.Text = "20365397695" Then
+            MsgBox("Cliente Registrado: " + "Pedro Lautaro Sanchez", 0 + 0 + 64, "Aviso")
+        Else
+            Dim res As MsgBoxResult
+            res = MsgBox("Cliente no registrado, ¿Desea registrarlo?", 4 + 256 + 64, "Confirmar")
+            If res = 6 Then
+                CuadroUsu.MaximizeBox = True
+                CuadroUsu.Show()
+                CuadroUsu.PanelRegistro.Visible = True
+                CuadroUsu.PanelBusca.Visible = False
+                CuadroUsu.PanelVer.Visible = False
+            End If
+        End If
+    End Sub
+
+
 End Class
