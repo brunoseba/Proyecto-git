@@ -6,16 +6,9 @@ Public Class Ventana
         Dim usu As New Ususario(Form1.Tusuario.Text)
         usu.Dato(usu.GetDni(), usu.GetNomYape())
         If usu.GetTipoUsu = "a" And usu.GetEstado = "a" Then
-            'Principal.MaximizeBox = True
-            'Principal.ControlBox = False
-            'Principal.StartPosition = FormStartPosition.CenterScreen
-            'Principal.Show()
-            'Principal.MdiParent = Me
-
+    
             Me.usuario.Text = ("Administrador :  " + usu.GetNomYape())
             Me.usuario.Image = My.Resources.user_gray
-
-
 
         ElseIf usu.GetTipoUsu = "s" And usu.GetEstado = "a" Then
             'Principal.Show()
@@ -42,7 +35,7 @@ Public Class Ventana
             Me.CargarStockToolStripMenuItem.Visible = False
             Me.EliminarProductosToolStripMenuItem.Visible = False
             Vendedor.Show()
-            Vendedor.PanelCarrito.Visible = False
+            Vendedor.PanelConfirmarCompra.Visible = False
             Vendedor.MdiParent = Me
         End If
     End Sub
@@ -56,12 +49,6 @@ Public Class Ventana
         CuadroUsu.PanelVer.Visible = False
         CuadroUsu.MdiParent = Me
 
-        'Principal.PanelBuscarClientes.Visible = False
-        'Principal.PanelClientes.Visible = True
-        'Principal.PanelMostrarCliente.Visible = False
-        'Principal.PanelAgregarModificarCliente.Visible = True
-
-
     End Sub
 
     Private Sub MenuClientesMostrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuClientesMostrar.Click
@@ -72,19 +59,6 @@ Public Class Ventana
         CuadroUsu.MdiParent = Me
     End Sub
 
-    Private Sub MenuClientesModificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'Principal.PanelBuscarClientes.Visible = True
-        'Principal.PanelClientes.Visible = True
-        'Principal.PanelMostrarCliente.Visible = False
-        'Principal.PanelAgregarModificarCliente.Visible = True
-    End Sub
-
-    Private Sub MenuProductosAgregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'Principal.PanelProductos.Visible = True
-        'Principal.PanelAgregarProductos.Visible = True
-        'Principal.PanelBuscarProducto.Visible = True
-
-    End Sub
 
     Private Sub MenuProductosMostrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Principal.PanelProductos.Visible = True
@@ -99,7 +73,7 @@ Public Class Ventana
 
     End Sub
 
-    
+
     Private Sub CerrarSesiónToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
         Form1.Show()
         Me.Close()
@@ -120,8 +94,7 @@ Public Class Ventana
 
     Private Sub VerProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VerProductosToolStripMenuItem.Click
         Vendedor.Show()
-        Vendedor.PanelBuscarProducto.Visible = True
-        Vendedor.PanelResultadosProductos.Visible = True
+        Vendedor.PanelBuscarProductoVendedor.Visible = True
         Vendedor.MdiParent = Me
 
     End Sub

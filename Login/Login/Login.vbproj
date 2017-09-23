@@ -348,6 +348,15 @@
   <ItemGroup>
     <None Include="Resources\table_delete.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RE_050_RFT1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RE_050_RFT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Potenza_GIII.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
