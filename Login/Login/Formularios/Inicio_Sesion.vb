@@ -1,4 +1,4 @@
-﻿Public Class Form1
+﻿Public Class Inicio_Sesion
 
     Dim cadena As String 'variable global
 

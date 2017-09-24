@@ -3,10 +3,10 @@
 Public Class Ventana
 
     Private Sub Ventana_Principal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Dim usu As New Ususario(Form1.Tusuario.Text)
+        Dim usu As New Ususario(Inicio_Sesion.Tusuario.Text)
         usu.Dato(usu.GetDni(), usu.GetNomYape())
         If usu.GetTipoUsu = "a" And usu.GetEstado = "a" Then
-    
+
             Me.usuario.Text = ("Administrador :  " + usu.GetNomYape())
             Me.usuario.Image = My.Resources.user_gray
 
@@ -21,7 +21,7 @@ Public Class Ventana
             Me.MenuEmpresa.Visible = False
 
         Else
-           
+
             Me.BackgroundImage = My.Resources.BRIDGESTONE_MOTOGP__7_
 
             Me.usuario.Text = ("Vendedor :  " + usu.GetNomYape())
@@ -31,7 +31,6 @@ Public Class Ventana
             Me.MenuFacturas.Visible = False
             Me.AgregarProductoToolStripMenuItem.Visible = False
             Me.BuscarProductosToolStripMenuItem.Visible = False
-            Me.ModificarProductosToolStripMenuItem.Visible = False
             Me.CargarStockToolStripMenuItem.Visible = False
             Me.EliminarProductosToolStripMenuItem.Visible = False
             Vendedor.Show()
@@ -61,8 +60,8 @@ Public Class Ventana
 
 
     Private Sub MenuProductosMostrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Principal.PanelProductos.Visible = True
-        Principal.PanelProductosBuscar.Visible = True
+        'Principal.PanelProductos.Visible = True
+        'V_Producto.PanelProductosBuscar.Visible = True
     End Sub
 
     Private Sub BuscarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarToolStripMenuItem.Click
@@ -75,7 +74,7 @@ Public Class Ventana
 
 
     Private Sub CerrarSesiónToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
-        Form1.Show()
+        Inicio_Sesion.Show()
         Me.Close()
     End Sub
 
@@ -92,7 +91,7 @@ Public Class Ventana
 
     End Sub
 
-    Private Sub VerProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VerProductosToolStripMenuItem.Click
+    Private Sub VerProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Vendedor.Show()
         Vendedor.PanelBuscarProductoVendedor.Visible = True
         Vendedor.MdiParent = Me
@@ -100,7 +99,13 @@ Public Class Ventana
     End Sub
 
     Private Sub BuscarProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarProductosToolStripMenuItem.Click
-
+        V_Producto.MaximizeBox = True
+        V_Producto.Show()
+        V_Producto.PanelMostrarDatosTecnicos.Visible = False
+        V_Producto.PanelActualizarStock.Visible = False
+        V_Producto.PanelAgregarProductos.Visible = False
+        V_Producto.PanelProductosBuscar.Visible = True
+        V_Producto.MdiParent = Me
     End Sub
 
     Private Sub MenuEmpresaVerDatos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuEmpresaVerDatos.Click
@@ -145,4 +150,22 @@ Public Class Ventana
         V_Factura.Panel_Cancelar_Factura.Visible = True
         V_Factura.MdiParent = Me
     End Sub
+
+    Private Sub AgregarProductoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AgregarProductoToolStripMenuItem.Click
+        V_Producto.MaximizeBox = True
+        V_Producto.Show()
+        V_Producto.PanelAgregarProductos.Visible = True
+        V_Producto.MdiParent = Me
+    End Sub
+
+    Private Sub CargarStockToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CargarStockToolStripMenuItem.Click
+        V_Producto.MaximizeBox = True
+        V_Producto.Show()
+        V_Producto.PanelAgregarProductos.Visible = False
+        V_Producto.PanelMostrarDatosTecnicos.Visible = False
+        V_Producto.PanelActualizarStock.Visible = False
+        V_Producto.PanelProductosBuscar.Visible = True
+    End Sub
+
+ 
 End Class

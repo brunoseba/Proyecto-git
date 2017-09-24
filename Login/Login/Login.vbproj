@@ -99,17 +99,17 @@
     <Compile Include="Formularios\Empresa.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Form1.vb">
+    <Compile Include="Formularios\Inicio_Sesion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Formularios\Inicio_Sesion.Designer.vb">
+      <DependentUpon>Inicio_Sesion.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Form3.Designer.vb">
-      <DependentUpon>Form3.vb</DependentUpon>
+    <Compile Include="Formularios\V_Producto.Designer.vb">
+      <DependentUpon>V_Producto.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form3.vb">
+    <Compile Include="Formularios\V_Producto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\MDIParent1.Designer.vb">
@@ -169,11 +169,11 @@
     <EmbeddedResource Include="Formularios\Empresa.resx">
       <DependentUpon>Empresa.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\Inicio_Sesion.resx">
+      <DependentUpon>Inicio_Sesion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Form3.resx">
-      <DependentUpon>Form3.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\V_Producto.resx">
+      <DependentUpon>V_Producto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\MDIParent1.resx">
       <DependentUpon>MDIParent1.vb</DependentUpon>
@@ -359,6 +359,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\RE_050_RFT1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R152-Toda-posicion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image-not-found %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

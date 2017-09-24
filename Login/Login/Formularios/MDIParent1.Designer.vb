@@ -30,10 +30,8 @@ Partial Class Ventana
         Me.Productos = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgregarProductoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ModificarProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CargarStockToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EliminarProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VerProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuClientes = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuClientesAgregar = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator11 = New System.Windows.Forms.ToolStripSeparator()
@@ -70,7 +68,7 @@ Partial Class Ventana
         '
         'Productos
         '
-        Me.Productos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarProductoToolStripMenuItem, Me.BuscarProductosToolStripMenuItem, Me.ModificarProductosToolStripMenuItem, Me.CargarStockToolStripMenuItem, Me.EliminarProductosToolStripMenuItem, Me.VerProductosToolStripMenuItem})
+        Me.Productos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarProductoToolStripMenuItem, Me.BuscarProductosToolStripMenuItem, Me.CargarStockToolStripMenuItem, Me.EliminarProductosToolStripMenuItem})
         Me.Productos.Image = Global.Login.My.Resources.Resources.bricks
         Me.Productos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Productos.Name = "Productos"
@@ -82,43 +80,29 @@ Partial Class Ventana
         '
         Me.AgregarProductoToolStripMenuItem.Image = Global.Login.My.Resources.Resources.brick_add
         Me.AgregarProductoToolStripMenuItem.Name = "AgregarProductoToolStripMenuItem"
-        Me.AgregarProductoToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
+        Me.AgregarProductoToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.AgregarProductoToolStripMenuItem.Text = "Agregar Productos"
         '
         'BuscarProductosToolStripMenuItem
         '
         Me.BuscarProductosToolStripMenuItem.Image = Global.Login.My.Resources.Resources.search16_h
         Me.BuscarProductosToolStripMenuItem.Name = "BuscarProductosToolStripMenuItem"
-        Me.BuscarProductosToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
+        Me.BuscarProductosToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.BuscarProductosToolStripMenuItem.Text = "Buscar Productos"
-        '
-        'ModificarProductosToolStripMenuItem
-        '
-        Me.ModificarProductosToolStripMenuItem.Image = Global.Login.My.Resources.Resources.brick_edit
-        Me.ModificarProductosToolStripMenuItem.Name = "ModificarProductosToolStripMenuItem"
-        Me.ModificarProductosToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
-        Me.ModificarProductosToolStripMenuItem.Text = "Modificar Productos"
         '
         'CargarStockToolStripMenuItem
         '
         Me.CargarStockToolStripMenuItem.Image = Global.Login.My.Resources.Resources.pencil
         Me.CargarStockToolStripMenuItem.Name = "CargarStockToolStripMenuItem"
-        Me.CargarStockToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
-        Me.CargarStockToolStripMenuItem.Text = "Cargar Stock"
+        Me.CargarStockToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.CargarStockToolStripMenuItem.Text = "Actualizar Stock"
         '
         'EliminarProductosToolStripMenuItem
         '
         Me.EliminarProductosToolStripMenuItem.Image = Global.Login.My.Resources.Resources.delete_square16
         Me.EliminarProductosToolStripMenuItem.Name = "EliminarProductosToolStripMenuItem"
-        Me.EliminarProductosToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
+        Me.EliminarProductosToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.EliminarProductosToolStripMenuItem.Text = "Eliminar Productos"
-        '
-        'VerProductosToolStripMenuItem
-        '
-        Me.VerProductosToolStripMenuItem.Image = Global.Login.My.Resources.Resources.print_preview16_h
-        Me.VerProductosToolStripMenuItem.Name = "VerProductosToolStripMenuItem"
-        Me.VerProductosToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
-        Me.VerProductosToolStripMenuItem.Text = "Ver Productos"
         '
         'MenuClientes
         '
@@ -331,9 +315,7 @@ Partial Class Ventana
     Friend WithEvents Productos As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AgregarProductoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BuscarProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ModificarProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CargarStockToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EliminarProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents VerProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

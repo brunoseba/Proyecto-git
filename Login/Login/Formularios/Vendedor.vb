@@ -202,8 +202,11 @@
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         Dim res As MsgBoxResult
         res = MsgBox("¿Desea cancelar la compra?", 4 + 256 + 64, "Eliminar")
+
         If res = 6 Then
             DataGridCompra.Rows.Clear()
+            MontoTotal.Text = "0"
+            totalCompra.Text = "0"
         End If
     End Sub
 

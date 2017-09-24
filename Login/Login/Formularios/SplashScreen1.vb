@@ -43,7 +43,7 @@
         ' Cerramos el formulario SplashScreen
         Me.Hide()
         'login()
-        Form1.Show()
+        Inicio_Sesion.Show()
         tmr.stop()
 
         'MDIParent1.Show()
