@@ -1,4 +1,4 @@
-﻿Public Class Empresas
+﻿Public Class Empresa
     Private empresa_cuit As Long
     Private empresa_nombre As String
     Private empresa_direccion As String

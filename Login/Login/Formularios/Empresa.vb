@@ -1,4 +1,4 @@
-﻿Public Class Empresa
+﻿Public Class Empresas
 
     Private Sub ButtonGuardarEmpresa_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonGuardarEmpresa.Click
         MsgBox("Los datos fueron modificados")
@@ -10,5 +10,9 @@
 
     Private Sub ButtonEAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonEAceptar.Click
         Me.Close()
+    End Sub
+
+    Private Sub Empresa_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

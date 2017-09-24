@@ -1,6 +1,6 @@
-﻿Public Class CuadroUsu
+﻿Public Class CuadroCliente
 
-   
+
     Private Sub BGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BGuardar.Click
         Dim cli As New Cliente(Val(TDni.Text), TNomApe.Text, TDire.Text, TTelef.Text, TEmail.Text, estado(), TApellido.Text, TLocal.Text, CBProvincia.SelectedItem, DateTime.Value.Date(), TPostal.Text, TCelular.Text)
         Dim res As MsgBoxResult
@@ -54,7 +54,7 @@
 
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        Dim dni As Integer
+        Dim dni As Long
         Dim nom As String
         Dim apel As String
         Dim esta As Char
@@ -80,7 +80,8 @@
         Try
             Using Base As New NNeumaticosEntities1
 
-                Dim mues = (From c In Base.Cliente Where (c.cliente_cuil = dni Or c.cliente_NomYape = nom Or c.cliente_Ape = apel Or c.cliente_estado = esta) Select c).ToList
+                'Dim mues = (From c In Base.Cliente Where (c.cliente_cuil = dni Or c.cliente_NomYape = nom Or c.cliente_Ape = apel Or c.cliente_estado = esta) Select c).ToList
+                Dim mues = (From c In Base.Cliente Select c).ToList
 
                 'Dni = u.usu_Dni, NombreyApellido = u.usu_nomYape, Direccion = u.usu_Direccon, Localidad = u.usu_Localidad, Telefono = u.usu_Telefono, Email = u.usu_Email, Contraseña = u.usu_Contraseña, Estado = u.usu_Estado, TipoUsuario = u.usu_TipoUsu).ToList
 
@@ -91,7 +92,7 @@
 
             End Using
         Catch ex As Exception
-
+            MessageBox.Show("Error al Cargar los Datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub
@@ -200,6 +201,7 @@
         PanelVer.Visible = False
 
     End Sub
+
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         PanelBusca.Visible = True

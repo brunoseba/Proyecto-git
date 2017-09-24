@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class CuadroUsu
+Partial Class CuadroCliente
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,14 +22,11 @@ Partial Class CuadroUsu
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CuadroUsu))
-
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelRegistro = New System.Windows.Forms.Panel()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TEmail = New System.Windows.Forms.TextBox()
@@ -912,7 +909,7 @@ Partial Class CuadroUsu
         Me.GroupBox5.Size = New System.Drawing.Size(1337, 106)
         Me.GroupBox5.TabIndex = 0
         Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Buscar Usuario"
+        Me.GroupBox5.Text = "Buscar Cliente"
         '
         'TApellido2
         '
@@ -945,9 +942,7 @@ Partial Class CuadroUsu
         Me.Label25.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label25.AutoSize = True
         Me.Label25.ForeColor = System.Drawing.Color.White
-
         Me.Label25.Location = New System.Drawing.Point(612, 37)
-
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(87, 18)
         Me.Label25.TabIndex = 6
@@ -957,6 +952,7 @@ Partial Class CuadroUsu
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button2.Image = Global.Login.My.Resources.Resources.search16_h
         Me.Button2.Location = New System.Drawing.Point(1212, 32)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 29)
@@ -1012,8 +1008,8 @@ Partial Class CuadroUsu
         'Dni
         '
         Me.Dni.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Dni.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Dni.DefaultCellStyle = DataGridViewCellStyle11
         Me.Dni.FillWeight = 150.0!
         Me.Dni.HeaderText = "DNI"
         Me.Dni.Name = "Dni"
@@ -1021,16 +1017,16 @@ Partial Class CuadroUsu
         'NomApe
         '
         Me.NomApe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.NomApe.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.NomApe.DefaultCellStyle = DataGridViewCellStyle12
         Me.NomApe.HeaderText = "Nombre y Apellido"
         Me.NomApe.Name = "NomApe"
         '
         'Direc
         '
         Me.Direc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Direc.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Direc.DefaultCellStyle = DataGridViewCellStyle13
         Me.Direc.HeaderText = "Direccion"
         Me.Direc.Name = "Direc"
         '
@@ -1043,16 +1039,16 @@ Partial Class CuadroUsu
         'Email
         '
         Me.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Email.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Email.DefaultCellStyle = DataGridViewCellStyle14
         Me.Email.HeaderText = "Email"
         Me.Email.Name = "Email"
         '
         'tipoUsu
         '
         Me.tipoUsu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.tipoUsu.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.tipoUsu.DefaultCellStyle = DataGridViewCellStyle15
         Me.tipoUsu.HeaderText = "Estado"
         Me.tipoUsu.Name = "tipoUsu"
         '
@@ -1436,17 +1432,15 @@ Partial Class CuadroUsu
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1370, 623)
+        Me.ControlBox = False
         Me.Controls.Add(Me.PanelBusca)
         Me.Controls.Add(Me.PanelVer)
         Me.Controls.Add(Me.PanelRegistro)
-
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-
         Me.Controls.Add(Me.PanelModifica)
-
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "CuadroUsu"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cliente"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

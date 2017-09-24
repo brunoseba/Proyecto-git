@@ -1,4 +1,4 @@
-﻿Public Class BuscaModifica
+﻿Public Class CuadroUsuario
     Dim Var1 As Array
     Public Function usuario() As Char
         If CBUsuario.SelectedItem = "Administrador" Then
@@ -67,7 +67,7 @@
 
                 End Using
             Catch ex As Exception
-
+                MessageBox.Show("Error al Cargar los Datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
 
             '--limpiar su filas llamando al método Clear de la propiedad Rows:--
@@ -190,7 +190,7 @@
         Me.Close()
     End Sub
 
-   
+
     Private Sub BSalir3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BSalir3.Click
         Me.Close()
     End Sub

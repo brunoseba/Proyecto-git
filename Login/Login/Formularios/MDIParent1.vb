@@ -42,21 +42,21 @@ Public Class Ventana
 
 
     Private Sub MenuClientesAgregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuClientesAgregar.Click
-        CuadroUsu.MaximizeBox = True
-        CuadroUsu.Show()
-        CuadroUsu.PanelRegistro.Visible = True
-        CuadroUsu.PanelBusca.Visible = False
-        CuadroUsu.PanelVer.Visible = False
-        CuadroUsu.MdiParent = Me
+        CuadroCliente.MaximizeBox = True
+        CuadroCliente.Show()
+        CuadroCliente.PanelRegistro.Visible = True
+        CuadroCliente.PanelBusca.Visible = False
+        CuadroCliente.PanelVer.Visible = False
+        CuadroCliente.MdiParent = Me
 
     End Sub
 
     Private Sub MenuClientesMostrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuClientesMostrar.Click
-        CuadroUsu.MaximizeBox = True
-        CuadroUsu.Show()
-        CuadroUsu.PanelBusca.Visible = True
-        CuadroUsu.PanelRegistro.Visible = False
-        CuadroUsu.MdiParent = Me
+        CuadroCliente.MaximizeBox = True
+        CuadroCliente.Show()
+        CuadroCliente.PanelBusca.Visible = True
+        CuadroCliente.PanelRegistro.Visible = False
+        CuadroCliente.MdiParent = Me
     End Sub
 
 
@@ -66,10 +66,10 @@ Public Class Ventana
     End Sub
 
     Private Sub BuscarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarToolStripMenuItem.Click
-        BuscaModifica.MaximizeBox = True
-        BuscaModifica.Show()
-        BuscaModifica.PanelBusca.Visible = True
-        BuscaModifica.MdiParent = Me
+        CuadroUsuario.MaximizeBox = True
+        CuadroUsuario.Show()
+        CuadroUsuario.PanelBusca.Visible = True
+        CuadroUsuario.MdiParent = Me
 
     End Sub
 
@@ -80,11 +80,11 @@ Public Class Ventana
     End Sub
 
     Private Sub AgregarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AgregarToolStripMenuItem.Click
-        BuscaModifica.MaximizeBox = True
-        BuscaModifica.Show()
-        BuscaModifica.PanelRegistro.Visible = True
-        BuscaModifica.PanelBusca.Visible = False
-        BuscaModifica.MdiParent = Me
+        CuadroUsuario.MaximizeBox = True
+        CuadroUsuario.Show()
+        CuadroUsuario.PanelRegistro.Visible = True
+        CuadroUsuario.PanelBusca.Visible = False
+        CuadroUsuario.MdiParent = Me
 
     End Sub
 
@@ -104,19 +104,19 @@ Public Class Ventana
     End Sub
 
     Private Sub MenuEmpresaVerDatos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuEmpresaVerDatos.Click
-        Empresa.MaximizeBox = True
-        Empresa.Show()
-        Empresa.Panel_modificar_Empresa.Visible = False
-        Empresa.Panel_Ver_Datos_Empresa.Visible = True
-        Empresa.MdiParent = Me
+        Empresas.MaximizeBox = True
+        Empresas.Show()
+        Empresas.Panel_modificar_Empresa.Visible = False
+        Empresas.Panel_Ver_Datos_Empresa.Visible = True
+        Empresas.MdiParent = Me
     End Sub
 
     Private Sub MenuEmpresaModificarDatos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuEmpresaModificarDatos.Click
-        Empresa.MaximizeBox = True
-        Empresa.Show()
-        Empresa.Panel_Ver_Datos_Empresa.Visible = False
-        Empresa.Panel_modificar_Empresa.Visible = True
-        Empresa.MdiParent = Me
+        Empresas.MaximizeBox = True
+        Empresas.Show()
+        Empresas.Panel_Ver_Datos_Empresa.Visible = False
+        Empresas.Panel_modificar_Empresa.Visible = True
+        Empresas.MdiParent = Me
     End Sub
 
     Private Sub VerFacturasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VerFacturasToolStripMenuItem.Click

@@ -214,14 +214,14 @@
         totalCompra.Text = total
     End Sub
 
-    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
-        Dim res As MsgBoxResult
-        res = MsgBox("¿Desea Cancelar la Compra?", 4 + 256 + 64, "Confirmar")
-        If res = 6 Then
-            DataGridViewCarrito.Rows.Clear()
-            MontoTotal.Text = "0"
-        End If
-    End Sub
+    'Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+    'Dim res As MsgBoxResult
+    '   res = MsgBox("¿Desea Cancelar la Compra?", 4 + 256 + 64, "Confirmar")
+    '  If res = 6 Then
+    '     DataGridViewCarrito.Rows.Clear()
+    '    MontoTotal.Text = "0"
+    'End If
+    'End Sub
 
     Private Sub ButtonVerificarCuil_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonVerificarCuil.Click
         If TextBoxCuilCliente.Text = "20365397695" Then
@@ -230,11 +230,11 @@
             Dim res As MsgBoxResult
             res = MsgBox("Cliente no registrado, ¿Desea registrarlo?", 4 + 256 + 64, "Confirmar")
             If res = 6 Then
-                CuadroUsu.MaximizeBox = True
-                CuadroUsu.Show()
-                CuadroUsu.PanelRegistro.Visible = True
-                CuadroUsu.PanelBusca.Visible = False
-                CuadroUsu.PanelVer.Visible = False
+                'CuadroUsu.MaximizeBox = True
+                'CuadroUsu.Show()
+                'CuadroUsu.PanelRegistro.Visible = True
+                'CuadroUsu.PanelBusca.Visible = False
+                'CuadroUsu.PanelVer.Visible = False
             End If
         End If
     End Sub
