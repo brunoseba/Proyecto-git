@@ -33,6 +33,8 @@ Partial Class CuadroUsuario
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CuadroUsuario))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TApel = New System.Windows.Forms.TextBox()
+        Me.Label28 = New System.Windows.Forms.Label()
         Me.CBEsta = New System.Windows.Forms.ComboBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -111,8 +113,6 @@ Partial Class CuadroUsuario
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.TApel = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBusca.SuspendLayout()
@@ -145,6 +145,22 @@ Partial Class CuadroUsuario
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Buscar Usuario"
+        '
+        'TApel
+        '
+        Me.TApel.Location = New System.Drawing.Point(565, 35)
+        Me.TApel.Name = "TApel"
+        Me.TApel.Size = New System.Drawing.Size(154, 24)
+        Me.TApel.TabIndex = 10
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(472, 38)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(87, 18)
+        Me.Label28.TabIndex = 9
+        Me.Label28.Text = "APELLIDO :"
         '
         'CBEsta
         '
@@ -726,7 +742,7 @@ Partial Class CuadroUsuario
         Me.GroupBox3.Controls.Add(Me.TContra)
         Me.GroupBox3.Controls.Add(Me.TTelef)
         Me.GroupBox3.Controls.Add(Me.TDire)
-        Me.GroupBox3.Location = New System.Drawing.Point(33, 14)
+        Me.GroupBox3.Location = New System.Drawing.Point(213, 14)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(972, 254)
         Me.GroupBox3.TabIndex = 39
@@ -870,7 +886,7 @@ Partial Class CuadroUsuario
         '
         'BSalir3
         '
-        Me.BSalir3.Location = New System.Drawing.Point(562, 426)
+        Me.BSalir3.Location = New System.Drawing.Point(757, 432)
         Me.BSalir3.Name = "BSalir3"
         Me.BSalir3.Size = New System.Drawing.Size(80, 23)
         Me.BSalir3.TabIndex = 38
@@ -879,7 +895,7 @@ Partial Class CuadroUsuario
         '
         'BGuardar
         '
-        Me.BGuardar.Location = New System.Drawing.Point(373, 426)
+        Me.BGuardar.Location = New System.Drawing.Point(568, 432)
         Me.BGuardar.Name = "BGuardar"
         Me.BGuardar.Size = New System.Drawing.Size(80, 23)
         Me.BGuardar.TabIndex = 37
@@ -888,21 +904,21 @@ Partial Class CuadroUsuario
         '
         'TEmail
         '
-        Me.TEmail.Location = New System.Drawing.Point(182, 360)
+        Me.TEmail.Location = New System.Drawing.Point(377, 366)
         Me.TEmail.Name = "TEmail"
         Me.TEmail.Size = New System.Drawing.Size(243, 20)
         Me.TEmail.TabIndex = 36
         '
         'TLocal
         '
-        Me.TLocal.Location = New System.Drawing.Point(640, 300)
+        Me.TLocal.Location = New System.Drawing.Point(835, 306)
         Me.TLocal.Name = "TLocal"
         Me.TLocal.Size = New System.Drawing.Size(243, 20)
         Me.TLocal.TabIndex = 35
         '
         'TProv1
         '
-        Me.TProv1.Location = New System.Drawing.Point(182, 300)
+        Me.TProv1.Location = New System.Drawing.Point(377, 306)
         Me.TProv1.Name = "TProv1"
         Me.TProv1.Size = New System.Drawing.Size(243, 20)
         Me.TProv1.TabIndex = 34
@@ -910,7 +926,7 @@ Partial Class CuadroUsuario
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(538, 366)
+        Me.Label23.Location = New System.Drawing.Point(733, 372)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(42, 13)
         Me.Label23.TabIndex = 33
@@ -919,7 +935,7 @@ Partial Class CuadroUsuario
         'DateTime1
         '
         Me.DateTime1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTime1.Location = New System.Drawing.Point(640, 360)
+        Me.DateTime1.Location = New System.Drawing.Point(835, 366)
         Me.DateTime1.Name = "DateTime1"
         Me.DateTime1.Size = New System.Drawing.Size(116, 20)
         Me.DateTime1.TabIndex = 40
@@ -927,7 +943,7 @@ Partial Class CuadroUsuario
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(513, 303)
+        Me.Label24.Location = New System.Drawing.Point(708, 309)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(67, 13)
         Me.Label24.TabIndex = 30
@@ -936,7 +952,7 @@ Partial Class CuadroUsuario
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(112, 363)
+        Me.Label25.Location = New System.Drawing.Point(307, 369)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(39, 13)
         Me.Label25.TabIndex = 32
@@ -945,29 +961,13 @@ Partial Class CuadroUsuario
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(89, 307)
+        Me.Label26.Location = New System.Drawing.Point(284, 313)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(65, 13)
         Me.Label26.TabIndex = 31
         Me.Label26.Text = "PROVINCIA"
         '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(472, 38)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(87, 18)
-        Me.Label28.TabIndex = 9
-        Me.Label28.Text = "APELLIDO :"
-        '
-        'TApel
-        '
-        Me.TApel.Location = New System.Drawing.Point(565, 35)
-        Me.TApel.Name = "TApel"
-        Me.TApel.Size = New System.Drawing.Size(154, 24)
-        Me.TApel.TabIndex = 10
-        '
-        'BuscaModifica
+        'CuadroUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -978,7 +978,7 @@ Partial Class CuadroUsuario
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "BuscaModifica"
+        Me.Name = "CuadroUsuario"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Usuarios"

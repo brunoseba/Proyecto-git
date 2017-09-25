@@ -22,27 +22,35 @@ Partial Class Vendedor
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle85 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle86 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle87 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle88 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle89 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle90 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle91 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle92 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle93 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle94 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle95 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle96 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle97 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle98 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle99 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle100 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle101 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle102 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle103 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle104 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle105 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelBuscarProductoVendedor = New System.Windows.Forms.Panel()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.totalCompra = New System.Windows.Forms.Label()
@@ -50,6 +58,7 @@ Partial Class Vendedor
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.DataGridCompra = New System.Windows.Forms.DataGridView()
         Me.pro_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pro_medida = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,15 +70,8 @@ Partial Class Vendedor
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Eliminar_C = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.DataGridViewBuscadorProducto = New System.Windows.Forms.DataGridView()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Medida = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Rodado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TipoVehiculo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Precio_Unit = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Imagen = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Agregar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ButtonBuscar = New System.Windows.Forms.Button()
@@ -104,8 +106,27 @@ Partial Class Vendedor
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ButtonConfirmarCompra = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Medida = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Rodado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TipoVehiculo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Precio_Unit = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Imagen = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Agregar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Datos_Tecn = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.PanelDatosTecnicosVendedor = New System.Windows.Forms.Panel()
+        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
+        Me.DataGridDatosCodigo = New System.Windows.Forms.DataGridView()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Datos_Cod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MedidaCod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Indice_Carga = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Datos_Velocidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RevXKm = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AnchoLLanta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AnchoSesion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Diametro = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PanelBuscarProductoVendedor.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -119,6 +140,9 @@ Partial Class Vendedor
         Me.GroupBox7.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.DataGridViewCarrito, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelDatosTecnicosVendedor.SuspendLayout()
+        Me.GroupBox8.SuspendLayout()
+        CType(Me.DataGridDatosCodigo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelBuscarProductoVendedor
@@ -127,6 +151,7 @@ Partial Class Vendedor
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelBuscarProductoVendedor.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.PanelBuscarProductoVendedor.Controls.Add(Me.PanelDatosTecnicosVendedor)
         Me.PanelBuscarProductoVendedor.Controls.Add(Me.GroupBox6)
         Me.PanelBuscarProductoVendedor.Controls.Add(Me.Button2)
         Me.PanelBuscarProductoVendedor.Controls.Add(Me.Button1)
@@ -206,6 +231,17 @@ Partial Class Vendedor
         Me.GroupBox3.TabIndex = 19
         Me.GroupBox3.TabStop = False
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label9.Location = New System.Drawing.Point(625, -3)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(77, 18)
+        Me.Label9.TabIndex = 20
+        Me.Label9.Text = "Compras"
+        '
         'DataGridCompra
         '
         Me.DataGridCompra.AllowUserToAddRows = False
@@ -223,59 +259,59 @@ Partial Class Vendedor
         '
         'pro_nombre
         '
-        DataGridViewCellStyle85.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle85.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pro_nombre.DefaultCellStyle = DataGridViewCellStyle85
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pro_nombre.DefaultCellStyle = DataGridViewCellStyle9
         Me.pro_nombre.HeaderText = "Nombre"
         Me.pro_nombre.Name = "pro_nombre"
         '
         'pro_medida
         '
-        DataGridViewCellStyle86.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle86.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pro_medida.DefaultCellStyle = DataGridViewCellStyle86
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pro_medida.DefaultCellStyle = DataGridViewCellStyle10
         Me.pro_medida.HeaderText = "Medidas"
         Me.pro_medida.Name = "pro_medida"
         '
         'pro_rodado
         '
-        DataGridViewCellStyle87.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle87.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pro_rodado.DefaultCellStyle = DataGridViewCellStyle87
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pro_rodado.DefaultCellStyle = DataGridViewCellStyle11
         Me.pro_rodado.HeaderText = "Rodado"
         Me.pro_rodado.Name = "pro_rodado"
         '
         'pro_tipo_vehiculo
         '
-        DataGridViewCellStyle88.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle88.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pro_tipo_vehiculo.DefaultCellStyle = DataGridViewCellStyle88
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pro_tipo_vehiculo.DefaultCellStyle = DataGridViewCellStyle12
         Me.pro_tipo_vehiculo.HeaderText = "Tipo Vehiculo"
         Me.pro_tipo_vehiculo.Name = "pro_tipo_vehiculo"
         '
         'pro_precio_unitario
         '
-        DataGridViewCellStyle89.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle89.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pro_precio_unitario.DefaultCellStyle = DataGridViewCellStyle89
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pro_precio_unitario.DefaultCellStyle = DataGridViewCellStyle13
         Me.pro_precio_unitario.HeaderText = "Precio Unitario"
         Me.pro_precio_unitario.Name = "pro_precio_unitario"
         '
         'pro_cantidad
         '
-        DataGridViewCellStyle90.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle90.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pro_cantidad.DefaultCellStyle = DataGridViewCellStyle90
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pro_cantidad.DefaultCellStyle = DataGridViewCellStyle14
         Me.pro_cantidad.HeaderText = "Cantidad"
         Me.pro_cantidad.Name = "pro_cantidad"
         '
         'pro_total
         '
-        DataGridViewCellStyle91.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle91.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle91.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle91.ForeColor = System.Drawing.Color.Maroon
-        Me.pro_total.DefaultCellStyle = DataGridViewCellStyle91
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle15.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.Maroon
+        Me.pro_total.DefaultCellStyle = DataGridViewCellStyle15
         Me.pro_total.HeaderText = "Total"
         Me.pro_total.Name = "pro_total"
         '
@@ -308,6 +344,17 @@ Partial Class Vendedor
         Me.GroupBox2.TabIndex = 17
         Me.GroupBox2.TabStop = False
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(625, -1)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(93, 18)
+        Me.Label5.TabIndex = 19
+        Me.Label5.Text = "Resultados"
+        '
         'DataGridViewBuscadorProducto
         '
         Me.DataGridViewBuscadorProducto.AllowUserToAddRows = False
@@ -319,87 +366,11 @@ Partial Class Vendedor
         Me.DataGridViewBuscadorProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridViewBuscadorProducto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridViewBuscadorProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewBuscadorProducto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Medida, Me.Rodado, Me.TipoVehiculo, Me.Stock, Me.Precio_Unit, Me.Imagen, Me.Agregar})
+        Me.DataGridViewBuscadorProducto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Medida, Me.Rodado, Me.TipoVehiculo, Me.Stock, Me.Precio_Unit, Me.Imagen, Me.Agregar, Me.Datos_Tecn})
         Me.DataGridViewBuscadorProducto.Location = New System.Drawing.Point(12, 20)
         Me.DataGridViewBuscadorProducto.Name = "DataGridViewBuscadorProducto"
         Me.DataGridViewBuscadorProducto.Size = New System.Drawing.Size(1308, 238)
         Me.DataGridViewBuscadorProducto.TabIndex = 2
-        '
-        'Nombre
-        '
-        DataGridViewCellStyle92.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle92.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Nombre.DefaultCellStyle = DataGridViewCellStyle92
-        Me.Nombre.FillWeight = 55.3934!
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        '
-        'Medida
-        '
-        DataGridViewCellStyle93.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle93.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Medida.DefaultCellStyle = DataGridViewCellStyle93
-        Me.Medida.FillWeight = 55.3934!
-        Me.Medida.HeaderText = "Medida"
-        Me.Medida.Name = "Medida"
-        '
-        'Rodado
-        '
-        DataGridViewCellStyle94.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle94.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Rodado.DefaultCellStyle = DataGridViewCellStyle94
-        Me.Rodado.FillWeight = 55.3934!
-        Me.Rodado.HeaderText = "Rodado"
-        Me.Rodado.Name = "Rodado"
-        '
-        'TipoVehiculo
-        '
-        DataGridViewCellStyle95.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle95.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TipoVehiculo.DefaultCellStyle = DataGridViewCellStyle95
-        Me.TipoVehiculo.FillWeight = 55.3934!
-        Me.TipoVehiculo.HeaderText = "Tipo Vehiculo"
-        Me.TipoVehiculo.Name = "TipoVehiculo"
-        '
-        'Stock
-        '
-        DataGridViewCellStyle96.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle96.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Stock.DefaultCellStyle = DataGridViewCellStyle96
-        Me.Stock.FillWeight = 55.3934!
-        Me.Stock.HeaderText = "Stock Disponible"
-        Me.Stock.Name = "Stock"
-        '
-        'Precio_Unit
-        '
-        DataGridViewCellStyle97.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle97.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle97.ForeColor = System.Drawing.Color.Gray
-        Me.Precio_Unit.DefaultCellStyle = DataGridViewCellStyle97
-        Me.Precio_Unit.FillWeight = 55.3934!
-        Me.Precio_Unit.HeaderText = "Precio Unit."
-        Me.Precio_Unit.Name = "Precio_Unit"
-        '
-        'Imagen
-        '
-        Me.Imagen.FillWeight = 55.3934!
-        Me.Imagen.HeaderText = "Imagen"
-        Me.Imagen.Name = "Imagen"
-        '
-        'Agregar
-        '
-        Me.Agregar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle98.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle98.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Agregar.DefaultCellStyle = DataGridViewCellStyle98
-        Me.Agregar.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Agregar.HeaderText = "Agregar"
-        Me.Agregar.Name = "Agregar"
-        Me.Agregar.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Agregar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Agregar.Text = "Agregar"
-        Me.Agregar.UseColumnTextForButtonValue = True
-        Me.Agregar.Width = 259
         '
         'PictureBox1
         '
@@ -654,70 +625,70 @@ Partial Class Vendedor
         '
         'Nombre_Carrito
         '
-        DataGridViewCellStyle99.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle99.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle99.ForeColor = System.Drawing.Color.Black
-        Me.Nombre_Carrito.DefaultCellStyle = DataGridViewCellStyle99
+        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle23.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black
+        Me.Nombre_Carrito.DefaultCellStyle = DataGridViewCellStyle23
         Me.Nombre_Carrito.HeaderText = "Nombre"
         Me.Nombre_Carrito.Name = "Nombre_Carrito"
         Me.Nombre_Carrito.ReadOnly = True
         '
         'Medida_carrito
         '
-        DataGridViewCellStyle100.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle100.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle100.ForeColor = System.Drawing.Color.Black
-        Me.Medida_carrito.DefaultCellStyle = DataGridViewCellStyle100
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle24.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black
+        Me.Medida_carrito.DefaultCellStyle = DataGridViewCellStyle24
         Me.Medida_carrito.HeaderText = "Medidas"
         Me.Medida_carrito.Name = "Medida_carrito"
         Me.Medida_carrito.ReadOnly = True
         '
         'Rodado_Carrito
         '
-        DataGridViewCellStyle101.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle101.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle101.ForeColor = System.Drawing.Color.Black
-        Me.Rodado_Carrito.DefaultCellStyle = DataGridViewCellStyle101
+        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle25.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black
+        Me.Rodado_Carrito.DefaultCellStyle = DataGridViewCellStyle25
         Me.Rodado_Carrito.HeaderText = "Rodado"
         Me.Rodado_Carrito.Name = "Rodado_Carrito"
         Me.Rodado_Carrito.ReadOnly = True
         '
         'Tipo_Vehi_Carrito
         '
-        DataGridViewCellStyle102.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle102.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle102.ForeColor = System.Drawing.Color.Black
-        Me.Tipo_Vehi_Carrito.DefaultCellStyle = DataGridViewCellStyle102
+        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle26.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black
+        Me.Tipo_Vehi_Carrito.DefaultCellStyle = DataGridViewCellStyle26
         Me.Tipo_Vehi_Carrito.HeaderText = "Tipo Vehiculo"
         Me.Tipo_Vehi_Carrito.Name = "Tipo_Vehi_Carrito"
         Me.Tipo_Vehi_Carrito.ReadOnly = True
         '
         'PrecioUnitCarrito
         '
-        DataGridViewCellStyle103.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle103.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle103.ForeColor = System.Drawing.Color.Black
-        Me.PrecioUnitCarrito.DefaultCellStyle = DataGridViewCellStyle103
+        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle27.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black
+        Me.PrecioUnitCarrito.DefaultCellStyle = DataGridViewCellStyle27
         Me.PrecioUnitCarrito.HeaderText = "Precio Unitario"
         Me.PrecioUnitCarrito.Name = "PrecioUnitCarrito"
         Me.PrecioUnitCarrito.ReadOnly = True
         '
         'Cantidad_Carrito
         '
-        DataGridViewCellStyle104.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle104.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle104.ForeColor = System.Drawing.Color.Black
-        Me.Cantidad_Carrito.DefaultCellStyle = DataGridViewCellStyle104
+        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle28.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black
+        Me.Cantidad_Carrito.DefaultCellStyle = DataGridViewCellStyle28
         Me.Cantidad_Carrito.HeaderText = "Cantidad"
         Me.Cantidad_Carrito.Name = "Cantidad_Carrito"
         Me.Cantidad_Carrito.ReadOnly = True
         '
         'Total_Carrito
         '
-        DataGridViewCellStyle105.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle105.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle105.ForeColor = System.Drawing.Color.Black
-        Me.Total_Carrito.DefaultCellStyle = DataGridViewCellStyle105
+        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle29.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle29.ForeColor = System.Drawing.Color.Black
+        Me.Total_Carrito.DefaultCellStyle = DataGridViewCellStyle29
         Me.Total_Carrito.HeaderText = "Total"
         Me.Total_Carrito.Name = "Total_Carrito"
         Me.Total_Carrito.ReadOnly = True
@@ -759,33 +730,219 @@ Partial Class Vendedor
         Me.ButtonConfirmarCompra.Text = "Cobrar"
         Me.ButtonConfirmarCompra.UseVisualStyleBackColor = True
         '
-        'Label5
+        'Nombre
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(625, -1)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(93, 18)
-        Me.Label5.TabIndex = 19
-        Me.Label5.Text = "Resultados"
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Nombre.DefaultCellStyle = DataGridViewCellStyle16
+        Me.Nombre.FillWeight = 55.3934!
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
         '
-        'Label9
+        'Medida
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label9.Location = New System.Drawing.Point(625, -3)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(77, 18)
-        Me.Label9.TabIndex = 20
-        Me.Label9.Text = "Compras"
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Medida.DefaultCellStyle = DataGridViewCellStyle17
+        Me.Medida.FillWeight = 55.3934!
+        Me.Medida.HeaderText = "Medida"
+        Me.Medida.Name = "Medida"
+        '
+        'Rodado
+        '
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle18.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Rodado.DefaultCellStyle = DataGridViewCellStyle18
+        Me.Rodado.FillWeight = 55.3934!
+        Me.Rodado.HeaderText = "Rodado"
+        Me.Rodado.Name = "Rodado"
+        '
+        'TipoVehiculo
+        '
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle19.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TipoVehiculo.DefaultCellStyle = DataGridViewCellStyle19
+        Me.TipoVehiculo.FillWeight = 55.3934!
+        Me.TipoVehiculo.HeaderText = "Tipo Vehiculo"
+        Me.TipoVehiculo.Name = "TipoVehiculo"
+        '
+        'Stock
+        '
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle20.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Stock.DefaultCellStyle = DataGridViewCellStyle20
+        Me.Stock.FillWeight = 55.3934!
+        Me.Stock.HeaderText = "Stock Disponible"
+        Me.Stock.Name = "Stock"
+        '
+        'Precio_Unit
+        '
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle21.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle21.ForeColor = System.Drawing.Color.Gray
+        Me.Precio_Unit.DefaultCellStyle = DataGridViewCellStyle21
+        Me.Precio_Unit.FillWeight = 55.3934!
+        Me.Precio_Unit.HeaderText = "Precio Unit."
+        Me.Precio_Unit.Name = "Precio_Unit"
+        '
+        'Imagen
+        '
+        Me.Imagen.FillWeight = 55.3934!
+        Me.Imagen.HeaderText = "Imagen"
+        Me.Imagen.Name = "Imagen"
+        '
+        'Agregar
+        '
+        Me.Agregar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Agregar.DefaultCellStyle = DataGridViewCellStyle22
+        Me.Agregar.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Agregar.HeaderText = "Agregar"
+        Me.Agregar.Name = "Agregar"
+        Me.Agregar.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Agregar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Agregar.Text = "Agregar"
+        Me.Agregar.UseColumnTextForButtonValue = True
+        Me.Agregar.Width = 259
+        '
+        'Datos_Tecn
+        '
+        Me.Datos_Tecn.HeaderText = "Datos Técnicos"
+        Me.Datos_Tecn.Name = "Datos_Tecn"
+        Me.Datos_Tecn.Text = "Datos Técnicos"
+        Me.Datos_Tecn.UseColumnTextForButtonValue = True
+        '
+        'PanelDatosTecnicosVendedor
+        '
+        Me.PanelDatosTecnicosVendedor.Controls.Add(Me.Button5)
+        Me.PanelDatosTecnicosVendedor.Controls.Add(Me.GroupBox8)
+        Me.PanelDatosTecnicosVendedor.Location = New System.Drawing.Point(6, 365)
+        Me.PanelDatosTecnicosVendedor.Name = "PanelDatosTecnicosVendedor"
+        Me.PanelDatosTecnicosVendedor.Size = New System.Drawing.Size(1344, 260)
+        Me.PanelDatosTecnicosVendedor.TabIndex = 21
+        Me.PanelDatosTecnicosVendedor.Visible = False
+        '
+        'GroupBox8
+        '
+        Me.GroupBox8.Controls.Add(Me.DataGridDatosCodigo)
+        Me.GroupBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox8.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.GroupBox8.Location = New System.Drawing.Point(11, 21)
+        Me.GroupBox8.Name = "GroupBox8"
+        Me.GroupBox8.Size = New System.Drawing.Size(1335, 158)
+        Me.GroupBox8.TabIndex = 25
+        Me.GroupBox8.TabStop = False
+        Me.GroupBox8.Text = "Datos Técnicos"
+        '
+        'DataGridDatosCodigo
+        '
+        Me.DataGridDatosCodigo.AllowUserToAddRows = False
+        Me.DataGridDatosCodigo.AllowUserToDeleteRows = False
+        Me.DataGridDatosCodigo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridDatosCodigo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DataGridDatosCodigo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridDatosCodigo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Datos_Cod, Me.MedidaCod, Me.Indice_Carga, Me.Datos_Velocidad, Me.RevXKm, Me.AnchoLLanta, Me.AnchoSesion, Me.Diametro})
+        Me.DataGridDatosCodigo.Location = New System.Drawing.Point(10, 24)
+        Me.DataGridDatosCodigo.Name = "DataGridDatosCodigo"
+        Me.DataGridDatosCodigo.ReadOnly = True
+        Me.DataGridDatosCodigo.Size = New System.Drawing.Size(1320, 105)
+        Me.DataGridDatosCodigo.TabIndex = 1
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(623, 190)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(112, 48)
+        Me.Button5.TabIndex = 26
+        Me.Button5.Text = "Aceptar"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Datos_Cod
+        '
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.Datos_Cod.DefaultCellStyle = DataGridViewCellStyle1
+        Me.Datos_Cod.HeaderText = "Cod_Datos"
+        Me.Datos_Cod.Name = "Datos_Cod"
+        Me.Datos_Cod.ReadOnly = True
+        '
+        'MedidaCod
+        '
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.MedidaCod.DefaultCellStyle = DataGridViewCellStyle2
+        Me.MedidaCod.HeaderText = "Medida"
+        Me.MedidaCod.Name = "MedidaCod"
+        Me.MedidaCod.ReadOnly = True
+        '
+        'Indice_Carga
+        '
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        Me.Indice_Carga.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Indice_Carga.HeaderText = "Índice de Carga"
+        Me.Indice_Carga.Name = "Indice_Carga"
+        Me.Indice_Carga.ReadOnly = True
+        '
+        'Datos_Velocidad
+        '
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        Me.Datos_Velocidad.DefaultCellStyle = DataGridViewCellStyle4
+        Me.Datos_Velocidad.HeaderText = "Velocidad"
+        Me.Datos_Velocidad.Name = "Datos_Velocidad"
+        Me.Datos_Velocidad.ReadOnly = True
+        '
+        'RevXKm
+        '
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        Me.RevXKm.DefaultCellStyle = DataGridViewCellStyle5
+        Me.RevXKm.HeaderText = "Rev. por Kilometros"
+        Me.RevXKm.Name = "RevXKm"
+        Me.RevXKm.ReadOnly = True
+        '
+        'AnchoLLanta
+        '
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        Me.AnchoLLanta.DefaultCellStyle = DataGridViewCellStyle6
+        Me.AnchoLLanta.HeaderText = "Ancho de LLanta"
+        Me.AnchoLLanta.Name = "AnchoLLanta"
+        Me.AnchoLLanta.ReadOnly = True
+        '
+        'AnchoSesion
+        '
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
+        Me.AnchoSesion.DefaultCellStyle = DataGridViewCellStyle7
+        Me.AnchoSesion.HeaderText = "Ancho de Sesion"
+        Me.AnchoSesion.Name = "AnchoSesion"
+        Me.AnchoSesion.ReadOnly = True
+        '
+        'Diametro
+        '
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        Me.Diametro.DefaultCellStyle = DataGridViewCellStyle8
+        Me.Diametro.HeaderText = "Diametro"
+        Me.Diametro.Name = "Diametro"
+        Me.Diametro.ReadOnly = True
         '
         'Vendedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1370, 631)
+        Me.ClientSize = New System.Drawing.Size(1362, 631)
         Me.Controls.Add(Me.PanelBuscarProductoVendedor)
         Me.Controls.Add(Me.PanelConfirmarCompra)
         Me.MinimizeBox = False
@@ -813,6 +970,9 @@ Partial Class Vendedor
         Me.GroupBox7.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         CType(Me.DataGridViewCarrito, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelDatosTecnicosVendedor.ResumeLayout(False)
+        Me.GroupBox8.ResumeLayout(False)
+        CType(Me.DataGridDatosCodigo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -844,14 +1004,6 @@ Partial Class Vendedor
     Friend WithEvents DataGridCompra As System.Windows.Forms.DataGridView
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Medida As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Rodado As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TipoVehiculo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Stock As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Precio_Unit As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Imagen As System.Windows.Forms.DataGridViewImageColumn
-    Friend WithEvents Agregar As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents pro_nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents pro_medida As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents pro_rodado As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -879,4 +1031,25 @@ Partial Class Vendedor
     Friend WithEvents GroupBox7 As System.Windows.Forms.GroupBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Medida As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Rodado As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TipoVehiculo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Stock As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Precio_Unit As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Imagen As System.Windows.Forms.DataGridViewImageColumn
+    Friend WithEvents Agregar As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents Datos_Tecn As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents PanelDatosTecnicosVendedor As System.Windows.Forms.Panel
+    Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents GroupBox8 As System.Windows.Forms.GroupBox
+    Friend WithEvents DataGridDatosCodigo As System.Windows.Forms.DataGridView
+    Friend WithEvents Datos_Cod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents MedidaCod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Indice_Carga As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Datos_Velocidad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents RevXKm As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents AnchoLLanta As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents AnchoSesion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Diametro As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

@@ -48,6 +48,7 @@
                         Me.PanelActualizarStock.Visible = False
                         Me.PanelAgregarProductos.Visible = False
                         Me.PanelMostrarDatosTecnicos.Visible = True
+                        DataGridView1.Rows.Add("1", "LT215/75R15", "1", "S180", "466", "6", "216", "703")
                 End Select
                 Select Case bc.Name
                     Case "A_Stock"
@@ -77,5 +78,41 @@
         MsgBox("Producto Actuañizado")
         ButtonActualizarProducto.Visible = False
         Me.Close()
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        OpenFileDialog1.Filter = "Jpg|*.jpg|Bmp|*.bmp|Png|*.png"
+        If OpenFileDialog1.ShowDialog = DialogResult.OK Then
+            LabelRutaArchivo.Text = OpenFileDialog1.FileName
+            PictureBox1.ImageLocation = OpenFileDialog1.FileName
+        End If
+    End Sub
+
+    Private Sub ButtonAgregarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonAgregarProducto.Click
+        Dim prod As New Productos(TextBoxNombreProducto.Text, ComboBoxRodadoProducto.SelectedItem, ComboBoxMedidaProducto.SelectedItem, Val(TextBoxPrecio.Text), Val(TextBoxCod_Datos.Text), Val(TextBoxStock.Text), LabelRutaArchivo.Text, "A", ComboBoxTipoVehiculo.SelectedItem)
+        Dim res As MsgBoxResult
+        MsgBox(prod.GetNombre())
+        MsgBox(prod.GetRodado())
+        MsgBox(prod.GetMedida())
+        MsgBox(prod.GetPrecio())
+        MsgBox(prod.GetDatos())
+        MsgBox(prod.GetStock())
+        MsgBox(prod.GetImagen())
+        MsgBox(prod.GetEstado())
+        MsgBox(prod.GetVehiculo())
+        res = MsgBox("Desea Agregar un nuevo Producto?", 4 + 0 + 32, "Aviso")
+        If res = vbYes Then
+
+            prod.AgregarProducto()
+            MsgBox("Cliente agregado", 0 + 0 + 64)
+
+        Else
+            MsgBox("Ocurrio un error!!")
+        End If
+
+    End Sub
+
+    Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox1.Enter
+
     End Sub
 End Class

@@ -16,7 +16,7 @@ Public Class Ventana
             Me.usuario.Text = ("Supervisor :  " + usu.GetNomYape())
             Me.usuario.Image = My.Resources.user_suit
             'Principal.MdiParent = Me
-            Me.MenuClientes.Visible = False
+             Me.MenuClientes.Visible = True
             Me.MenuUsuarios.Visible = False
             Me.MenuEmpresa.Visible = False
 
@@ -29,6 +29,7 @@ Public Class Ventana
             Me.MenuUsuarios.Visible = False
             Me.MenuEmpresa.Visible = False
             Me.MenuFacturas.Visible = False
+            Me.Productos.Visible = False
             Me.AgregarProductoToolStripMenuItem.Visible = False
             Me.BuscarProductosToolStripMenuItem.Visible = False
             Me.CargarStockToolStripMenuItem.Visible = False
@@ -165,7 +166,11 @@ Public Class Ventana
         V_Producto.PanelMostrarDatosTecnicos.Visible = False
         V_Producto.PanelActualizarStock.Visible = False
         V_Producto.PanelProductosBuscar.Visible = True
+        V_Producto.MdiParent = Me
     End Sub
 
  
+    Private Sub EliminarProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarProductosToolStripMenuItem.Click
+
+    End Sub
 End Class

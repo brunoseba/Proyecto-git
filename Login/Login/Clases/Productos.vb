@@ -1,21 +1,22 @@
-﻿Public Class Producto
+﻿Public Class Productos
 
     Private nombre As String
     Private rodado As String
     Private medida As String
     Private precio As Double
-    Private datos As Char
+    Private datos As Integer
     Private stock As Integer
     Private imagen As String
+    Private estado As Char
     Private vehiculo As String
-    
+
 
 #Region "Constructores"
 
     Public Sub New()
     End Sub
 
-    Public Sub New(ByVal p_nombre As Integer, ByVal p_rodado As String, ByVal p_medida As String, ByVal p_precio As Double, ByVal p_datos As Char, ByVal p_stock As Integer, ByVal p_imagen As String, ByVal p_vehiculo As String)
+    Public Sub New(ByVal p_nombre As String, ByVal p_rodado As String, ByVal p_medida As String, ByVal p_precio As Double, ByVal p_datos As Integer, ByVal p_stock As Integer, ByVal p_imagen As String, ByVal p_estado As Char, ByVal p_vehiculo As String)
         SetNombre(p_nombre)
         SetRodado(p_rodado)
         SetMedida(p_medida)
@@ -23,6 +24,7 @@
         SetDatos(p_datos)
         SetStock(p_stock)
         SetImagen(p_imagen)
+        SetEstado(p_estado)
         SetVehiculo(p_vehiculo)
 
     End Sub
@@ -60,6 +62,10 @@
         Return imagen
     End Function
 
+    Public Function GetEstado()
+        Return estado
+    End Function
+
     Public Function GetVehiculo()
         Return vehiculo
     End Function
@@ -83,16 +89,19 @@
         precio = p_Precio
     End Sub
 
-    Private Sub SetDatos(ByVal p_datos As Char)
+    Private Sub SetDatos(ByVal p_datos As Integer)
         datos = p_datos
     End Sub
 
-    Private Sub SetStock(ByVal p_stock As String)
+    Private Sub SetStock(ByVal p_stock As Integer)
         stock = p_stock
     End Sub
 
     Private Sub SetImagen(ByVal p_imagen As String)
         imagen = p_imagen
+    End Sub
+    Private Sub SetEstado(ByVal p_estado As Char)
+        estado = p_estado
     End Sub
 
     Private Sub SetVehiculo(ByVal p_vehiculo As String)
@@ -108,8 +117,8 @@
     Public Sub AgregarProducto()
         Try
             Using Base As New NNeumaticosEntities1
-
-                Dim agrega = New Producto With
+                MsgBox("Eligio la DB")
+                Dim agregar = New Productos With
                     {
                     .producto_nombre = GetNombre(),
                     .producto_rodado = GetRodado(),
@@ -118,11 +127,14 @@
                     .Datos_cod = GetDatos(),
                     .producto_stock = GetStock(),
                     .producto_imagen = GetImagen(),
+                    .producto_estado = GetEstado(),
                     .tipoVehi_descripcion = GetVehiculo()}
-                Base.Producto.AddObject(agrega)
+                MsgBox("Cargo los datos")
+                Base.Producto.AddObject(agregar)
                 Base.SaveChanges()
             End Using
         Catch ex As Exception
+            Console.WriteLine("An error occurred: '{0}'", ex)
         End Try
     End Sub
 

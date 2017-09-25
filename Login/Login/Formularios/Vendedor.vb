@@ -135,6 +135,11 @@
                         End If
                         Exit Select
                 End Select
+                Select Case bc.Name
+                    Case "Datos_Tecn"
+                        PanelDatosTecnicosVendedor.Visible = True
+                        DataGridDatosCodigo.Rows.Add("1", "LT215/75R15", "1", "S180", "466", "6", "216", "703")
+                End Select
 
             End If
         End If
@@ -243,4 +248,8 @@
         End If
     End Sub
 
+    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
+        DataGridDatosCodigo.Rows.Clear()
+        PanelDatosTecnicosVendedor.Visible = False
+    End Sub
 End Class
