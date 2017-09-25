@@ -118,7 +118,7 @@
         Try
             Using Base As New NNeumaticosEntities1
                 MsgBox("Eligio la DB")
-                Dim agregar = New Productos With
+                Dim agregar = New Producto With
                     {
                     .producto_nombre = GetNombre(),
                     .producto_rodado = GetRodado(),

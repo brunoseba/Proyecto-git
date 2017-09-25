@@ -138,6 +138,7 @@
                 Select Case bc.Name
                     Case "Datos_Tecn"
                         PanelDatosTecnicosVendedor.Visible = True
+                        DataGridDatosCodigo.Rows.Clear()
                         DataGridDatosCodigo.Rows.Add("1", "LT215/75R15", "1", "S180", "466", "6", "216", "703")
                 End Select
 

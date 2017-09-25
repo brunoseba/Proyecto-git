@@ -27,7 +27,6 @@ Partial Class V_Factura
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(V_Factura))
         Me.Panel_VerFacturas = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -35,12 +34,6 @@ Partial Class V_Factura
         Me.Label4 = New System.Windows.Forms.Label()
         Me.ButtonAceptar = New System.Windows.Forms.Button()
         Me.DataGridVerFacturas = New System.Windows.Forms.DataGridView()
-        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Vendedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Monto_Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Tipo_Pago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.detalles_Ventas = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.ButtonBuscarFactura = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -72,6 +65,7 @@ Partial Class V_Factura
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel_Cancelar_Factura = New System.Windows.Forms.Panel()
+        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.ButtonAceptarCF = New System.Windows.Forms.Button()
         Me.DataGridCFProductos = New System.Windows.Forms.DataGridView()
@@ -87,7 +81,11 @@ Partial Class V_Factura
         Me.TextBoxBuscarFacturaCancelar = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Vendedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Monto_Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Tipo_Pago = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel_VerFacturas.SuspendLayout()
         CType(Me.DataGridVerFacturas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Informe_Factura.SuspendLayout()
@@ -95,9 +93,9 @@ Partial Class V_Factura
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.Panel_Cancelar_Factura.SuspendLayout()
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridCFProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel_VerFacturas
@@ -166,66 +164,12 @@ Partial Class V_Factura
         Me.DataGridVerFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridVerFacturas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridVerFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridVerFacturas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Fecha, Me.Cliente, Me.Vendedor, Me.Monto_Total, Me.Tipo_Pago, Me.detalles_Ventas})
+        Me.DataGridVerFacturas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Fecha, Me.Cliente, Me.Vendedor, Me.Monto_Total, Me.Tipo_Pago})
         Me.DataGridVerFacturas.Location = New System.Drawing.Point(47, 222)
         Me.DataGridVerFacturas.Name = "DataGridVerFacturas"
         Me.DataGridVerFacturas.ReadOnly = True
         Me.DataGridVerFacturas.Size = New System.Drawing.Size(1144, 297)
         Me.DataGridVerFacturas.TabIndex = 6
-        '
-        'Fecha
-        '
-        Me.Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Fecha.DefaultCellStyle = DataGridViewCellStyle1
-        Me.Fecha.HeaderText = "Fecha"
-        Me.Fecha.Name = "Fecha"
-        Me.Fecha.ReadOnly = True
-        '
-        'Cliente
-        '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Cliente.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Cliente.HeaderText = "Cliente"
-        Me.Cliente.Name = "Cliente"
-        Me.Cliente.ReadOnly = True
-        '
-        'Vendedor
-        '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Vendedor.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Vendedor.HeaderText = "Vendedor"
-        Me.Vendedor.Name = "Vendedor"
-        Me.Vendedor.ReadOnly = True
-        '
-        'Monto_Total
-        '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Monto_Total.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Monto_Total.HeaderText = "Monto Total"
-        Me.Monto_Total.Name = "Monto_Total"
-        Me.Monto_Total.ReadOnly = True
-        '
-        'Tipo_Pago
-        '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Tipo_Pago.DefaultCellStyle = DataGridViewCellStyle5
-        Me.Tipo_Pago.HeaderText = "Tipo Pago"
-        Me.Tipo_Pago.Name = "Tipo_Pago"
-        Me.Tipo_Pago.ReadOnly = True
-        '
-        'detalles_Ventas
-        '
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.NullValue = Nothing
-        Me.detalles_Ventas.DefaultCellStyle = DataGridViewCellStyle6
-        Me.detalles_Ventas.HeaderText = "Detalles"
-        Me.detalles_Ventas.Name = "detalles_Ventas"
-        Me.detalles_Ventas.ReadOnly = True
-        Me.detalles_Ventas.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.detalles_Ventas.Text = "Detalles"
-        Me.detalles_Ventas.ToolTipText = "Detalles"
-        Me.detalles_Ventas.UseColumnTextForButtonValue = True
         '
         'ButtonBuscarFactura
         '
@@ -537,6 +481,14 @@ Partial Class V_Factura
         Me.Panel_Cancelar_Factura.Size = New System.Drawing.Size(1321, 607)
         Me.Panel_Cancelar_Factura.TabIndex = 17
         '
+        'DataGridView3
+        '
+        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView3.Location = New System.Drawing.Point(69, 310)
+        Me.DataGridView3.Name = "DataGridView3"
+        Me.DataGridView3.Size = New System.Drawing.Size(1207, 159)
+        Me.DataGridView3.TabIndex = 14
+        '
         'Button2
         '
         Me.Button2.Image = Global.Login.My.Resources.Resources.table_delete
@@ -570,7 +522,7 @@ Partial Class V_Factura
         Me.DataGridCFProductos.Location = New System.Drawing.Point(69, 200)
         Me.DataGridCFProductos.Name = "DataGridCFProductos"
         Me.DataGridCFProductos.ReadOnly = True
-        Me.DataGridCFProductos.Size = New System.Drawing.Size(1207, 69)
+        Me.DataGridCFProductos.Size = New System.Drawing.Size(1207, 86)
         Me.DataGridCFProductos.TabIndex = 3
         '
         'NroFactura
@@ -673,13 +625,46 @@ Partial Class V_Factura
         Me.Label8.TabIndex = 1
         Me.Label8.Text = "Cancelar Factura"
         '
-        'DataGridView3
+        'Fecha
         '
-        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Location = New System.Drawing.Point(69, 310)
-        Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.Size = New System.Drawing.Size(1207, 159)
-        Me.DataGridView3.TabIndex = 14
+        Me.Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Fecha.DefaultCellStyle = DataGridViewCellStyle1
+        Me.Fecha.HeaderText = "Fecha"
+        Me.Fecha.Name = "Fecha"
+        Me.Fecha.ReadOnly = True
+        '
+        'Cliente
+        '
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Cliente.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Cliente.HeaderText = "Cliente"
+        Me.Cliente.Name = "Cliente"
+        Me.Cliente.ReadOnly = True
+        '
+        'Vendedor
+        '
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Vendedor.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Vendedor.HeaderText = "Vendedor"
+        Me.Vendedor.Name = "Vendedor"
+        Me.Vendedor.ReadOnly = True
+        '
+        'Monto_Total
+        '
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Monto_Total.DefaultCellStyle = DataGridViewCellStyle4
+        Me.Monto_Total.HeaderText = "Monto Total"
+        Me.Monto_Total.Name = "Monto_Total"
+        Me.Monto_Total.ReadOnly = True
+        '
+        'Tipo_Pago
+        '
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Tipo_Pago.DefaultCellStyle = DataGridViewCellStyle5
+        Me.Tipo_Pago.HeaderText = "Tipo Pago"
+        Me.Tipo_Pago.Name = "Tipo_Pago"
+        Me.Tipo_Pago.ReadOnly = True
         '
         'V_Factura
         '
@@ -705,10 +690,10 @@ Partial Class V_Factura
         Me.GroupBox1.PerformLayout()
         Me.Panel_Cancelar_Factura.ResumeLayout(False)
         Me.Panel_Cancelar_Factura.PerformLayout()
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridCFProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -721,12 +706,6 @@ Partial Class V_Factura
     Friend WithEvents ButtonBuscarFactura As System.Windows.Forms.Button
     Friend WithEvents DataGridVerFacturas As System.Windows.Forms.DataGridView
     Friend WithEvents ButtonAceptar As System.Windows.Forms.Button
-    Friend WithEvents Fecha As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Cliente As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Vendedor As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Monto_Total As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Tipo_Pago As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents detalles_Ventas As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
@@ -771,4 +750,9 @@ Partial Class V_Factura
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridView3 As System.Windows.Forms.DataGridView
+    Friend WithEvents Fecha As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Cliente As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Vendedor As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Monto_Total As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Tipo_Pago As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

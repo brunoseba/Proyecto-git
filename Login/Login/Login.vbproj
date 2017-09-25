@@ -369,6 +369,30 @@
   <ItemGroup>
     <None Include="Resources\Screenshot_1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Db cancel%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_square16.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Save%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveHL.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bundle-24x24x8b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bundle-32x32x8b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_2_B_h.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

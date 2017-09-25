@@ -80,7 +80,6 @@ Partial Class CuadroUsuario
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.DateTime = New System.Windows.Forms.DateTimePicker()
-        Me.TProv = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.BSalir = New System.Windows.Forms.Button()
@@ -113,6 +112,9 @@ Partial Class CuadroUsuario
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Label30 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBusca.SuspendLayout()
@@ -120,6 +122,7 @@ Partial Class CuadroUsuario
         Me.GroupBox2.SuspendLayout()
         Me.PanelRegistro.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -255,9 +258,9 @@ Partial Class CuadroUsuario
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Dni, Me.NomApe, Me.Direc, Me.Local, Me.Telef, Me.Email, Me.contraseña, Me.estado, Me.tipoUsu, Me.ColVer})
-        Me.DataGridView1.Location = New System.Drawing.Point(10, 135)
+        Me.DataGridView1.Location = New System.Drawing.Point(6, 19)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1307, 407)
+        Me.DataGridView1.Size = New System.Drawing.Size(1278, 349)
         Me.DataGridView1.TabIndex = 1
         '
         'Dni
@@ -350,9 +353,9 @@ Partial Class CuadroUsuario
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelBusca.BackColor = System.Drawing.Color.Brown
+        Me.PanelBusca.Controls.Add(Me.GroupBox4)
         Me.PanelBusca.Controls.Add(Me.BSalir2)
         Me.PanelBusca.Controls.Add(Me.GroupBox1)
-        Me.PanelBusca.Controls.Add(Me.DataGridView1)
         Me.PanelBusca.Location = New System.Drawing.Point(2, 1)
         Me.PanelBusca.Name = "PanelBusca"
         Me.PanelBusca.Size = New System.Drawing.Size(1340, 644)
@@ -373,14 +376,14 @@ Partial Class CuadroUsuario
         Me.PanelVer.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PanelVer.BackColor = System.Drawing.Color.SteelBlue
+        Me.PanelVer.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.PanelVer.Controls.Add(Me.Label30)
         Me.PanelVer.Controls.Add(Me.Llocal)
         Me.PanelVer.Controls.Add(Me.BModifica)
         Me.PanelVer.Controls.Add(Me.BBaja)
         Me.PanelVer.Controls.Add(Me.GroupBox2)
         Me.PanelVer.Controls.Add(Me.Label11)
         Me.PanelVer.Controls.Add(Me.DateTime)
-        Me.PanelVer.Controls.Add(Me.TProv)
         Me.PanelVer.Controls.Add(Me.Label12)
         Me.PanelVer.Controls.Add(Me.Label14)
         Me.PanelVer.Controls.Add(Me.BSalir)
@@ -396,7 +399,7 @@ Partial Class CuadroUsuario
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Llocal.AutoSize = True
         Me.Llocal.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Llocal.Location = New System.Drawing.Point(621, 372)
+        Me.Llocal.Location = New System.Drawing.Point(612, 366)
         Me.Llocal.Name = "Llocal"
         Me.Llocal.Size = New System.Drawing.Size(66, 24)
         Me.Llocal.TabIndex = 54
@@ -443,6 +446,7 @@ Partial Class CuadroUsuario
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.Label10)
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.White
         Me.GroupBox2.Location = New System.Drawing.Point(12, 19)
         Me.GroupBox2.Name = "GroupBox2"
@@ -456,7 +460,7 @@ Partial Class CuadroUsuario
         Me.Lesta.AutoSize = True
         Me.Lesta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lesta.ForeColor = System.Drawing.Color.Black
-        Me.Lesta.Location = New System.Drawing.Point(851, 200)
+        Me.Lesta.Location = New System.Drawing.Point(833, 209)
         Me.Lesta.Name = "Lesta"
         Me.Lesta.Size = New System.Drawing.Size(77, 25)
         Me.Lesta.TabIndex = 55
@@ -467,7 +471,7 @@ Partial Class CuadroUsuario
         Me.Lusu.AutoSize = True
         Me.Lusu.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lusu.ForeColor = System.Drawing.Color.Black
-        Me.Lusu.Location = New System.Drawing.Point(502, 201)
+        Me.Lusu.Location = New System.Drawing.Point(468, 211)
         Me.Lusu.Name = "Lusu"
         Me.Lusu.Size = New System.Drawing.Size(77, 25)
         Me.Lusu.TabIndex = 54
@@ -478,7 +482,7 @@ Partial Class CuadroUsuario
         Me.Lemail.AutoSize = True
         Me.Lemail.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lemail.ForeColor = System.Drawing.Color.Black
-        Me.Lemail.Location = New System.Drawing.Point(1027, 122)
+        Me.Lemail.Location = New System.Drawing.Point(1027, 129)
         Me.Lemail.Name = "Lemail"
         Me.Lemail.Size = New System.Drawing.Size(77, 25)
         Me.Lemail.TabIndex = 53
@@ -489,7 +493,7 @@ Partial Class CuadroUsuario
         Me.Lcontra.AutoSize = True
         Me.Lcontra.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lcontra.ForeColor = System.Drawing.Color.Black
-        Me.Lcontra.Location = New System.Drawing.Point(1027, 36)
+        Me.Lcontra.Location = New System.Drawing.Point(1026, 44)
         Me.Lcontra.Name = "Lcontra"
         Me.Lcontra.Size = New System.Drawing.Size(77, 25)
         Me.Lcontra.TabIndex = 52
@@ -500,7 +504,7 @@ Partial Class CuadroUsuario
         Me.Ltelef.AutoSize = True
         Me.Ltelef.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ltelef.ForeColor = System.Drawing.Color.Black
-        Me.Ltelef.Location = New System.Drawing.Point(642, 122)
+        Me.Ltelef.Location = New System.Drawing.Point(612, 129)
         Me.Ltelef.Name = "Ltelef"
         Me.Ltelef.Size = New System.Drawing.Size(77, 25)
         Me.Ltelef.TabIndex = 51
@@ -511,7 +515,7 @@ Partial Class CuadroUsuario
         Me.Ldirec.AutoSize = True
         Me.Ldirec.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ldirec.ForeColor = System.Drawing.Color.Black
-        Me.Ldirec.Location = New System.Drawing.Point(198, 122)
+        Me.Ldirec.Location = New System.Drawing.Point(159, 129)
         Me.Ldirec.Name = "Ldirec"
         Me.Ldirec.Size = New System.Drawing.Size(77, 25)
         Me.Ldirec.TabIndex = 50
@@ -522,7 +526,7 @@ Partial Class CuadroUsuario
         Me.Lnom.AutoSize = True
         Me.Lnom.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lnom.ForeColor = System.Drawing.Color.Black
-        Me.Lnom.Location = New System.Drawing.Point(608, 36)
+        Me.Lnom.Location = New System.Drawing.Point(612, 44)
         Me.Lnom.Name = "Lnom"
         Me.Lnom.Size = New System.Drawing.Size(77, 25)
         Me.Lnom.TabIndex = 49
@@ -533,7 +537,7 @@ Partial Class CuadroUsuario
         Me.Ldni.AutoSize = True
         Me.Ldni.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ldni.ForeColor = System.Drawing.Color.Black
-        Me.Ldni.Location = New System.Drawing.Point(146, 36)
+        Me.Ldni.Location = New System.Drawing.Point(104, 44)
         Me.Ldni.Name = "Ldni"
         Me.Ldni.Size = New System.Drawing.Size(77, 25)
         Me.Ldni.TabIndex = 48
@@ -542,147 +546,145 @@ Partial Class CuadroUsuario
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(48, 43)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 16)
+        Me.Label4.Size = New System.Drawing.Size(50, 24)
         Me.Label4.TabIndex = 0
-        Me.Label4.Text = "DNI *"
+        Me.Label4.Text = "DNI:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Location = New System.Drawing.Point(419, 41)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(152, 16)
+        Me.Label5.Size = New System.Drawing.Size(190, 24)
         Me.Label5.TabIndex = 1
-        Me.Label5.Text = "NOMBRE y APELLIDO *"
+        Me.Label5.Text = "Nombre y Apellido:"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
         Me.Label6.Location = New System.Drawing.Point(48, 129)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(89, 16)
+        Me.Label6.Size = New System.Drawing.Size(105, 24)
         Me.Label6.TabIndex = 2
-        Me.Label6.Text = "DIRECCION *"
+        Me.Label6.Text = "Dirección:"
         '
         'Label13
         '
         Me.Label13.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.White
         Me.Label13.Location = New System.Drawing.Point(937, 129)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(58, 16)
+        Me.Label13.Size = New System.Drawing.Size(75, 24)
         Me.Label13.TabIndex = 43
-        Me.Label13.Text = "EMAIL * "
+        Me.Label13.Text = "E-mail:"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
         Me.Label7.Location = New System.Drawing.Point(507, 129)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(88, 16)
+        Me.Label7.Size = New System.Drawing.Size(99, 24)
         Me.Label7.TabIndex = 5
-        Me.Label7.Text = "TELEFONO *"
+        Me.Label7.Text = "Teléfono:"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
         Me.Label8.Location = New System.Drawing.Point(898, 44)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(110, 16)
+        Me.Label8.Size = New System.Drawing.Size(122, 24)
         Me.Label8.TabIndex = 7
-        Me.Label8.Text = "CONTRASEÑA *"
+        Me.Label8.Text = "Contraseña:"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(744, 209)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(58, 13)
+        Me.Label9.Size = New System.Drawing.Size(80, 24)
         Me.Label9.TabIndex = 8
-        Me.Label9.Text = "ESTADO *"
+        Me.Label9.Text = "Estado:"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(375, 212)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(63, 13)
+        Me.Label10.Size = New System.Drawing.Size(87, 24)
         Me.Label10.TabIndex = 9
-        Me.Label10.Text = "USUARIO *"
+        Me.Label10.Text = "Usuario:"
         '
         'Label11
         '
         Me.Label11.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(927, 381)
+        Me.Label11.Location = New System.Drawing.Point(889, 368)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(42, 13)
+        Me.Label11.Size = New System.Drawing.Size(64, 20)
         Me.Label11.TabIndex = 44
-        Me.Label11.Text = "FECHA"
+        Me.Label11.Text = "Fecha:"
         '
         'DateTime
         '
         Me.DateTime.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.DateTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTime.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTime.Location = New System.Drawing.Point(1005, 378)
+        Me.DateTime.Location = New System.Drawing.Point(971, 363)
         Me.DateTime.Name = "DateTime"
-        Me.DateTime.Size = New System.Drawing.Size(216, 20)
+        Me.DateTime.Size = New System.Drawing.Size(182, 26)
         Me.DateTime.TabIndex = 51
-        '
-        'TProv
-        '
-        Me.TProv.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.TProv.Location = New System.Drawing.Point(197, 377)
-        Me.TProv.Name = "TProv"
-        Me.TProv.Size = New System.Drawing.Size(248, 20)
-        Me.TProv.TabIndex = 45
         '
         'Label12
         '
         Me.Label12.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(516, 380)
+        Me.Label12.Location = New System.Drawing.Point(504, 369)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(67, 13)
+        Me.Label12.Size = New System.Drawing.Size(91, 20)
         Me.Label12.TabIndex = 41
-        Me.Label12.Text = "LOCALIDAD"
+        Me.Label12.Text = "Localidad:"
         '
         'Label14
         '
         Me.Label14.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(102, 384)
+        Me.Label14.Location = New System.Drawing.Point(146, 369)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(65, 13)
+        Me.Label14.Size = New System.Drawing.Size(102, 24)
         Me.Label14.TabIndex = 42
-        Me.Label14.Text = "PROVINCIA"
+        Me.Label14.Text = "Provincia:"
         '
         'BSalir
         '
-        Me.BSalir.Location = New System.Drawing.Point(971, 570)
+        Me.BSalir.Location = New System.Drawing.Point(971, 543)
         Me.BSalir.Name = "BSalir"
-        Me.BSalir.Size = New System.Drawing.Size(75, 23)
+        Me.BSalir.Size = New System.Drawing.Size(104, 50)
         Me.BSalir.TabIndex = 1
         Me.BSalir.Text = "Salir"
         Me.BSalir.UseVisualStyleBackColor = True
@@ -704,7 +706,8 @@ Partial Class CuadroUsuario
         Me.PanelRegistro.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PanelRegistro.BackColor = System.Drawing.Color.LightSlateGray
+        Me.PanelRegistro.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.PanelRegistro.Controls.Add(Me.Label29)
         Me.PanelRegistro.Controls.Add(Me.GroupBox3)
         Me.PanelRegistro.Controls.Add(Me.BSalir3)
         Me.PanelRegistro.Controls.Add(Me.BGuardar)
@@ -725,7 +728,7 @@ Partial Class CuadroUsuario
         '
         Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox3.BackColor = System.Drawing.Color.LightSlateGray
+        Me.GroupBox3.BackColor = System.Drawing.Color.DarkSlateGray
         Me.GroupBox3.Controls.Add(Me.TApellido)
         Me.GroupBox3.Controls.Add(Me.Label27)
         Me.GroupBox3.Controls.Add(Me.TDni1)
@@ -742,7 +745,9 @@ Partial Class CuadroUsuario
         Me.GroupBox3.Controls.Add(Me.TContra)
         Me.GroupBox3.Controls.Add(Me.TTelef)
         Me.GroupBox3.Controls.Add(Me.TDire)
-        Me.GroupBox3.Location = New System.Drawing.Point(213, 14)
+        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.GroupBox3.Location = New System.Drawing.Point(213, 75)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(972, 254)
         Me.GroupBox3.TabIndex = 39
@@ -751,221 +756,276 @@ Partial Class CuadroUsuario
         '
         'TApellido
         '
-        Me.TApellido.Location = New System.Drawing.Point(626, 135)
+        Me.TApellido.Location = New System.Drawing.Point(624, 153)
         Me.TApellido.Name = "TApellido"
-        Me.TApellido.Size = New System.Drawing.Size(236, 20)
+        Me.TApellido.Size = New System.Drawing.Size(236, 26)
         Me.TApellido.TabIndex = 11
         '
         'Label27
         '
         Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(495, 138)
+        Me.Label27.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.Location = New System.Drawing.Point(493, 156)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(66, 13)
+        Me.Label27.Size = New System.Drawing.Size(85, 18)
         Me.Label27.TabIndex = 10
-        Me.Label27.Text = "APELLIDO *"
+        Me.Label27.Text = "Apellido:"
         '
         'TDni1
         '
-        Me.TDni1.Location = New System.Drawing.Point(145, 19)
+        Me.TDni1.Location = New System.Drawing.Point(161, 35)
         Me.TDni1.Name = "TDni1"
-        Me.TDni1.Size = New System.Drawing.Size(238, 20)
+        Me.TDni1.Size = New System.Drawing.Size(238, 26)
         Me.TDni1.TabIndex = 1
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(52, 22)
+        Me.Label16.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(25, 38)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(33, 13)
+        Me.Label16.Size = New System.Drawing.Size(47, 18)
         Me.Label16.TabIndex = 0
-        Me.Label16.Text = "DNI *"
+        Me.Label16.Text = "DNI:"
         '
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(492, 22)
+        Me.Label17.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(490, 40)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(64, 13)
+        Me.Label17.Size = New System.Drawing.Size(80, 18)
         Me.Label17.TabIndex = 1
-        Me.Label17.Text = "NOMBRE  *"
+        Me.Label17.Text = "Nombre:"
         '
         'CBUsu
         '
         Me.CBUsu.FormattingEnabled = True
         Me.CBUsu.Items.AddRange(New Object() {"Administrador", "Supervisor", "Vendedor"})
-        Me.CBUsu.Location = New System.Drawing.Point(335, 195)
+        Me.CBUsu.Location = New System.Drawing.Point(161, 202)
         Me.CBUsu.Name = "CBUsu"
-        Me.CBUsu.Size = New System.Drawing.Size(121, 21)
+        Me.CBUsu.Size = New System.Drawing.Size(195, 28)
         Me.CBUsu.TabIndex = 6
         Me.CBUsu.Text = "Tipo usuario"
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(26, 138)
+        Me.Label18.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(24, 156)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(73, 13)
+        Me.Label18.Size = New System.Drawing.Size(94, 18)
         Me.Label18.TabIndex = 2
-        Me.Label18.Text = "DIRECCION *"
+        Me.Label18.Text = "Dirección:"
         '
         'CBEsta1
         '
         Me.CBEsta1.FormattingEnabled = True
         Me.CBEsta1.Items.AddRange(New Object() {"Activo", "Inactivo"})
-        Me.CBEsta1.Location = New System.Drawing.Point(575, 195)
+        Me.CBEsta1.Location = New System.Drawing.Point(622, 213)
         Me.CBEsta1.Name = "CBEsta1"
-        Me.CBEsta1.Size = New System.Drawing.Size(121, 21)
+        Me.CBEsta1.Size = New System.Drawing.Size(170, 28)
         Me.CBEsta1.TabIndex = 7
         Me.CBEsta1.Text = "Selecione.."
         '
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(490, 79)
+        Me.Label19.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(488, 97)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(71, 13)
+        Me.Label19.Size = New System.Drawing.Size(87, 18)
         Me.Label19.TabIndex = 5
-        Me.Label19.Text = "TELEFONO *"
+        Me.Label19.Text = "Teléfono:"
         '
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(26, 82)
+        Me.Label20.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(24, 100)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(88, 13)
+        Me.Label20.Size = New System.Drawing.Size(109, 18)
         Me.Label20.TabIndex = 7
-        Me.Label20.Text = "CONTRASEÑA *"
+        Me.Label20.Text = "Contraseña:"
         '
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(496, 198)
+        Me.Label21.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(492, 216)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(58, 13)
+        Me.Label21.Size = New System.Drawing.Size(71, 18)
         Me.Label21.TabIndex = 8
-        Me.Label21.Text = "ESTADO *"
+        Me.Label21.Text = "Estado:"
         '
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(244, 198)
+        Me.Label22.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(25, 204)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(63, 13)
+        Me.Label22.Size = New System.Drawing.Size(80, 18)
         Me.Label22.TabIndex = 9
-        Me.Label22.Text = "USUARIO *"
+        Me.Label22.Text = "Usuario:"
         '
         'TNomApe
         '
-        Me.TNomApe.Location = New System.Drawing.Point(624, 19)
+        Me.TNomApe.Location = New System.Drawing.Point(622, 37)
         Me.TNomApe.Name = "TNomApe"
-        Me.TNomApe.Size = New System.Drawing.Size(238, 20)
+        Me.TNomApe.Size = New System.Drawing.Size(238, 26)
         Me.TNomApe.TabIndex = 2
         '
         'TContra
         '
-        Me.TContra.Location = New System.Drawing.Point(145, 79)
+        Me.TContra.Location = New System.Drawing.Point(161, 96)
         Me.TContra.Name = "TContra"
-        Me.TContra.Size = New System.Drawing.Size(238, 20)
+        Me.TContra.Size = New System.Drawing.Size(238, 26)
         Me.TContra.TabIndex = 3
         '
         'TTelef
         '
         Me.TTelef.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TTelef.Location = New System.Drawing.Point(624, 79)
+        Me.TTelef.Location = New System.Drawing.Point(622, 97)
         Me.TTelef.Name = "TTelef"
-        Me.TTelef.Size = New System.Drawing.Size(238, 20)
+        Me.TTelef.Size = New System.Drawing.Size(238, 26)
         Me.TTelef.TabIndex = 4
         '
         'TDire
         '
-        Me.TDire.Location = New System.Drawing.Point(145, 135)
+        Me.TDire.Location = New System.Drawing.Point(161, 150)
         Me.TDire.Name = "TDire"
-        Me.TDire.Size = New System.Drawing.Size(238, 20)
+        Me.TDire.Size = New System.Drawing.Size(238, 26)
         Me.TDire.TabIndex = 5
         '
         'BSalir3
         '
-        Me.BSalir3.Location = New System.Drawing.Point(757, 432)
+        Me.BSalir3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BSalir3.Location = New System.Drawing.Point(757, 542)
         Me.BSalir3.Name = "BSalir3"
-        Me.BSalir3.Size = New System.Drawing.Size(80, 23)
+        Me.BSalir3.Size = New System.Drawing.Size(100, 47)
         Me.BSalir3.TabIndex = 38
         Me.BSalir3.Text = "Salir"
         Me.BSalir3.UseVisualStyleBackColor = True
         '
         'BGuardar
         '
-        Me.BGuardar.Location = New System.Drawing.Point(568, 432)
+        Me.BGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BGuardar.Location = New System.Drawing.Point(568, 542)
         Me.BGuardar.Name = "BGuardar"
-        Me.BGuardar.Size = New System.Drawing.Size(80, 23)
+        Me.BGuardar.Size = New System.Drawing.Size(117, 47)
         Me.BGuardar.TabIndex = 37
         Me.BGuardar.Text = "Guardar"
         Me.BGuardar.UseVisualStyleBackColor = True
         '
         'TEmail
         '
-        Me.TEmail.Location = New System.Drawing.Point(377, 366)
+        Me.TEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TEmail.Location = New System.Drawing.Point(388, 452)
         Me.TEmail.Name = "TEmail"
-        Me.TEmail.Size = New System.Drawing.Size(243, 20)
+        Me.TEmail.Size = New System.Drawing.Size(243, 26)
         Me.TEmail.TabIndex = 36
         '
         'TLocal
         '
-        Me.TLocal.Location = New System.Drawing.Point(835, 306)
+        Me.TLocal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TLocal.Location = New System.Drawing.Point(848, 391)
         Me.TLocal.Name = "TLocal"
-        Me.TLocal.Size = New System.Drawing.Size(243, 20)
+        Me.TLocal.Size = New System.Drawing.Size(243, 26)
         Me.TLocal.TabIndex = 35
         '
         'TProv1
         '
-        Me.TProv1.Location = New System.Drawing.Point(377, 306)
+        Me.TProv1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TProv1.Location = New System.Drawing.Point(388, 395)
         Me.TProv1.Name = "TProv1"
-        Me.TProv1.Size = New System.Drawing.Size(243, 20)
+        Me.TProv1.Size = New System.Drawing.Size(243, 26)
         Me.TProv1.TabIndex = 34
         '
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(733, 372)
+        Me.Label23.Font = New System.Drawing.Font("Georgia", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label23.Location = New System.Drawing.Point(708, 457)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(42, 13)
+        Me.Label23.Size = New System.Drawing.Size(75, 23)
         Me.Label23.TabIndex = 33
-        Me.Label23.Text = "FECHA"
+        Me.Label23.Text = "Fecha:"
         '
         'DateTime1
         '
+        Me.DateTime1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTime1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTime1.Location = New System.Drawing.Point(835, 366)
+        Me.DateTime1.Location = New System.Drawing.Point(848, 450)
         Me.DateTime1.Name = "DateTime1"
-        Me.DateTime1.Size = New System.Drawing.Size(116, 20)
+        Me.DateTime1.Size = New System.Drawing.Size(141, 26)
         Me.DateTime1.TabIndex = 40
         '
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(708, 309)
+        Me.Label24.Font = New System.Drawing.Font("Georgia", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label24.Location = New System.Drawing.Point(708, 394)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(67, 13)
+        Me.Label24.Size = New System.Drawing.Size(107, 23)
         Me.Label24.TabIndex = 30
-        Me.Label24.Text = "LOCALIDAD"
+        Me.Label24.Text = "Localidad"
         '
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(307, 369)
+        Me.Label25.Font = New System.Drawing.Font("Georgia", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label25.Location = New System.Drawing.Point(277, 455)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(39, 13)
+        Me.Label25.Size = New System.Drawing.Size(82, 23)
         Me.Label25.TabIndex = 32
-        Me.Label25.Text = "EMAIL"
+        Me.Label25.Text = "E-mail:"
         '
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(284, 313)
+        Me.Label26.Font = New System.Drawing.Font("Georgia", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label26.Location = New System.Drawing.Point(277, 398)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(65, 13)
+        Me.Label26.Size = New System.Drawing.Size(111, 23)
         Me.Label26.TabIndex = 31
-        Me.Label26.Text = "PROVINCIA"
+        Me.Label26.Text = "Provincia:"
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label29.Location = New System.Drawing.Point(570, 29)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(265, 25)
+        Me.Label29.TabIndex = 41
+        Me.Label29.Text = "Agregar Nuevo Usuario"
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.DataGridView1)
+        Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.Location = New System.Drawing.Point(16, 140)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(1294, 374)
+        Me.GroupBox4.TabIndex = 3
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "GroupBox4"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.ForeColor = System.Drawing.Color.Black
+        Me.Label30.Location = New System.Drawing.Point(271, 368)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(77, 25)
+        Me.Label30.TabIndex = 56
+        Me.Label30.Text = "Label3"
         '
         'CuadroUsuario
         '
@@ -995,6 +1055,7 @@ Partial Class CuadroUsuario
         Me.PanelRegistro.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1032,7 +1093,6 @@ Partial Class CuadroUsuario
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents DateTime As System.Windows.Forms.DateTimePicker
-    Friend WithEvents TProv As System.Windows.Forms.TextBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
@@ -1079,4 +1139,7 @@ Partial Class CuadroUsuario
     Friend WithEvents Label27 As System.Windows.Forms.Label
     Friend WithEvents TApel As System.Windows.Forms.TextBox
     Friend WithEvents Label28 As System.Windows.Forms.Label
+    Friend WithEvents Label29 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label30 As System.Windows.Forms.Label
 End Class

@@ -90,24 +90,22 @@
 
     Private Sub ButtonAgregarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonAgregarProducto.Click
         Dim prod As New Productos(TextBoxNombreProducto.Text, ComboBoxRodadoProducto.SelectedItem, ComboBoxMedidaProducto.SelectedItem, Val(TextBoxPrecio.Text), Val(TextBoxCod_Datos.Text), Val(TextBoxStock.Text), LabelRutaArchivo.Text, "A", ComboBoxTipoVehiculo.SelectedItem)
-        Dim res As MsgBoxResult
-        MsgBox(prod.GetNombre())
-        MsgBox(prod.GetRodado())
-        MsgBox(prod.GetMedida())
-        MsgBox(prod.GetPrecio())
-        MsgBox(prod.GetDatos())
-        MsgBox(prod.GetStock())
-        MsgBox(prod.GetImagen())
-        MsgBox(prod.GetEstado())
-        MsgBox(prod.GetVehiculo())
+        Dim res, res2 As MsgBoxResult
         res = MsgBox("Desea Agregar un nuevo Producto?", 4 + 0 + 32, "Aviso")
         If res = vbYes Then
-
             prod.AgregarProducto()
-            MsgBox("Cliente agregado", 0 + 0 + 64)
-
+            MsgBox("Producto Agregado", 0 + 0 + 64)
+            res2 = MsgBox("¿Desea Agregar un otro Producto?", 4 + 0 + 32, "Aviso")
+            If res2 = vbYes Then
+                TextBoxNombreProducto.Text = ""
+                TextBoxCod_Datos.Text = ""
+                TextBoxStock.Text = ""
+                TextBoxPrecio.Text = ""
+            Else
+                Me.Close()
+            End If
         Else
-            MsgBox("Ocurrio un error!!")
+            MsgBox("No se agrego el Producto", 0 + 0 + 64)
         End If
 
     End Sub

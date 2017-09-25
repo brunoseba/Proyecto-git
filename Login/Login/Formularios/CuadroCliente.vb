@@ -1,59 +1,66 @@
 ﻿Public Class CuadroCliente
 
 
+    Private Sub CuadroCliente_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.CBEstaCli.SelectedIndex = 0
+    End Sub
+
+    'Procedimiento guardar Cliente'
     Private Sub BGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BGuardar.Click
-        Dim cli As New Cliente(Val(TDni.Text), TNomApe.Text, TDire.Text, TTelef.Text, TEmail.Text, estado(), TApellido.Text, TLocal.Text, CBProvincia.SelectedItem, DateTime.Value.Date(), TPostal.Text, TCelular.Text)
-        Dim res As MsgBoxResult
-
-        res = MsgBox("Desea Agregar un nuevo usuario?", 4 + 0 + 32, "Aviso")
-        If res = vbYes Then
-
-            If cli.AgregaCliente() Then 'Val(TDni.Text), TNomApe.Text, TDire.Text, TLocal.Text, TProv.Text, TTelef.Text, TEmail.Text, TContra.Text, TEstado.Text, TUsu.Text, TFecha.Text)
-                MsgBox("Cliente agregado", 0 + 0 + 64)
-
-            Else
-                MsgBox("Ocurrio un error!!")
+        If Not ComprobarVacioNuevoClientes() Then
+            Dim cli As New Cliente(Val(Me.TDni.Text), Me.TNomApe.Text, Me.TDire.Text, Me.TTelef.Text, Me.TEmail.Text, Me.estado(), Me.TApellido.Text, Me.TLocal.Text, Me.CBProvincia.SelectedItem, Me.DateTime.Value.Date(), Me.TPostal.Text, Me.TCelular.Text)
+            Dim res As MsgBoxResult
+            TDni.BackColor = Color.LightGreen
+            TNomApe.BackColor = Color.LightGreen
+            TDire.BackColor = Color.LightGreen
+            TTelef.BackColor = Color.LightGreen
+            TEmail.BackColor = Color.LightGreen
+            TApellido.BackColor = Color.LightGreen
+            TLocal.BackColor = Color.LightGreen
+            TPostal.BackColor = Color.LightGreen
+            TCelular.BackColor = Color.LightGreen
+            res = MsgBox("Desea Agregar un nuevo Cliente?", 4 + 0 + 32, "Aviso")
+            If res = vbYes Then
+                If cli.AgregaCliente() Then
+                    MsgBox("Cliente agregado", 0 + 0 + 64)
+                    TDni.Text = ""
+                    TNomApe.Text = ""
+                    TDire.Text = ""
+                    TTelef.Text = ""
+                    TEmail.Text = ""
+                    TApellido.Text = ""
+                    TLocal.Text = ""
+                    TPostal.Text = ""
+                    TCelular.Text = ""
+                Else
+                    MsgBox("Ocurrio un error!!")
+                End If
             End If
+        Else
 
         End If
     End Sub
 
+    'Salir'
     Private Sub BSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BSalir.Click
         Me.Close()
     End Sub
 
-
-    'Private Function Provin()
-    'Dim var As Char
-    'If CBProvincia.SelectedItem = "Administrador" Then
-    'var = "a"
-
-    'ElseIf CBProvincia.SelectedItem = "Supervisor" Then
-    'var = "s"
-
-    'Else
-    'var = "v"
-
-    'End If
-    'Return var
-    'End Function
-
-
+    'Devuelve el valor del estado'
     Private Function estado()
         Dim var As Char
-        If CBEstado.SelectedItem = "Activo" Then
+        If Me.CBEstado.SelectedItem = "Activo" Then
             var = "a"
-
         Else
             var = "b"
-
         End If
         Return var
     End Function
 
 
-
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+
+
         Dim dni As Long
         Dim nom As String
         Dim apel As String
@@ -63,29 +70,12 @@
         apel = TApellido2.Text
         esta = estados()
         DataGridCliente.RowTemplate.Height = 50
-        'usu.muestra(DataGridView1, Val(TDni.Text), TNombre.Text, usuario())
-
-        'Si está enlazado a un origen de datos, y la propiedad AutoGenerateColumns tiene su valor por defecto (True), 
-        'la manera más sencilla de limpiar el control DataGridView es estableciendo el valor Nothing a su propiedad DataSource:
-
-        'DataGridView1.DataSource = Nothing
-
-
-
-        '--limpiar su filas llamando al método Clear de la propiedad Rows:--
-        'DataGridView1.Rows.Clear()
-
-
+        
         DataGridCliente.Rows.Clear()
         Try
             Using Base As New NNeumaticosEntities1
 
-                'Dim mues = (From c In Base.Cliente Where (c.cliente_cuil = dni Or c.cliente_NomYape = nom Or c.cliente_Ape = apel Or c.cliente_estado = esta) Select c).ToList
-                Dim mues = (From c In Base.Cliente Select c).ToList
-
-                'Dni = u.usu_Dni, NombreyApellido = u.usu_nomYape, Direccion = u.usu_Direccon, Localidad = u.usu_Localidad, Telefono = u.usu_Telefono, Email = u.usu_Email, Contraseña = u.usu_Contraseña, Estado = u.usu_Estado, TipoUsuario = u.usu_TipoUsu).ToList
-
-                'tabla.DataSource = mues
+                Dim mues = (From c In Base.Cliente Where (c.cliente_cuil = dni Or c.cliente_NomYape = nom Or c.cliente_Ape = apel Or c.cliente_estado = esta) Select c).ToList
                 For Each c In mues
                     DataGridCliente.Rows.Add(c.cliente_cuil, c.cliente_NomYape & " " & c.cliente_Ape, c.cliente_Direccion, c.cliente_Telefono, c.cliente_Email, c.cliente_estado, c.cliente_Ape, c.cliente_Localidad, c.cliente_Provincia, c.cliente_Fecha, c.cliente_Cpostal, c.cliente_Celular)
                 Next
@@ -112,59 +102,35 @@
     End Sub
 
     Private Sub DataGridCliente_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridCliente.CellContentClick
-        Dim cell As DataGridViewButtonCell = TryCast(DataGridCliente.CurrentCell, DataGridViewButtonCell)
+        Dim cell As DataGridViewButtonCell = TryCast(Me.DataGridCliente.CurrentCell, DataGridViewButtonCell)
         Dim res As MsgBoxResult
         If cell IsNot Nothing Then 'Verifica que la celdas tengan informacion
-            Dim bc As DataGridViewButtonColumn = TryCast(DataGridCliente.Columns(e.ColumnIndex), DataGridViewButtonColumn) 'Genero una variable que contiene el boton en el datagrid
+            Dim bc As DataGridViewButtonColumn = TryCast(Me.DataGridCliente.Columns(e.ColumnIndex), DataGridViewButtonColumn) 'Genero una variable que contiene el boton en el datagrid
             If bc IsNot Nothing Then
                 Dim s As String = Convert.ToString(cell.Value)
                 Select Case bc.Name
                     Case "ColVer"
-                        'Eliminar Poner el nombre de la columna donde se desa dar un evento()
-                        'aquí dentro poner las acciones cuando se precione el botón eliminar()
-                        'DataGrid.Item(DataGrid.CurrentCell, DataGrid.CurrentRow.Index).Value()
-                        'res = MsgBox("Desea ver el cliente ", 4 + 256 + 16, "ver")
-                        'If res = 6 Then
-                        PanelBusca.Visible = False
-                        'Var1 = DataGridView1.Rows(e.RowIndex).Cells(10).Value
 
-                        Ldni.Text = (DataGridCliente.Item(0, DataGridCliente.CurrentRow.Index).Value).ToString
-                        Lnom.Text = (DataGridCliente.Item(1, DataGridCliente.CurrentRow.Index).Value).ToString
-                        Ldirec.Text = (DataGridCliente.Item(2, DataGridCliente.CurrentRow.Index).Value).ToString
-                        Ltelef.Text = (DataGridCliente.Item(3, DataGridCliente.CurrentRow.Index).Value).ToString
-                        Lemail.Text = (DataGridCliente.Item(4, DataGridCliente.CurrentRow.Index).Value).ToString
-                        'Lcontra.Text = (DataGridCliente.Item(6, DataGridCliente.CurrentRow.Index).Value).ToString
+                        Me.PanelBusca.Visible = False
+                        Me.Ldni.Text = (Me.DataGridCliente.Item(0, Me.DataGridCliente.CurrentRow.Index).Value).ToString
+                        Me.Lnom.Text = (Me.DataGridCliente.Item(1, Me.DataGridCliente.CurrentRow.Index).Value).ToString
+                        Me.Ldirec.Text = (Me.DataGridCliente.Item(2, Me.DataGridCliente.CurrentRow.Index).Value).ToString
+                        Me.Ltelef.Text = (Me.DataGridCliente.Item(3, Me.DataGridCliente.CurrentRow.Index).Value).ToString
+                        Me.Lemail.Text = (Me.DataGridCliente.Item(4, Me.DataGridCliente.CurrentRow.Index).Value).ToString
 
-                        If ((DataGridCliente.Item(5, DataGridCliente.CurrentRow.Index).Value).ToString) = "a" Then
-                            Lesta.Text = "ALTA"
+                        If ((Me.DataGridCliente.Item(5, Me.DataGridCliente.CurrentRow.Index).Value).ToString) = "a" Then
+                            Me.Lesta.Text = "ALTA"
                         Else
-                            Lesta.Text = "BAJA"
+                            Me.Lesta.Text = "BAJA"
                         End If
 
-                        Lape.Text = (DataGridCliente.Item(6, DataGridCliente.CurrentRow.Index).Value).ToString
-                        Lloca.Text = (DataGridCliente.Item(7, DataGridCliente.CurrentRow.Index).Value).ToString
-                        Lprov.Text = (DataGridCliente.Item(8, DataGridCliente.CurrentRow.Index).Value).ToString
-                        Lfecha.Text = (DataGridCliente.Item(9, DataGridCliente.CurrentRow.Index).Value).ToString
-                        LPostal.Text = (DataGridCliente.Item(10, DataGridCliente.CurrentRow.Index).Value).ToString
-                        Lcelu.Text = (DataGridCliente.Item(11, DataGridCliente.CurrentRow.Index).Value).ToString
-
-                        'If ((DataGridCliente.Item(8, DataGridCliente.CurrentRow.Index).Value).ToString) = "a" Then
-                        'Lusu.Text = "ADMINISTRADOR"
-                        'ElseIf ((DataGridCliente.Item(8, DataGridCliente.CurrentRow.Index).Value).ToString) = "s" Then
-                        'Lusu.Text = "SUPERVISOR"
-                        'Else
-                        'Lusu.Text = "VENDEDOR"
-                        'End If
-
-                        'Label10.Text = (DataGridView1.Item(9, DataGridView1.CurrentRow.Index).Value).ToString
-
-                        PanelVer.Visible = True
-
-
-                        'DataGridView1.Rows.RemoveAt(e.RowIndex)
-                        'MsgBox("Cliente Eliminado", 0 + 0 + 16, "Eliminado")
-
-                        'End If
+                        Me.Lape.Text = (Me.DataGridCliente.Item(6, Me.DataGridCliente.CurrentRow.Index).Value).ToString
+                        Me.Lloca.Text = (Me.DataGridCliente.Item(7, Me.DataGridCliente.CurrentRow.Index).Value).ToString
+                        Me.Lprov.Text = (Me.DataGridCliente.Item(8, Me.DataGridCliente.CurrentRow.Index).Value).ToString
+                        Me.Lfecha.Text = (Me.DataGridCliente.Item(9, Me.DataGridCliente.CurrentRow.Index).Value).ToString
+                        Me.LPostal.Text = (Me.DataGridCliente.Item(10, Me.DataGridCliente.CurrentRow.Index).Value).ToString
+                        Me.Lcelu.Text = (Me.DataGridCliente.Item(11, Me.DataGridCliente.CurrentRow.Index).Value).ToString
+                        Me.PanelVer.Visible = True
                         Exit Select
                 End Select
 
@@ -197,33 +163,159 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        PanelBusca.Visible = True
-        PanelVer.Visible = False
+        Me.PanelBusca.Visible = True
+        Me.PanelVer.Visible = False
 
     End Sub
 
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        PanelBusca.Visible = True
-        PanelModifica.Visible = False
+        Me.PanelBusca.Visible = True
+        Me.PanelModifica.Visible = False
     End Sub
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
-        TextBox1.Clear()
-        TextBox2.Clear()
-        TextBox3.Clear()
-        TextBox4.Clear()
-        TextBox5.Clear()
-        TextBox6.Clear()
-        TextBox7.Clear()
-        TextBox8.Clear()
-        TextBox9.Clear()
-        ComboBox1.Items.Clear()
-        ComboBox2.Items.Clear()
+        Me.TextBox1.Clear()
+        Me.TextBox2.Clear()
+        Me.TextBox3.Clear()
+        Me.TextBox4.Clear()
+        Me.TextBox5.Clear()
+        Me.TextBox6.Clear()
+        Me.TextBox7.Clear()
+        Me.TextBox8.Clear()
+        Me.TextBox9.Clear()
+        Me.ComboBox1.Items.Clear()
+        Me.ComboBox2.Items.Clear()
+    End Sub
+    'Procedimiento que verifica que sea número'
+    Public Sub ComprobarNumero(ByVal e As System.Windows.Forms.KeyPressEventArgs)
+        'Verifica que sea numero lo que se ingresa'
+        If e.KeyChar.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar = "-" Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+
     End Sub
 
+    'Función comprobar si es letra lo que se presiona'
+    Public Sub ComprobarLetra(ByVal e As System.Windows.Forms.KeyPressEventArgs)
+        If e.KeyChar.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
 
-    Private Sub CuadroUsu_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    'Función que verifica que los TextBox no esten vacio en NUEVO CLIENTE'
+    Private Function ComprobarVacioNuevoClientes() As Boolean
+         If String.IsNullOrWhiteSpace(TDni.Text) Then
+            MsgBox("Debe completar el campo DNI")
+            TDni.BackColor = Color.Salmon
+            TDni.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TApellido.Text) Then
+            MsgBox("Debe completar el campo Apellido")
+            TApellido.BackColor = Color.Salmon
+            TApellido.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TNomApe.Text) Then
+            MsgBox("Debe completar el campo Nombre")
+            TNomApe.BackColor = Color.Salmon
+            TNomApe.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TTelef.Text) Then
+            MsgBox("Debe completar el campo Teléfono")
+            TTelef.BackColor = Color.Salmon
+            TTelef.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TDire.Text) Then
+            MsgBox("Debe completar el campo Dirección")
+            TDire.BackColor = Color.Salmon
+            TDire.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TLocal.Text) Then
+            MsgBox("Debe completar el campo Localidad")
+            TLocal.BackColor = Color.Salmon
+            TLocal.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TPostal.Text) Then
+            MsgBox("Debe completar el campo CP")
+            TPostal.BackColor = Color.Salmon
+            TPostal.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TEmail.Text) Then
+            MsgBox("Debe completar el campo E-mail")
+            TEmail.BackColor = Color.Salmon
+            TEmail.Focus()
+            Return True
 
+        Else
+            Return False
+        End If
+    End Function
+
+    'COMPROBACIOES DE LOS CAMPOS'
+    Private Sub TDniCli_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TDniCli.KeyPress
+        Me.ComprobarNumero(e)
+    End Sub
+
+    Private Sub TNombreCli_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TNombreCli.KeyPress
+        Me.ComprobarLetra(e)
+    End Sub
+
+    Private Sub TApellido2_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TApellido2.KeyPress
+        Me.ComprobarLetra(e)
+    End Sub
+
+    'Comprobacion de lo que se ingresa si es numero en los campos "TELEFONO, CP, DNI,CELULAR" en nuevo CLiente'
+    Private Sub TDni_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TTelef.KeyPress, TPostal.KeyPress, TDni.KeyPress, TCelular.KeyPress
+        Me.ComprobarNumero(e)
+    End Sub
+    'Comprobacion de lo que se ingresa si es letra en los campos "NOMBRE, LOCALIDAD Y APELLIDO" en nuevo CLiente'
+    Private Sub TApellido_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TNomApe.KeyPress, TLocal.KeyPress, TApellido.KeyPress
+        Me.ComprobarLetra(e)
+    End Sub
+    'Comprobacion de lo que se ingresa si es numero en los campos "TELEFONO, CP, DNI,CELULAR" en modificar CLiente'
+    Private Sub TextBox7_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox9.KeyPress, TextBox7.KeyPress, TextBox5.KeyPress, TextBox3.KeyPress
+        Me.ComprobarNumero(e)
+    End Sub
+    'Comprobacion de lo que se ingresa si es letra en los campos "NOMBRE, LOCALIDAD Y APELLIDO" en modificar CLiente'
+    Private Sub TextBox6_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox8.KeyPress, TextBox6.KeyPress, TextBox2.KeyPress
+        Me.ComprobarLetra(e)
+    End Sub
+
+    Private Sub BAlta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BAlta.Click
+        Dim res As MsgBoxResult
+        res = MsgBox("Desea dar de alta al Cliente?", 4 + 0 + 32, "Aviso")
+        If res = vbYes Then
+            If Lesta.Text = "ALTA" Then
+                MsgBox("El cliente ya estaba activo")
+            Else
+                MsgBox("Cliente dado de Alta")
+                Lesta.Text = "ALTA"
+            End If
+        End If
+    End Sub
+
+    Private Sub BBaja_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BBaja.Click
+        Dim res As MsgBoxResult
+        res = MsgBox("Desea dar de alta al Cliente?", 4 + 0 + 32, "Aviso")
+        If res = vbYes Then
+            If Lesta.Text = "BAJA" Then
+                MsgBox("El cliente ya estaba inactivo")
+            Else
+                MsgBox("Cliente dado de Baja")
+                Lesta.Text = "BAJA"
+            End If
+        End If
     End Sub
 End Class

@@ -37,6 +37,7 @@ Partial Class Empresas
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel_Ver_Datos_Empresa = New System.Windows.Forms.Panel()
+        Me.ButtonEAceptar = New System.Windows.Forms.Button()
         Me.LabelTelefono = New System.Windows.Forms.Label()
         Me.LabelDireccion = New System.Windows.Forms.Label()
         Me.LabelEmail = New System.Windows.Forms.Label()
@@ -48,27 +49,22 @@ Partial Class Empresas
         Me.LabelENombre = New System.Windows.Forms.Label()
         Me.LabelECuit = New System.Windows.Forms.Label()
         Me.LabelETitulo = New System.Windows.Forms.Label()
-        Me.ButtonEAceptar = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Panel_modificar_Empresa.SuspendLayout()
         Me.Panel_Ver_Datos_Empresa.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel_modificar_Empresa
         '
-        Me.Panel_modificar_Empresa.BackColor = System.Drawing.Color.Chocolate
+        Me.Panel_modificar_Empresa.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Panel_modificar_Empresa.Controls.Add(Me.GroupBox2)
         Me.Panel_modificar_Empresa.Controls.Add(Me.ButtonSalirEmpresa)
         Me.Panel_modificar_Empresa.Controls.Add(Me.ButtonGuardarEmpresa)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.TextBoxTelefonoEmpresa)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.TextBoxDireccionEmpresa)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.TextBoxEmailEmpresa)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.TextBoxNombreEmpresa)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.TextBoxCuitEmpresa)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.Label6)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.Label5)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.Label4)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.Label3)
-        Me.Panel_modificar_Empresa.Controls.Add(Me.Label2)
         Me.Panel_modificar_Empresa.Controls.Add(Me.Label1)
+        Me.Panel_modificar_Empresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel_modificar_Empresa.Location = New System.Drawing.Point(2, 1)
         Me.Panel_modificar_Empresa.Name = "Panel_modificar_Empresa"
         Me.Panel_modificar_Empresa.Size = New System.Drawing.Size(1370, 620)
@@ -95,7 +91,7 @@ Partial Class Empresas
         'TextBoxTelefonoEmpresa
         '
         Me.TextBoxTelefonoEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxTelefonoEmpresa.Location = New System.Drawing.Point(625, 284)
+        Me.TextBoxTelefonoEmpresa.Location = New System.Drawing.Point(787, 172)
         Me.TextBoxTelefonoEmpresa.Name = "TextBoxTelefonoEmpresa"
         Me.TextBoxTelefonoEmpresa.Size = New System.Drawing.Size(207, 26)
         Me.TextBoxTelefonoEmpresa.TabIndex = 9
@@ -104,25 +100,25 @@ Partial Class Empresas
         'TextBoxDireccionEmpresa
         '
         Me.TextBoxDireccionEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxDireccionEmpresa.Location = New System.Drawing.Point(163, 284)
+        Me.TextBoxDireccionEmpresa.Location = New System.Drawing.Point(325, 172)
         Me.TextBoxDireccionEmpresa.Name = "TextBoxDireccionEmpresa"
-        Me.TextBoxDireccionEmpresa.Size = New System.Drawing.Size(207, 26)
+        Me.TextBoxDireccionEmpresa.Size = New System.Drawing.Size(247, 26)
         Me.TextBoxDireccionEmpresa.TabIndex = 8
         Me.TextBoxDireccionEmpresa.Text = "Avenida Independeencia 3547"
         '
         'TextBoxEmailEmpresa
         '
         Me.TextBoxEmailEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxEmailEmpresa.Location = New System.Drawing.Point(970, 165)
+        Me.TextBoxEmailEmpresa.Location = New System.Drawing.Point(947, 67)
         Me.TextBoxEmailEmpresa.Name = "TextBoxEmailEmpresa"
-        Me.TextBoxEmailEmpresa.Size = New System.Drawing.Size(207, 26)
+        Me.TextBoxEmailEmpresa.Size = New System.Drawing.Size(253, 26)
         Me.TextBoxEmailEmpresa.TabIndex = 7
         Me.TextBoxEmailEmpresa.Text = "neumanneumaticos@gmail.com"
         '
         'TextBoxNombreEmpresa
         '
         Me.TextBoxNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxNombreEmpresa.Location = New System.Drawing.Point(611, 165)
+        Me.TextBoxNombreEmpresa.Location = New System.Drawing.Point(588, 67)
         Me.TextBoxNombreEmpresa.Name = "TextBoxNombreEmpresa"
         Me.TextBoxNombreEmpresa.Size = New System.Drawing.Size(207, 26)
         Me.TextBoxNombreEmpresa.TabIndex = 6
@@ -131,7 +127,7 @@ Partial Class Empresas
         'TextBoxCuitEmpresa
         '
         Me.TextBoxCuitEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxCuitEmpresa.Location = New System.Drawing.Point(150, 165)
+        Me.TextBoxCuitEmpresa.Location = New System.Drawing.Point(127, 67)
         Me.TextBoxCuitEmpresa.Name = "TextBoxCuitEmpresa"
         Me.TextBoxCuitEmpresa.Size = New System.Drawing.Size(207, 26)
         Me.TextBoxCuitEmpresa.TabIndex = 5
@@ -140,50 +136,55 @@ Partial Class Empresas
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(893, 168)
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(850, 68)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(68, 24)
+        Me.Label6.Size = New System.Drawing.Size(85, 25)
         Me.Label6.TabIndex = 4
         Me.Label6.Text = "E-mail:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(521, 166)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(478, 66)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(84, 24)
+        Me.Label5.Size = New System.Drawing.Size(100, 25)
         Me.Label5.TabIndex = 3
         Me.Label5.Text = "Nombre:"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(62, 284)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(204, 170)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(95, 24)
+        Me.Label4.Size = New System.Drawing.Size(118, 25)
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "Dirección:"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(521, 284)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(663, 170)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(90, 24)
+        Me.Label3.Size = New System.Drawing.Size(111, 25)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Teléfono:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(72, 168)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(29, 68)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(72, 24)
+        Me.Label2.Size = New System.Drawing.Size(92, 25)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "C.U.I.T:"
         '
@@ -191,6 +192,7 @@ Partial Class Empresas
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Georgia", 20.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label1.Location = New System.Drawing.Point(466, 38)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(388, 31)
@@ -199,29 +201,30 @@ Partial Class Empresas
         '
         'Panel_Ver_Datos_Empresa
         '
-        Me.Panel_Ver_Datos_Empresa.BackColor = System.Drawing.Color.Firebrick
+        Me.Panel_Ver_Datos_Empresa.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Panel_Ver_Datos_Empresa.Controls.Add(Me.GroupBox1)
         Me.Panel_Ver_Datos_Empresa.Controls.Add(Me.ButtonEAceptar)
-        Me.Panel_Ver_Datos_Empresa.Controls.Add(Me.LabelTelefono)
-        Me.Panel_Ver_Datos_Empresa.Controls.Add(Me.LabelDireccion)
-        Me.Panel_Ver_Datos_Empresa.Controls.Add(Me.LabelEmail)
-        Me.Panel_Ver_Datos_Empresa.Controls.Add(Me.LabelNombre)
-        Me.Panel_Ver_Datos_Empresa.Controls.Add(Me.LabelCuit)
-        Me.Panel_Ver_Datos_Empresa.Controls.Add(Me.LabelETelefono)
-        Me.Panel_Ver_Datos_Empresa.Controls.Add(Me.LabelEDireccion)
-        Me.Panel_Ver_Datos_Empresa.Controls.Add(Me.LabelEEmail)
-        Me.Panel_Ver_Datos_Empresa.Controls.Add(Me.LabelENombre)
-        Me.Panel_Ver_Datos_Empresa.Controls.Add(Me.LabelECuit)
         Me.Panel_Ver_Datos_Empresa.Controls.Add(Me.LabelETitulo)
         Me.Panel_Ver_Datos_Empresa.Location = New System.Drawing.Point(2, 1)
         Me.Panel_Ver_Datos_Empresa.Name = "Panel_Ver_Datos_Empresa"
         Me.Panel_Ver_Datos_Empresa.Size = New System.Drawing.Size(1373, 623)
         Me.Panel_Ver_Datos_Empresa.TabIndex = 0
         '
+        'ButtonEAceptar
+        '
+        Me.ButtonEAceptar.Location = New System.Drawing.Point(601, 503)
+        Me.ButtonEAceptar.Name = "ButtonEAceptar"
+        Me.ButtonEAceptar.Size = New System.Drawing.Size(127, 36)
+        Me.ButtonEAceptar.TabIndex = 11
+        Me.ButtonEAceptar.Text = "Aceptar"
+        Me.ButtonEAceptar.UseVisualStyleBackColor = True
+        '
         'LabelTelefono
         '
         Me.LabelTelefono.AutoSize = True
         Me.LabelTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelTelefono.Location = New System.Drawing.Point(1106, 168)
+        Me.LabelTelefono.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.LabelTelefono.Location = New System.Drawing.Point(1107, 76)
         Me.LabelTelefono.Name = "LabelTelefono"
         Me.LabelTelefono.Size = New System.Drawing.Size(139, 25)
         Me.LabelTelefono.TabIndex = 10
@@ -231,7 +234,8 @@ Partial Class Empresas
         '
         Me.LabelDireccion.AutoSize = True
         Me.LabelDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelDireccion.Location = New System.Drawing.Point(181, 356)
+        Me.LabelDireccion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.LabelDireccion.Location = New System.Drawing.Point(178, 174)
         Me.LabelDireccion.Name = "LabelDireccion"
         Me.LabelDireccion.Size = New System.Drawing.Size(303, 25)
         Me.LabelDireccion.TabIndex = 9
@@ -241,7 +245,8 @@ Partial Class Empresas
         '
         Me.LabelEmail.AutoSize = True
         Me.LabelEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelEmail.Location = New System.Drawing.Point(676, 356)
+        Me.LabelEmail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.LabelEmail.Location = New System.Drawing.Point(681, 172)
         Me.LabelEmail.Name = "LabelEmail"
         Me.LabelEmail.Size = New System.Drawing.Size(317, 25)
         Me.LabelEmail.TabIndex = 8
@@ -251,7 +256,8 @@ Partial Class Empresas
         '
         Me.LabelNombre.AutoSize = True
         Me.LabelNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelNombre.Location = New System.Drawing.Point(640, 167)
+        Me.LabelNombre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.LabelNombre.Location = New System.Drawing.Point(641, 75)
         Me.LabelNombre.Name = "LabelNombre"
         Me.LabelNombre.Size = New System.Drawing.Size(223, 25)
         Me.LabelNombre.TabIndex = 7
@@ -261,7 +267,8 @@ Partial Class Empresas
         '
         Me.LabelCuit.AutoSize = True
         Me.LabelCuit.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelCuit.Location = New System.Drawing.Point(158, 166)
+        Me.LabelCuit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.LabelCuit.Location = New System.Drawing.Point(159, 74)
         Me.LabelCuit.Name = "LabelCuit"
         Me.LabelCuit.Size = New System.Drawing.Size(144, 25)
         Me.LabelCuit.TabIndex = 6
@@ -270,55 +277,55 @@ Partial Class Empresas
         'LabelETelefono
         '
         Me.LabelETelefono.AutoSize = True
-        Me.LabelETelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelETelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelETelefono.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.LabelETelefono.Location = New System.Drawing.Point(1006, 169)
+        Me.LabelETelefono.Location = New System.Drawing.Point(1007, 77)
         Me.LabelETelefono.Name = "LabelETelefono"
-        Me.LabelETelefono.Size = New System.Drawing.Size(90, 24)
+        Me.LabelETelefono.Size = New System.Drawing.Size(99, 24)
         Me.LabelETelefono.TabIndex = 5
         Me.LabelETelefono.Text = "Teléfono:"
         '
         'LabelEDireccion
         '
         Me.LabelEDireccion.AutoSize = True
-        Me.LabelEDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelEDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelEDireccion.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.LabelEDireccion.Location = New System.Drawing.Point(80, 357)
+        Me.LabelEDireccion.Location = New System.Drawing.Point(67, 174)
         Me.LabelEDireccion.Name = "LabelEDireccion"
-        Me.LabelEDireccion.Size = New System.Drawing.Size(95, 24)
+        Me.LabelEDireccion.Size = New System.Drawing.Size(105, 24)
         Me.LabelEDireccion.TabIndex = 4
         Me.LabelEDireccion.Text = "Direccion:"
         '
         'LabelEEmail
         '
         Me.LabelEEmail.AutoSize = True
-        Me.LabelEEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelEEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelEEmail.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.LabelEEmail.Location = New System.Drawing.Point(613, 356)
+        Me.LabelEEmail.Location = New System.Drawing.Point(600, 173)
         Me.LabelEEmail.Name = "LabelEEmail"
-        Me.LabelEEmail.Size = New System.Drawing.Size(68, 24)
+        Me.LabelEEmail.Size = New System.Drawing.Size(75, 24)
         Me.LabelEEmail.TabIndex = 3
         Me.LabelEEmail.Text = "E-mail:"
         '
         'LabelENombre
         '
         Me.LabelENombre.AutoSize = True
-        Me.LabelENombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelENombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelENombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.LabelENombre.Location = New System.Drawing.Point(550, 167)
+        Me.LabelENombre.Location = New System.Drawing.Point(551, 75)
         Me.LabelENombre.Name = "LabelENombre"
-        Me.LabelENombre.Size = New System.Drawing.Size(84, 24)
+        Me.LabelENombre.Size = New System.Drawing.Size(91, 24)
         Me.LabelENombre.TabIndex = 2
         Me.LabelENombre.Text = "Nombre:"
         '
         'LabelECuit
         '
         Me.LabelECuit.AutoSize = True
-        Me.LabelECuit.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelECuit.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelECuit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.LabelECuit.Location = New System.Drawing.Point(80, 167)
+        Me.LabelECuit.Location = New System.Drawing.Point(81, 75)
         Me.LabelECuit.Name = "LabelECuit"
-        Me.LabelECuit.Size = New System.Drawing.Size(72, 24)
+        Me.LabelECuit.Size = New System.Drawing.Size(80, 24)
         Me.LabelECuit.TabIndex = 1
         Me.LabelECuit.Text = "C.U.I.T:"
         '
@@ -327,27 +334,56 @@ Partial Class Empresas
         Me.LabelETitulo.AutoSize = True
         Me.LabelETitulo.Font = New System.Drawing.Font("Georgia", 24.0!, CType(((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic) _
                         Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelETitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.LabelETitulo.Location = New System.Drawing.Point(464, 38)
+        Me.LabelETitulo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.LabelETitulo.Location = New System.Drawing.Point(518, 56)
         Me.LabelETitulo.Name = "LabelETitulo"
         Me.LabelETitulo.Size = New System.Drawing.Size(359, 38)
         Me.LabelETitulo.TabIndex = 0
         Me.LabelETitulo.Text = "Datos de la Empresa"
         '
-        'ButtonEAceptar
+        'GroupBox1
         '
-        Me.ButtonEAceptar.Location = New System.Drawing.Point(583, 494)
-        Me.ButtonEAceptar.Name = "ButtonEAceptar"
-        Me.ButtonEAceptar.Size = New System.Drawing.Size(127, 36)
-        Me.ButtonEAceptar.TabIndex = 11
-        Me.ButtonEAceptar.Text = "Aceptar"
-        Me.ButtonEAceptar.UseVisualStyleBackColor = True
+        Me.GroupBox1.Controls.Add(Me.LabelCuit)
+        Me.GroupBox1.Controls.Add(Me.LabelECuit)
+        Me.GroupBox1.Controls.Add(Me.LabelDireccion)
+        Me.GroupBox1.Controls.Add(Me.LabelTelefono)
+        Me.GroupBox1.Controls.Add(Me.LabelEmail)
+        Me.GroupBox1.Controls.Add(Me.LabelEDireccion)
+        Me.GroupBox1.Controls.Add(Me.LabelENombre)
+        Me.GroupBox1.Controls.Add(Me.LabelEEmail)
+        Me.GroupBox1.Controls.Add(Me.LabelETelefono)
+        Me.GroupBox1.Controls.Add(Me.LabelNombre)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.GroupBox1.Location = New System.Drawing.Point(46, 140)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(1286, 286)
+        Me.GroupBox1.TabIndex = 12
+        Me.GroupBox1.TabStop = False
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.TextBoxEmailEmpresa)
+        Me.GroupBox2.Controls.Add(Me.Label2)
+        Me.GroupBox2.Controls.Add(Me.Label5)
+        Me.GroupBox2.Controls.Add(Me.TextBoxTelefonoEmpresa)
+        Me.GroupBox2.Controls.Add(Me.TextBoxDireccionEmpresa)
+        Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Controls.Add(Me.Label4)
+        Me.GroupBox2.Controls.Add(Me.TextBoxCuitEmpresa)
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Controls.Add(Me.TextBoxNombreEmpresa)
+        Me.GroupBox2.Location = New System.Drawing.Point(32, 111)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(1224, 340)
+        Me.GroupBox2.TabIndex = 12
+        Me.GroupBox2.TabStop = False
         '
         'Empresas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1370, 623)
+        Me.ClientSize = New System.Drawing.Size(1362, 623)
         Me.Controls.Add(Me.Panel_Ver_Datos_Empresa)
         Me.Controls.Add(Me.Panel_modificar_Empresa)
         Me.Name = "Empresas"
@@ -357,6 +393,10 @@ Partial Class Empresas
         Me.Panel_modificar_Empresa.PerformLayout()
         Me.Panel_Ver_Datos_Empresa.ResumeLayout(False)
         Me.Panel_Ver_Datos_Empresa.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -387,4 +427,6 @@ Partial Class Empresas
     Friend WithEvents LabelENombre As System.Windows.Forms.Label
     Friend WithEvents LabelECuit As System.Windows.Forms.Label
     Friend WithEvents LabelETitulo As System.Windows.Forms.Label
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
 End Class
