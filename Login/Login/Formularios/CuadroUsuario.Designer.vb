@@ -56,8 +56,10 @@ Partial Class CuadroUsuario
         Me.tipoUsu = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColVer = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.PanelBusca = New System.Windows.Forms.Panel()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.BSalir2 = New System.Windows.Forms.Button()
         Me.PanelVer = New System.Windows.Forms.Panel()
+        Me.Label30 = New System.Windows.Forms.Label()
         Me.Llocal = New System.Windows.Forms.Label()
         Me.BModifica = New System.Windows.Forms.Button()
         Me.BBaja = New System.Windows.Forms.Button()
@@ -85,6 +87,7 @@ Partial Class CuadroUsuario
         Me.BSalir = New System.Windows.Forms.Button()
         Me.BAlta = New System.Windows.Forms.Button()
         Me.PanelRegistro = New System.Windows.Forms.Panel()
+        Me.Label29 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TApellido = New System.Windows.Forms.TextBox()
         Me.Label27 = New System.Windows.Forms.Label()
@@ -112,17 +115,14 @@ Partial Class CuadroUsuario
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Label30 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBusca.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.PanelVer.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.PanelRegistro.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -361,9 +361,22 @@ Partial Class CuadroUsuario
         Me.PanelBusca.Size = New System.Drawing.Size(1340, 644)
         Me.PanelBusca.TabIndex = 2
         '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.DataGridView1)
+        Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.Location = New System.Drawing.Point(16, 140)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(1294, 374)
+        Me.GroupBox4.TabIndex = 3
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "GroupBox4"
+        '
         'BSalir2
         '
         Me.BSalir2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.BSalir2.Image = Global.Login.My.Resources.Resources.cancel_square16
+        Me.BSalir2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BSalir2.Location = New System.Drawing.Point(659, 583)
         Me.BSalir2.Name = "BSalir2"
         Me.BSalir2.Size = New System.Drawing.Size(75, 36)
@@ -392,6 +405,17 @@ Partial Class CuadroUsuario
         Me.PanelVer.Name = "PanelVer"
         Me.PanelVer.Size = New System.Drawing.Size(1340, 644)
         Me.PanelVer.TabIndex = 3
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.ForeColor = System.Drawing.Color.Black
+        Me.Label30.Location = New System.Drawing.Point(271, 368)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(77, 25)
+        Me.Label30.TabIndex = 56
+        Me.Label30.Text = "Label3"
         '
         'Llocal
         '
@@ -682,9 +706,11 @@ Partial Class CuadroUsuario
         '
         'BSalir
         '
-        Me.BSalir.Location = New System.Drawing.Point(971, 543)
+        Me.BSalir.Image = Global.Login.My.Resources.Resources.cancel_square16
+        Me.BSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BSalir.Location = New System.Drawing.Point(971, 553)
         Me.BSalir.Name = "BSalir"
-        Me.BSalir.Size = New System.Drawing.Size(104, 50)
+        Me.BSalir.Size = New System.Drawing.Size(89, 40)
         Me.BSalir.TabIndex = 1
         Me.BSalir.Text = "Salir"
         Me.BSalir.UseVisualStyleBackColor = True
@@ -723,6 +749,17 @@ Partial Class CuadroUsuario
         Me.PanelRegistro.Name = "PanelRegistro"
         Me.PanelRegistro.Size = New System.Drawing.Size(1334, 641)
         Me.PanelRegistro.TabIndex = 3
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label29.Location = New System.Drawing.Point(570, 29)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(265, 25)
+        Me.Label29.TabIndex = 41
+        Me.Label29.Text = "Agregar Nuevo Usuario"
         '
         'GroupBox3
         '
@@ -900,6 +937,8 @@ Partial Class CuadroUsuario
         'BSalir3
         '
         Me.BSalir3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BSalir3.Image = Global.Login.My.Resources.Resources.cancel_square16
+        Me.BSalir3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BSalir3.Location = New System.Drawing.Point(757, 542)
         Me.BSalir3.Name = "BSalir3"
         Me.BSalir3.Size = New System.Drawing.Size(100, 47)
@@ -910,6 +949,8 @@ Partial Class CuadroUsuario
         'BGuardar
         '
         Me.BGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BGuardar.Image = Global.Login.My.Resources.Resources.SaveHL
+        Me.BGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BGuardar.Location = New System.Drawing.Point(568, 542)
         Me.BGuardar.Name = "BGuardar"
         Me.BGuardar.Size = New System.Drawing.Size(117, 47)
@@ -994,39 +1035,6 @@ Partial Class CuadroUsuario
         Me.Label26.TabIndex = 31
         Me.Label26.Text = "Provincia:"
         '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label29.Location = New System.Drawing.Point(570, 29)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(265, 25)
-        Me.Label29.TabIndex = 41
-        Me.Label29.Text = "Agregar Nuevo Usuario"
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.DataGridView1)
-        Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(16, 140)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(1294, 374)
-        Me.GroupBox4.TabIndex = 3
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "GroupBox4"
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.ForeColor = System.Drawing.Color.Black
-        Me.Label30.Location = New System.Drawing.Point(271, 368)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(77, 25)
-        Me.Label30.TabIndex = 56
-        Me.Label30.Text = "Label3"
-        '
         'CuadroUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1047,6 +1055,7 @@ Partial Class CuadroUsuario
         Me.GroupBox1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelBusca.ResumeLayout(False)
+        Me.GroupBox4.ResumeLayout(False)
         Me.PanelVer.ResumeLayout(False)
         Me.PanelVer.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -1055,7 +1064,6 @@ Partial Class CuadroUsuario
         Me.PanelRegistro.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        Me.GroupBox4.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

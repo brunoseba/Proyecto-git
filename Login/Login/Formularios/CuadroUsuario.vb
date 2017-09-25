@@ -241,19 +241,32 @@
     End Sub
 
     Private Sub BGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BGuardar.Click
-        Dim usus As New Ususario(Val(TDni1.Text), TNomApe.Text, TDire.Text, TLocal.Text, TProv1.Text, TTelef.Text, TEmail.Text, TContra.Text, esta(), usua(), DateTime.Value.Date(), TApellido.Text)
-        Dim res As MsgBoxResult
+        If Not ComprobarVacioNuevoUsuario() Then
+            TDni1.BackColor = Color.LightGreen
+            TContra.BackColor = Color.LightGreen
+            TDire.BackColor = Color.LightGreen
+            TNomApe.BackColor = Color.LightGreen
+            TTelef.BackColor = Color.LightGreen
+            TApellido.BackColor = Color.LightGreen
+            TProv1.BackColor = Color.LightGreen
+            TLocal.BackColor = Color.LightGreen
+            TEmail.BackColor = Color.LightGreen
 
-        res = MsgBox("Desea Agregar un nuevo usuario?", 4 + 0 + 32, "Aviso")
-        If res = vbYes Then
+            Dim usus As New Ususario(Val(TDni1.Text), TNomApe.Text, TDire.Text, TLocal.Text, TProv1.Text, TTelef.Text, TEmail.Text, TContra.Text, esta(), usua(), DateTime.Value.Date(), TApellido.Text)
+            Dim res As MsgBoxResult
 
-            If usus.AgregarUsuario() Then 'Val(TDni.Text), TNomApe.Text, TDire.Text, TLocal.Text, TProv.Text, TTelef.Text, TEmail.Text, TContra.Text, TEstado.Text, TUsu.Text, TFecha.Text)
-                MsgBox("Cliente agregado", 0 + 0 + 64)
+            res = MsgBox("Desea Agregar un nuevo usuario?", 4 + 0 + 32, "Aviso")
+            If res = vbYes Then
 
-            Else
-                MsgBox("Ocurrio un error!!")
+                If usus.AgregarUsuario() Then 'Val(TDni.Text), TNomApe.Text, TDire.Text, TLocal.Text, TProv.Text, TTelef.Text, TEmail.Text, TContra.Text, TEstado.Text, TUsu.Text, TFecha.Text)
+                    MsgBox("Cliente agregado", 0 + 0 + 64)
+
+                Else
+                    MsgBox("Ocurrio un error!!")
+                End If
+
             End If
-
+        Else
         End If
     End Sub
 
@@ -286,5 +299,98 @@
         Return var
     End Function
 
+    'Procedimiento que verifica que sea número'
+    Public Sub ComprobarNumero(ByVal e As System.Windows.Forms.KeyPressEventArgs)
+        'Verifica que sea numero lo que se ingresa'
+        If e.KeyChar.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar = "-" Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
 
+    End Sub
+
+    'Función comprobar si es letra lo que se presiona'
+    Public Sub ComprobarLetra(ByVal e As System.Windows.Forms.KeyPressEventArgs)
+        If e.KeyChar.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TDni1_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TTelef.KeyPress, TDni1.KeyPress
+        ComprobarNumero(e)
+    End Sub
+
+    Private Sub TNomApe_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TProv1.KeyPress, TNomApe.KeyPress, TLocal.KeyPress, TApellido.KeyPress
+        ComprobarLetra(e)
+    End Sub
+
+    Private Function ComprobarVacioNuevoUsuario() As Boolean
+        If String.IsNullOrWhiteSpace(TDni1.Text) Then
+            MsgBox("Debe completar el campo DNI")
+            TDni1.BackColor = Color.Salmon
+            TDni1.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TContra.Text) Then
+            MsgBox("Debe completar el campo Contraseña")
+            TContra.BackColor = Color.Salmon
+            TContra.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TDire.Text) Then
+            MsgBox("Debe completar el campo Domicilio")
+            TDire.BackColor = Color.Salmon
+            TDire.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TNomApe.Text) Then
+            MsgBox("Debe completar el campo Nombre")
+            TNomApe.BackColor = Color.Salmon
+            TNomApe.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TTelef.Text) Then
+            MsgBox("Debe completar el campo Teléfono")
+            TTelef.BackColor = Color.Salmon
+            TTelef.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TApellido.Text) Then
+            MsgBox("Debe completar el campo Apellido")
+            TApellido.BackColor = Color.Salmon
+            TApellido.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TProv1.Text) Then
+            MsgBox("Debe completar el campo Provincia")
+            TProv1.BackColor = Color.Salmon
+            TProv1.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TLocal.Text) Then
+            MsgBox("Debe completar el campo Localidad")
+            TLocal.BackColor = Color.Salmon
+            TLocal.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TEmail.Text) Then
+            MsgBox("Debe completar el campo E-mail")
+            TEmail.BackColor = Color.Salmon
+            TEmail.Focus()
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Private Sub TDni_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TDni.KeyPress
+        Me.ComprobarNumero(e)
+    End Sub
+
+    Private Sub TNombre_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TNombre.KeyPress, TApel.KeyPress
+        Me.ComprobarLetra(e)
+    End Sub
 End Class

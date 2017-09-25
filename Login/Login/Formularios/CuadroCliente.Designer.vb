@@ -56,6 +56,8 @@ Partial Class CuadroCliente
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TNomApe = New System.Windows.Forms.TextBox()
         Me.TTelef = New System.Windows.Forms.TextBox()
+        Me.BSalir = New System.Windows.Forms.Button()
+        Me.BGuardar = New System.Windows.Forms.Button()
         Me.PanelVer = New System.Windows.Forms.Panel()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.Label32 = New System.Windows.Forms.Label()
@@ -88,11 +90,13 @@ Partial Class CuadroCliente
         Me.Button1 = New System.Windows.Forms.Button()
         Me.BAlta = New System.Windows.Forms.Button()
         Me.PanelBusca = New System.Windows.Forms.Panel()
+        Me.BSalir2 = New System.Windows.Forms.Button()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.TApellido2 = New System.Windows.Forms.TextBox()
         Me.CBEstaCli = New System.Windows.Forms.ComboBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.TNombreCli = New System.Windows.Forms.TextBox()
         Me.TDniCli = New System.Windows.Forms.TextBox()
         Me.Label26 = New System.Windows.Forms.Label()
@@ -141,10 +145,6 @@ Partial Class CuadroCliente
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.BSalir = New System.Windows.Forms.Button()
-        Me.BGuardar = New System.Windows.Forms.Button()
-        Me.BSalir2 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.PanelRegistro.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -472,6 +472,35 @@ Partial Class CuadroCliente
         Me.TTelef.Name = "TTelef"
         Me.TTelef.Size = New System.Drawing.Size(238, 20)
         Me.TTelef.TabIndex = 4
+        '
+        'BSalir
+        '
+        Me.BSalir.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.BSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BSalir.ForeColor = System.Drawing.Color.Black
+        Me.BSalir.Image = Global.Login.My.Resources.Resources.cancel_square16
+        Me.BSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BSalir.Location = New System.Drawing.Point(825, 575)
+        Me.BSalir.Name = "BSalir"
+        Me.BSalir.Size = New System.Drawing.Size(80, 36)
+        Me.BSalir.TabIndex = 38
+        Me.BSalir.Text = "Salir"
+        Me.BSalir.UseVisualStyleBackColor = True
+        '
+        'BGuardar
+        '
+        Me.BGuardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.BGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BGuardar.ForeColor = System.Drawing.Color.Black
+        Me.BGuardar.Image = Global.Login.My.Resources.Resources.SaveHL
+        Me.BGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BGuardar.Location = New System.Drawing.Point(541, 575)
+        Me.BGuardar.Name = "BGuardar"
+        Me.BGuardar.Size = New System.Drawing.Size(100, 36)
+        Me.BGuardar.TabIndex = 37
+        Me.BGuardar.Text = "Guardar"
+        Me.BGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BGuardar.UseVisualStyleBackColor = True
         '
         'PanelVer
         '
@@ -863,6 +892,19 @@ Partial Class CuadroCliente
         Me.PanelBusca.Size = New System.Drawing.Size(1370, 627)
         Me.PanelBusca.TabIndex = 5
         '
+        'BSalir2
+        '
+        Me.BSalir2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.BSalir2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BSalir2.Image = Global.Login.My.Resources.Resources.cancel_square16
+        Me.BSalir2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BSalir2.Location = New System.Drawing.Point(675, 563)
+        Me.BSalir2.Name = "BSalir2"
+        Me.BSalir2.Size = New System.Drawing.Size(97, 36)
+        Me.BSalir2.TabIndex = 2
+        Me.BSalir2.Text = "Salir"
+        Me.BSalir2.UseVisualStyleBackColor = True
+        '
         'GroupBox5
         '
         Me.GroupBox5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -921,6 +963,17 @@ Partial Class CuadroCliente
         Me.Label25.Size = New System.Drawing.Size(87, 18)
         Me.Label25.TabIndex = 6
         Me.Label25.Text = "APELLIDO :"
+        '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button2.Image = Global.Login.My.Resources.Resources.search16_h
+        Me.Button2.Location = New System.Drawing.Point(1212, 32)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 29)
+        Me.Button2.TabIndex = 4
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'TNombreCli
         '
@@ -1397,68 +1450,15 @@ Partial Class CuadroCliente
         Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'BSalir
-        '
-        Me.BSalir.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.BSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BSalir.ForeColor = System.Drawing.Color.Black
-        Me.BSalir.Image = Global.Login.My.Resources.Resources.cancel_square16
-        Me.BSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BSalir.Location = New System.Drawing.Point(825, 575)
-        Me.BSalir.Name = "BSalir"
-        Me.BSalir.Size = New System.Drawing.Size(80, 36)
-        Me.BSalir.TabIndex = 38
-        Me.BSalir.Text = "Salir"
-        Me.BSalir.UseVisualStyleBackColor = True
-        '
-        'BGuardar
-        '
-        Me.BGuardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.BGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BGuardar.ForeColor = System.Drawing.Color.Black
-        Me.BGuardar.Image = Global.Login.My.Resources.Resources.SaveHL
-        Me.BGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BGuardar.Location = New System.Drawing.Point(541, 575)
-        Me.BGuardar.Name = "BGuardar"
-        Me.BGuardar.Size = New System.Drawing.Size(100, 36)
-        Me.BGuardar.TabIndex = 37
-        Me.BGuardar.Text = "Guardar"
-        Me.BGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BGuardar.UseVisualStyleBackColor = True
-        '
-        'BSalir2
-        '
-        Me.BSalir2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.BSalir2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BSalir2.Image = Global.Login.My.Resources.Resources.cancel_square16
-        Me.BSalir2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BSalir2.Location = New System.Drawing.Point(675, 563)
-        Me.BSalir2.Name = "BSalir2"
-        Me.BSalir2.Size = New System.Drawing.Size(97, 36)
-        Me.BSalir2.TabIndex = 2
-        Me.BSalir2.Text = "Salir"
-        Me.BSalir2.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Button2.Image = Global.Login.My.Resources.Resources.search16_h
-        Me.Button2.Location = New System.Drawing.Point(1212, 32)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 29)
-        Me.Button2.TabIndex = 4
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'CuadroCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1370, 623)
         Me.ControlBox = False
-        Me.Controls.Add(Me.PanelRegistro)
         Me.Controls.Add(Me.PanelBusca)
         Me.Controls.Add(Me.PanelVer)
+        Me.Controls.Add(Me.PanelRegistro)
         Me.Controls.Add(Me.PanelModifica)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
