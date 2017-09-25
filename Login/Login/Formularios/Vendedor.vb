@@ -240,11 +240,12 @@
             Dim res As MsgBoxResult
             res = MsgBox("Cliente no registrado, ¿Desea registrarlo?", 4 + 256 + 64, "Confirmar")
             If res = 6 Then
-                'CuadroUsu.MaximizeBox = True
-                'CuadroUsu.Show()
-                'CuadroUsu.PanelRegistro.Visible = True
-                'CuadroUsu.PanelBusca.Visible = False
-                'CuadroUsu.PanelVer.Visible = False
+                CuadroCliente.MaximizeBox = True
+                CuadroCliente.Show()
+                CuadroCliente.PanelRegistro.Visible = True
+                CuadroCliente.PanelBusca.Visible = False
+                CuadroCliente.PanelVer.Visible = False
+
             End If
         End If
     End Sub
@@ -253,4 +254,5 @@
         DataGridDatosCodigo.Rows.Clear()
         PanelDatosTecnicosVendedor.Visible = False
     End Sub
+
 End Class
