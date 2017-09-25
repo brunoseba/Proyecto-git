@@ -89,28 +89,94 @@
     End Sub
 
     Private Sub ButtonAgregarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonAgregarProducto.Click
-        Dim prod As New Productos(TextBoxNombreProducto.Text, ComboBoxRodadoProducto.SelectedItem, ComboBoxMedidaProducto.SelectedItem, Val(TextBoxPrecio.Text), Val(TextBoxCod_Datos.Text), Val(TextBoxStock.Text), LabelRutaArchivo.Text, "A", ComboBoxTipoVehiculo.SelectedItem)
-        Dim res, res2 As MsgBoxResult
-        res = MsgBox("Desea Agregar un nuevo Producto?", 4 + 0 + 32, "Aviso")
-        If res = vbYes Then
-            prod.AgregarProducto()
-            MsgBox("Producto Agregado", 0 + 0 + 64)
-            res2 = MsgBox("¿Desea Agregar un otro Producto?", 4 + 0 + 32, "Aviso")
-            If res2 = vbYes Then
-                TextBoxNombreProducto.Text = ""
-                TextBoxCod_Datos.Text = ""
-                TextBoxStock.Text = ""
-                TextBoxPrecio.Text = ""
+        If Not ComprobarVacioNuevoProducto() Then
+            TextBoxNombreProducto.BackColor = Color.LightGreen
+            TextBoxPrecio.BackColor = Color.LightGreen
+            TextBoxCod_Datos.BackColor = Color.LightGreen
+            TextBoxStock.BackColor = Color.LightGreen
+            Dim prod As New Productos(TextBoxNombreProducto.Text, ComboBoxRodadoProducto.SelectedItem, ComboBoxMedidaProducto.SelectedItem, Val(TextBoxPrecio.Text), Val(TextBoxCod_Datos.Text), Val(TextBoxStock.Text), LabelRutaArchivo.Text, "A", ComboBoxTipoVehiculo.SelectedItem)
+            Dim res, res2 As MsgBoxResult
+            res = MsgBox("Desea Agregar un nuevo Producto?", 4 + 0 + 32, "Aviso")
+            If res = vbYes Then
+                prod.AgregarProducto()
+                MsgBox("Producto Agregado", 0 + 0 + 64)
+                res2 = MsgBox("¿Desea Agregar un otro Producto?", 4 + 0 + 32, "Aviso")
+                If res2 = vbYes Then
+                    TextBoxNombreProducto.Text = ""
+                    TextBoxCod_Datos.Text = ""
+                    TextBoxStock.Text = ""
+                    TextBoxPrecio.Text = ""
+                Else
+                    Me.Close()
+                End If
             Else
-                Me.Close()
+                MsgBox("No se agrego el Producto", 0 + 0 + 64)
             End If
+        End If
+    End Sub
+    'Procedimiento que verifica que sea número'
+    Public Sub ComprobarNumero(ByVal e As System.Windows.Forms.KeyPressEventArgs)
+        'Verifica que sea numero lo que se ingresa'
+        If e.KeyChar.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar = "-" Then
+            e.Handled = False
         Else
-            MsgBox("No se agrego el Producto", 0 + 0 + 64)
+            e.Handled = True
         End If
 
     End Sub
 
-    Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox1.Enter
+    'Función comprobar si es letra lo que se presiona'
+    Public Sub ComprobarLetra(ByVal e As System.Windows.Forms.KeyPressEventArgs)
+        If e.KeyChar.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
 
+    Private Function ComprobarVacioNuevoProducto() As Boolean
+        If String.IsNullOrWhiteSpace(TextBoxNombreProducto.Text) Then
+            MsgBox("Debe completar el campo Nombre")
+            TextBoxNombreProducto.BackColor = Color.Salmon
+            TextBoxNombreProducto.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TextBoxPrecio.Text) Then
+            MsgBox("Debe completar el campo Precio")
+            TextBoxPrecio.BackColor = Color.Salmon
+            TextBoxPrecio.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TextBoxCod_Datos.Text) Then
+            MsgBox("Debe completar el campo Cod de Datos")
+            TextBoxCod_Datos.BackColor = Color.Salmon
+            TextBoxCod_Datos.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TextBoxStock.Text) Then
+            MsgBox("Debe completar el campo Stock")
+            TextBoxStock.BackColor = Color.Salmon
+            TextBoxStock.Focus()
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Private Sub TextBoxPrecio_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBoxStock.KeyPress, TextBoxPrecio.KeyPress, TextBoxCod_Datos.KeyPress
+        Me.ComprobarNumero(e)
+    End Sub
+
+    Private Sub TextBoxNombreProducto_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
+        Me.ComprobarLetra(e)
+    End Sub
+
+    Private Sub TextBoxNombreProducto_KeyPress_1(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBoxNombreProducto.KeyPress
+        Me.ComprobarLetra(e)
     End Sub
 End Class

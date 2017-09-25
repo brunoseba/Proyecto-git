@@ -199,7 +199,7 @@ Partial Class CuadroUsuario
         '
         Me.CBUsuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CBUsuario.FormattingEnabled = True
-        Me.CBUsuario.Items.AddRange(New Object() {"", "Todos", "Administrador", "Supervisor", "Vendedor"})
+        Me.CBUsuario.Items.AddRange(New Object() {"Todos", "Administrador", "Supervisor", "Vendedor"})
         Me.CBUsuario.Location = New System.Drawing.Point(1054, 35)
         Me.CBUsuario.Name = "CBUsuario"
         Me.CBUsuario.Size = New System.Drawing.Size(121, 26)
@@ -918,6 +918,7 @@ Partial Class CuadroUsuario
         Me.TContra.Name = "TContra"
         Me.TContra.Size = New System.Drawing.Size(238, 26)
         Me.TContra.TabIndex = 3
+        Me.TContra.UseSystemPasswordChar = True
         '
         'TTelef
         '

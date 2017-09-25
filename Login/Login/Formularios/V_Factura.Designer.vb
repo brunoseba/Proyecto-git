@@ -417,7 +417,7 @@ Partial Class V_Factura
         '
         Me.ComboBoxTipoPago.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxTipoPago.FormattingEnabled = True
-        Me.ComboBoxTipoPago.Items.AddRange(New Object() {"Efectivo", "Tarjeta de Crédito", "Tarjeta de Débito", "Cheques"})
+        Me.ComboBoxTipoPago.Items.AddRange(New Object() {"Efectivo", "Tarjeta de Crédito", "Tarjeta de Débito"})
         Me.ComboBoxTipoPago.Location = New System.Drawing.Point(102, 94)
         Me.ComboBoxTipoPago.Name = "ComboBoxTipoPago"
         Me.ComboBoxTipoPago.Size = New System.Drawing.Size(174, 26)

@@ -69,6 +69,7 @@ Public Class Ventana
         CuadroUsuario.MaximizeBox = True
         CuadroUsuario.Show()
         CuadroUsuario.PanelBusca.Visible = True
+        CuadroUsuario.CBUsuario.SelectedIndex = 0
         CuadroUsuario.MdiParent = Me
 
     End Sub
