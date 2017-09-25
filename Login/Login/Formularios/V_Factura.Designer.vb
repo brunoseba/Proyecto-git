@@ -34,6 +34,11 @@ Partial Class V_Factura
         Me.Label4 = New System.Windows.Forms.Label()
         Me.ButtonAceptar = New System.Windows.Forms.Button()
         Me.DataGridVerFacturas = New System.Windows.Forms.DataGridView()
+        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Vendedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Monto_Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Tipo_Pago = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ButtonBuscarFactura = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -81,11 +86,6 @@ Partial Class V_Factura
         Me.TextBoxBuscarFacturaCancelar = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Vendedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Monto_Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Tipo_Pago = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel_VerFacturas.SuspendLayout()
         CType(Me.DataGridVerFacturas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Informe_Factura.SuspendLayout()
@@ -170,6 +170,47 @@ Partial Class V_Factura
         Me.DataGridVerFacturas.ReadOnly = True
         Me.DataGridVerFacturas.Size = New System.Drawing.Size(1144, 297)
         Me.DataGridVerFacturas.TabIndex = 6
+        '
+        'Fecha
+        '
+        Me.Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Fecha.DefaultCellStyle = DataGridViewCellStyle1
+        Me.Fecha.HeaderText = "Fecha"
+        Me.Fecha.Name = "Fecha"
+        Me.Fecha.ReadOnly = True
+        '
+        'Cliente
+        '
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Cliente.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Cliente.HeaderText = "Cliente"
+        Me.Cliente.Name = "Cliente"
+        Me.Cliente.ReadOnly = True
+        '
+        'Vendedor
+        '
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Vendedor.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Vendedor.HeaderText = "Vendedor"
+        Me.Vendedor.Name = "Vendedor"
+        Me.Vendedor.ReadOnly = True
+        '
+        'Monto_Total
+        '
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Monto_Total.DefaultCellStyle = DataGridViewCellStyle4
+        Me.Monto_Total.HeaderText = "Monto Total"
+        Me.Monto_Total.Name = "Monto_Total"
+        Me.Monto_Total.ReadOnly = True
+        '
+        'Tipo_Pago
+        '
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Tipo_Pago.DefaultCellStyle = DataGridViewCellStyle5
+        Me.Tipo_Pago.HeaderText = "Tipo Pago"
+        Me.Tipo_Pago.Name = "Tipo_Pago"
+        Me.Tipo_Pago.ReadOnly = True
         '
         'ButtonBuscarFactura
         '
@@ -625,56 +666,15 @@ Partial Class V_Factura
         Me.Label8.TabIndex = 1
         Me.Label8.Text = "Cancelar Factura"
         '
-        'Fecha
-        '
-        Me.Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Fecha.DefaultCellStyle = DataGridViewCellStyle1
-        Me.Fecha.HeaderText = "Fecha"
-        Me.Fecha.Name = "Fecha"
-        Me.Fecha.ReadOnly = True
-        '
-        'Cliente
-        '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Cliente.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Cliente.HeaderText = "Cliente"
-        Me.Cliente.Name = "Cliente"
-        Me.Cliente.ReadOnly = True
-        '
-        'Vendedor
-        '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Vendedor.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Vendedor.HeaderText = "Vendedor"
-        Me.Vendedor.Name = "Vendedor"
-        Me.Vendedor.ReadOnly = True
-        '
-        'Monto_Total
-        '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Monto_Total.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Monto_Total.HeaderText = "Monto Total"
-        Me.Monto_Total.Name = "Monto_Total"
-        Me.Monto_Total.ReadOnly = True
-        '
-        'Tipo_Pago
-        '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Tipo_Pago.DefaultCellStyle = DataGridViewCellStyle5
-        Me.Tipo_Pago.HeaderText = "Tipo Pago"
-        Me.Tipo_Pago.Name = "Tipo_Pago"
-        Me.Tipo_Pago.ReadOnly = True
-        '
         'V_Factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1324, 606)
-        Me.Controls.Add(Me.Panel_Cancelar_Factura)
         Me.Controls.Add(Me.Panel_Informe_Factura)
         Me.Controls.Add(Me.Panel_VerFacturas)
+        Me.Controls.Add(Me.Panel_Cancelar_Factura)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "V_Factura"
         Me.Text = "V_Factura"

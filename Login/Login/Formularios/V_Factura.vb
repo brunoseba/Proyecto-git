@@ -35,4 +35,43 @@
         MsgBox("Informe Generado Correctamente", 64, "Atención")
     End Sub
 
+    'Procedimiento que verifica que sea número'
+    Public Sub ComprobarNumero(ByVal e As System.Windows.Forms.KeyPressEventArgs)
+        'Verifica que sea numero lo que se ingresa'
+        If e.KeyChar.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar = "-" Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+
+    End Sub
+
+    'Función comprobar si es letra lo que se presiona'
+    Public Sub ComprobarLetra(ByVal e As System.Windows.Forms.KeyPressEventArgs)
+        If e.KeyChar.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TextBoxBuscarFacturaCancelar_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBoxBuscarFacturaCancelar.KeyPress
+        Me.ComprobarNumero(e)
+    End Sub
+
+    Private Sub TextBoxInformeNFactura_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBoxInformeNFactura.KeyPress
+        Me.ComprobarNumero(e)
+    End Sub
+
+    Private Sub TextBox1_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox1.KeyPress
+        Me.ComprobarNumero(e)
+    End Sub
 End Class
