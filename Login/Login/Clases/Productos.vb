@@ -117,7 +117,6 @@
     Public Sub AgregarProducto()
         Try
             Using Base As New NNeumaticosEntities1
-                MsgBox("Eligio la DB")
                 Dim agregar = New Producto With
                     {
                     .producto_nombre = GetNombre(),
@@ -129,7 +128,6 @@
                     .producto_imagen = GetImagen(),
                     .producto_estado = GetEstado(),
                     .tipoVehi_descripcion = GetVehiculo()}
-                MsgBox("Cargo los datos")
                 Base.Producto.AddObject(agregar)
                 Base.SaveChanges()
             End Using

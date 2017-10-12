@@ -81,7 +81,7 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        OpenFileDialog1.Filter = "Jpg|*.jpg|Bmp|*.bmp|Png|*.png"
+        OpenFileDialog1.Filter = "Png|*.png|Jpg|*.jpg|Bmp|*.bmp"
         If OpenFileDialog1.ShowDialog = DialogResult.OK Then
             LabelRutaArchivo.Text = OpenFileDialog1.FileName
             PictureBox1.ImageLocation = OpenFileDialog1.FileName
@@ -95,23 +95,54 @@
             TextBoxCod_Datos.BackColor = Color.LightGreen
             TextBoxStock.BackColor = Color.LightGreen
             Dim prod As New Productos(TextBoxNombreProducto.Text, ComboBoxRodadoProducto.SelectedItem, ComboBoxMedidaProducto.SelectedItem, Val(TextBoxPrecio.Text), Val(TextBoxCod_Datos.Text), Val(TextBoxStock.Text), LabelRutaArchivo.Text, "A", ComboBoxTipoVehiculo.SelectedItem)
-            Dim res, res2 As MsgBoxResult
+            Dim res, res2, res_img As MsgBoxResult
+
             res = MsgBox("Desea Agregar un nuevo Producto?", 4 + 0 + 32, "Aviso")
             If res = vbYes Then
-                prod.AgregarProducto()
-                MsgBox("Producto Agregado", 0 + 0 + 64)
-                res2 = MsgBox("¿Desea Agregar un otro Producto?", 4 + 0 + 32, "Aviso")
-                If res2 = vbYes Then
-                    TextBoxNombreProducto.Text = ""
-                    TextBoxCod_Datos.Text = ""
-                    TextBoxStock.Text = ""
-                    TextBoxPrecio.Text = ""
+                If Me.LabelRutaArchivo.Text = "Ruta:" Then
+                    res_img = MsgBox("El producto no tiene imagen asignada, ¿Desea agregar una?", 4 + 0 + 32, "Aviso")
+                    If res_img = vbNo Then
+                        prod.AgregarProducto()
+                        MsgBox("Producto Agregado", 0 + 0 + 64)
+                        res2 = MsgBox("¿Desea Agregar otro Producto?", 4 + 0 + 32, "Aviso")
+                        If res2 = vbYes Then
+                            TextBoxNombreProducto.Text = ""
+                            TextBoxCod_Datos.Text = ""
+                            TextBoxStock.Text = ""
+                            TextBoxPrecio.Text = ""
+                            LabelRutaArchivo.Text = "Ruta:"
+                            TextBoxNombreProducto.BackColor = Color.White
+                            TextBoxPrecio.BackColor = Color.White
+                            TextBoxCod_Datos.BackColor = Color.White
+                            TextBoxStock.BackColor = Color.White
+                            PictureBox1.Image = My.Resources.image_not_found__1_
+                        Else
+                            Me.Close()
+                        End If
+                    End If
                 Else
-                    Me.Close()
+                    prod.AgregarProducto()
+                    MsgBox("Producto Agregado", 0 + 0 + 64)
+                    res2 = MsgBox("¿Desea Agregar otro Producto?", 4 + 0 + 32, "Aviso")
+                    If res2 = vbYes Then
+                        TextBoxNombreProducto.Text = ""
+                        TextBoxCod_Datos.Text = ""
+                        TextBoxStock.Text = ""
+                        TextBoxPrecio.Text = ""
+                        LabelRutaArchivo.Text = "Ruta:"
+                        TextBoxNombreProducto.BackColor = Color.White
+                        TextBoxPrecio.BackColor = Color.White
+                        TextBoxCod_Datos.BackColor = Color.White
+                        TextBoxStock.BackColor = Color.White
+                        PictureBox1.Image = My.Resources.image_not_found__1_
+                    Else
+                        Me.Close()
+                    End If
                 End If
             Else
                 MsgBox("No se agrego el Producto", 0 + 0 + 64)
             End If
+            
         End If
     End Sub
     'Procedimiento que verifica que sea número'
@@ -168,15 +199,8 @@
         End If
     End Function
 
-    Private Sub TextBoxPrecio_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBoxStock.KeyPress, TextBoxPrecio.KeyPress, TextBoxCod_Datos.KeyPress
+    Private Sub TextBoxPrecio_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBoxStock.KeyPress, TextBoxPrecio.KeyPress
         Me.ComprobarNumero(e)
     End Sub
 
-    Private Sub TextBoxNombreProducto_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
-        Me.ComprobarLetra(e)
-    End Sub
-
-    Private Sub TextBoxNombreProducto_KeyPress_1(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBoxNombreProducto.KeyPress
-        Me.ComprobarLetra(e)
-    End Sub
 End Class
