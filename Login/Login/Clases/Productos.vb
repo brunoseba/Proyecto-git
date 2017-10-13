@@ -1,5 +1,4 @@
 ﻿Public Class Productos
-
     Private nombre As String
     Private rodado As String
     Private medida As String
@@ -9,7 +8,6 @@
     Private imagen As String
     Private estado As Char
     Private vehiculo As String
-
 
 #Region "Constructores"
 
@@ -136,8 +134,6 @@
         End Try
     End Sub
 
-
-
     '---borrado logico----
     Public Sub EliminaProducto(ByVal pro_id As Integer, ByVal p_estado As Char)
         Try
@@ -155,28 +151,18 @@
         End Try
     End Sub
 
-
-
     '---borrado fisico----
     Public Sub Eliminar(ByVal pro_id)
         Try
-
             Using Base As New NNeumaticosEntities1
 
                 Dim borra = (From p In Base.Producto Where (pro_id = p.producto_id)
                              Select p).First()
-
                 Base.Producto.DeleteObject(borra)
                 Base.SaveChanges()
             End Using
-
         Catch ex As Exception
-
         End Try
     End Sub
-
-
-
 #End Region
-
 End Class

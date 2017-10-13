@@ -79,6 +79,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\D_Tecnicos.vb" />
     <Compile Include="Clases\Empresas.vb" />
     <Compile Include="Formularios\CuadroUsuario.Designer.vb">
       <DependentUpon>CuadroUsuario.vb</DependentUpon>

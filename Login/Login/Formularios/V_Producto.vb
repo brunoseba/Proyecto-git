@@ -2,12 +2,9 @@
 
     'Procedimiento cuando carga la ventana Principal'
     Private Sub Vendedor_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.DataGridViewDatosCodigo.Rows.Add("1", "LT215/75R15", "1", "S180", "466", "6", "216", "703")
-        Me.DataGridViewDatosCodigo.Rows.Add("2", "LT235/75R15", "1", "R 170", "447", "6,5", "235", "733")
-        Me.DataGridViewDatosCodigo.Rows.Add("3", "215/80R16", "107", "S 180", "437", "6", "216", "751")
-        Me.DataGridViewDatosCodigo.Rows.Add("4", "235/75R15", "108", "S 180", "447", "6,5", "235", "733")
-        Me.DataGridViewDatosCodigo.Rows.Add("5", "31x10,5R", "109", "S 180", "423", "8,5", "268", "775")
-        Me.DataGridViewDatosCodigo.Rows.Add("6", "LT255/75R15", "1", "S 180", "430", "7", "255", "763")
+        Dim d_Tec As New D_Tecnicos()
+        d_Tec.MostrarDTecnicos(Me.DataGridViewDatosCodigo)
+     
         ComboBoxMedidaProducto.SelectedIndex = 0
         ComboBoxRodadoProducto.SelectedIndex = 0
         ComboBoxTipoVehiculo.SelectedIndex = 0

@@ -39,7 +39,6 @@
 
 #End Region
 
-
 #Region "Set/Get"
 
     Private Sub SetID(ByVal c_id As Long)
@@ -141,7 +140,6 @@
     End Function
 #End Region
 
-
 #Region "Metodos"
 
     Public Sub Consulta(ByVal cliente As Long)
@@ -150,16 +148,10 @@
             Using Base As New NNeumaticosEntities1
                 Dim cliConsul = (From c In Base.Cliente Where (c.cliente_cuil = cliente And c.cliente_estado = "a")
                                Select c).First
-
             End Using
-
         Catch ex As Exception
-
         End Try
     End Sub
-
-
-
 
     Public Function AgregaCliente()
         Try
@@ -187,8 +179,6 @@
         End Try
     End Function
 
-
-
     Public Sub ModifCliente(ByVal cliente As Long, ByVal nombe As String, ByVal direc As String, ByVal tel As String, ByVal email As String, ByVal estado As Char, ByVal ape As String, ByVal local As String, ByVal prov As String, ByVal fecha As String, ByVal postal As String, ByVal celu As String)
         Try
 
@@ -206,17 +196,11 @@
                 modifica.cliente_Fecha = fecha
                 modifica.cliente_Cpostal = postal
                 modifica.cliente_Celular = celu
-
-
                 Base.SaveChanges()
             End Using
-
         Catch ex As Exception
-
         End Try
     End Sub
-
-
 
     Public Sub AltaCliente(ByVal cliente As Long)
         Try
@@ -232,8 +216,6 @@
         End Try
     End Sub
 
-
-
     Public Sub BajaCliente(ByVal cliente As Long)
         Try
 
@@ -243,16 +225,9 @@
 
                 baja.cliente_estado = "b"
                 Base.SaveChanges()
-
             End Using
-
         Catch ex As Exception
-
         End Try
     End Sub
-
-
 #End Region
-
-
 End Class

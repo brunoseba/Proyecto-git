@@ -21,9 +21,8 @@ Public Class Ususario
     Private fecha As String
     Private ape As String
 
-
 #Region "Constructores"
-    
+
 
     Public Sub New()
     End Sub
@@ -179,10 +178,7 @@ Public Class Ususario
 
 
 #End Region
-
 #Region "Procedimientos"
-
-
     '---agrega usuario---
     Public Function AgregarUsuario() 'ByVal dni As Integer, ByVal nomYape As String, ByVal direc As String, ByVal local As String, ByVal prov As String, ByVal tel As String, ByVal email As String, ByVal contra As String, ByVal estado As Char, ByVal tipoUsu As Char, ByVal fecha As String)
         Try
@@ -209,17 +205,13 @@ Public Class Ususario
         Catch ex As Exception
             Return False
         End Try
-
     End Function
-
-
     '---Verifica si esta en la base de datos---
     Public Function Verifica(ByVal u_dni As Integer, ByVal u_contra As String)
         Try
             Using Consulta As New NNeumaticosEntities1
                 Dim objMostrar = (From q In Consulta.Usuario Where (q.usu_Dni = u_dni And q.usu_Contraseña = u_contra And q.usu_Estado = "a")
                                   Select q).First
-
             End Using
             Return True
         Catch ex As Exception
@@ -227,31 +219,24 @@ Public Class Ususario
         End Try
     End Function
 
-
     '---borrado logico (BAJA)----
     Public Sub EliminaUsuario(ByVal usua_dni As Integer, ByVal usu_estado As Char)
         Try
-
             Using Base As New NNeumaticosEntities1
                 Dim borra = (From u In Base.Usuario Where (usua_dni = u.usu_Dni)
                 Select u).First
                 borra.usu_Estado = usu_estado
-
                 Base.SaveChanges()
             End Using
-
         Catch ex As Exception
-
         End Try
     End Sub
-
 
     Public Sub Dato(ByVal dni As Integer, ByVal nombre As String)
         Try
             Using Base As New NNeumaticosEntities1
                 Dim trae = (From u In Base.Usuario Where (u.usu_Dni = dni Or u.usu_nomYape = nombre)
                            Select u).First
-
                 SetDni(trae.usu_Dni)
                 SetNomYape(trae.usu_nomYape)
                 SetDireccion(trae.usu_Direccon)
@@ -263,33 +248,21 @@ Public Class Ususario
                 SetEstado(trae.usu_Estado)
                 SetTipoUsu(trae.usu_TipoUsu)
                 SetFecha(trae.usu_Fecha)
-
             End Using
         Catch ex As Exception
-
         End Try
     End Sub
-
 
     Public Sub muestra(ByVal tabla As DataGridView, ByVal u_dni As Integer, ByVal nombre As String, ByVal usu As Char)
-
         Try
             Using Base As New NNeumaticosEntities1
-
                 Dim mues = (From u In Base.Usuario Where (u.usu_Dni = u_dni Or u.usu_nomYape = nombre Or u.usu_TipoUsu = usu)
                             Select Dni = u.usu_Dni, NombreyApellido = u.usu_nomYape & u.usu_ape, Direccion = u.usu_Direccon, Localidad = u.usu_Localidad, Telefono = u.usu_Telefono, Email = u.usu_Email, Contraseña = u.usu_Contraseña, Estado = u.usu_Estado, TipoUsuario = u.usu_TipoUsu).ToList
-
                 tabla.DataSource = mues
-
             End Using
         Catch ex As Exception
-
         End Try
     End Sub
-
-
-
-
 #End Region
 
 End Class
