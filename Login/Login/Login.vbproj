@@ -94,10 +94,10 @@
     <Compile Include="Formularios\CuadroCliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Empresa.Designer.vb">
-      <DependentUpon>Empresa.vb</DependentUpon>
+    <Compile Include="Formularios\V_Empresa.Designer.vb">
+      <DependentUpon>V_Empresa.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Empresa.vb">
+    <Compile Include="Formularios\V_Empresa.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Inicio_Sesion.vb">
@@ -167,8 +167,8 @@
     <EmbeddedResource Include="Formularios\CuadroCliente.resx">
       <DependentUpon>CuadroCliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Empresa.resx">
-      <DependentUpon>Empresa.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\V_Empresa.resx">
+      <DependentUpon>V_Empresa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Inicio_Sesion.resx">
       <DependentUpon>Inicio_Sesion.vb</DependentUpon>

@@ -95,7 +95,6 @@ Partial Class Empresas
         Me.TextBoxEmailEmpresa.Name = "TextBoxEmailEmpresa"
         Me.TextBoxEmailEmpresa.Size = New System.Drawing.Size(253, 26)
         Me.TextBoxEmailEmpresa.TabIndex = 7
-        Me.TextBoxEmailEmpresa.Text = "neumanneumaticos@gmail.com"
         '
         'Label2
         '
@@ -126,7 +125,6 @@ Partial Class Empresas
         Me.TextBoxTelefonoEmpresa.Name = "TextBoxTelefonoEmpresa"
         Me.TextBoxTelefonoEmpresa.Size = New System.Drawing.Size(207, 26)
         Me.TextBoxTelefonoEmpresa.TabIndex = 9
-        Me.TextBoxTelefonoEmpresa.Text = "379-4438363"
         '
         'TextBoxDireccionEmpresa
         '
@@ -135,7 +133,6 @@ Partial Class Empresas
         Me.TextBoxDireccionEmpresa.Name = "TextBoxDireccionEmpresa"
         Me.TextBoxDireccionEmpresa.Size = New System.Drawing.Size(247, 26)
         Me.TextBoxDireccionEmpresa.TabIndex = 8
-        Me.TextBoxDireccionEmpresa.Text = "Avenida Independeencia 3547"
         '
         'Label6
         '
@@ -166,7 +163,6 @@ Partial Class Empresas
         Me.TextBoxCuitEmpresa.Name = "TextBoxCuitEmpresa"
         Me.TextBoxCuitEmpresa.Size = New System.Drawing.Size(207, 26)
         Me.TextBoxCuitEmpresa.TabIndex = 5
-        Me.TextBoxCuitEmpresa.Text = "30500315683"
         '
         'Label3
         '
@@ -186,7 +182,6 @@ Partial Class Empresas
         Me.TextBoxNombreEmpresa.Name = "TextBoxNombreEmpresa"
         Me.TextBoxNombreEmpresa.Size = New System.Drawing.Size(207, 26)
         Me.TextBoxNombreEmpresa.TabIndex = 6
-        Me.TextBoxNombreEmpresa.Text = "Neumann Neumáticos"
         '
         'ButtonSalirEmpresa
         '
@@ -199,7 +194,7 @@ Partial Class Empresas
         '
         'ButtonGuardarEmpresa
         '
-        Me.ButtonGuardarEmpresa.Location = New System.Drawing.Point(420, 494)
+        Me.ButtonGuardarEmpresa.Location = New System.Drawing.Point(446, 494)
         Me.ButtonGuardarEmpresa.Name = "ButtonGuardarEmpresa"
         Me.ButtonGuardarEmpresa.Size = New System.Drawing.Size(139, 35)
         Me.ButtonGuardarEmpresa.TabIndex = 10
@@ -255,9 +250,8 @@ Partial Class Empresas
         Me.LabelCuit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.LabelCuit.Location = New System.Drawing.Point(159, 74)
         Me.LabelCuit.Name = "LabelCuit"
-        Me.LabelCuit.Size = New System.Drawing.Size(144, 25)
+        Me.LabelCuit.Size = New System.Drawing.Size(0, 25)
         Me.LabelCuit.TabIndex = 6
-        Me.LabelCuit.Text = "30500315683"
         '
         'LabelECuit
         '
@@ -277,9 +271,8 @@ Partial Class Empresas
         Me.LabelDireccion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.LabelDireccion.Location = New System.Drawing.Point(178, 174)
         Me.LabelDireccion.Name = "LabelDireccion"
-        Me.LabelDireccion.Size = New System.Drawing.Size(303, 25)
+        Me.LabelDireccion.Size = New System.Drawing.Size(0, 25)
         Me.LabelDireccion.TabIndex = 9
-        Me.LabelDireccion.Text = "Avenida Independeencia 3547"
         '
         'LabelTelefono
         '
@@ -288,9 +281,8 @@ Partial Class Empresas
         Me.LabelTelefono.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.LabelTelefono.Location = New System.Drawing.Point(1107, 76)
         Me.LabelTelefono.Name = "LabelTelefono"
-        Me.LabelTelefono.Size = New System.Drawing.Size(139, 25)
+        Me.LabelTelefono.Size = New System.Drawing.Size(0, 25)
         Me.LabelTelefono.TabIndex = 10
-        Me.LabelTelefono.Text = "379-4438363"
         '
         'LabelEmail
         '
@@ -299,9 +291,8 @@ Partial Class Empresas
         Me.LabelEmail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.LabelEmail.Location = New System.Drawing.Point(681, 172)
         Me.LabelEmail.Name = "LabelEmail"
-        Me.LabelEmail.Size = New System.Drawing.Size(317, 25)
+        Me.LabelEmail.Size = New System.Drawing.Size(0, 25)
         Me.LabelEmail.TabIndex = 8
-        Me.LabelEmail.Text = "neumanneumaticos@gmail.com"
         '
         'LabelEDireccion
         '
@@ -354,9 +345,8 @@ Partial Class Empresas
         Me.LabelNombre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.LabelNombre.Location = New System.Drawing.Point(641, 75)
         Me.LabelNombre.Name = "LabelNombre"
-        Me.LabelNombre.Size = New System.Drawing.Size(223, 25)
+        Me.LabelNombre.Size = New System.Drawing.Size(0, 25)
         Me.LabelNombre.TabIndex = 7
-        Me.LabelNombre.Text = "Neumann Neumáticos"
         '
         'ButtonEAceptar
         '

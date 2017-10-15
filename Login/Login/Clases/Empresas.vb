@@ -65,16 +65,39 @@
 #End Region
 
 #Region "Metodos"
-    Function Mostrar()
+    Function MostrarDatosEmpresa()
         Try
             Using Base As New NNeumaticosEntities1
-                Dim empConsulta = (From e In Base.Empresa Select e).ToList
-                Return empConsulta
+                Dim empConsulta As Empresa = (From e In Base.Empresa Select e).First()
+                SetCUIT(empConsulta.empresa_cuit)
+                SetNom(empConsulta.empresa_nombre)
+                SetDireccion(empConsulta.empresa_direccion)
+                SetEmail(empConsulta.empresa_email)
+                SetTelefono(empConsulta.empresa_telefono)
+                Return True
             End Using
         Catch ex As Exception
             Return False
         End Try
     End Function
-#End Region
 
+    Function ActualizarDatos(ByVal p_cuit As Long, ByVal p_nombre As String, ByVal p_direccion As String, ByVal p_email As String, ByVal p_telefono As String)
+        Try
+
+            Using Base As New NNeumaticosEntities1
+                Dim modif = (From q In Base.Empresa Where (p_cuit = q.empresa_cuit) Select q).First
+                modif.empresa_cuit = p_cuit
+                modif.empresa_nombre = p_nombre
+                modif.empresa_direccion = p_direccion
+                modif.empresa_email = p_email
+                modif.empresa_telefono = p_telefono
+                Base.SaveChanges()
+            End Using
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+
+    End Function
+#End Region
 End Class
