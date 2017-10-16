@@ -1041,9 +1041,9 @@ Partial Class CuadroUsuario
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1330, 644)
+        Me.Controls.Add(Me.PanelRegistro)
         Me.Controls.Add(Me.PanelBusca)
         Me.Controls.Add(Me.PanelVer)
-        Me.Controls.Add(Me.PanelRegistro)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False

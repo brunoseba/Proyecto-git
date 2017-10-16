@@ -1,13 +1,4 @@
-﻿Imports System
-Imports System.ComponentModel
-Imports System.Data.EntityClient
-Imports System.Data.Objects
-Imports System.Data.Objects.DataClasses
-Imports System.Linq
-Imports System.Runtime.Serialization
-Imports System.Xml.Serialization
-
-Public Class Ususario
+﻿Public Class Ususario
     Private dni As Integer
     Private nomYape As String
     Private direccion As String
@@ -178,6 +169,7 @@ Public Class Ususario
 
 
 #End Region
+
 #Region "Procedimientos"
     '---agrega usuario---
     Public Function AgregarUsuario() 'ByVal dni As Integer, ByVal nomYape As String, ByVal direc As String, ByVal local As String, ByVal prov As String, ByVal tel As String, ByVal email As String, ByVal contra As String, ByVal estado As Char, ByVal tipoUsu As Char, ByVal fecha As String)
@@ -206,12 +198,25 @@ Public Class Ususario
             Return False
         End Try
     End Function
-    '---Verifica si esta en la base de datos---
-    Public Function Verifica(ByVal u_dni As Integer, ByVal u_contra As String)
+
+    '--- Verifica si esta en la base de datos el USER Y PASS para ingresar al sistema ---
+    Public Function Verificar_Ingreso(ByVal u_dni As Integer, ByVal u_contra As String)
         Try
             Using Consulta As New NNeumaticosEntities1
                 Dim objMostrar = (From q In Consulta.Usuario Where (q.usu_Dni = u_dni And q.usu_Contraseña = u_contra And q.usu_Estado = "a")
                                   Select q).First
+            End Using
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    '-- Verifica si existe el dni antes de agregar uno nuevo ---
+    Public Function Verificar_Existencia(ByVal u_dni As Integer)
+        Try
+            Using Consulta As New NNeumaticosEntities1
+                Dim objMostrar = (From q In Consulta.Usuario Where (q.usu_Dni = u_dni) Select q).First
             End Using
             Return True
         Catch ex As Exception
@@ -264,5 +269,4 @@ Public Class Ususario
         End Try
     End Sub
 #End Region
-
 End Class

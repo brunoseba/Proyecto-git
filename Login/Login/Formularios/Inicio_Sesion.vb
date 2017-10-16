@@ -1,24 +1,15 @@
 ﻿Public Class Inicio_Sesion
-
     Dim cadena As String 'variable global
 
-
     Public Sub comprueba()
-
         Dim usu As New Ususario(Tusuario.Text, TContra.Text)
-        'MsgBox(usu.GetDni())
-        'MsgBox(usu.GetContraseña())
-        'MsgBox(usu.Verifica(usu.GetDni(), usu.GetContraseña()))
-        If usu.Verifica(usu.GetDni(), usu.GetContraseña()) Then
-
+        If usu.Verificar_Ingreso(usu.GetDni(), usu.GetContraseña()) Then
             Label1.Visible = True
             Label1.Text = ("Verificando Usuario...")
             PBarra.Visible = True
             Timer1.Enabled = True
             Timer1.Interval = 100
             Button1.Enabled = False
-
-
         Else
             Label1.Visible = True
             Label1.Text = ("Verificando Usuario...")
@@ -26,11 +17,7 @@
             Timer2.Enabled = True
             Timer2.Interval = 100
             Button1.Enabled = False
-
         End If
-
-
-
     End Sub
 
     Private Sub limpia()
@@ -41,34 +28,24 @@
         LIcontra.Visible = False
     End Sub
 
-
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-
-
-
         PBarra.Maximum = 100
         PBarra.Minimum = 0
         PBarra.Value = PBarra.Value + 5
-
         If PBarra.Value = 100 Then
-
             Ventana.Show()
             PBarra.Value = 0
             Timer1.Enabled = False
             Button1.Enabled = True
             Me.Close()
-
         End If
     End Sub
-
 
     Private Sub Timer2_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer2.Tick
         PBarra2.Maximum = 100
         PBarra2.Minimum = 0
         PBarra2.Value = PBarra2.Value + 5
-
         If PBarra2.Value = 100 Then
-
             PBarra2.Value = 0
             Timer2.Enabled = False
             Button1.Enabled = True
@@ -80,61 +57,40 @@
         End If
     End Sub
 
-
-
     '---boton--
-
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         'Dim res As MsgBoxResult
         comprueba()
-
     End Sub
 
     Private Sub BSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BSalir.Click
-
         SplashScreen1.Close()
         Me.Close()
     End Sub
 
-
-
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
         If Tusuario.Text IsNot Nothing And TContra.Text IsNot Nothing Then
             limpia()
         End If
-
-
         Tusuario.Focus()
         TContra.Focus()
         'ingresamos el texto que queremos que figure como imagen al agua
-
         Tusuario.Text = "11223344"
         TContra.Text = "*********"
         'Textbox3.text = "Salario Mensual"
-
         'cambiamos el color a gris claro
-
         Tusuario.ForeColor = Color.Silver
         TContra.ForeColor = Color.Silver
         'Textbox3.ForeColor = Color.LightGray
-
-
         'Agregamos los eventos para el procedimiento GotfocusTexto
-
         AddHandler Tusuario.GotFocus, AddressOf GotfocusTexto
         AddHandler TContra.GotFocus, AddressOf GotfocusTexto
         'AddHandler TextBox3.GotFocus, AddressOf GotfocusTexto
-
-
         'Agregamos los eventos para el procedimiento LostfocusTexto
-
         AddHandler Tusuario.LostFocus, AddressOf LostfocusTexto
         AddHandler TContra.LostFocus, AddressOf LostfocusTexto
         'AddHandler TextBox3.LostFocus, AddressOf LostfocusTexto
-
     End Sub
-
 
     Private Sub GotfocusTexto(ByVal sender As Object, ByVal e As System.EventArgs)
         'capturamos el texto que tenia
@@ -150,7 +106,6 @@
             sender.Text = cadena  'volverle a poner el texto que tenia
             sender.ForeColor = Color.Silver 'y poner la letra en gris
         End If
-
     End Sub
 
     Private Sub TContra_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TContra.KeyDown
@@ -160,10 +115,8 @@
     End Sub
 
     Private Sub Tusuario_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Tusuario.KeyPress
-
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = False
-
         Else
             e.Handled = True
         End If
@@ -171,8 +124,6 @@
             .MaxLength = 8
         End With
     End Sub
-
-
 
     'Private Sub GenerarPDF()
     'Dim oDoc As New iTextSharp.text.Document(PageSize.A4, 0, 0, 0, 0)
@@ -221,9 +172,4 @@
     'oDoc = Nothing
     'End Try
     'End Sub
-
-
-    Private Sub Tusuario_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tusuario.TextChanged
-
-    End Sub
 End Class
