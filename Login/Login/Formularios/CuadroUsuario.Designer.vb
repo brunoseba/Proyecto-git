@@ -168,7 +168,7 @@ Partial Class CuadroUsuario
         'CBEsta
         '
         Me.CBEsta.FormattingEnabled = True
-        Me.CBEsta.Items.AddRange(New Object() {"", "Alta", "Baja"})
+        Me.CBEsta.Items.AddRange(New Object() {"Todos", "Alta", "Baja"})
         Me.CBEsta.Location = New System.Drawing.Point(825, 35)
         Me.CBEsta.Name = "CBEsta"
         Me.CBEsta.Size = New System.Drawing.Size(121, 26)

@@ -59,7 +59,7 @@
         SetEstado(u_estado)
         SetTipoUsu(u_tipoUsu)
         SetFecha(u_fecha)
-        SetFecha(u_ape)
+        SetApe(u_ape)
     End Sub
 #End Region
 
@@ -188,7 +188,8 @@
                 .usu_Contraseña = GetContraseña(),
                 .usu_Estado = GetEstado(),
                 .usu_TipoUsu = GetTipoUsu(),
-                .usu_Fecha = GetFecha()
+                .usu_Fecha = GetFecha(),
+                .usu_ape = GetApe()
                 }
                 Base.Usuario.AddObject(consulta)
                 Base.SaveChanges()
