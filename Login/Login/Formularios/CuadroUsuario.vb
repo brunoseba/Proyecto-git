@@ -24,6 +24,7 @@
     End Function
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Me.DataGridView1.Visible = True
         Dim usua As New Ususario
         Dim dni As Integer
         Dim nom As String
@@ -37,7 +38,6 @@
         esta = estados()
         DataGridView1.RowTemplate.Height = 50
         If TDni.Enabled = True Then
-            MsgBox("El campo DNI esta activo y el resto desactivado")
             usua.BuscarPorDni(dni, DataGridView1)
         ElseIf TNombre.Enabled = True Then
             MsgBox("El campo Nombre y Apellido esta activo y el resto desactivado")
@@ -108,24 +108,26 @@
                         'res = MsgBox("Desea ver el cliente ", 4 + 256 + 16, "ver")
                         'If res = 6 Then
                         PanelBusca.Visible = False
-                        Ldni.Text = (DataGridView1.Item(0, DataGridView1.CurrentRow.Index).Value).ToString
-                        Lnom.Text = (DataGridView1.Item(1, DataGridView1.CurrentRow.Index).Value).ToString
-                        Ldirec.Text = (DataGridView1.Item(2, DataGridView1.CurrentRow.Index).Value).ToString
-                        Llocal.Text = (DataGridView1.Item(3, DataGridView1.CurrentRow.Index).Value).ToString
-                        Ltelef.Text = (DataGridView1.Item(4, DataGridView1.CurrentRow.Index).Value).ToString
-                        Lemail.Text = (DataGridView1.Item(5, DataGridView1.CurrentRow.Index).Value).ToString
-                        Lcontra.Text = (DataGridView1.Item(6, DataGridView1.CurrentRow.Index).Value).ToString
-                        If ((DataGridView1.Item(7, DataGridView1.CurrentRow.Index).Value).ToString) = "a" Then
-                            Lesta.Text = "ALTA"
+                        TextBoxUDni.Text = (DataGridView1.Item(1, DataGridView1.CurrentRow.Index).Value).ToString
+                        TextBoxUNombre.Text = (DataGridView1.Item(2, DataGridView1.CurrentRow.Index).Value).ToString
+                        TextBoxUApellido.Text = (DataGridView1.Item(3, DataGridView1.CurrentRow.Index).Value).ToString
+                        TextBoxUDireccion.Text = (DataGridView1.Item(4, DataGridView1.CurrentRow.Index).Value).ToString
+                        TextBoxULocalidad.Text = (DataGridView1.Item(5, DataGridView1.CurrentRow.Index).Value).ToString
+                        TextBoxUProvincia.Text = (DataGridView1.Item(6, DataGridView1.CurrentRow.Index).Value).ToString
+                        TextBoxUTelefono.Text = (DataGridView1.Item(7, DataGridView1.CurrentRow.Index).Value).ToString
+                        TextBoxUEmail.Text = (DataGridView1.Item(8, DataGridView1.CurrentRow.Index).Value).ToString
+                        TextBoxUPass.Text = (DataGridView1.Item(9, DataGridView1.CurrentRow.Index).Value).ToString
+                        If ((DataGridView1.Item(10, DataGridView1.CurrentRow.Index).Value).ToString) = "a" Then
+                            TextBoxUestado.Text = "ALTA"
                         Else
-                            Lesta.Text = "BAJA"
+                            TextBoxUestado.Text = "BAJA"
                         End If
-                        If ((DataGridView1.Item(8, DataGridView1.CurrentRow.Index).Value).ToString) = "a" Then
-                            Lusu.Text = "ADMINISTRADOR"
-                        ElseIf ((DataGridView1.Item(8, DataGridView1.CurrentRow.Index).Value).ToString) = "s" Then
-                            Lusu.Text = "SUPERVISOR"
+                        If ((DataGridView1.Item(11, DataGridView1.CurrentRow.Index).Value).ToString) = "a" Then
+                            TextBoxUsuario.Text = "ADMINISTRADOR"
+                        ElseIf ((DataGridView1.Item(9, DataGridView1.CurrentRow.Index).Value).ToString) = "s" Then
+                            TextBoxUsuario.Text = "SUPERVISOR"
                         Else
-                            Lusu.Text = "VENDEDOR"
+                            TextBoxUsuario.Text = "VENDEDOR"
                         End If
                         PanelVer.Visible = True
                         Exit Select
@@ -137,6 +139,7 @@
     Private Sub BuscaModifica_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.PanelVer.Visible = False
         Me.CBEsta.SelectedIndex = 0
+        Me.DataGridView1.Visible = False
     End Sub
 
     Private Sub BSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BSalir.Click
@@ -157,18 +160,18 @@
         Dim esta As Char
         esta = "b"
         Dim usu As New Ususario
-        If Lesta.Text <> "BAJA" Then
-            res = MsgBox("Desea dar de Baja al Usuario " + Lnom.Text + " ?", 4 + 256 + 32, "Baja")
-            If res = vbYes Then
-                usu.EliminaUsuario(Val(Ldni.Text), esta)
-                MsgBox("El Usuario " + Lnom.Text + "se ha dado de Baja", 0 + 0 + 16, "BAJA")
-                PanelBusca.Visible = True
-                DataGridView1.Rows.Clear()
-                PanelVer.Visible = False
-            End If
-        Else
-            MsgBox("El Usuario ya esta de BAJA", 0 + 0 + 64, "Info")
-        End If
+        ' If Lesta.Text <> "BAJA" Then
+        'res = MsgBox("Desea dar de Baja al Usuario " + Lnom.Text + " ?", 4 + 256 + 32, "Baja")
+        'If res = vbYes Then
+        'usu.EliminaUsuario(Val(Ldni.Text), esta)
+        'MsgBox("El Usuario " + Lnom.Text + "se ha dado de Baja", 0 + 0 + 16, "BAJA")
+        'PanelBusca.Visible = True
+        'DataGridView1.Rows.Clear()
+        'PanelVer.Visible = False
+        'End If
+        'Else
+        'MsgBox("El Usuario ya esta de BAJA", 0 + 0 + 64, "Info")
+        'End If
     End Sub
 
     Private Sub BAlta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BAlta.Click
@@ -176,18 +179,18 @@
         Dim esta As Char
         esta = "a"
         Dim usu As New Ususario
-        If Lesta.Text <> "ALTA" Then
-            res = MsgBox("Desea dar de Alta al Usuario " + Lnom.Text + " ?", 4 + 256 + 32, "Alta")
-            If res = vbYes Then
-                usu.EliminaUsuario(Val(Ldni.Text), esta)
-                MsgBox("El Usuario " + Lnom.Text + "se ha dado de Alta", 0 + 0 + 48, "ALTA")
-                PanelBusca.Visible = True
-                DataGridView1.Rows.Clear()
-                PanelVer.Visible = False
-            End If
-        Else
-            MsgBox("El Usuario ya esta de ALTA", 0 + 0 + 64, "Info")
-        End If
+        'If Lesta.Text <> "ALTA" Then
+        ' res = MsgBox("Desea dar de Alta al Usuario " + Lnom.Text + " ?", 4 + 256 + 32, "Alta")
+        ' If res = vbYes Then
+        ' usu.EliminaUsuario(Val(Ldni.Text), esta)
+        ' MsgBox("El Usuario " + Lnom.Text + "se ha dado de Alta", 0 + 0 + 48, "ALTA")
+        ' PanelBusca.Visible = True
+        ' DataGridView1.Rows.Clear()
+        ' PanelVer.Visible = False
+        ' End If
+        ' Else
+        ' MsgBox("El Usuario ya esta de ALTA", 0 + 0 + 64, "Info")
+        ' End If
     End Sub
 
     Private Sub BGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BGuardar.Click
@@ -411,5 +414,27 @@
         Me.CBUsuario.SelectedIndex = 0
         Me.CBEsta.Enabled = False
         Me.CBUsuario.Enabled = False
+    End Sub
+
+    Private Sub TextBoxUDni_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBoxUTelefono.KeyPress, TextBoxUDni.KeyPress
+        Me.ComprobarNumero(e)
+    End Sub
+
+
+    Private Sub TextBoxUProvincia_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBoxUsuario.KeyPress, TextBoxUProvincia.KeyPress, TextBoxUNombre.KeyPress, TextBoxULocalidad.KeyPress, TextBoxUestado.KeyPress, TextBoxUApellido.KeyPress
+        Me.ComprobarLetra(e)
+    End Sub
+
+    Private Sub BModifica_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BModifica.Click
+        MsgBox("Comprobar si no estan vacios")
+        Dim usuarioModificar As New Ususario()
+        If (usuarioModificar.ModificarUsuario(Val(TextBoxUDni.Text), TextBoxUNombre.Text, TextBoxUDireccion.Text, TextBoxULocalidad.Text, TextBoxUProvincia.Text, TextBoxUTelefono.Text, TextBoxUEmail.Text, TextBoxUPass.Text, esta(), usua(), DateTime.Value.Date(), TextBoxUApellido.Text)) Then
+            MsgBox("El usuario fue modificado con exito")
+            PanelBusca.Visible = True
+            PanelVer.Visible = False
+            Me.DataGridView1.Visible = False
+        Else
+            MsgBox("El usuario no fue modificado.")
+        End If
     End Sub
 End Class

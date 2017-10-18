@@ -239,7 +239,7 @@
     Public Sub BuscarPorDni(ByVal p_dni As Integer, ByVal p_resultado As DataGridView)
         Try
             Using Base As New NNeumaticosEntities1
-                Dim consulta = (From u In Base.Usuario Where (u.usu_Dni = p_dni) Select New With {.DNI = u.usu_Dni, .Nombre = u.usu_nomYape & " " & u.usu_ape, .Direccion = u.usu_Direccon, .Localidad = u.usu_Localidad, .Telefono = u.usu_Telefono, .Email = u.usu_Email, .Contraseña = u.usu_Contraseña, .Estado = u.usu_Estado, .Tipo_Usuario = u.usu_TipoUsu}).ToList
+                Dim consulta = (From u In Base.Usuario Where (u.usu_Dni = p_dni) Select New With {.DNI = u.usu_Dni, .Nombre = u.usu_nomYape, .Apellido = u.usu_ape, .Direccion = u.usu_Direccon, .Localidad = u.usu_Localidad, .Provincia = u.usu_Provincia, .Telefono = u.usu_Telefono, .Email = u.usu_Email, .Contraseña = u.usu_Contraseña, .Estado = u.usu_Estado, .Tipo_Usuario = u.usu_TipoUsu}).ToList
                 p_resultado.DataSource = consulta
             End Using
         Catch ex As Exception
@@ -247,7 +247,30 @@
         End Try
     End Sub
 
-
+    '-- Modificar Usuario'
+    Public Function ModificarUsuario(ByVal u_dni As Integer, ByVal u_nomYape As String, ByVal u_direccion As String, ByVal u_localidad As String, ByVal u_provincia As String, ByVal u_telefono As String, ByVal u_email As String, ByVal u_contraseña As String, ByVal u_estado As Char, ByVal u_tipoUsu As Char, ByVal u_fecha As String, ByVal u_ape As String)
+        Try
+            Using Base As New NNeumaticosEntities1
+                Dim modificar = (From u In Base.Usuario Where (u.usu_Dni = u_dni) Select u).First
+                modificar.usu_Dni = u_dni
+                modificar.usu_nomYape = u_nomYape
+                modificar.usu_Direccon = u_direccion
+                modificar.usu_Localidad = u_localidad
+                modificar.usu_Provincia = u_provincia
+                modificar.usu_Telefono = u_telefono
+                modificar.usu_Email = u_email
+                modificar.usu_Contraseña = u_contraseña
+                modificar.usu_Estado = u_estado
+                modificar.usu_TipoUsu = u_tipoUsu
+                modificar.usu_Fecha = u_fecha
+                modificar.usu_ape = u_ape
+                Base.SaveChanges()
+            End Using
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
 
     'Metodos que no se jaaj'
     Public Sub Dato(ByVal dni As Integer, ByVal nombre As String)

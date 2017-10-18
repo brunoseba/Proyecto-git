@@ -40,19 +40,9 @@ Partial Class CuadroUsuario
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.BSalir2 = New System.Windows.Forms.Button()
         Me.PanelVer = New System.Windows.Forms.Panel()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.Llocal = New System.Windows.Forms.Label()
         Me.BModifica = New System.Windows.Forms.Button()
         Me.BBaja = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Lesta = New System.Windows.Forms.Label()
-        Me.Lusu = New System.Windows.Forms.Label()
-        Me.Lemail = New System.Windows.Forms.Label()
-        Me.Lcontra = New System.Windows.Forms.Label()
-        Me.Ltelef = New System.Windows.Forms.Label()
-        Me.Ldirec = New System.Windows.Forms.Label()
-        Me.Lnom = New System.Windows.Forms.Label()
-        Me.Ldni = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -97,6 +87,18 @@ Partial Class CuadroUsuario
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.ColVer = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.TextBoxUDni = New System.Windows.Forms.TextBox()
+        Me.TextBoxUNombre = New System.Windows.Forms.TextBox()
+        Me.TextBoxUApellido = New System.Windows.Forms.TextBox()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.TextBoxUPass = New System.Windows.Forms.TextBox()
+        Me.TextBoxUDireccion = New System.Windows.Forms.TextBox()
+        Me.TextBoxUTelefono = New System.Windows.Forms.TextBox()
+        Me.TextBoxUEmail = New System.Windows.Forms.TextBox()
+        Me.TextBoxUsuario = New System.Windows.Forms.TextBox()
+        Me.TextBoxUestado = New System.Windows.Forms.TextBox()
+        Me.TextBoxUProvincia = New System.Windows.Forms.TextBox()
+        Me.TextBoxULocalidad = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBusca.SuspendLayout()
@@ -235,6 +237,7 @@ Partial Class CuadroUsuario
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -242,6 +245,7 @@ Partial Class CuadroUsuario
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColVer})
         Me.DataGridView1.Location = New System.Drawing.Point(6, 19)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(1278, 349)
         Me.DataGridView1.TabIndex = 1
         '
@@ -268,7 +272,7 @@ Partial Class CuadroUsuario
         Me.GroupBox4.Size = New System.Drawing.Size(1294, 374)
         Me.GroupBox4.TabIndex = 3
         Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "GroupBox4"
+        Me.GroupBox4.Text = "Usuarios"
         '
         'BSalir2
         '
@@ -288,8 +292,8 @@ Partial Class CuadroUsuario
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelVer.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.PanelVer.Controls.Add(Me.Label30)
-        Me.PanelVer.Controls.Add(Me.Llocal)
+        Me.PanelVer.Controls.Add(Me.TextBoxULocalidad)
+        Me.PanelVer.Controls.Add(Me.TextBoxUProvincia)
         Me.PanelVer.Controls.Add(Me.BModifica)
         Me.PanelVer.Controls.Add(Me.BBaja)
         Me.PanelVer.Controls.Add(Me.GroupBox2)
@@ -303,29 +307,6 @@ Partial Class CuadroUsuario
         Me.PanelVer.Name = "PanelVer"
         Me.PanelVer.Size = New System.Drawing.Size(1340, 644)
         Me.PanelVer.TabIndex = 3
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.ForeColor = System.Drawing.Color.Black
-        Me.Label30.Location = New System.Drawing.Point(271, 368)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(77, 25)
-        Me.Label30.TabIndex = 56
-        Me.Label30.Text = "Label3"
-        '
-        'Llocal
-        '
-        Me.Llocal.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Llocal.AutoSize = True
-        Me.Llocal.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Llocal.Location = New System.Drawing.Point(612, 366)
-        Me.Llocal.Name = "Llocal"
-        Me.Llocal.Size = New System.Drawing.Size(66, 24)
-        Me.Llocal.TabIndex = 54
-        Me.Llocal.Text = "Label4"
         '
         'BModifica
         '
@@ -352,14 +333,16 @@ Partial Class CuadroUsuario
         '
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.Controls.Add(Me.Lesta)
-        Me.GroupBox2.Controls.Add(Me.Lusu)
-        Me.GroupBox2.Controls.Add(Me.Lemail)
-        Me.GroupBox2.Controls.Add(Me.Lcontra)
-        Me.GroupBox2.Controls.Add(Me.Ltelef)
-        Me.GroupBox2.Controls.Add(Me.Ldirec)
-        Me.GroupBox2.Controls.Add(Me.Lnom)
-        Me.GroupBox2.Controls.Add(Me.Ldni)
+        Me.GroupBox2.Controls.Add(Me.TextBoxUestado)
+        Me.GroupBox2.Controls.Add(Me.TextBoxUsuario)
+        Me.GroupBox2.Controls.Add(Me.TextBoxUEmail)
+        Me.GroupBox2.Controls.Add(Me.TextBoxUTelefono)
+        Me.GroupBox2.Controls.Add(Me.TextBoxUDireccion)
+        Me.GroupBox2.Controls.Add(Me.TextBoxUPass)
+        Me.GroupBox2.Controls.Add(Me.TextBoxUApellido)
+        Me.GroupBox2.Controls.Add(Me.Label31)
+        Me.GroupBox2.Controls.Add(Me.TextBoxUNombre)
+        Me.GroupBox2.Controls.Add(Me.TextBoxUDni)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.Label6)
@@ -377,94 +360,6 @@ Partial Class CuadroUsuario
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "CAMPOS OBLIGATORIOS"
         '
-        'Lesta
-        '
-        Me.Lesta.AutoSize = True
-        Me.Lesta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lesta.ForeColor = System.Drawing.Color.Black
-        Me.Lesta.Location = New System.Drawing.Point(833, 209)
-        Me.Lesta.Name = "Lesta"
-        Me.Lesta.Size = New System.Drawing.Size(77, 25)
-        Me.Lesta.TabIndex = 55
-        Me.Lesta.Text = "Label8"
-        '
-        'Lusu
-        '
-        Me.Lusu.AutoSize = True
-        Me.Lusu.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lusu.ForeColor = System.Drawing.Color.Black
-        Me.Lusu.Location = New System.Drawing.Point(468, 211)
-        Me.Lusu.Name = "Lusu"
-        Me.Lusu.Size = New System.Drawing.Size(77, 25)
-        Me.Lusu.TabIndex = 54
-        Me.Lusu.Text = "Label9"
-        '
-        'Lemail
-        '
-        Me.Lemail.AutoSize = True
-        Me.Lemail.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lemail.ForeColor = System.Drawing.Color.Black
-        Me.Lemail.Location = New System.Drawing.Point(1027, 129)
-        Me.Lemail.Name = "Lemail"
-        Me.Lemail.Size = New System.Drawing.Size(77, 25)
-        Me.Lemail.TabIndex = 53
-        Me.Lemail.Text = "Label6"
-        '
-        'Lcontra
-        '
-        Me.Lcontra.AutoSize = True
-        Me.Lcontra.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lcontra.ForeColor = System.Drawing.Color.Black
-        Me.Lcontra.Location = New System.Drawing.Point(1026, 44)
-        Me.Lcontra.Name = "Lcontra"
-        Me.Lcontra.Size = New System.Drawing.Size(77, 25)
-        Me.Lcontra.TabIndex = 52
-        Me.Lcontra.Text = "Label7"
-        '
-        'Ltelef
-        '
-        Me.Ltelef.AutoSize = True
-        Me.Ltelef.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Ltelef.ForeColor = System.Drawing.Color.Black
-        Me.Ltelef.Location = New System.Drawing.Point(612, 129)
-        Me.Ltelef.Name = "Ltelef"
-        Me.Ltelef.Size = New System.Drawing.Size(77, 25)
-        Me.Ltelef.TabIndex = 51
-        Me.Ltelef.Text = "Label5"
-        '
-        'Ldirec
-        '
-        Me.Ldirec.AutoSize = True
-        Me.Ldirec.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Ldirec.ForeColor = System.Drawing.Color.Black
-        Me.Ldirec.Location = New System.Drawing.Point(159, 129)
-        Me.Ldirec.Name = "Ldirec"
-        Me.Ldirec.Size = New System.Drawing.Size(77, 25)
-        Me.Ldirec.TabIndex = 50
-        Me.Ldirec.Text = "Label3"
-        '
-        'Lnom
-        '
-        Me.Lnom.AutoSize = True
-        Me.Lnom.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lnom.ForeColor = System.Drawing.Color.Black
-        Me.Lnom.Location = New System.Drawing.Point(612, 44)
-        Me.Lnom.Name = "Lnom"
-        Me.Lnom.Size = New System.Drawing.Size(77, 25)
-        Me.Lnom.TabIndex = 49
-        Me.Lnom.Text = "Label2"
-        '
-        'Ldni
-        '
-        Me.Ldni.AutoSize = True
-        Me.Ldni.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Ldni.ForeColor = System.Drawing.Color.Black
-        Me.Ldni.Location = New System.Drawing.Point(104, 44)
-        Me.Ldni.Name = "Ldni"
-        Me.Ldni.Size = New System.Drawing.Size(77, 25)
-        Me.Ldni.TabIndex = 48
-        Me.Ldni.Text = "Label1"
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -481,11 +376,11 @@ Partial Class CuadroUsuario
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(419, 41)
+        Me.Label5.Location = New System.Drawing.Point(329, 43)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(190, 24)
+        Me.Label5.Size = New System.Drawing.Size(91, 24)
         Me.Label5.TabIndex = 1
-        Me.Label5.Text = "Nombre y Apellido:"
+        Me.Label5.Text = "Nombre:"
         '
         'Label6
         '
@@ -527,7 +422,7 @@ Partial Class CuadroUsuario
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(898, 44)
+        Me.Label8.Location = New System.Drawing.Point(982, 41)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(122, 24)
         Me.Label8.TabIndex = 7
@@ -537,7 +432,7 @@ Partial Class CuadroUsuario
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(744, 209)
+        Me.Label9.Location = New System.Drawing.Point(726, 209)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(80, 24)
         Me.Label9.TabIndex = 8
@@ -936,14 +831,106 @@ Partial Class CuadroUsuario
         '
         'ColVer
         '
-        Me.ColVer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.ColVer.HeaderText = "Ver"
+        Me.ColVer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.ColVer.HeaderText = "Modificar"
         Me.ColVer.Name = "ColVer"
+        Me.ColVer.ReadOnly = True
         Me.ColVer.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.ColVer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.ColVer.Text = "Ver"
-        Me.ColVer.ToolTipText = "Ver"
+        Me.ColVer.Text = "Modificar"
+        Me.ColVer.ToolTipText = "Modificar"
         Me.ColVer.UseColumnTextForButtonValue = True
+        Me.ColVer.Width = 123
+        '
+        'TextBoxUDni
+        '
+        Me.TextBoxUDni.Location = New System.Drawing.Point(104, 41)
+        Me.TextBoxUDni.Name = "TextBoxUDni"
+        Me.TextBoxUDni.Size = New System.Drawing.Size(132, 26)
+        Me.TextBoxUDni.TabIndex = 56
+        '
+        'TextBoxUNombre
+        '
+        Me.TextBoxUNombre.Location = New System.Drawing.Point(426, 41)
+        Me.TextBoxUNombre.Name = "TextBoxUNombre"
+        Me.TextBoxUNombre.Size = New System.Drawing.Size(176, 26)
+        Me.TextBoxUNombre.TabIndex = 57
+        '
+        'TextBoxUApellido
+        '
+        Me.TextBoxUApellido.Location = New System.Drawing.Point(734, 39)
+        Me.TextBoxUApellido.Name = "TextBoxUApellido"
+        Me.TextBoxUApellido.Size = New System.Drawing.Size(176, 26)
+        Me.TextBoxUApellido.TabIndex = 59
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label31.ForeColor = System.Drawing.Color.White
+        Me.Label31.Location = New System.Drawing.Point(633, 41)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(93, 24)
+        Me.Label31.TabIndex = 58
+        Me.Label31.Text = "Apellido:"
+        '
+        'TextBoxUPass
+        '
+        Me.TextBoxUPass.Location = New System.Drawing.Point(1108, 39)
+        Me.TextBoxUPass.Name = "TextBoxUPass"
+        Me.TextBoxUPass.Size = New System.Drawing.Size(176, 26)
+        Me.TextBoxUPass.TabIndex = 60
+        '
+        'TextBoxUDireccion
+        '
+        Me.TextBoxUDireccion.Location = New System.Drawing.Point(159, 127)
+        Me.TextBoxUDireccion.Name = "TextBoxUDireccion"
+        Me.TextBoxUDireccion.Size = New System.Drawing.Size(176, 26)
+        Me.TextBoxUDireccion.TabIndex = 61
+        '
+        'TextBoxUTelefono
+        '
+        Me.TextBoxUTelefono.Location = New System.Drawing.Point(612, 128)
+        Me.TextBoxUTelefono.Name = "TextBoxUTelefono"
+        Me.TextBoxUTelefono.Size = New System.Drawing.Size(176, 26)
+        Me.TextBoxUTelefono.TabIndex = 62
+        '
+        'TextBoxUEmail
+        '
+        Me.TextBoxUEmail.Location = New System.Drawing.Point(1018, 127)
+        Me.TextBoxUEmail.Name = "TextBoxUEmail"
+        Me.TextBoxUEmail.Size = New System.Drawing.Size(176, 26)
+        Me.TextBoxUEmail.TabIndex = 63
+        '
+        'TextBoxUsuario
+        '
+        Me.TextBoxUsuario.Location = New System.Drawing.Point(468, 209)
+        Me.TextBoxUsuario.Name = "TextBoxUsuario"
+        Me.TextBoxUsuario.Size = New System.Drawing.Size(176, 26)
+        Me.TextBoxUsuario.TabIndex = 64
+        '
+        'TextBoxUestado
+        '
+        Me.TextBoxUestado.Location = New System.Drawing.Point(825, 207)
+        Me.TextBoxUestado.Name = "TextBoxUestado"
+        Me.TextBoxUestado.Size = New System.Drawing.Size(72, 26)
+        Me.TextBoxUestado.TabIndex = 65
+        '
+        'TextBoxUProvincia
+        '
+        Me.TextBoxUProvincia.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxUProvincia.Location = New System.Drawing.Point(256, 366)
+        Me.TextBoxUProvincia.Name = "TextBoxUProvincia"
+        Me.TextBoxUProvincia.Size = New System.Drawing.Size(162, 26)
+        Me.TextBoxUProvincia.TabIndex = 66
+        '
+        'TextBoxULocalidad
+        '
+        Me.TextBoxULocalidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxULocalidad.Location = New System.Drawing.Point(601, 364)
+        Me.TextBoxULocalidad.Name = "TextBoxULocalidad"
+        Me.TextBoxULocalidad.Size = New System.Drawing.Size(176, 26)
+        Me.TextBoxULocalidad.TabIndex = 67
         '
         'CuadroUsuario
         '
@@ -1034,21 +1021,23 @@ Partial Class CuadroUsuario
     Friend WithEvents Label26 As System.Windows.Forms.Label
     Friend WithEvents BModifica As System.Windows.Forms.Button
     Friend WithEvents BBaja As System.Windows.Forms.Button
-    Friend WithEvents Lesta As System.Windows.Forms.Label
-    Friend WithEvents Lusu As System.Windows.Forms.Label
-    Friend WithEvents Lemail As System.Windows.Forms.Label
-    Friend WithEvents Lcontra As System.Windows.Forms.Label
-    Friend WithEvents Ltelef As System.Windows.Forms.Label
-    Friend WithEvents Ldirec As System.Windows.Forms.Label
-    Friend WithEvents Lnom As System.Windows.Forms.Label
-    Friend WithEvents Ldni As System.Windows.Forms.Label
-    Friend WithEvents Llocal As System.Windows.Forms.Label
     Friend WithEvents TApellido As System.Windows.Forms.TextBox
     Friend WithEvents Label27 As System.Windows.Forms.Label
     Friend WithEvents TApel As System.Windows.Forms.TextBox
     Friend WithEvents Label28 As System.Windows.Forms.Label
     Friend WithEvents Label29 As System.Windows.Forms.Label
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label30 As System.Windows.Forms.Label
     Friend WithEvents ColVer As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents TextBoxULocalidad As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxUProvincia As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxUestado As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxUsuario As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxUEmail As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxUTelefono As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxUDireccion As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxUPass As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxUApellido As System.Windows.Forms.TextBox
+    Friend WithEvents Label31 As System.Windows.Forms.Label
+    Friend WithEvents TextBoxUNombre As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxUDni As System.Windows.Forms.TextBox
 End Class
