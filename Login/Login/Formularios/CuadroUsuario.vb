@@ -24,6 +24,7 @@
     End Function
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Dim usua As New Ususario
         Dim dni As Integer
         Dim nom As String
         Dim ape As String
@@ -35,37 +36,43 @@
         tipo = usuario()
         esta = estados()
         DataGridView1.RowTemplate.Height = 50
+        If TDni.Enabled = True Then
+            MsgBox("El campo DNI esta activo y el resto desactivado")
+            usua.BuscarPorDni(dni, DataGridView1)
+        ElseIf TNombre.Enabled = True Then
+            MsgBox("El campo Nombre y Apellido esta activo y el resto desactivado")
+        Else
+            MsgBox("El campo Estado y tipo Usuario esta activo y el resto desactivado")
+        End If
         'Si está enlazado a un origen de datos, y la propiedad AutoGenerateColumns tiene su valor por defecto (True), 
         'la manera más sencilla de limpiar el control DataGridView es estableciendo el valor Nothing a su propiedad DataSource:
         'DataGridView1.DataSource = Nothing
-        If tipo = "*" Then
-            DataGridView1.Rows.Clear()
-            Try
-                Using Base As New NNeumaticosEntities1
-                    Dim mues = (From u In Base.Usuario Select u).ToList
-                    'Dni = u.usu_Dni, NombreyApellido = u.usu_nomYape, Direccion = u.usu_Direccon, Localidad = u.usu_Localidad, Telefono = u.usu_Telefono, Email = u.usu_Email, Contraseña = u.usu_Contraseña, Estado = u.usu_Estado, TipoUsuario = u.usu_TipoUsu).ToList
-                    'tabla.DataSource = mues
-                    For Each u In mues
-                        DataGridView1.Rows.Add(u.usu_Dni, u.usu_nomYape & " " & u.usu_ape, u.usu_Direccon, u.usu_Localidad, u.usu_Telefono, u.usu_Email, u.usu_Contraseña, u.usu_Estado, u.usu_TipoUsu, ColVer)
-                    Next
-                End Using
-            Catch ex As Exception
-                MessageBox.Show("Error al Cargar los Datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-            '--limpiar su filas llamando al método Clear de la propiedad Rows:--
-            'DataGridView1.Rows.Clear()
-        Else
-            DataGridView1.Rows.Clear()
-            Try
-                Using Base As New NNeumaticosEntities1
-                    Dim mues = (From u In Base.Usuario Where (u.usu_Dni = dni Or u.usu_nomYape = nom Or u.usu_ape = ape Or u.usu_TipoUsu = tipo Or u.usu_Estado = esta) Select u).ToList
-                    For Each u In mues
-                        DataGridView1.Rows.Add(u.usu_Dni, u.usu_nomYape & " " & u.usu_ape, u.usu_Direccon, u.usu_Localidad, u.usu_Telefono, u.usu_Email, u.usu_Contraseña, u.usu_Estado, u.usu_TipoUsu, ColVer)
-                    Next
-                End Using
-            Catch ex As Exception
-            End Try
-        End If
+        'If tipo = "*" Then
+        'DataGridView1.Rows.Clear()
+        'Try
+        'Using Base As New NNeumaticosEntities1
+        'Dim mues = (From u In Base.Usuario Select u).ToList
+        ' For Each u In mues
+        'DataGridView1.Rows.Add(u.usu_Dni, u.usu_nomYape & " " & u.usu_ape, u.usu_Direccon, u.usu_Localidad, u.usu_Telefono, u.usu_Email, u.usu_Contraseña, u.usu_Estado, u.usu_TipoUsu, ColVer)
+        'Next
+        'End Using
+        'Catch ex As Exception
+        'MessageBox.Show("Error al Cargar los Datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        'End Try
+        '--limpiar su filas llamando al método Clear de la propiedad Rows:--
+        'DataGridView1.Rows.Clear()
+        'Else
+        'DataGridView1.Rows.Clear()
+        'Try
+        'Using Base As New NNeumaticosEntities1
+        'Dim mues = (From u In Base.Usuario Where (u.usu_Dni = dni Or u.usu_nomYape = nom Or u.usu_ape = ape Or u.usu_TipoUsu = tipo Or u.usu_Estado = esta) Select u).ToList
+        'For Each u In mues
+        'DataGridView1.Rows.Add(u.usu_Dni, u.usu_nomYape & " " & u.usu_ape, u.usu_Direccon, u.usu_Localidad, u.usu_Telefono, u.usu_Email, u.usu_Contraseña, u.usu_Estado, u.usu_TipoUsu, ColVer)
+        'Next
+        'End Using
+        'Catch ex As Exception
+        'End Try
+        'End If
     End Sub
 
     Private Sub TDni_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TDni.KeyDown

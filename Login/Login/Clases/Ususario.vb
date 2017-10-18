@@ -13,11 +13,8 @@
     Private ape As String
 
 #Region "Constructores"
-
-
     Public Sub New()
     End Sub
-
 
     Public Sub New(ByVal u_dni As Integer)
         SetDni(u_dni)
@@ -171,8 +168,8 @@
 #End Region
 
 #Region "Procedimientos"
-    '---agrega usuario---
-    Public Function AgregarUsuario() 'ByVal dni As Integer, ByVal nomYape As String, ByVal direc As String, ByVal local As String, ByVal prov As String, ByVal tel As String, ByVal email As String, ByVal contra As String, ByVal estado As Char, ByVal tipoUsu As Char, ByVal fecha As String)
+    '---AGREGA USUARIO---
+    Public Function AgregarUsuario()
         Try
             Using Base As New NNeumaticosEntities1
 
@@ -238,6 +235,21 @@
         End Try
     End Sub
 
+    '-- Buscar el usuario por DNI'
+    Public Sub BuscarPorDni(ByVal p_dni As Integer, ByVal p_resultado As DataGridView)
+        Try
+            Using Base As New NNeumaticosEntities1
+                Dim consulta = (From u In Base.Usuario Where (u.usu_Dni = p_dni) Select New With {.DNI = u.usu_Dni, .Nombre = u.usu_nomYape & " " & u.usu_ape, .Direccion = u.usu_Direccon, .Localidad = u.usu_Localidad, .Telefono = u.usu_Telefono, .Email = u.usu_Email, .Contraseña = u.usu_Contraseña, .Estado = u.usu_Estado, .Tipo_Usuario = u.usu_TipoUsu}).ToList
+                p_resultado.DataSource = consulta
+            End Using
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+
+
+    'Metodos que no se jaaj'
     Public Sub Dato(ByVal dni As Integer, ByVal nombre As String)
         Try
             Using Base As New NNeumaticosEntities1

@@ -22,15 +22,6 @@ Partial Class CuadroUsuario
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CuadroUsuario))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TApel = New System.Windows.Forms.TextBox()
@@ -45,16 +36,6 @@ Partial Class CuadroUsuario
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Dni = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NomApe = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Direc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Local = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Telef = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Email = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.contraseña = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipoUsu = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColVer = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.PanelBusca = New System.Windows.Forms.Panel()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.BSalir2 = New System.Windows.Forms.Button()
@@ -115,6 +96,7 @@ Partial Class CuadroUsuario
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
+        Me.ColVer = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBusca.SuspendLayout()
@@ -257,95 +239,11 @@ Partial Class CuadroUsuario
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Dni, Me.NomApe, Me.Direc, Me.Local, Me.Telef, Me.Email, Me.contraseña, Me.estado, Me.tipoUsu, Me.ColVer})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColVer})
         Me.DataGridView1.Location = New System.Drawing.Point(6, 19)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(1278, 349)
         Me.DataGridView1.TabIndex = 1
-        '
-        'Dni
-        '
-        Me.Dni.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Dni.DefaultCellStyle = DataGridViewCellStyle1
-        Me.Dni.FillWeight = 150.0!
-        Me.Dni.HeaderText = "DNI"
-        Me.Dni.Name = "Dni"
-        '
-        'NomApe
-        '
-        Me.NomApe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.NomApe.DefaultCellStyle = DataGridViewCellStyle2
-        Me.NomApe.HeaderText = "Nombre y Apellido"
-        Me.NomApe.Name = "NomApe"
-        '
-        'Direc
-        '
-        Me.Direc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Direc.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Direc.HeaderText = "Direccion"
-        Me.Direc.Name = "Direc"
-        '
-        'Local
-        '
-        Me.Local.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Local.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Local.HeaderText = "Localidad"
-        Me.Local.Name = "Local"
-        '
-        'Telef
-        '
-        Me.Telef.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Telef.DefaultCellStyle = DataGridViewCellStyle5
-        Me.Telef.HeaderText = "Telefono"
-        Me.Telef.Name = "Telef"
-        '
-        'Email
-        '
-        Me.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Email.DefaultCellStyle = DataGridViewCellStyle6
-        Me.Email.HeaderText = "Email"
-        Me.Email.Name = "Email"
-        '
-        'contraseña
-        '
-        Me.contraseña.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.contraseña.DefaultCellStyle = DataGridViewCellStyle7
-        Me.contraseña.HeaderText = "Contraseña"
-        Me.contraseña.Name = "contraseña"
-        '
-        'estado
-        '
-        Me.estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.estado.DefaultCellStyle = DataGridViewCellStyle8
-        Me.estado.HeaderText = "Estado"
-        Me.estado.Name = "estado"
-        '
-        'tipoUsu
-        '
-        Me.tipoUsu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.tipoUsu.DefaultCellStyle = DataGridViewCellStyle9
-        Me.tipoUsu.HeaderText = "TipoUsuario"
-        Me.tipoUsu.Name = "tipoUsu"
-        '
-        'ColVer
-        '
-        Me.ColVer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.ColVer.HeaderText = "Ver"
-        Me.ColVer.Name = "ColVer"
-        Me.ColVer.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ColVer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.ColVer.Text = "Ver"
-        Me.ColVer.ToolTipText = "Ver"
-        Me.ColVer.UseColumnTextForButtonValue = True
         '
         'PanelBusca
         '
@@ -1036,14 +934,25 @@ Partial Class CuadroUsuario
         Me.Label26.TabIndex = 31
         Me.Label26.Text = "Provincia:"
         '
+        'ColVer
+        '
+        Me.ColVer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.ColVer.HeaderText = "Ver"
+        Me.ColVer.Name = "ColVer"
+        Me.ColVer.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ColVer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.ColVer.Text = "Ver"
+        Me.ColVer.ToolTipText = "Ver"
+        Me.ColVer.UseColumnTextForButtonValue = True
+        '
         'CuadroUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1330, 644)
-        Me.Controls.Add(Me.PanelRegistro)
         Me.Controls.Add(Me.PanelBusca)
         Me.Controls.Add(Me.PanelVer)
+        Me.Controls.Add(Me.PanelRegistro)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -1082,16 +991,6 @@ Partial Class CuadroUsuario
     Friend WithEvents BSalir As System.Windows.Forms.Button
     Friend WithEvents BAlta As System.Windows.Forms.Button
     Friend WithEvents BSalir2 As System.Windows.Forms.Button
-    Friend WithEvents Dni As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents NomApe As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Direc As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Local As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Telef As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Email As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents contraseña As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents estado As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents tipoUsu As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ColVer As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
@@ -1151,4 +1050,5 @@ Partial Class CuadroUsuario
     Friend WithEvents Label29 As System.Windows.Forms.Label
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents Label30 As System.Windows.Forms.Label
+    Friend WithEvents ColVer As System.Windows.Forms.DataGridViewButtonColumn
 End Class
