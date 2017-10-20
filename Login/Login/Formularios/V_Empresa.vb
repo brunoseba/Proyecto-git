@@ -3,7 +3,7 @@
     Private Sub ButtonGuardarEmpresa_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonGuardarEmpresa.Click
         Dim modEmpresa As New Empresa()
         If modEmpresa.ActualizarDatos(Val(TextBoxCuitEmpresa.Text), TextBoxNombreEmpresa.Text, TextBoxDireccionEmpresa.Text, TextBoxEmailEmpresa.Text, TextBoxTelefonoEmpresa.Text) Then
-            MsgBox("Los datos fueron modificados")
+            MsgBox("Los datos fueron modificados con Éxito")
         Else
             MsgBox("Los datos fueron modificados")
         End If

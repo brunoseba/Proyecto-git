@@ -36,13 +36,27 @@ Partial Class CuadroUsuario
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.ColVer = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.PanelBusca = New System.Windows.Forms.Panel()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.BSalir2 = New System.Windows.Forms.Button()
         Me.PanelVer = New System.Windows.Forms.Panel()
+        Me.DateTime = New System.Windows.Forms.TextBox()
+        Me.TextBoxULocalidad = New System.Windows.Forms.TextBox()
+        Me.TextBoxUProvincia = New System.Windows.Forms.TextBox()
         Me.BModifica = New System.Windows.Forms.Button()
         Me.BBaja = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.TextBoxUestado = New System.Windows.Forms.TextBox()
+        Me.TextBoxUEmail = New System.Windows.Forms.TextBox()
+        Me.TextBoxUTelefono = New System.Windows.Forms.TextBox()
+        Me.TextBoxUDireccion = New System.Windows.Forms.TextBox()
+        Me.TextBoxUPass = New System.Windows.Forms.TextBox()
+        Me.TextBoxUApellido = New System.Windows.Forms.TextBox()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.TextBoxUNombre = New System.Windows.Forms.TextBox()
+        Me.TextBoxUDni = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -52,7 +66,6 @@ Partial Class CuadroUsuario
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.DateTime = New System.Windows.Forms.DateTimePicker()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.BSalir = New System.Windows.Forms.Button()
@@ -86,19 +99,6 @@ Partial Class CuadroUsuario
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.ColVer = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.TextBoxUDni = New System.Windows.Forms.TextBox()
-        Me.TextBoxUNombre = New System.Windows.Forms.TextBox()
-        Me.TextBoxUApellido = New System.Windows.Forms.TextBox()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.TextBoxUPass = New System.Windows.Forms.TextBox()
-        Me.TextBoxUDireccion = New System.Windows.Forms.TextBox()
-        Me.TextBoxUTelefono = New System.Windows.Forms.TextBox()
-        Me.TextBoxUEmail = New System.Windows.Forms.TextBox()
-        Me.TextBoxUsuario = New System.Windows.Forms.TextBox()
-        Me.TextBoxUestado = New System.Windows.Forms.TextBox()
-        Me.TextBoxUProvincia = New System.Windows.Forms.TextBox()
-        Me.TextBoxULocalidad = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBusca.SuspendLayout()
@@ -241,13 +241,26 @@ Partial Class CuadroUsuario
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColVer})
         Me.DataGridView1.Location = New System.Drawing.Point(6, 19)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(1278, 349)
+        Me.DataGridView1.Size = New System.Drawing.Size(1282, 349)
         Me.DataGridView1.TabIndex = 1
+        '
+        'ColVer
+        '
+        Me.ColVer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.ColVer.HeaderText = "Modificar"
+        Me.ColVer.Name = "ColVer"
+        Me.ColVer.ReadOnly = True
+        Me.ColVer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.ColVer.Text = "Modificar"
+        Me.ColVer.ToolTipText = "Modificar"
+        Me.ColVer.UseColumnTextForButtonValue = True
+        Me.ColVer.Width = 88
         '
         'PanelBusca
         '
@@ -292,13 +305,13 @@ Partial Class CuadroUsuario
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelVer.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.PanelVer.Controls.Add(Me.DateTime)
         Me.PanelVer.Controls.Add(Me.TextBoxULocalidad)
         Me.PanelVer.Controls.Add(Me.TextBoxUProvincia)
         Me.PanelVer.Controls.Add(Me.BModifica)
         Me.PanelVer.Controls.Add(Me.BBaja)
         Me.PanelVer.Controls.Add(Me.GroupBox2)
         Me.PanelVer.Controls.Add(Me.Label11)
-        Me.PanelVer.Controls.Add(Me.DateTime)
         Me.PanelVer.Controls.Add(Me.Label12)
         Me.PanelVer.Controls.Add(Me.Label14)
         Me.PanelVer.Controls.Add(Me.BSalir)
@@ -307,6 +320,31 @@ Partial Class CuadroUsuario
         Me.PanelVer.Name = "PanelVer"
         Me.PanelVer.Size = New System.Drawing.Size(1340, 644)
         Me.PanelVer.TabIndex = 3
+        '
+        'DateTime
+        '
+        Me.DateTime.Enabled = False
+        Me.DateTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTime.Location = New System.Drawing.Point(982, 364)
+        Me.DateTime.Name = "DateTime"
+        Me.DateTime.Size = New System.Drawing.Size(165, 26)
+        Me.DateTime.TabIndex = 68
+        '
+        'TextBoxULocalidad
+        '
+        Me.TextBoxULocalidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxULocalidad.Location = New System.Drawing.Point(601, 364)
+        Me.TextBoxULocalidad.Name = "TextBoxULocalidad"
+        Me.TextBoxULocalidad.Size = New System.Drawing.Size(176, 26)
+        Me.TextBoxULocalidad.TabIndex = 67
+        '
+        'TextBoxUProvincia
+        '
+        Me.TextBoxUProvincia.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxUProvincia.Location = New System.Drawing.Point(256, 366)
+        Me.TextBoxUProvincia.Name = "TextBoxUProvincia"
+        Me.TextBoxUProvincia.Size = New System.Drawing.Size(162, 26)
+        Me.TextBoxUProvincia.TabIndex = 66
         '
         'BModifica
         '
@@ -333,8 +371,8 @@ Partial Class CuadroUsuario
         '
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.ComboBox1)
         Me.GroupBox2.Controls.Add(Me.TextBoxUestado)
-        Me.GroupBox2.Controls.Add(Me.TextBoxUsuario)
         Me.GroupBox2.Controls.Add(Me.TextBoxUEmail)
         Me.GroupBox2.Controls.Add(Me.TextBoxUTelefono)
         Me.GroupBox2.Controls.Add(Me.TextBoxUDireccion)
@@ -359,6 +397,82 @@ Partial Class CuadroUsuario
         Me.GroupBox2.TabIndex = 50
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "CAMPOS OBLIGATORIOS"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Tipo Usuario", "Administrador", "Supervisor", "Vendedor"})
+        Me.ComboBox1.Location = New System.Drawing.Point(468, 209)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(138, 28)
+        Me.ComboBox1.TabIndex = 66
+        '
+        'TextBoxUestado
+        '
+        Me.TextBoxUestado.Location = New System.Drawing.Point(825, 207)
+        Me.TextBoxUestado.Name = "TextBoxUestado"
+        Me.TextBoxUestado.Size = New System.Drawing.Size(104, 26)
+        Me.TextBoxUestado.TabIndex = 65
+        '
+        'TextBoxUEmail
+        '
+        Me.TextBoxUEmail.Location = New System.Drawing.Point(1018, 127)
+        Me.TextBoxUEmail.Name = "TextBoxUEmail"
+        Me.TextBoxUEmail.Size = New System.Drawing.Size(235, 26)
+        Me.TextBoxUEmail.TabIndex = 63
+        '
+        'TextBoxUTelefono
+        '
+        Me.TextBoxUTelefono.Location = New System.Drawing.Point(612, 128)
+        Me.TextBoxUTelefono.Name = "TextBoxUTelefono"
+        Me.TextBoxUTelefono.Size = New System.Drawing.Size(176, 26)
+        Me.TextBoxUTelefono.TabIndex = 62
+        '
+        'TextBoxUDireccion
+        '
+        Me.TextBoxUDireccion.Location = New System.Drawing.Point(159, 127)
+        Me.TextBoxUDireccion.Name = "TextBoxUDireccion"
+        Me.TextBoxUDireccion.Size = New System.Drawing.Size(176, 26)
+        Me.TextBoxUDireccion.TabIndex = 61
+        '
+        'TextBoxUPass
+        '
+        Me.TextBoxUPass.Location = New System.Drawing.Point(1108, 39)
+        Me.TextBoxUPass.Name = "TextBoxUPass"
+        Me.TextBoxUPass.Size = New System.Drawing.Size(176, 26)
+        Me.TextBoxUPass.TabIndex = 60
+        '
+        'TextBoxUApellido
+        '
+        Me.TextBoxUApellido.Location = New System.Drawing.Point(734, 39)
+        Me.TextBoxUApellido.Name = "TextBoxUApellido"
+        Me.TextBoxUApellido.Size = New System.Drawing.Size(176, 26)
+        Me.TextBoxUApellido.TabIndex = 59
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label31.ForeColor = System.Drawing.Color.White
+        Me.Label31.Location = New System.Drawing.Point(633, 41)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(93, 24)
+        Me.Label31.TabIndex = 58
+        Me.Label31.Text = "Apellido:"
+        '
+        'TextBoxUNombre
+        '
+        Me.TextBoxUNombre.Location = New System.Drawing.Point(426, 41)
+        Me.TextBoxUNombre.Name = "TextBoxUNombre"
+        Me.TextBoxUNombre.Size = New System.Drawing.Size(176, 26)
+        Me.TextBoxUNombre.TabIndex = 57
+        '
+        'TextBoxUDni
+        '
+        Me.TextBoxUDni.Location = New System.Drawing.Point(104, 41)
+        Me.TextBoxUDni.Name = "TextBoxUDni"
+        Me.TextBoxUDni.Size = New System.Drawing.Size(132, 26)
+        Me.TextBoxUDni.TabIndex = 56
         '
         'Label4
         '
@@ -455,21 +569,11 @@ Partial Class CuadroUsuario
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(889, 368)
+        Me.Label11.Location = New System.Drawing.Point(864, 369)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(64, 20)
+        Me.Label11.Size = New System.Drawing.Size(112, 20)
         Me.Label11.TabIndex = 44
-        Me.Label11.Text = "Fecha:"
-        '
-        'DateTime
-        '
-        Me.DateTime.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.DateTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTime.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTime.Location = New System.Drawing.Point(971, 363)
-        Me.DateTime.Name = "DateTime"
-        Me.DateTime.Size = New System.Drawing.Size(182, 26)
-        Me.DateTime.TabIndex = 51
+        Me.Label11.Text = "Fecha Inicio:"
         '
         'Label12
         '
@@ -829,109 +933,6 @@ Partial Class CuadroUsuario
         Me.Label26.TabIndex = 31
         Me.Label26.Text = "Provincia:"
         '
-        'ColVer
-        '
-        Me.ColVer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.ColVer.HeaderText = "Modificar"
-        Me.ColVer.Name = "ColVer"
-        Me.ColVer.ReadOnly = True
-        Me.ColVer.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ColVer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.ColVer.Text = "Modificar"
-        Me.ColVer.ToolTipText = "Modificar"
-        Me.ColVer.UseColumnTextForButtonValue = True
-        Me.ColVer.Width = 123
-        '
-        'TextBoxUDni
-        '
-        Me.TextBoxUDni.Location = New System.Drawing.Point(104, 41)
-        Me.TextBoxUDni.Name = "TextBoxUDni"
-        Me.TextBoxUDni.Size = New System.Drawing.Size(132, 26)
-        Me.TextBoxUDni.TabIndex = 56
-        '
-        'TextBoxUNombre
-        '
-        Me.TextBoxUNombre.Location = New System.Drawing.Point(426, 41)
-        Me.TextBoxUNombre.Name = "TextBoxUNombre"
-        Me.TextBoxUNombre.Size = New System.Drawing.Size(176, 26)
-        Me.TextBoxUNombre.TabIndex = 57
-        '
-        'TextBoxUApellido
-        '
-        Me.TextBoxUApellido.Location = New System.Drawing.Point(734, 39)
-        Me.TextBoxUApellido.Name = "TextBoxUApellido"
-        Me.TextBoxUApellido.Size = New System.Drawing.Size(176, 26)
-        Me.TextBoxUApellido.TabIndex = 59
-        '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.ForeColor = System.Drawing.Color.White
-        Me.Label31.Location = New System.Drawing.Point(633, 41)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(93, 24)
-        Me.Label31.TabIndex = 58
-        Me.Label31.Text = "Apellido:"
-        '
-        'TextBoxUPass
-        '
-        Me.TextBoxUPass.Location = New System.Drawing.Point(1108, 39)
-        Me.TextBoxUPass.Name = "TextBoxUPass"
-        Me.TextBoxUPass.Size = New System.Drawing.Size(176, 26)
-        Me.TextBoxUPass.TabIndex = 60
-        '
-        'TextBoxUDireccion
-        '
-        Me.TextBoxUDireccion.Location = New System.Drawing.Point(159, 127)
-        Me.TextBoxUDireccion.Name = "TextBoxUDireccion"
-        Me.TextBoxUDireccion.Size = New System.Drawing.Size(176, 26)
-        Me.TextBoxUDireccion.TabIndex = 61
-        '
-        'TextBoxUTelefono
-        '
-        Me.TextBoxUTelefono.Location = New System.Drawing.Point(612, 128)
-        Me.TextBoxUTelefono.Name = "TextBoxUTelefono"
-        Me.TextBoxUTelefono.Size = New System.Drawing.Size(176, 26)
-        Me.TextBoxUTelefono.TabIndex = 62
-        '
-        'TextBoxUEmail
-        '
-        Me.TextBoxUEmail.Location = New System.Drawing.Point(1018, 127)
-        Me.TextBoxUEmail.Name = "TextBoxUEmail"
-        Me.TextBoxUEmail.Size = New System.Drawing.Size(176, 26)
-        Me.TextBoxUEmail.TabIndex = 63
-        '
-        'TextBoxUsuario
-        '
-        Me.TextBoxUsuario.Location = New System.Drawing.Point(468, 209)
-        Me.TextBoxUsuario.Name = "TextBoxUsuario"
-        Me.TextBoxUsuario.Size = New System.Drawing.Size(176, 26)
-        Me.TextBoxUsuario.TabIndex = 64
-        '
-        'TextBoxUestado
-        '
-        Me.TextBoxUestado.Location = New System.Drawing.Point(825, 207)
-        Me.TextBoxUestado.Name = "TextBoxUestado"
-        Me.TextBoxUestado.Size = New System.Drawing.Size(72, 26)
-        Me.TextBoxUestado.TabIndex = 65
-        '
-        'TextBoxUProvincia
-        '
-        Me.TextBoxUProvincia.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxUProvincia.Location = New System.Drawing.Point(256, 366)
-        Me.TextBoxUProvincia.Name = "TextBoxUProvincia"
-        Me.TextBoxUProvincia.Size = New System.Drawing.Size(162, 26)
-        Me.TextBoxUProvincia.TabIndex = 66
-        '
-        'TextBoxULocalidad
-        '
-        Me.TextBoxULocalidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxULocalidad.Location = New System.Drawing.Point(601, 364)
-        Me.TextBoxULocalidad.Name = "TextBoxULocalidad"
-        Me.TextBoxULocalidad.Size = New System.Drawing.Size(176, 26)
-        Me.TextBoxULocalidad.TabIndex = 67
-        '
         'CuadroUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -987,7 +988,6 @@ Partial Class CuadroUsuario
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents DateTime As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
@@ -1027,11 +1027,8 @@ Partial Class CuadroUsuario
     Friend WithEvents Label28 As System.Windows.Forms.Label
     Friend WithEvents Label29 As System.Windows.Forms.Label
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
-    Friend WithEvents ColVer As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents TextBoxULocalidad As System.Windows.Forms.TextBox
     Friend WithEvents TextBoxUProvincia As System.Windows.Forms.TextBox
-    Friend WithEvents TextBoxUestado As System.Windows.Forms.TextBox
-    Friend WithEvents TextBoxUsuario As System.Windows.Forms.TextBox
     Friend WithEvents TextBoxUEmail As System.Windows.Forms.TextBox
     Friend WithEvents TextBoxUTelefono As System.Windows.Forms.TextBox
     Friend WithEvents TextBoxUDireccion As System.Windows.Forms.TextBox
@@ -1040,4 +1037,8 @@ Partial Class CuadroUsuario
     Friend WithEvents Label31 As System.Windows.Forms.Label
     Friend WithEvents TextBoxUNombre As System.Windows.Forms.TextBox
     Friend WithEvents TextBoxUDni As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxUestado As System.Windows.Forms.TextBox
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents ColVer As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents DateTime As System.Windows.Forms.TextBox
 End Class

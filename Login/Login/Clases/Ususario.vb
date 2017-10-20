@@ -226,8 +226,7 @@
     Public Sub EliminaUsuario(ByVal usua_dni As Integer, ByVal usu_estado As Char)
         Try
             Using Base As New NNeumaticosEntities1
-                Dim borra = (From u In Base.Usuario Where (usua_dni = u.usu_Dni)
-                Select u).First
+                Dim borra = (From u In Base.Usuario Where (usua_dni = u.usu_Dni) Select u).First
                 borra.usu_Estado = usu_estado
                 Base.SaveChanges()
             End Using
@@ -239,11 +238,23 @@
     Public Sub BuscarPorDni(ByVal p_dni As Integer, ByVal p_resultado As DataGridView)
         Try
             Using Base As New NNeumaticosEntities1
-                Dim consulta = (From u In Base.Usuario Where (u.usu_Dni = p_dni) Select New With {.DNI = u.usu_Dni, .Nombre = u.usu_nomYape, .Apellido = u.usu_ape, .Direccion = u.usu_Direccon, .Localidad = u.usu_Localidad, .Provincia = u.usu_Provincia, .Telefono = u.usu_Telefono, .Email = u.usu_Email, .Contraseña = u.usu_Contraseña, .Estado = u.usu_Estado, .Tipo_Usuario = u.usu_TipoUsu}).ToList
+                Dim consulta = (From u In Base.Usuario Where (u.usu_Dni = p_dni) Select New With {.DNI = u.usu_Dni, .Nombre = u.usu_nomYape, .Apellido = u.usu_ape, .Direccion = u.usu_Direccon, .Localidad = u.usu_Localidad, .Provincia = u.usu_Provincia, .Telefono = u.usu_Telefono, .Email = u.usu_Email, .Contraseña = u.usu_Contraseña, .Estado = u.usu_Estado, .Tipo_Usuario = u.usu_TipoUsu, .Fecha_Inicio = u.usu_Fecha}).ToList
                 p_resultado.DataSource = consulta
             End Using
         Catch ex As Exception
+            MsgBox("No se pudo realizar la consulta")
+        End Try
+    End Sub
 
+    '-- Buscar por el Nombre --'
+    Public Sub BuscarPorNombre(ByVal u_nombre As String, ByVal u_resultados As DataGridView)
+        Try
+            Using base As New NNeumaticosEntities1
+                Dim consulta = (From u In base.Usuario Where (u.usu_nomYape.Contains(u_nombre)) Select New With {.DNI = u.usu_Dni, .Nombre = u.usu_nomYape, .Apellido = u.usu_ape, .Direccion = u.usu_Direccon, .Localidad = u.usu_Localidad, .Provincia = u.usu_Provincia, .Telefono = u.usu_Telefono, .Email = u.usu_Email, .Contraseña = u.usu_Contraseña, .Estado = u.usu_Estado, .Tipo_Usuario = u.usu_TipoUsu, .Fecha_Inicio = u.usu_Fecha}).ToList
+                u_resultados.DataSource = consulta
+            End Using
+        Catch ex As Exception
+            MsgBox("No se pudo realizar la consulta")
         End Try
     End Sub
 
@@ -302,6 +313,18 @@
                 tabla.DataSource = mues
             End Using
         Catch ex As Exception
+        End Try
+    End Sub
+
+    'Trae todos los usuarios para mostrar en el datagrid al principio'
+    Public Sub MostrarTodos(ByVal tabla As DataGridView)
+        Try
+            Using Base As New NNeumaticosEntities1
+                Dim todos = (From u In Base.Usuario Select DNI = u.usu_Dni, Nombre = u.usu_nomYape, Apellido = u.usu_ape, Direccion = u.usu_Direccon, Localidad = u.usu_Localidad, Provincia = u.usu_Provincia, Telefono = u.usu_Telefono, Email = u.usu_Email, Contraseña = u.usu_Contraseña, Estado = u.usu_Estado, Tipo_Usuario = u.usu_TipoUsu, Fecha_Inicio = u.usu_Fecha).ToList
+                tabla.DataSource = todos
+            End Using
+        Catch ex As Exception
+
         End Try
     End Sub
 #End Region

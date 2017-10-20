@@ -31,7 +31,6 @@ Partial Class Empresas
         Me.TextBoxDireccionEmpresa = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBoxCuitEmpresa = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBoxNombreEmpresa = New System.Windows.Forms.TextBox()
         Me.ButtonSalirEmpresa = New System.Windows.Forms.Button()
@@ -51,6 +50,7 @@ Partial Class Empresas
         Me.LabelNombre = New System.Windows.Forms.Label()
         Me.ButtonEAceptar = New System.Windows.Forms.Button()
         Me.LabelETitulo = New System.Windows.Forms.Label()
+        Me.TextBoxCuitEmpresa = New System.Windows.Forms.TextBox()
         Me.Panel_modificar_Empresa.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.Panel_Ver_Datos_Empresa.SuspendLayout()
@@ -155,14 +155,6 @@ Partial Class Empresas
         Me.Label4.Size = New System.Drawing.Size(118, 25)
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "Dirección:"
-        '
-        'TextBoxCuitEmpresa
-        '
-        Me.TextBoxCuitEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxCuitEmpresa.Location = New System.Drawing.Point(127, 67)
-        Me.TextBoxCuitEmpresa.Name = "TextBoxCuitEmpresa"
-        Me.TextBoxCuitEmpresa.Size = New System.Drawing.Size(207, 26)
-        Me.TextBoxCuitEmpresa.TabIndex = 5
         '
         'Label3
         '
@@ -369,6 +361,14 @@ Partial Class Empresas
         Me.LabelETitulo.TabIndex = 0
         Me.LabelETitulo.Text = "Datos de la Empresa"
         '
+        'TextBoxCuitEmpresa
+        '
+        Me.TextBoxCuitEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxCuitEmpresa.Location = New System.Drawing.Point(127, 67)
+        Me.TextBoxCuitEmpresa.Name = "TextBoxCuitEmpresa"
+        Me.TextBoxCuitEmpresa.Size = New System.Drawing.Size(207, 26)
+        Me.TextBoxCuitEmpresa.TabIndex = 5
+        '
         'Empresas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -397,7 +397,6 @@ Partial Class Empresas
     Friend WithEvents TextBoxDireccionEmpresa As System.Windows.Forms.TextBox
     Friend WithEvents TextBoxEmailEmpresa As System.Windows.Forms.TextBox
     Friend WithEvents TextBoxNombreEmpresa As System.Windows.Forms.TextBox
-    Friend WithEvents TextBoxCuitEmpresa As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
@@ -419,4 +418,5 @@ Partial Class Empresas
     Friend WithEvents LabelETitulo As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents TextBoxCuitEmpresa As System.Windows.Forms.TextBox
 End Class

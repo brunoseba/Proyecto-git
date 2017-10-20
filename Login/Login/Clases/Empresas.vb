@@ -85,7 +85,7 @@
         Try
 
             Using Base As New NNeumaticosEntities1
-                Dim modif = (From q In Base.Empresa Where (p_cuit = q.empresa_cuit) Select q).First
+                Dim modif = (From q In Base.Empresa Where (q.empresa_cuit = p_cuit) Select q).First
                 modif.empresa_cuit = p_cuit
                 modif.empresa_nombre = p_nombre
                 modif.empresa_direccion = p_direccion
