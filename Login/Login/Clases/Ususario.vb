@@ -270,6 +270,16 @@
         End Try
     End Sub
 
+    Public Sub BuscarPorEstadoTipoUser(ByVal u_estado As Char, ByVal u_tipoUser As Char, ByVal u_resultados As DataGridView)
+        Try
+            Using Base As New NNeumaticosEntities1
+                Dim consulta = (From u In Base.Usuario Where ((u.usu_Estado = u_estado) Or (u.usu_TipoUsu = u_tipoUser)) Select New With {.DNI = u.usu_Dni, .Nombre = u.usu_nomYape, .Apellido = u.usu_ape, .Direccion = u.usu_Direccon, .Localidad = u.usu_Localidad, .Provincia = u.usu_Provincia, .Telefono = u.usu_Telefono, .Email = u.usu_Email, .Contraseña = u.usu_Contraseña, .Estado = u.usu_Estado, .Tipo_Usuario = u.usu_TipoUsu, .Fecha_Inicio = u.usu_Fecha}).ToList
+                u_resultados.DataSource = consulta
+            End Using
+        Catch ex As Exception
+
+        End Try
+    End Sub
     '-- Modificar Usuario'
     Public Function ModificarUsuario(ByVal u_dni As Integer, ByVal u_nomYape As String, ByVal u_direccion As String, ByVal u_localidad As String, ByVal u_provincia As String, ByVal u_telefono As String, ByVal u_email As String, ByVal u_contraseña As String, ByVal u_estado As Char, ByVal u_tipoUsu As Char, ByVal u_fecha As String, ByVal u_ape As String)
         Try
