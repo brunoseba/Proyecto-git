@@ -258,6 +258,18 @@
         End Try
     End Sub
 
+    '-- Buscar por Apellido --'
+    Public Sub BuscarPorApellido(ByVal u_apellido As String, ByVal u_resultados As DataGridView)
+        Try
+            Using Base As New NNeumaticosEntities1
+                Dim consulta = (From u In Base.Usuario Where (u.usu_ape.Contains(u_apellido)) Select New With {.DNI = u.usu_Dni, .Nombre = u.usu_nomYape, .Apellido = u.usu_ape, .Direccion = u.usu_Direccon, .Localidad = u.usu_Localidad, .Provincia = u.usu_Provincia, .Telefono = u.usu_Telefono, .Email = u.usu_Email, .Contraseña = u.usu_Contraseña, .Estado = u.usu_Estado, .Tipo_Usuario = u.usu_TipoUsu, .Fecha_Inicio = u.usu_Fecha}).ToList
+                u_resultados.DataSource = consulta
+            End Using
+        Catch ex As Exception
+            MsgBox("No se pudo realizar la consulta")
+        End Try
+    End Sub
+
     '-- Modificar Usuario'
     Public Function ModificarUsuario(ByVal u_dni As Integer, ByVal u_nomYape As String, ByVal u_direccion As String, ByVal u_localidad As String, ByVal u_provincia As String, ByVal u_telefono As String, ByVal u_email As String, ByVal u_contraseña As String, ByVal u_estado As Char, ByVal u_tipoUsu As Char, ByVal u_fecha As String, ByVal u_ape As String)
         Try

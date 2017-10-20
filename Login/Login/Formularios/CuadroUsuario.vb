@@ -369,72 +369,7 @@
         TEmail.Text = ""
     End Sub
 
-    'Habilita el campo DNI, desactivando los de nombre-apellido, estado y tipo de usuario'
-    Private Sub TDni_MouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TDni.MouseClick
-        Me.TDni.Enabled = True
-        Me.TNombre.Enabled = False
-        Me.TNombre.Text = ""
-        Me.TApel.Enabled = False
-        Me.TApel.Text = ""
-        Me.CBEsta.SelectedIndex = 0
-        Me.CBUsuario.SelectedIndex = 0
-        Me.CBEsta.Enabled = False
-        Me.CBUsuario.Enabled = False
-    End Sub
-
-    'Haciendo click en el label nombre o apellido activa los campos de los mismos, desactivando los restos'
-    Private Sub Label28_MouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Label28.MouseClick, Label2.MouseClick
-        Me.TDni.Enabled = False
-        Me.TDni.Text = ""
-        Me.TNombre.Enabled = True
-        Me.TApel.Enabled = True
-        Me.CBEsta.Enabled = False
-        Me.CBEsta.SelectedIndex = 0
-        Me.CBUsuario.Enabled = False
-        Me.CBUsuario.SelectedIndex = 0
-    End Sub
-
-    'Haciendo click en el label DNI activa el campo dNI, desactivando el resto'
-    Private Sub Label1_MouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Label1.MouseClick
-        Me.TDni.Enabled = True
-        Me.TNombre.Enabled = False
-        Me.TNombre.Text = ""
-        Me.TApel.Enabled = False
-        Me.TApel.Text = ""
-        Me.CBEsta.Enabled = False
-        Me.CBEsta.SelectedIndex = 0
-        Me.CBUsuario.Enabled = False
-        Me.CBUsuario.SelectedIndex = 0
-    End Sub
-
-    'Haciendo click en el label estado o tipoUsuario, activa el mismo desactivando el resto'
-    Private Sub Label3_MouseClick_1(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Label3.MouseClick, Label15.MouseClick
-        Me.TDni.Enabled = False
-        Me.TDni.Text = ""
-        Me.TNombre.Enabled = False
-        Me.TNombre.Text = ""
-        Me.TApel.Enabled = False
-        Me.TApel.Text = ""
-        Me.CBEsta.Enabled = True
-        Me.CBEsta.SelectedIndex = 0
-        Me.CBUsuario.Enabled = True
-        Me.CBUsuario.SelectedIndex = 0
-    End Sub
-
-    'Haciendo click en el campo nombre o apellido habilita, desactivando el resto'
-    Private Sub TApel_MouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TNombre.MouseClick, TApel.MouseClick
-        Me.TDni.Enabled = False
-        Me.TDni.Text = ""
-        Me.TNombre.Enabled = True
-        Me.TNombre.Text = ""
-        Me.TApel.Enabled = True
-        Me.TApel.Text = ""
-        Me.CBEsta.SelectedIndex = 0
-        Me.CBUsuario.SelectedIndex = 0
-        Me.CBEsta.Enabled = False
-        Me.CBUsuario.Enabled = False
-    End Sub
-
+  
     Private Sub TextBoxUDni_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBoxUTelefono.KeyPress, TextBoxUDni.KeyPress
         Me.ComprobarNumero(e)
     End Sub
@@ -463,6 +398,10 @@
     End Sub
 
     Private Sub TDni_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TDni.TextChanged
+        Me.TNombre.Text = ""
+        Me.TApel.Text = ""
+        Me.CBEsta.SelectedIndex = 0
+        Me.CBUsuario.SelectedIndex = 0
         Dim usua As New Ususario
         If Me.TDni.Text = "" Then
             tod.MostrarTodos(Me.DataGridView1)
@@ -472,11 +411,28 @@
     End Sub
 
     Private Sub TNombre_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TNombre.TextChanged
+        Me.TApel.Text = ""
+        Me.TDni.Text = ""
+        Me.CBEsta.SelectedIndex = 0
+        Me.CBUsuario.SelectedIndex = 0
         Dim usua As New Ususario
         If (Me.TNombre.Text = "") Then
             tod.MostrarTodos(Me.DataGridView1)
         Else
             usua.BuscarPorNombre(Me.TNombre.Text, Me.DataGridView1)
+        End If
+    End Sub
+
+    Private Sub TApel_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TApel.TextChanged
+        Me.TNombre.Text = ""
+        Me.TDni.Text = ""
+        Me.CBEsta.SelectedIndex = 0
+        Me.CBUsuario.SelectedIndex = 0
+        Dim usua As New Ususario
+        If (Me.TApel.Text = "") Then
+            tod.MostrarTodos(Me.DataGridView1)
+        Else
+            usua.BuscarPorApellido(Me.TApel.Text, Me.DataGridView1)
         End If
     End Sub
 End Class
