@@ -24,7 +24,7 @@
         End If
     End Function
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.DataGridView1.Visible = True
         Dim usua As New Ususario
         Dim dni As Integer
@@ -44,39 +44,39 @@
 
 
         ElseIf TNombre.Enabled = True Then
-                MsgBox("El campo Nombre y Apellido esta activo y el resto desactivado")
+            MsgBox("El campo Nombre y Apellido esta activo y el resto desactivado")
         Else
-                MsgBox("El campo Estado y tipo Usuario esta activo y el resto desactivado")
-            End If
-                'Si está enlazado a un origen de datos, y la propiedad AutoGenerateColumns tiene su valor por defecto (True), 
-                'la manera más sencilla de limpiar el control DataGridView es estableciendo el valor Nothing a su propiedad DataSource:
-                'DataGridView1.DataSource = Nothing
-                'If tipo = "*" Then
-                'DataGridView1.Rows.Clear()
-                'Try
-                'Using Base As New NNeumaticosEntities1
-                'Dim mues = (From u In Base.Usuario Select u).ToList
-                ' For Each u In mues
-                'DataGridView1.Rows.Add(u.usu_Dni, u.usu_nomYape & " " & u.usu_ape, u.usu_Direccon, u.usu_Localidad, u.usu_Telefono, u.usu_Email, u.usu_Contraseña, u.usu_Estado, u.usu_TipoUsu, ColVer)
-                'Next
-                'End Using
-                'Catch ex As Exception
-                'MessageBox.Show("Error al Cargar los Datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                'End Try
-                '--limpiar su filas llamando al método Clear de la propiedad Rows:--
-                'DataGridView1.Rows.Clear()
-                'Else
-                'DataGridView1.Rows.Clear()
-                'Try
-                'Using Base As New NNeumaticosEntities1
-                'Dim mues = (From u In Base.Usuario Where (u.usu_Dni = dni Or u.usu_nomYape = nom Or u.usu_ape = ape Or u.usu_TipoUsu = tipo Or u.usu_Estado = esta) Select u).ToList
-                'For Each u In mues
-                'DataGridView1.Rows.Add(u.usu_Dni, u.usu_nomYape & " " & u.usu_ape, u.usu_Direccon, u.usu_Localidad, u.usu_Telefono, u.usu_Email, u.usu_Contraseña, u.usu_Estado, u.usu_TipoUsu, ColVer)
-                'Next
-                'End Using
-                'Catch ex As Exception
-                'End Try
-                'End If
+            MsgBox("El campo Estado y tipo Usuario esta activo y el resto desactivado")
+        End If
+        'Si está enlazado a un origen de datos, y la propiedad AutoGenerateColumns tiene su valor por defecto (True), 
+        'la manera más sencilla de limpiar el control DataGridView es estableciendo el valor Nothing a su propiedad DataSource:
+        'DataGridView1.DataSource = Nothing
+        'If tipo = "*" Then
+        'DataGridView1.Rows.Clear()
+        'Try
+        'Using Base As New NNeumaticosEntities1
+        'Dim mues = (From u In Base.Usuario Select u).ToList
+        ' For Each u In mues
+        'DataGridView1.Rows.Add(u.usu_Dni, u.usu_nomYape & " " & u.usu_ape, u.usu_Direccon, u.usu_Localidad, u.usu_Telefono, u.usu_Email, u.usu_Contraseña, u.usu_Estado, u.usu_TipoUsu, ColVer)
+        'Next
+        'End Using
+        'Catch ex As Exception
+        'MessageBox.Show("Error al Cargar los Datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        'End Try
+        '--limpiar su filas llamando al método Clear de la propiedad Rows:--
+        'DataGridView1.Rows.Clear()
+        'Else
+        'DataGridView1.Rows.Clear()
+        'Try
+        'Using Base As New NNeumaticosEntities1
+        'Dim mues = (From u In Base.Usuario Where (u.usu_Dni = dni Or u.usu_nomYape = nom Or u.usu_ape = ape Or u.usu_TipoUsu = tipo Or u.usu_Estado = esta) Select u).ToList
+        'For Each u In mues
+        'DataGridView1.Rows.Add(u.usu_Dni, u.usu_nomYape & " " & u.usu_ape, u.usu_Direccon, u.usu_Localidad, u.usu_Telefono, u.usu_Email, u.usu_Contraseña, u.usu_Estado, u.usu_TipoUsu, ColVer)
+        'Next
+        'End Using
+        'Catch ex As Exception
+        'End Try
+        'End If
     End Sub
 
     Private Sub TDni_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TDni.KeyDown
@@ -149,7 +149,7 @@
         Me.CBEsta.SelectedIndex = 0
         DataGridView1.RowTemplate.Height = 50
         tod.MostrarTodos(Me.DataGridView1)
-        Me.Button1.Focus()
+
     End Sub
 
     Private Sub BSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BSalir.Click
@@ -442,9 +442,15 @@
         Me.TApel.Text = ""
         If (Me.CBEsta.SelectedIndex = 0) And (Me.CBUsuario.SelectedIndex = 0) Then
             tod.MostrarTodos(Me.DataGridView1)
+        ElseIf (Me.CBEsta.SelectedIndex = 0) And (Me.CBUsuario.SelectedIndex > 0) Then
+            Dim usua As New Ususario
+            usua.BuscarPorEstadoTipoUser("a", Me.usuario(), Me.DataGridView1, "b", Me.usuario(), , )
+        ElseIf (Me.CBEsta.SelectedIndex > 0) And (Me.CBUsuario.SelectedIndex = 0) Then
+            Dim usua As New Ususario
+            usua.BuscarPorEstadoTipoUser(Me.estados(), "a", Me.DataGridView1, Me.estados(), "s", Me.estados(), "v")
         Else
             Dim usua As New Ususario
-            usua.BuscarPorEstadoTipoUser(Me.estados(), Me.usuario(), Me.DataGridView1)
+            usua.BuscarPorEstadoTipoUser(Me.estados(), Me.usuario(), Me.DataGridView1, , , , )
         End If
 
     End Sub

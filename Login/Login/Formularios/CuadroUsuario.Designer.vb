@@ -30,7 +30,6 @@ Partial Class CuadroUsuario
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.CBUsuario = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.TNombre = New System.Windows.Forms.TextBox()
         Me.TDni = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -119,7 +118,6 @@ Partial Class CuadroUsuario
         Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.CBUsuario)
-        Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.TNombre)
         Me.GroupBox1.Controls.Add(Me.TDni)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -135,7 +133,7 @@ Partial Class CuadroUsuario
         '
         'TApel
         '
-        Me.TApel.Location = New System.Drawing.Point(565, 35)
+        Me.TApel.Location = New System.Drawing.Point(619, 49)
         Me.TApel.Name = "TApel"
         Me.TApel.Size = New System.Drawing.Size(154, 24)
         Me.TApel.TabIndex = 10
@@ -143,7 +141,7 @@ Partial Class CuadroUsuario
         'Label28
         '
         Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(472, 38)
+        Me.Label28.Location = New System.Drawing.Point(526, 52)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(87, 18)
         Me.Label28.TabIndex = 9
@@ -152,8 +150,8 @@ Partial Class CuadroUsuario
         'CBEsta
         '
         Me.CBEsta.FormattingEnabled = True
-        Me.CBEsta.Items.AddRange(New Object() {"Todos", "Alta", "Baja"})
-        Me.CBEsta.Location = New System.Drawing.Point(825, 35)
+        Me.CBEsta.Items.AddRange(New Object() {"Ambos", "Alta", "Baja"})
+        Me.CBEsta.Location = New System.Drawing.Point(879, 49)
         Me.CBEsta.Name = "CBEsta"
         Me.CBEsta.Size = New System.Drawing.Size(121, 26)
         Me.CBEsta.TabIndex = 8
@@ -162,7 +160,7 @@ Partial Class CuadroUsuario
         '
         Me.Label15.AutoSize = True
         Me.Label15.ForeColor = System.Drawing.Color.White
-        Me.Label15.Location = New System.Drawing.Point(746, 38)
+        Me.Label15.Location = New System.Drawing.Point(800, 52)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(73, 18)
         Me.Label15.TabIndex = 7
@@ -173,7 +171,7 @@ Partial Class CuadroUsuario
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(969, 40)
+        Me.Label3.Location = New System.Drawing.Point(1023, 54)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(79, 18)
         Me.Label3.TabIndex = 6
@@ -184,32 +182,21 @@ Partial Class CuadroUsuario
         Me.CBUsuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CBUsuario.FormattingEnabled = True
         Me.CBUsuario.Items.AddRange(New Object() {"Todos", "Administrador", "Supervisor", "Vendedor"})
-        Me.CBUsuario.Location = New System.Drawing.Point(1054, 35)
+        Me.CBUsuario.Location = New System.Drawing.Point(1108, 49)
         Me.CBUsuario.Name = "CBUsuario"
         Me.CBUsuario.Size = New System.Drawing.Size(121, 26)
         Me.CBUsuario.TabIndex = 5
         '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackgroundImage = Global.Login.My.Resources.Resources.search16_h
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Button1.Location = New System.Drawing.Point(1215, 35)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 29)
-        Me.Button1.TabIndex = 4
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'TNombre
         '
-        Me.TNombre.Location = New System.Drawing.Point(318, 35)
+        Me.TNombre.Location = New System.Drawing.Point(372, 49)
         Me.TNombre.Name = "TNombre"
         Me.TNombre.Size = New System.Drawing.Size(125, 24)
         Me.TNombre.TabIndex = 3
         '
         'TDni
         '
-        Me.TDni.Location = New System.Drawing.Point(58, 35)
+        Me.TDni.Location = New System.Drawing.Point(112, 49)
         Me.TDni.Name = "TDni"
         Me.TDni.Size = New System.Drawing.Size(145, 24)
         Me.TDni.TabIndex = 2
@@ -218,7 +205,7 @@ Partial Class CuadroUsuario
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(229, 38)
+        Me.Label2.Location = New System.Drawing.Point(283, 52)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(83, 18)
         Me.Label2.TabIndex = 1
@@ -228,7 +215,7 @@ Partial Class CuadroUsuario
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(20, 38)
+        Me.Label1.Location = New System.Drawing.Point(74, 52)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(37, 18)
         Me.Label1.TabIndex = 0
@@ -969,7 +956,6 @@ Partial Class CuadroUsuario
     Friend WithEvents TDni As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents TNombre As System.Windows.Forms.TextBox
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents Label3 As System.Windows.Forms.Label
