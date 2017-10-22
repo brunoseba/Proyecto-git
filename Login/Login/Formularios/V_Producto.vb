@@ -104,8 +104,12 @@
     End Sub
 
     Private Sub ButtonActualizarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonActualizarProducto.Click
-        MsgBox("Producto Actuañizado")
-        ButtonActualizarProducto.Visible = False
+        Dim prod As New Productos()
+        If (prod.ModificarProducto(DataGridViewResultadosProductos.Item(4, DataGridViewResultadosProductos.CurrentRow.Index).Value, TextBoxNombreProducto.Text, ComboBoxRodadoProducto.SelectedItem, ComboBoxMedidaProducto.SelectedItem, Val(TextBoxPrecio.Text), Val(TextBoxCod_Datos.Text), Val(TextBoxStock.Text), LabelRutaArchivo.Text, "A", ComboBoxTipoVehiculo.SelectedItem)) Then
+            MsgBox("Producto se modifico con Éxito", 0 + 0 + 64)
+        Else
+            MsgBox("No se pudo modificar el Producto", 16, "Atención")
+        End If
         Me.Close()
     End Sub
 

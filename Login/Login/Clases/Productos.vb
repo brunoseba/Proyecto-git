@@ -111,6 +111,7 @@
 #End Region
 
 #Region "Procedimientos"
+    'Agregar Nuevo Producto'
     Public Sub AgregarProducto()
         Try
             Using Base As New NNeumaticosEntities1
@@ -133,6 +134,29 @@
         End Try
     End Sub
 
+    'Modificar Producto'
+    Public Function ModificarProducto(ByVal p_cod As Integer, ByVal p_nombre As String, ByVal p_rodado As String, ByVal p_medida As String, ByVal p_precio As Double, ByVal p_datos As Integer, ByVal p_stock As Integer, ByVal p_imagen As String, ByVal p_estado As Char, ByVal p_vehiculo As String)
+        Try
+            Using Base As New NNeumaticosEntities1
+                Dim modificar = (From u In Base.Producto Where (u.producto_id = p_cod) Select u).First
+                modificar.producto_nombre = p_nombre
+                modificar.producto_rodado = p_rodado
+                modificar.producto_medida = p_medida
+                modificar.producto_precio = p_precio
+                modificar.Datos_cod = p_datos
+                modificar.producto_stock = p_stock
+                modificar.producto_imagen = p_imagen
+                modificar.producto_estado = p_estado
+                modificar.tipoVehi_descripcion = p_vehiculo
+                Base.SaveChanges()
+            End Using
+            Return True
+        Catch ex As Exception
+            Console.WriteLine("An error occurred: '{0}'", ex)
+            Return False
+        End Try
+    End Function
+
     'Trae todos los productos para mostrar en el datagrid al principio'
     'Public Sub MostrarTodos(ByVal tabla1 As DataGridView) ', ByVal imagen As PictureBox
     Public Sub MostrarTodos(ByVal tabla As DataGridView)
@@ -144,6 +168,7 @@
         Catch ex As Exception
         End Try
     End Sub
+
 
     '---borrado logico----
     Public Function ActualizarStock(ByVal pro_id As Integer, ByVal p_cantidad As Integer)
@@ -174,7 +199,6 @@
 
         End Try
     End Sub
-
     '---borrado fisico----
     Public Sub Eliminar(ByVal pro_id)
         Try
