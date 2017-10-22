@@ -21,14 +21,21 @@
     End Sub
 
     Private Sub Button2_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        Dim prod As New Productos()
+        If String.IsNullOrWhiteSpace(TextBox1.Text) Then
+            MsgBox("Se encuentra vacio el campo", 16, "Error")
+            TextBox1.Focus()
+            TextBox1.BackColor = Color.Red
+        Else
+            Dim prod As New Productos()
         If prod.ActualizarStock(Val((DataGridViewResultadosProductos.Item(4, DataGridViewResultadosProductos.CurrentRow.Index).Value)), Val(TextBox1.Text)) Then
             MsgBox("Stock Actualizado", 0 + 0 + 64)
         Else
             MsgBox("No se actualizo el stock del Producto", 16, "Atención")
         End If
         Me.PanelActualizarStock.Visible = False
-        cargarImagen()
+            cargarImagen()
+        End If
+
     End Sub
 
     Private Sub DataGridViewResultadosProductos_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridViewResultadosProductos.CellContentClick
@@ -42,6 +49,8 @@
                         Me.PanelActualizarStock.Visible = False
                         Me.PanelAgregarProductos.Visible = False
                         Me.PanelMostrarDatosTecnicos.Visible = True
+                        TextBox1.Text = ""
+                        TextBox1.BackColor = Color.White
                         Dim d_Tec As New D_Tecnicos()
                         d_Tec.MostrarUnicoDTecnicos(DataGridViewResultadosProductos.Item(13, DataGridViewResultadosProductos.CurrentRow.Index).Value, Me.DataGridView1)
                 End Select
@@ -50,6 +59,8 @@
                         Me.PanelAgregarProductos.Visible = False
                         Me.PanelMostrarDatosTecnicos.Visible = False
                         Me.PanelActualizarStock.Visible = True
+                        TextBox1.Text = ""
+                        TextBox1.BackColor = Color.White
                         Label3.Text = DataGridViewResultadosProductos.Item(5, DataGridViewResultadosProductos.CurrentRow.Index).Value
                         Label6.Text = DataGridViewResultadosProductos.Item(7, DataGridViewResultadosProductos.CurrentRow.Index).Value
                         Label8.Text = DataGridViewResultadosProductos.Item(6, DataGridViewResultadosProductos.CurrentRow.Index).Value
@@ -57,6 +68,8 @@
                 End Select
                 Select Case bc.Name
                     Case "Modificar"
+                        TextBox1.Text = ""
+                        TextBox1.BackColor = Color.White
                         Me.PanelMostrarDatosTecnicos.Visible = False
                         Me.PanelActualizarStock.Visible = False
                         Me.PanelProductosBuscar.Visible = False
@@ -66,6 +79,20 @@
                         Me.ButtonAltaProducto.Visible = True
                         Me.ButtonActualizarProducto.Visible = True
                         Me.PanelAgregarProductos.Visible = True
+                        TextBoxNombreProducto.Text = DataGridViewResultadosProductos.Item(5, DataGridViewResultadosProductos.CurrentRow.Index).Value
+                        TextBoxPrecio.Text = Val(DataGridViewResultadosProductos.Item(8, DataGridViewResultadosProductos.CurrentRow.Index).Value)
+                        TextBoxStock.Text = DataGridViewResultadosProductos.Item(9, DataGridViewResultadosProductos.CurrentRow.Index).Value
+                        asignarMedida(ComboBoxMedidaProducto, DataGridViewResultadosProductos.Item(7, DataGridViewResultadosProductos.CurrentRow.Index).Value)
+                        asignarRodado(ComboBoxRodadoProducto, DataGridViewResultadosProductos.Item(6, DataGridViewResultadosProductos.CurrentRow.Index).Value)
+                        asignarTipoVehiculo(ComboBoxTipoVehiculo, DataGridViewResultadosProductos.Item(11, DataGridViewResultadosProductos.CurrentRow.Index).Value)
+                        PictureBox1.Load(DataGridViewResultadosProductos.Item(10, DataGridViewResultadosProductos.CurrentRow.Index).Value)
+                        LabelRutaArchivo.Text = DataGridViewResultadosProductos.Item(10, DataGridViewResultadosProductos.CurrentRow.Index).Value
+                        LabelestadoProducto.Text = DataGridViewResultadosProductos.Item(12, DataGridViewResultadosProductos.CurrentRow.Index).Value
+                        If LabelestadoProducto.Text = "A" Then
+                            ButtonAltaProducto.Visible = False
+                        Else
+                            ButtonBajaProducto.Visible = False
+                        End If
                 End Select
 
             End If
@@ -245,11 +272,11 @@
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
         TextBoxNombreProducto.Text = ""
-        ComboBoxRodadoProducto.SelectedIndex = 0
-        ComboBoxMedidaProducto.SelectedIndex = 0
+        'ComboBoxRodadoProducto.SelectedIndex = 0
+        'ComboBoxMedidaProducto.SelectedIndex = 0
         TextBoxPrecio.Text = ""
         TextBoxStock.Text = ""
-        ComboBoxTipoVehiculo.SelectedIndex = 0
+        'ComboBoxTipoVehiculo.SelectedIndex = 0
         LabelRutaArchivo.Text = "Ruta:"
         PictureBox1.Image = My.Resources.image_not_found__1_
     End Sub
@@ -258,8 +285,90 @@
     Private Sub V_Producto_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim d_Tec As New D_Tecnicos()
         d_Tec.MostrarTodosDTecnicos(Me.DataGridViewDatosCodigo)
-        ComboBoxMedidaProducto.SelectedIndex = 0
-        ComboBoxRodadoProducto.SelectedIndex = 0
-        ComboBoxTipoVehiculo.SelectedIndex = 0
+        'ComboBoxMedidaProducto.SelectedIndex = 0
+        'ComboBoxRodadoProducto.SelectedIndex = 0
+        ' ComboBoxTipoVehiculo.SelectedIndex = 0
+    End Sub
+
+    Private Sub TextBox1_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox1.KeyPress
+        ComprobarNumero(e)
+    End Sub
+
+    Private Sub TextBox1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox1.TextChanged
+        If String.IsNullOrWhiteSpace(TextBox1.Text) Then
+            TextBox1.BackColor = Color.Red
+        Else
+            TextBox1.BackColor = Color.Green
+        End If
+    End Sub
+
+    Private Sub asignarMedida(ByVal combo As ComboBox, ByVal valor As String)
+        If valor = "27x8.5" Then
+            combo.SelectedIndex = 0
+        ElseIf valor = "31x10" Then
+            combo.SelectedIndex = 1
+        ElseIf valor = "32x11.5" Then
+            combo.SelectedIndex = 2
+        ElseIf valor = "215/60" Then
+            combo.SelectedIndex = 3
+        ElseIf valor = "215/120" Then
+            combo.SelectedIndex = 4
+        ElseIf valor = "235/60" Then
+            combo.SelectedIndex = 5
+        ElseIf valor = "235/120" Then
+            combo.SelectedIndex = 6
+        ElseIf valor = "255/75" Then
+            combo.SelectedIndex = 7
+        ElseIf valor = "255/100" Then
+            combo.SelectedIndex = 8
+        ElseIf valor = "290/24" Then
+            combo.SelectedIndex = 9
+        ElseIf valor = "290/90" Then
+            combo.SelectedIndex = 10
+        Else
+            combo.SelectedIndex = 11
+        End If
+    End Sub
+    Private Sub asignarRodado(ByVal combo As ComboBox, ByVal valor As String)
+        If valor = "12" Then
+            combo.SelectedIndex = 0
+        ElseIf valor = "13" Then
+            combo.SelectedIndex = 1
+        ElseIf valor = "14" Then
+            combo.SelectedIndex = 2
+        ElseIf valor = "15" Then
+            combo.SelectedIndex = 3
+        ElseIf valor = "16" Then
+            combo.SelectedIndex = 4
+        ElseIf valor = "17" Then
+            combo.SelectedIndex = 5
+        ElseIf valor = "18" Then
+            combo.SelectedIndex = 6
+        ElseIf valor = "19" Then
+            combo.SelectedIndex = 7
+        ElseIf valor = "20" Then
+            combo.SelectedIndex = 8
+        ElseIf valor = "22.5" Then
+            combo.SelectedIndex = 9
+        ElseIf valor = "26" Then
+            combo.SelectedIndex = 10
+        ElseIf valor = "28" Then
+            combo.SelectedIndex = 11
+        ElseIf valor = "36" Then
+            combo.SelectedIndex = 12
+        Else
+            combo.SelectedIndex = 13
+        End If
+    End Sub
+    Private Sub asignarTipoVehiculo(ByVal combo As ComboBox, ByVal valor As String)
+        If valor = "Automóviles" Then
+            combo.SelectedIndex = 0
+        ElseIf valor = "Camiones/Colectivos" Then
+            combo.SelectedIndex = 1
+        ElseIf valor = "Camionetas" Then
+            combo.SelectedIndex = 2
+        Else
+            combo.SelectedIndex = 3
+        End If
     End Sub
 End Class

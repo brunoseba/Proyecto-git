@@ -22,7 +22,7 @@ Partial Class V_Producto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelAgregarProductos = New System.Windows.Forms.Panel()
         Me.ButtonAltaProducto = New System.Windows.Forms.Button()
         Me.ButtonBajaProducto = New System.Windows.Forms.Button()
@@ -31,7 +31,7 @@ Partial Class V_Producto
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DataGridViewDatosCodigo = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.LabelcodProducto = New System.Windows.Forms.Label()
+        Me.LabelestadoProducto = New System.Windows.Forms.Label()
         Me.TextBoxCod_Datos = New System.Windows.Forms.TextBox()
         Me.TextBoxStock = New System.Windows.Forms.TextBox()
         Me.LabelRutaArchivo = New System.Windows.Forms.Label()
@@ -194,7 +194,7 @@ Partial Class V_Producto
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.LabelcodProducto)
+        Me.GroupBox1.Controls.Add(Me.LabelestadoProducto)
         Me.GroupBox1.Controls.Add(Me.TextBoxCod_Datos)
         Me.GroupBox1.Controls.Add(Me.TextBoxStock)
         Me.GroupBox1.Controls.Add(Me.LabelRutaArchivo)
@@ -223,15 +223,15 @@ Partial Class V_Producto
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Características"
         '
-        'LabelcodProducto
+        'LabelestadoProducto
         '
-        Me.LabelcodProducto.AutoSize = True
-        Me.LabelcodProducto.Location = New System.Drawing.Point(174, 90)
-        Me.LabelcodProducto.Name = "LabelcodProducto"
-        Me.LabelcodProducto.Size = New System.Drawing.Size(63, 16)
-        Me.LabelcodProducto.TabIndex = 26
-        Me.LabelcodProducto.Text = "Label11"
-        Me.LabelcodProducto.Visible = False
+        Me.LabelestadoProducto.AutoSize = True
+        Me.LabelestadoProducto.Location = New System.Drawing.Point(174, 90)
+        Me.LabelestadoProducto.Name = "LabelestadoProducto"
+        Me.LabelestadoProducto.Size = New System.Drawing.Size(63, 16)
+        Me.LabelestadoProducto.TabIndex = 26
+        Me.LabelestadoProducto.Text = "Label11"
+        Me.LabelestadoProducto.Visible = False
         '
         'TextBoxCod_Datos
         '
@@ -454,6 +454,7 @@ Partial Class V_Producto
         '
         Me.PanelMostrarDatosTecnicos.Controls.Add(Me.Button3)
         Me.PanelMostrarDatosTecnicos.Controls.Add(Me.GroupBox5)
+        Me.PanelMostrarDatosTecnicos.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PanelMostrarDatosTecnicos.Location = New System.Drawing.Point(12, 447)
         Me.PanelMostrarDatosTecnicos.Name = "PanelMostrarDatosTecnicos"
         Me.PanelMostrarDatosTecnicos.Size = New System.Drawing.Size(1338, 172)
@@ -635,7 +636,7 @@ Partial Class V_Producto
         Me.GroupBox4.Controls.Add(Me.DataGridViewResultadosProductos)
         Me.GroupBox4.Controls.Add(Me.Label1)
         Me.GroupBox4.Controls.Add(Me.PictureBox2)
-        Me.GroupBox4.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.GroupBox4.Location = New System.Drawing.Point(16, 176)
         Me.GroupBox4.Name = "GroupBox4"
@@ -688,10 +689,10 @@ Partial Class V_Producto
         'Modificar
         '
         Me.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Gray
-        Me.Modificar.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Gray
+        Me.Modificar.DefaultCellStyle = DataGridViewCellStyle3
         Me.Modificar.HeaderText = "Modificar"
         Me.Modificar.Name = "Modificar"
         Me.Modificar.ReadOnly = True
@@ -699,7 +700,7 @@ Partial Class V_Producto
         Me.Modificar.Text = "Modificar"
         Me.Modificar.ToolTipText = "Modificar"
         Me.Modificar.UseColumnTextForButtonValue = True
-        Me.Modificar.Width = 87
+        Me.Modificar.Width = 98
         '
         'Imagen
         '
@@ -864,8 +865,8 @@ Partial Class V_Producto
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1362, 624)
-        Me.Controls.Add(Me.PanelProductosBuscar)
         Me.Controls.Add(Me.PanelAgregarProductos)
+        Me.Controls.Add(Me.PanelProductosBuscar)
         Me.Name = "V_Producto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Producto"
@@ -956,7 +957,7 @@ Partial Class V_Producto
     Friend WithEvents ButtonAltaProducto As System.Windows.Forms.Button
     Friend WithEvents ButtonBajaProducto As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
-    Friend WithEvents LabelcodProducto As System.Windows.Forms.Label
+    Friend WithEvents LabelestadoProducto As System.Windows.Forms.Label
     Friend WithEvents Datos_Tecnicos As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents A_Stock As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents Modificar As System.Windows.Forms.DataGridViewButtonColumn
