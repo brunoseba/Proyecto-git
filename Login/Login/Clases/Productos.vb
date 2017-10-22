@@ -169,8 +169,7 @@
         End Try
     End Sub
 
-
-    '---borrado logico----
+    '---ActualizarStock----
     Public Function ActualizarStock(ByVal pro_id As Integer, ByVal p_cantidad As Integer)
         Try
             Using Base As New NNeumaticosEntities1
@@ -183,22 +182,34 @@
             Return False
         End Try
     End Function
-    '---borrado logico----
-    Public Sub EliminaProducto(ByVal pro_id As Integer, ByVal p_estado As Char)
+
+    '---Baja de Producto----
+    Public Function BajaProducto(ByVal pro_id As Integer)
         Try
-
             Using Base As New NNeumaticosEntities1
-                Dim borra = (From p In Base.Producto Where (pro_id = p.producto_id)
-                             Select p).First
-                borra.producto_estado = p_estado
-
+                Dim baja = (From p In Base.Producto Where (pro_id = p.producto_id) Select p).First
+                baja.producto_estado = "B"
                 Base.SaveChanges()
             End Using
-
+            Return True
         Catch ex As Exception
-
+            Return False
         End Try
-    End Sub
+    End Function
+
+    '---Alta de Producto----
+    Public Function AltaProducto(ByVal pro_id As Integer)
+        Try
+            Using Base As New NNeumaticosEntities1
+                Dim baja = (From p In Base.Producto Where (pro_id = p.producto_id) Select p).First
+                baja.producto_estado = "A"
+                Base.SaveChanges()
+            End Using
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
     '---borrado fisico----
     Public Sub Eliminar(ByVal pro_id)
         Try

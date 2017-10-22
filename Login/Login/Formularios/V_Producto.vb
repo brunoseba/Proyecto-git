@@ -375,4 +375,24 @@
             combo.SelectedIndex = 3
         End If
     End Sub
+
+    Private Sub ButtonBajaProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonBajaProducto.Click
+        Dim prod As New Productos()
+        If (prod.BajaProducto(DataGridViewResultadosProductos.Item(4, DataGridViewResultadosProductos.CurrentRow.Index).Value)) Then
+            MsgBox("El Producto se dio de Baja Correctamente", 0 + 0 + 64)
+        Else
+            MsgBox("El producto no se pudo dar de Baja", 16, "Atención")
+        End If
+        Me.Close()
+    End Sub
+
+    Private Sub ButtonAltaProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonAltaProducto.Click
+        Dim prod As New Productos()
+        If (prod.BajaProducto(DataGridViewResultadosProductos.Item(4, DataGridViewResultadosProductos.CurrentRow.Index).Value)) Then
+            MsgBox("El Producto se dio de Alta Correctamente", 0 + 0 + 64)
+        Else
+            MsgBox("El producto no se pudo dar de Alta", 16, "Atención")
+        End If
+        Me.Close()
+    End Sub
 End Class
