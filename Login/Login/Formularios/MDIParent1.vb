@@ -34,8 +34,6 @@ Public Class Ventana
             Me.Productos.Visible = False
             Me.AgregarProductoToolStripMenuItem.Visible = False
             Me.BuscarProductosToolStripMenuItem.Visible = False
-            Me.CargarStockToolStripMenuItem.Visible = False
-            Me.EliminarProductosToolStripMenuItem.Visible = False
             Vendedor.Show()
             Vendedor.PanelConfirmarCompra.Visible = False
             Vendedor.MdiParent = Me
@@ -103,13 +101,18 @@ Public Class Ventana
     End Sub
 
     Private Sub BuscarProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarProductosToolStripMenuItem.Click
+        V_Producto.PanelAgregarProductos.Visible = False
+        V_Producto.PanelProductosBuscar.Visible = True
         V_Producto.MaximizeBox = True
         V_Producto.Show()
+        V_Producto.ComboBox1.SelectedIndex = 0
+        V_Producto.ComboBox2.SelectedIndex = 0
+        V_Producto.ComboBox3.SelectedIndex = 0
         V_Producto.PanelMostrarDatosTecnicos.Visible = False
         V_Producto.PanelActualizarStock.Visible = False
         V_Producto.PanelAgregarProductos.Visible = False
-        V_Producto.PanelProductosBuscar.Visible = True
         V_Producto.MdiParent = Me
+        V_Producto.cargarImagen()
     End Sub
 
     Private Sub MenuEmpresaVerDatos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuEmpresaVerDatos.Click
@@ -159,10 +162,11 @@ Public Class Ventana
         V_Producto.MaximizeBox = True
         V_Producto.Show()
         V_Producto.PanelAgregarProductos.Visible = True
+        V_Producto.PanelProductosBuscar.Visible = False
         V_Producto.MdiParent = Me
     End Sub
 
-    Private Sub CargarStockToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CargarStockToolStripMenuItem.Click
+    Private Sub CargarStockToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         V_Producto.MaximizeBox = True
         V_Producto.Show()
         V_Producto.PanelAgregarProductos.Visible = False

@@ -1,28 +1,19 @@
 ﻿Public Class V_Producto
 
-    'Procedimiento cuando carga la ventana Principal'
-    Private Sub Vendedor_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Dim d_Tec As New D_Tecnicos()
-        d_Tec.MostrarDTecnicos(Me.DataGridViewDatosCodigo)
-     
-        ComboBoxMedidaProducto.SelectedIndex = 0
-        ComboBoxRodadoProducto.SelectedIndex = 0
-        ComboBoxTipoVehiculo.SelectedIndex = 0
-    End Sub
 
     Private Sub ButtonCancelarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonCancelarProducto.Click
         Me.Close()
     End Sub
 
     Private Sub ButtonBuscarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonBuscarProducto.Click
-        Me.DataGridViewResultadosProductos.Rows.Add("AT-53", "175X6", "16", "Automovil", 25, "$ 450", PictureBox2.Image)
-        Me.DataGridViewResultadosProductos.Rows.Add("Potenza GII", "175x7", "16", "Automovil", 13, "$ 500", PictureBox2.Image)
-        Me.DataGridViewResultadosProductos.Rows.Add("Toranza", "155x9", "15", "Automovil", 10, "$ 700", PictureBox2.Image)
-        Me.DataGridViewResultadosProductos.Rows.Add("Potenza GII", "175x7", "15", "Automovil", 55, "$ 600", PictureBox2.Image)
-        Me.DataGridViewResultadosProductos.Rows.Add("AT-53", "175X6", "16", "Automovil", 45, "$ 300", PictureBox2.Image)
-        Me.DataGridViewResultadosProductos.Rows.Add("Potenza_RE_050A", "175x7", "16", "Automovil", 3, "$ 650", PictureBox2.Image)
-        Me.DataGridViewResultadosProductos.Rows.Add("Toranza", "155x9", "15", "Automovil", 37, "$ 300", PictureBox2.Image)
-        Me.DataGridViewResultadosProductos.Rows.Add("Potenza GII", "175x7", "15", "Automovil", 22, "$ 600", PictureBox2.Image)
+        cargarImagen()
+        'Dim prod As New Productos()
+        'prod.MostrarTodos(Me.DataGridViewResultadosProductos)
+        ''Cargo la FOTO'
+        'For Each fila As DataGridViewRow In DataGridViewResultadosProductos.Rows
+        ' PictureBox3.Load(fila.Cells("Ruta").Value)
+        ' fila.Cells("Imagen").Value = (PictureBox3.Image)
+        ' Next
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -45,7 +36,9 @@
                         Me.PanelActualizarStock.Visible = False
                         Me.PanelAgregarProductos.Visible = False
                         Me.PanelMostrarDatosTecnicos.Visible = True
-                        DataGridView1.Rows.Add("1", "LT215/75R15", "1", "S180", "466", "6", "216", "703")
+                        Dim d_Tec As New D_Tecnicos()
+                        d_Tec.MostrarUnicoDTecnicos(DataGridViewResultadosProductos.Item(13, DataGridViewResultadosProductos.CurrentRow.Index).Value, Me.DataGridView1)
+
                 End Select
                 Select Case bc.Name
                     Case "A_Stock"
@@ -59,6 +52,9 @@
                         Me.PanelActualizarStock.Visible = False
                         Me.PanelProductosBuscar.Visible = False
                         Me.ButtonAgregarProducto.Visible = False
+                        Me.Button4.Visible = False
+                        Me.ButtonBajaProducto.Visible = True
+                        Me.ButtonAltaProducto.Visible = True
                         Me.ButtonActualizarProducto.Visible = True
                         Me.PanelAgregarProductos.Visible = True
                 End Select
@@ -137,7 +133,7 @@
                     End If
                 End If
             Else
-                MsgBox("No se agrego el Producto", 0 + 0 + 64)
+                MsgBox("No se agrego el Producto", 16, "Atención")
             End If
             
         End If
@@ -172,22 +168,17 @@
 
     Private Function ComprobarVacioNuevoProducto() As Boolean
         If String.IsNullOrWhiteSpace(TextBoxNombreProducto.Text) Then
-            MsgBox("Debe completar el campo Nombre")
+            MsgBox("Debe completar el campo Nombre", 16, "Atención")
             TextBoxNombreProducto.BackColor = Color.Salmon
             TextBoxNombreProducto.Focus()
             Return True
         ElseIf String.IsNullOrWhiteSpace(TextBoxPrecio.Text) Then
-            MsgBox("Debe completar el campo Precio")
+            MsgBox("Debe completar el campo Precio", 16, "Atención")
             TextBoxPrecio.BackColor = Color.Salmon
             TextBoxPrecio.Focus()
             Return True
-        ElseIf String.IsNullOrWhiteSpace(TextBoxCod_Datos.Text) Then
-            MsgBox("Debe completar el campo Cod de Datos")
-            TextBoxCod_Datos.BackColor = Color.Salmon
-            TextBoxCod_Datos.Focus()
-            Return True
         ElseIf String.IsNullOrWhiteSpace(TextBoxStock.Text) Then
-            MsgBox("Debe completar el campo Stock")
+            MsgBox("Debe completar el campo Stock", 16, "Atención")
             TextBoxStock.BackColor = Color.Salmon
             TextBoxStock.Focus()
             Return True
@@ -200,4 +191,67 @@
         Me.ComprobarNumero(e)
     End Sub
 
+    Private Sub ComboBoxMedidaProducto_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBoxMedidaProducto.SelectedIndexChanged
+        For Each fila As DataGridViewRow In DataGridViewDatosCodigo.Rows
+            If fila.Cells("Medida").Value = ComboBoxMedidaProducto.Text Then
+                TextBoxCod_Datos.Text = fila.Cells("Codigo").Value
+                fila.Cells("Codigo").Style.BackColor = Color.Aquamarine
+                fila.Cells("Medida").Style.BackColor = Color.Aquamarine
+                fila.Cells("Indice_Carga").Style.BackColor = Color.Aquamarine
+                fila.Cells("Velocidad").Style.BackColor = Color.Aquamarine
+                fila.Cells("Revision_Por_Km").Style.BackColor = Color.Aquamarine
+                fila.Cells("Ancho_Llanta").Style.BackColor = Color.Aquamarine
+                fila.Cells("Ancho_Sesion").Style.BackColor = Color.Aquamarine
+                fila.Cells("Diametro").Style.BackColor = Color.Aquamarine
+            Else
+                fila.Cells("Codigo").Style.BackColor = Color.White
+                fila.Cells("Medida").Style.BackColor = Color.White
+                fila.Cells("Indice_Carga").Style.BackColor = Color.White
+                fila.Cells("Velocidad").Style.BackColor = Color.White
+                fila.Cells("Revision_Por_Km").Style.BackColor = Color.White
+                fila.Cells("Ancho_Llanta").Style.BackColor = Color.White
+                fila.Cells("Ancho_Sesion").Style.BackColor = Color.White
+                fila.Cells("Diametro").Style.BackColor = Color.White
+            End If
+        Next
+    End Sub
+
+    Public Sub cargarImagen()
+        Dim prod As New Productos()
+        prod.MostrarTodos(Me.DataGridViewResultadosProductos)
+
+        Dim ima As Image
+        For Each fila As DataGridViewRow In DataGridViewResultadosProductos.Rows
+            'Pone invisible el id y Ruta de la imagen
+            DataGridViewResultadosProductos.Columns("ID").Visible = False
+            DataGridViewResultadosProductos.Columns("Ruta").Visible = False
+            ' DataGridViewResultadosProductos.Columns("Datos").Visible = False
+            'Àsigno a imagen.fromfile el valor de la ruta de la imagen de la DB
+            ima = Image.FromFile(fila.Cells("Ruta").Value)
+
+            'asigno a la columna datagriedviewImage la imagen asignada fromfile
+            fila.Cells("Imagen").Value = ima
+
+        Next
+    End Sub
+
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+        TextBoxNombreProducto.Text = ""
+        ComboBoxRodadoProducto.SelectedIndex = 0
+        ComboBoxMedidaProducto.SelectedIndex = 0
+        TextBoxPrecio.Text = ""
+        TextBoxStock.Text = ""
+        ComboBoxTipoVehiculo.SelectedIndex = 0
+        LabelRutaArchivo.Text = "Ruta:"
+        PictureBox1.Image = My.Resources.image_not_found__1_
+    End Sub
+
+
+    Private Sub V_Producto_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Dim d_Tec As New D_Tecnicos()
+        d_Tec.MostrarTodosDTecnicos(Me.DataGridViewDatosCodigo)
+        ComboBoxMedidaProducto.SelectedIndex = 0
+        ComboBoxRodadoProducto.SelectedIndex = 0
+        ComboBoxTipoVehiculo.SelectedIndex = 0
+    End Sub
 End Class

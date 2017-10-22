@@ -87,10 +87,23 @@
 #End Region
 
 #Region "Procedimientos"
-    Public Function MostrarDTecnicos(ByVal dataTecnicos As DataGridView)
+    Public Function MostrarTodosDTecnicos(ByVal dataTecnicos As DataGridView)
         Try
             Using Mostrar As New NNeumaticosEntities1
                 Dim mostrarD_Tecnicos = (From q In Mostrar.Datos_Tecnicos
+                                         Select Codigo = q.Datos_cod, Medida = q.Datos_Medida, Indice_Carga = q.Datos_IndCarga, Velocidad = q.Datos_Velocidad, Revision_Por_KM = q.Datos_RevPorKm, Ancho_Llanta = q.Datos_AnchoLLanta, Ancho_Sesion = q.Datos_AnchoSecion, Diametro = q.Datos_Diametro)
+                dataTecnicos.DataSource = mostrarD_Tecnicos
+            End Using
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Public Function MostrarUnicoDTecnicos(ByVal cod As Integer, ByVal dataTecnicos As DataGridView)
+        Try
+            Using Mostrar As New NNeumaticosEntities1
+                Dim mostrarD_Tecnicos = (From q In Mostrar.Datos_Tecnicos Where (q.Datos_cod = cod)
                                          Select Codigo = q.Datos_cod, Medida = q.Datos_Medida, Indice_Carga = q.Datos_IndCarga, Velocidad = q.Datos_Velocidad, Revision_Por_KM = q.Datos_RevPorKm, Ancho_Llanta = q.Datos_AnchoLLanta, Ancho_Sesion = q.Datos_AnchoSecion, Diametro = q.Datos_Diametro)
                 dataTecnicos.DataSource = mostrarD_Tecnicos
             End Using

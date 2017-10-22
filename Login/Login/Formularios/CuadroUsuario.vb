@@ -137,6 +137,13 @@
                             ComboBox1.SelectedIndex = 3
                         End If
                         DateTime.Text = (DataGridView1.Item(12, DataGridView1.CurrentRow.Index).Value).ToString
+                        If TextBoxUestado.Text = "ALTA" Then
+                            BBaja.Visible = True
+                            BAlta.Visible = False
+                        Else
+                            BAlta.Visible = True
+                            BBaja.Visible = False
+                        End If
                         PanelVer.Visible = True
                         Exit Select
                 End Select

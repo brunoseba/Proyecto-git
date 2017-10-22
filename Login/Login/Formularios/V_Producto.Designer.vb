@@ -22,19 +22,17 @@ Partial Class V_Producto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelAgregarProductos = New System.Windows.Forms.Panel()
+        Me.ButtonAltaProducto = New System.Windows.Forms.Button()
+        Me.ButtonBajaProducto = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.ButtonActualizarProducto = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DataGridViewDatosCodigo = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextBoxCod_Datos = New System.Windows.Forms.NumericUpDown()
+        Me.LabelcodProducto = New System.Windows.Forms.Label()
+        Me.TextBoxCod_Datos = New System.Windows.Forms.TextBox()
         Me.TextBoxStock = New System.Windows.Forms.TextBox()
         Me.LabelRutaArchivo = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -60,14 +58,6 @@ Partial Class V_Producto
         Me.Button3 = New System.Windows.Forms.Button()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PanelActualizarStock = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
@@ -83,16 +73,10 @@ Partial Class V_Producto
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.DataGridViewResultadosProductos = New System.Windows.Forms.DataGridView()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Medida = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Rodado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TipoVehiculo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Precio_Unit = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Imagen = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Datos_Tecnicos = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.A_Stock = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Modificar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Imagen = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -112,7 +96,6 @@ Partial Class V_Producto
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridViewDatosCodigo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.TextBoxCod_Datos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelProductosBuscar.SuspendLayout()
         Me.PanelMostrarDatosTecnicos.SuspendLayout()
@@ -130,6 +113,9 @@ Partial Class V_Producto
         '
         Me.PanelAgregarProductos.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelAgregarProductos.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.PanelAgregarProductos.Controls.Add(Me.ButtonAltaProducto)
+        Me.PanelAgregarProductos.Controls.Add(Me.ButtonBajaProducto)
+        Me.PanelAgregarProductos.Controls.Add(Me.Button4)
         Me.PanelAgregarProductos.Controls.Add(Me.ButtonActualizarProducto)
         Me.PanelAgregarProductos.Controls.Add(Me.GroupBox2)
         Me.PanelAgregarProductos.Controls.Add(Me.GroupBox1)
@@ -139,10 +125,40 @@ Partial Class V_Producto
         Me.PanelAgregarProductos.Name = "PanelAgregarProductos"
         Me.PanelAgregarProductos.Size = New System.Drawing.Size(1362, 665)
         Me.PanelAgregarProductos.TabIndex = 1
+        Me.PanelAgregarProductos.Visible = False
+        '
+        'ButtonAltaProducto
+        '
+        Me.ButtonAltaProducto.Location = New System.Drawing.Point(445, 620)
+        Me.ButtonAltaProducto.Name = "ButtonAltaProducto"
+        Me.ButtonAltaProducto.Size = New System.Drawing.Size(141, 38)
+        Me.ButtonAltaProducto.TabIndex = 28
+        Me.ButtonAltaProducto.Text = "Alta Producto"
+        Me.ButtonAltaProducto.UseVisualStyleBackColor = True
+        Me.ButtonAltaProducto.Visible = False
+        '
+        'ButtonBajaProducto
+        '
+        Me.ButtonBajaProducto.Location = New System.Drawing.Point(241, 620)
+        Me.ButtonBajaProducto.Name = "ButtonBajaProducto"
+        Me.ButtonBajaProducto.Size = New System.Drawing.Size(141, 38)
+        Me.ButtonBajaProducto.TabIndex = 27
+        Me.ButtonBajaProducto.Text = "Baja Producto"
+        Me.ButtonBajaProducto.UseVisualStyleBackColor = True
+        Me.ButtonBajaProducto.Visible = False
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(59, 620)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(141, 38)
+        Me.Button4.TabIndex = 26
+        Me.Button4.Text = "Limpiar Campos"
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'ButtonActualizarProducto
         '
-        Me.ButtonActualizarProducto.Location = New System.Drawing.Point(665, 620)
+        Me.ButtonActualizarProducto.Location = New System.Drawing.Point(830, 620)
         Me.ButtonActualizarProducto.Name = "ButtonActualizarProducto"
         Me.ButtonActualizarProducto.Size = New System.Drawing.Size(141, 38)
         Me.ButtonActualizarProducto.TabIndex = 25
@@ -153,8 +169,8 @@ Partial Class V_Producto
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.DataGridViewDatosCodigo)
-        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.ForeColor = System.Drawing.Color.Salmon
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.ForeColor = System.Drawing.Color.Black
         Me.GroupBox2.Location = New System.Drawing.Point(16, 244)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(1335, 355)
@@ -178,6 +194,7 @@ Partial Class V_Producto
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.LabelcodProducto)
         Me.GroupBox1.Controls.Add(Me.TextBoxCod_Datos)
         Me.GroupBox1.Controls.Add(Me.TextBoxStock)
         Me.GroupBox1.Controls.Add(Me.LabelRutaArchivo)
@@ -206,15 +223,24 @@ Partial Class V_Producto
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Características"
         '
+        'LabelcodProducto
+        '
+        Me.LabelcodProducto.AutoSize = True
+        Me.LabelcodProducto.Location = New System.Drawing.Point(174, 90)
+        Me.LabelcodProducto.Name = "LabelcodProducto"
+        Me.LabelcodProducto.Size = New System.Drawing.Size(63, 16)
+        Me.LabelcodProducto.TabIndex = 26
+        Me.LabelcodProducto.Text = "Label11"
+        Me.LabelcodProducto.Visible = False
+        '
         'TextBoxCod_Datos
         '
-        Me.TextBoxCod_Datos.Location = New System.Drawing.Point(136, 126)
-        Me.TextBoxCod_Datos.Maximum = New Decimal(New Integer() {6, 0, 0, 0})
-        Me.TextBoxCod_Datos.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.TextBoxCod_Datos.Enabled = False
+        Me.TextBoxCod_Datos.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxCod_Datos.Location = New System.Drawing.Point(130, 121)
         Me.TextBoxCod_Datos.Name = "TextBoxCod_Datos"
-        Me.TextBoxCod_Datos.Size = New System.Drawing.Size(120, 22)
+        Me.TextBoxCod_Datos.Size = New System.Drawing.Size(72, 26)
         Me.TextBoxCod_Datos.TabIndex = 25
-        Me.TextBoxCod_Datos.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'TextBoxStock
         '
@@ -226,7 +252,7 @@ Partial Class V_Producto
         'LabelRutaArchivo
         '
         Me.LabelRutaArchivo.AutoSize = True
-        Me.LabelRutaArchivo.Location = New System.Drawing.Point(846, 159)
+        Me.LabelRutaArchivo.Location = New System.Drawing.Point(775, 159)
         Me.LabelRutaArchivo.Name = "LabelRutaArchivo"
         Me.LabelRutaArchivo.Size = New System.Drawing.Size(44, 16)
         Me.LabelRutaArchivo.TabIndex = 23
@@ -387,7 +413,7 @@ Partial Class V_Producto
         'ComboBoxMedidaProducto
         '
         Me.ComboBoxMedidaProducto.FormattingEnabled = True
-        Me.ComboBoxMedidaProducto.Items.AddRange(New Object() {"LT215/75R15", "LT235/75R15", "215/80R 16", "235/75R15", "31 x 10,5R", "LT255/75R15", "27x8.5R14", "215/75R15", "P235/75R15", "32x11.5R15"})
+        Me.ComboBoxMedidaProducto.Items.AddRange(New Object() {"27x8.5", "31x10", "32x11.5", "215/60", "215/120", "235/60", "235/120", "255/75", "255/100", "290/24", "290/90", "310/54"})
         Me.ComboBoxMedidaProducto.Location = New System.Drawing.Point(697, 44)
         Me.ComboBoxMedidaProducto.Name = "ComboBoxMedidaProducto"
         Me.ComboBoxMedidaProducto.Size = New System.Drawing.Size(121, 24)
@@ -404,7 +430,7 @@ Partial Class V_Producto
         '
         'ButtonAgregarProducto
         '
-        Me.ButtonAgregarProducto.Location = New System.Drawing.Point(462, 620)
+        Me.ButtonAgregarProducto.Location = New System.Drawing.Point(622, 620)
         Me.ButtonAgregarProducto.Name = "ButtonAgregarProducto"
         Me.ButtonAgregarProducto.Size = New System.Drawing.Size(141, 38)
         Me.ButtonAgregarProducto.TabIndex = 2
@@ -422,6 +448,7 @@ Partial Class V_Producto
         Me.PanelProductosBuscar.Name = "PanelProductosBuscar"
         Me.PanelProductosBuscar.Size = New System.Drawing.Size(1362, 665)
         Me.PanelProductosBuscar.TabIndex = 0
+        Me.PanelProductosBuscar.Visible = False
         '
         'PanelMostrarDatosTecnicos
         '
@@ -460,60 +487,11 @@ Partial Class V_Producto
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
         Me.DataGridView1.Location = New System.Drawing.Point(6, 22)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(1319, 95)
         Me.DataGridView1.TabIndex = 2
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Cod_Datos"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Medida"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Índice de Carga"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Velocidad"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Rev. por Kilometros"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Ancho de LLanta"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Ancho de Sesion"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Diametro"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.ReadOnly = True
         '
         'PanelActualizarStock
         '
@@ -669,109 +647,65 @@ Partial Class V_Producto
         '
         Me.DataGridViewResultadosProductos.AllowUserToAddRows = False
         Me.DataGridViewResultadosProductos.AllowUserToDeleteRows = False
-        Me.DataGridViewResultadosProductos.AllowUserToResizeColumns = False
-        Me.DataGridViewResultadosProductos.AllowUserToResizeRows = False
         Me.DataGridViewResultadosProductos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridViewResultadosProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridViewResultadosProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridViewResultadosProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewResultadosProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Medida, Me.Rodado, Me.TipoVehiculo, Me.Stock, Me.Precio_Unit, Me.Imagen, Me.Datos_Tecnicos, Me.A_Stock, Me.Modificar})
+        Me.DataGridViewResultadosProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Datos_Tecnicos, Me.A_Stock, Me.Modificar, Me.Imagen})
         Me.DataGridViewResultadosProductos.Location = New System.Drawing.Point(6, 20)
         Me.DataGridViewResultadosProductos.Name = "DataGridViewResultadosProductos"
+        Me.DataGridViewResultadosProductos.ReadOnly = True
         Me.DataGridViewResultadosProductos.Size = New System.Drawing.Size(1314, 231)
         Me.DataGridViewResultadosProductos.TabIndex = 2
         '
-        'Nombre
-        '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Nombre.DefaultCellStyle = DataGridViewCellStyle1
-        Me.Nombre.FillWeight = 55.3934!
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        '
-        'Medida
-        '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Medida.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Medida.FillWeight = 55.3934!
-        Me.Medida.HeaderText = "Medida"
-        Me.Medida.Name = "Medida"
-        '
-        'Rodado
-        '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Rodado.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Rodado.FillWeight = 55.3934!
-        Me.Rodado.HeaderText = "Rodado"
-        Me.Rodado.Name = "Rodado"
-        '
-        'TipoVehiculo
-        '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TipoVehiculo.DefaultCellStyle = DataGridViewCellStyle4
-        Me.TipoVehiculo.FillWeight = 55.3934!
-        Me.TipoVehiculo.HeaderText = "Tipo Vehiculo"
-        Me.TipoVehiculo.Name = "TipoVehiculo"
-        '
-        'Stock
-        '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Stock.DefaultCellStyle = DataGridViewCellStyle5
-        Me.Stock.FillWeight = 55.3934!
-        Me.Stock.HeaderText = "Stock Disponible"
-        Me.Stock.Name = "Stock"
-        '
-        'Precio_Unit
-        '
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Gray
-        Me.Precio_Unit.DefaultCellStyle = DataGridViewCellStyle6
-        Me.Precio_Unit.FillWeight = 55.3934!
-        Me.Precio_Unit.HeaderText = "Precio Unit."
-        Me.Precio_Unit.Name = "Precio_Unit"
-        '
-        'Imagen
-        '
-        Me.Imagen.FillWeight = 55.3934!
-        Me.Imagen.HeaderText = "Imagen"
-        Me.Imagen.Name = "Imagen"
-        '
         'Datos_Tecnicos
         '
+        Me.Datos_Tecnicos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.Datos_Tecnicos.HeaderText = "Datos Técnicos"
         Me.Datos_Tecnicos.Name = "Datos_Tecnicos"
+        Me.Datos_Tecnicos.ReadOnly = True
+        Me.Datos_Tecnicos.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Datos_Tecnicos.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.Datos_Tecnicos.Text = "Datos Técnicos"
         Me.Datos_Tecnicos.ToolTipText = "Datos Técnicos"
         Me.Datos_Tecnicos.UseColumnTextForButtonValue = True
+        Me.Datos_Tecnicos.Width = 132
         '
         'A_Stock
         '
-        Me.A_Stock.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.A_Stock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.A_Stock.HeaderText = "Actualizar Stock"
         Me.A_Stock.Name = "A_Stock"
+        Me.A_Stock.ReadOnly = True
+        Me.A_Stock.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.A_Stock.Text = "Actualizar Stock"
         Me.A_Stock.ToolTipText = "Actualizar Stock"
         Me.A_Stock.UseColumnTextForButtonValue = True
+        Me.A_Stock.Width = 136
         '
         'Modificar
         '
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Gray
-        Me.Modificar.DefaultCellStyle = DataGridViewCellStyle7
-        Me.Modificar.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Gray
+        Me.Modificar.DefaultCellStyle = DataGridViewCellStyle5
         Me.Modificar.HeaderText = "Modificar"
         Me.Modificar.Name = "Modificar"
+        Me.Modificar.ReadOnly = True
+        Me.Modificar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.Modificar.Text = "Modificar"
+        Me.Modificar.ToolTipText = "Modificar"
         Me.Modificar.UseColumnTextForButtonValue = True
+        Me.Modificar.Width = 87
+        '
+        'Imagen
+        '
+        Me.Imagen.HeaderText = "Imagen"
+        Me.Imagen.Name = "Imagen"
+        Me.Imagen.ReadOnly = True
         '
         'Label1
         '
@@ -818,7 +752,7 @@ Partial Class V_Producto
         'ComboBox3
         '
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"LT215/75R15", "LT235/75R15", "215/80R 16", "235/75R15", "31 x 10,5R", "LT255/75R15", "27x8.5R14", "215/75R15", "P235/75R15", "32x11.5R15"})
+        Me.ComboBox3.Items.AddRange(New Object() {"Todos", "27x8.5", "31x10", "32x11.5", "215/60", "215/120", "235/60", "235/120", "255/75", "255/100", "290/24", "290/90", "310/54"})
         Me.ComboBox3.Location = New System.Drawing.Point(709, 50)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(121, 28)
@@ -827,7 +761,7 @@ Partial Class V_Producto
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"12", "13", "14", "15", "16", "17", "18", "19", "20", "22.5", "26", "28", "36", "38"})
+        Me.ComboBox2.Items.AddRange(New Object() {"Todos", "12", "13", "14", "15", "16", "17", "18", "19", "20", "22.5", "26", "28", "36", "38"})
         Me.ComboBox2.Location = New System.Drawing.Point(413, 50)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(121, 28)
@@ -869,7 +803,7 @@ Partial Class V_Producto
         Me.ComboBox1.DisplayMember = "Automovil"
         Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Automóviles", "Camiones", "Camionetas", "Tractores"})
+        Me.ComboBox1.Items.AddRange(New Object() {"Todos", "Automóviles", "Camiones", "Camionetas", "Tractores"})
         Me.ComboBox1.Location = New System.Drawing.Point(1065, 50)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 28)
@@ -941,7 +875,6 @@ Partial Class V_Producto
         CType(Me.DataGridViewDatosCodigo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.TextBoxCod_Datos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelProductosBuscar.ResumeLayout(False)
         Me.PanelMostrarDatosTecnicos.ResumeLayout(False)
@@ -1013,29 +946,19 @@ Partial Class V_Producto
     Friend WithEvents PanelMostrarDatosTecnicos As System.Windows.Forms.Panel
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents ButtonActualizarProducto As System.Windows.Forms.Button
-    Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Medida As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Rodado As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TipoVehiculo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Stock As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Precio_Unit As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Imagen As System.Windows.Forms.DataGridViewImageColumn
+    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents TextBoxStock As System.Windows.Forms.TextBox
+    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
+    Friend WithEvents TextBoxCod_Datos As System.Windows.Forms.TextBox
+    Friend WithEvents ButtonAltaProducto As System.Windows.Forms.Button
+    Friend WithEvents ButtonBajaProducto As System.Windows.Forms.Button
+    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents LabelcodProducto As System.Windows.Forms.Label
     Friend WithEvents Datos_Tecnicos As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents A_Stock As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents Modificar As System.Windows.Forms.DataGridViewButtonColumn
-    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
-    Friend WithEvents TextBoxStock As System.Windows.Forms.TextBox
-    Friend WithEvents TextBoxCod_Datos As System.Windows.Forms.NumericUpDown
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
+    Friend WithEvents Imagen As System.Windows.Forms.DataGridViewImageColumn
 End Class

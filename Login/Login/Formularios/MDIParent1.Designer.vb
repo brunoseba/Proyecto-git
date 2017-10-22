@@ -30,8 +30,6 @@ Partial Class Ventana
         Me.Productos = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgregarProductoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CargarStockToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EliminarProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuClientes = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuClientesAgregar = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator11 = New System.Windows.Forms.ToolStripSeparator()
@@ -74,7 +72,7 @@ Partial Class Ventana
         '
         'Productos
         '
-        Me.Productos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarProductoToolStripMenuItem, Me.BuscarProductosToolStripMenuItem, Me.CargarStockToolStripMenuItem, Me.EliminarProductosToolStripMenuItem})
+        Me.Productos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarProductoToolStripMenuItem, Me.BuscarProductosToolStripMenuItem})
         Me.Productos.Image = Global.Login.My.Resources.Resources.bricks
         Me.Productos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Productos.Name = "Productos"
@@ -86,29 +84,15 @@ Partial Class Ventana
         '
         Me.AgregarProductoToolStripMenuItem.Image = Global.Login.My.Resources.Resources.brick_add
         Me.AgregarProductoToolStripMenuItem.Name = "AgregarProductoToolStripMenuItem"
-        Me.AgregarProductoToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.AgregarProductoToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.AgregarProductoToolStripMenuItem.Text = "Agregar Productos"
         '
         'BuscarProductosToolStripMenuItem
         '
         Me.BuscarProductosToolStripMenuItem.Image = Global.Login.My.Resources.Resources.search16_h
         Me.BuscarProductosToolStripMenuItem.Name = "BuscarProductosToolStripMenuItem"
-        Me.BuscarProductosToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.BuscarProductosToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.BuscarProductosToolStripMenuItem.Text = "Buscar Productos"
-        '
-        'CargarStockToolStripMenuItem
-        '
-        Me.CargarStockToolStripMenuItem.Image = Global.Login.My.Resources.Resources.pencil
-        Me.CargarStockToolStripMenuItem.Name = "CargarStockToolStripMenuItem"
-        Me.CargarStockToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
-        Me.CargarStockToolStripMenuItem.Text = "Actualizar Stock"
-        '
-        'EliminarProductosToolStripMenuItem
-        '
-        Me.EliminarProductosToolStripMenuItem.Image = Global.Login.My.Resources.Resources.delete_square16
-        Me.EliminarProductosToolStripMenuItem.Name = "EliminarProductosToolStripMenuItem"
-        Me.EliminarProductosToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
-        Me.EliminarProductosToolStripMenuItem.Text = "Eliminar Productos"
         '
         'MenuClientes
         '
@@ -251,7 +235,7 @@ Partial Class Ventana
         '
         Me.CerrarSesiónToolStripMenuItem.Image = Global.Login.My.Resources.Resources.delete_square16
         Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
         'BackUp
@@ -259,31 +243,31 @@ Partial Class Ventana
         Me.BackUp.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductosToolStripMenuItem, Me.FacturasToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.UsuarioToolStripMenuItem})
         Me.BackUp.Image = Global.Login.My.Resources.Resources.Database_Blue
         Me.BackUp.Name = "BackUp"
-        Me.BackUp.Size = New System.Drawing.Size(152, 22)
+        Me.BackUp.Size = New System.Drawing.Size(143, 22)
         Me.BackUp.Text = "Back Up"
         '
         'ProductosToolStripMenuItem
         '
         Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
-        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
         Me.ProductosToolStripMenuItem.Text = "Productos"
         '
         'FacturasToolStripMenuItem
         '
         Me.FacturasToolStripMenuItem.Name = "FacturasToolStripMenuItem"
-        Me.FacturasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.FacturasToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
         Me.FacturasToolStripMenuItem.Text = "Facturas"
         '
         'ClientesToolStripMenuItem
         '
         Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
         Me.ClientesToolStripMenuItem.Text = "Clientes"
         '
         'UsuarioToolStripMenuItem
         '
         Me.UsuarioToolStripMenuItem.Name = "UsuarioToolStripMenuItem"
-        Me.UsuarioToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.UsuarioToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
         Me.UsuarioToolStripMenuItem.Text = "Usuario"
         '
         'StatusStrip
@@ -360,8 +344,6 @@ Partial Class Ventana
     Friend WithEvents Productos As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AgregarProductoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BuscarProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CargarStockToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EliminarProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ReportesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BackUp As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

@@ -353,6 +353,7 @@ Partial Class CuadroUsuario
         Me.BBaja.Text = "BAJA USUARIO"
         Me.BBaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BBaja.UseVisualStyleBackColor = True
+        Me.BBaja.Visible = False
         '
         'GroupBox2
         '
@@ -610,6 +611,7 @@ Partial Class CuadroUsuario
         Me.BAlta.Text = "ALTA USUARIO"
         Me.BAlta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BAlta.UseVisualStyleBackColor = True
+        Me.BAlta.Visible = False
         '
         'PanelRegistro
         '
