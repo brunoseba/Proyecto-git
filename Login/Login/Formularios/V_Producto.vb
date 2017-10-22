@@ -21,8 +21,14 @@
     End Sub
 
     Private Sub Button2_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        MsgBox("Stock Actualizado")
+        Dim prod As New Productos()
+        If prod.ActualizarStock(Val((DataGridViewResultadosProductos.Item(4, DataGridViewResultadosProductos.CurrentRow.Index).Value)), Val(TextBox1.Text)) Then
+            MsgBox("Stock Actualizado", 0 + 0 + 64)
+        Else
+            MsgBox("No se actualizo el stock del Producto", 16, "Atención")
+        End If
         Me.PanelActualizarStock.Visible = False
+        cargarImagen()
     End Sub
 
     Private Sub DataGridViewResultadosProductos_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridViewResultadosProductos.CellContentClick
@@ -38,13 +44,16 @@
                         Me.PanelMostrarDatosTecnicos.Visible = True
                         Dim d_Tec As New D_Tecnicos()
                         d_Tec.MostrarUnicoDTecnicos(DataGridViewResultadosProductos.Item(13, DataGridViewResultadosProductos.CurrentRow.Index).Value, Me.DataGridView1)
-
                 End Select
                 Select Case bc.Name
                     Case "A_Stock"
                         Me.PanelAgregarProductos.Visible = False
                         Me.PanelMostrarDatosTecnicos.Visible = False
                         Me.PanelActualizarStock.Visible = True
+                        Label3.Text = DataGridViewResultadosProductos.Item(5, DataGridViewResultadosProductos.CurrentRow.Index).Value
+                        Label6.Text = DataGridViewResultadosProductos.Item(7, DataGridViewResultadosProductos.CurrentRow.Index).Value
+                        Label8.Text = DataGridViewResultadosProductos.Item(6, DataGridViewResultadosProductos.CurrentRow.Index).Value
+                        Label9.Text = DataGridViewResultadosProductos.Item(9, DataGridViewResultadosProductos.CurrentRow.Index).Value
                 End Select
                 Select Case bc.Name
                     Case "Modificar"
@@ -225,10 +234,9 @@
             'Pone invisible el id y Ruta de la imagen
             DataGridViewResultadosProductos.Columns("ID").Visible = False
             DataGridViewResultadosProductos.Columns("Ruta").Visible = False
-            ' DataGridViewResultadosProductos.Columns("Datos").Visible = False
+            DataGridViewResultadosProductos.Columns("Datos").Visible = False
             'Àsigno a imagen.fromfile el valor de la ruta de la imagen de la DB
             ima = Image.FromFile(fila.Cells("Ruta").Value)
-
             'asigno a la columna datagriedviewImage la imagen asignada fromfile
             fila.Cells("Imagen").Value = ima
 

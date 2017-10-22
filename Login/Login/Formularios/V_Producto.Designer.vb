@@ -22,7 +22,7 @@ Partial Class V_Producto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelAgregarProductos = New System.Windows.Forms.Panel()
         Me.ButtonAltaProducto = New System.Windows.Forms.Button()
         Me.ButtonBajaProducto = New System.Windows.Forms.Button()
@@ -440,8 +440,8 @@ Partial Class V_Producto
         'PanelProductosBuscar
         '
         Me.PanelProductosBuscar.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.PanelProductosBuscar.Controls.Add(Me.PanelMostrarDatosTecnicos)
         Me.PanelProductosBuscar.Controls.Add(Me.PanelActualizarStock)
+        Me.PanelProductosBuscar.Controls.Add(Me.PanelMostrarDatosTecnicos)
         Me.PanelProductosBuscar.Controls.Add(Me.GroupBox4)
         Me.PanelProductosBuscar.Controls.Add(Me.GroupBox3)
         Me.PanelProductosBuscar.Location = New System.Drawing.Point(0, 0)
@@ -688,10 +688,10 @@ Partial Class V_Producto
         'Modificar
         '
         Me.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Gray
-        Me.Modificar.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Gray
+        Me.Modificar.DefaultCellStyle = DataGridViewCellStyle7
         Me.Modificar.HeaderText = "Modificar"
         Me.Modificar.Name = "Modificar"
         Me.Modificar.ReadOnly = True
@@ -864,8 +864,8 @@ Partial Class V_Producto
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1362, 624)
-        Me.Controls.Add(Me.PanelAgregarProductos)
         Me.Controls.Add(Me.PanelProductosBuscar)
+        Me.Controls.Add(Me.PanelAgregarProductos)
         Me.Name = "V_Producto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Producto"

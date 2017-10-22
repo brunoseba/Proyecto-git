@@ -111,7 +111,6 @@
 #End Region
 
 #Region "Procedimientos"
-
     Public Sub AgregarProducto()
         Try
             Using Base As New NNeumaticosEntities1
@@ -146,7 +145,19 @@
         End Try
     End Sub
 
-
+    '---borrado logico----
+    Public Function ActualizarStock(ByVal pro_id As Integer, ByVal p_cantidad As Integer)
+        Try
+            Using Base As New NNeumaticosEntities1
+                Dim consulta = (From p In Base.Producto Where (pro_id = p.producto_id) Select p).First
+                consulta.producto_stock = consulta.producto_stock + p_cantidad
+                Base.SaveChanges()
+            End Using
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
     '---borrado logico----
     Public Sub EliminaProducto(ByVal pro_id As Integer, ByVal p_estado As Char)
         Try
