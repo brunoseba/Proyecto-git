@@ -388,7 +388,7 @@
 
     Private Sub ButtonAltaProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonAltaProducto.Click
         Dim prod As New Productos()
-        If (prod.BajaProducto(DataGridViewResultadosProductos.Item(4, DataGridViewResultadosProductos.CurrentRow.Index).Value)) Then
+        If (prod.AltaProducto(DataGridViewResultadosProductos.Item(4, DataGridViewResultadosProductos.CurrentRow.Index).Value)) Then
             MsgBox("El Producto se dio de Alta Correctamente", 0 + 0 + 64)
         Else
             MsgBox("El producto no se pudo dar de Alta", 16, "Atención")
