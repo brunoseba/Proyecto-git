@@ -107,7 +107,6 @@ Public Class Ventana
         V_Producto.Show()
         V_Producto.ComboBox1.SelectedIndex = 0
         V_Producto.ComboBox2.SelectedIndex = 0
-        V_Producto.ComboBox3.SelectedIndex = 0
         V_Producto.PanelMostrarDatosTecnicos.Visible = False
         V_Producto.PanelActualizarStock.Visible = False
         V_Producto.PanelAgregarProductos.Visible = False

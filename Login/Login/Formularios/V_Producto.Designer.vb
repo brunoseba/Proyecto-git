@@ -80,17 +80,15 @@ Partial Class V_Producto
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.LabelBuscarProducto = New System.Windows.Forms.Label()
         Me.LabelNombreProducto = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.LabelRodado = New System.Windows.Forms.Label()
-        Me.LabelMedida = New System.Windows.Forms.Label()
         Me.LabelTipoVehiculo = New System.Windows.Forms.Label()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.PanelAgregarProductos.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridViewDatosCodigo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -731,13 +729,11 @@ Partial Class V_Producto
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.ComboBox3)
         Me.GroupBox3.Controls.Add(Me.ComboBox2)
         Me.GroupBox3.Controls.Add(Me.LabelBuscarProducto)
         Me.GroupBox3.Controls.Add(Me.LabelNombreProducto)
         Me.GroupBox3.Controls.Add(Me.ComboBox1)
         Me.GroupBox3.Controls.Add(Me.LabelRodado)
-        Me.GroupBox3.Controls.Add(Me.LabelMedida)
         Me.GroupBox3.Controls.Add(Me.LabelTipoVehiculo)
         Me.GroupBox3.Controls.Add(Me.TextBox6)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -748,20 +744,11 @@ Partial Class V_Producto
         Me.GroupBox3.TabIndex = 12
         Me.GroupBox3.TabStop = False
         '
-        'ComboBox3
-        '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"Todos", "27x8.5", "31x10", "32x11.5", "215/60", "215/120", "235/60", "235/120", "255/75", "255/100", "290/24", "290/90", "310/54"})
-        Me.ComboBox3.Location = New System.Drawing.Point(709, 50)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(121, 28)
-        Me.ComboBox3.TabIndex = 14
-        '
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"Todos", "13", "14", "15", "16", "17", "18", "19", "20", "22.5", "26", "28", "36", "38"})
-        Me.ComboBox2.Location = New System.Drawing.Point(413, 50)
+        Me.ComboBox2.Location = New System.Drawing.Point(662, 50)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(121, 28)
         Me.ComboBox2.TabIndex = 13
@@ -781,37 +768,39 @@ Partial Class V_Producto
         '
         Me.LabelNombreProducto.AutoSize = True
         Me.LabelNombreProducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelNombreProducto.Location = New System.Drawing.Point(17, 53)
+        Me.LabelNombreProducto.Location = New System.Drawing.Point(113, 52)
         Me.LabelNombreProducto.Name = "LabelNombreProducto"
         Me.LabelNombreProducto.Size = New System.Drawing.Size(100, 25)
         Me.LabelNombreProducto.TabIndex = 2
         Me.LabelNombreProducto.Text = "Nombre:"
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.DisplayMember = "Automovil"
+        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Todos", "Automóviles", "Camiones/Colectivos", "Camionetas", "Tractores"})
+        Me.ComboBox1.Location = New System.Drawing.Point(1075, 50)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 28)
+        Me.ComboBox1.TabIndex = 10
+        Me.ComboBox1.ValueMember = "Automovil"
+        '
         'LabelRodado
         '
         Me.LabelRodado.AutoSize = True
         Me.LabelRodado.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelRodado.Location = New System.Drawing.Point(314, 53)
+        Me.LabelRodado.Location = New System.Drawing.Point(545, 53)
         Me.LabelRodado.Name = "LabelRodado"
         Me.LabelRodado.Size = New System.Drawing.Size(93, 25)
         Me.LabelRodado.TabIndex = 3
         Me.LabelRodado.Text = "Rodado:"
         '
-        'LabelMedida
-        '
-        Me.LabelMedida.AutoSize = True
-        Me.LabelMedida.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelMedida.Location = New System.Drawing.Point(614, 53)
-        Me.LabelMedida.Name = "LabelMedida"
-        Me.LabelMedida.Size = New System.Drawing.Size(89, 25)
-        Me.LabelMedida.TabIndex = 4
-        Me.LabelMedida.Text = "Medida:"
-        '
         'LabelTipoVehiculo
         '
         Me.LabelTipoVehiculo.AutoSize = True
         Me.LabelTipoVehiculo.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelTipoVehiculo.Location = New System.Drawing.Point(910, 53)
+        Me.LabelTipoVehiculo.Location = New System.Drawing.Point(920, 53)
         Me.LabelTipoVehiculo.Name = "LabelTipoVehiculo"
         Me.LabelTipoVehiculo.Size = New System.Drawing.Size(149, 25)
         Me.LabelTipoVehiculo.TabIndex = 5
@@ -820,7 +809,7 @@ Partial Class V_Producto
         'TextBox6
         '
         Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(123, 53)
+        Me.TextBox6.Location = New System.Drawing.Point(219, 52)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(157, 26)
         Me.TextBox6.TabIndex = 7
@@ -835,18 +824,6 @@ Partial Class V_Producto
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.DisplayMember = "Automovil"
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Todos", "Automóviles", "Camiones/Colectivos", "Camionetas", "Tractores"})
-        Me.ComboBox1.Location = New System.Drawing.Point(1065, 50)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 28)
-        Me.ComboBox1.TabIndex = 10
-        Me.ComboBox1.ValueMember = "Automovil"
         '
         'V_Producto
         '
@@ -903,7 +880,6 @@ Partial Class V_Producto
     Friend WithEvents PanelProductosBuscar As System.Windows.Forms.Panel
     Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
     Friend WithEvents LabelTipoVehiculo As System.Windows.Forms.Label
-    Friend WithEvents LabelMedida As System.Windows.Forms.Label
     Friend WithEvents LabelRodado As System.Windows.Forms.Label
     Friend WithEvents LabelNombreProducto As System.Windows.Forms.Label
     Friend WithEvents LabelBuscarProducto As System.Windows.Forms.Label
@@ -938,7 +914,6 @@ Partial Class V_Producto
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents TextBoxStock As System.Windows.Forms.TextBox
     Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
     Friend WithEvents TextBoxCod_Datos As System.Windows.Forms.TextBox
     Friend WithEvents ButtonAltaProducto As System.Windows.Forms.Button
     Friend WithEvents ButtonBajaProducto As System.Windows.Forms.Button

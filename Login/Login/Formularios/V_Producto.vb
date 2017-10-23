@@ -389,7 +389,6 @@
     End Sub
 
     Private Sub TextBox6_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox6.TextChanged
-        ComboBoxMedidaProducto.SelectedIndex = 0
         ComboBoxRodadoProducto.SelectedIndex = 0
         ComboBoxTipoVehiculo.SelectedIndex = 0
         If TextBox6.Text = "" Then
@@ -413,28 +412,21 @@
         End If
     End Sub
 
-    Private Sub ComboBox2_SelectionChangeCommitted(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox3.SelectionChangeCommitted, ComboBox2.SelectionChangeCommitted, ComboBox1.SelectionChangeCommitted
+    Private Sub ComboBox2_SelectionChangeCommitted(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox2.SelectionChangeCommitted, ComboBox1.SelectionChangeCommitted
         TextBox6.Text = ""
         Dim prod As New Productos
-        If (ComboBox3.SelectedIndex = 0) And (ComboBox2.SelectedIndex = 0) And (ComboBox1.SelectedIndex = 0) Then
-            Dim prods As New Productos()
-            prods.MostrarTodos(Me.DataGridViewResultadosProductos)
+        If (ComboBox2.SelectedIndex = 0) And (ComboBox1.SelectedIndex = 0) Then
+            prod.MostrarTodos(Me.DataGridViewResultadosProductos)
             cargaImagen()
-        ElseIf (ComboBox3.SelectedIndex = 0) And (ComboBox2.SelectedIndex = 0) And (ComboBox1.SelectedIndex > 0) Then
-            prod.BuscarPorTipoVehi(ComboBox1.SelectedItem, DataGridViewResultadosProductos)
+        ElseIf (ComboBox2.SelectedIndex = 0) And (ComboBox1.SelectedIndex > 0) Then
+            prod.BuscarPorRodaTipoVehi("a", ComboBox1.SelectedItem, DataGridViewResultadosProductos, , ComboBox1.SelectedItem)
             cargaImagen()
-        ElseIf (ComboBox3.SelectedIndex = 0) And (ComboBox2.SelectedIndex > 0) And (ComboBox1.SelectedIndex = 0) Then
-            MsgBox("Busca solo por rodado de vehiculo")
-        ElseIf (ComboBox3.SelectedIndex > 0) And (ComboBox2.SelectedIndex = 0) And (ComboBox1.SelectedIndex = 0) Then
-            MsgBox("Busca solo por medida del producto")
-        ElseIf (ComboBox3.SelectedIndex = 0) And (ComboBox2.SelectedIndex > 0) And (ComboBox1.SelectedIndex > 0) Then
-            MsgBox("Busca por rodado producto y tipo de vehiculo")
-        ElseIf (ComboBox3.SelectedIndex > 0) And (ComboBox2.SelectedIndex = 0) And (ComboBox1.SelectedIndex > 0) Then
-            MsgBox("Busca por medida del producto y tipo vehiculo")
-        ElseIf (ComboBox3.SelectedIndex > 0) And (ComboBox2.SelectedIndex > 0) And (ComboBox1.SelectedIndex = 0) Then
-            MsgBox("Busca por medida de producto y rodado de producto ")
+        ElseIf (ComboBox2.SelectedIndex > 0) And (ComboBox1.SelectedIndex = 0) Then
+            prod.BuscarPorRodaTipoVehi(ComboBox2.SelectedItem, "a", DataGridViewResultadosProductos, ComboBox2.SelectedItem, )
+            cargaImagen()
         Else
-            MsgBox("busca por los tres")
+            prod.BuscarPorRodaTipoVehi(ComboBox2.SelectedItem, ComboBox1.SelectedItem, DataGridViewResultadosProductos)
+            cargaImagen()
         End If
     End Sub
 

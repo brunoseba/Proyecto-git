@@ -273,7 +273,10 @@
     Public Sub BuscarPorEstadoTipoUser(ByVal u_estado1 As Char, ByVal u_tipoUser1 As Char, ByVal u_resultados As DataGridView, Optional ByVal u_estado2 As Char = "*", Optional ByVal u_tipoUser2 As Char = "*", Optional ByVal u_estado3 As Char = "*", Optional ByVal u_tipoUser3 As Char = "*")
         Try
             Using Base As New NNeumaticosEntities1
-                Dim consulta = (From u In Base.Usuario Where (((u.usu_Estado = u_estado1) And (u.usu_TipoUsu = u_tipoUser1)) Or ((u.usu_Estado = u_estado2) And (u.usu_TipoUsu = u_tipoUser2)) Or ((u.usu_Estado = u_estado3) And (u.usu_TipoUsu = u_tipoUser3))) Select New With {.DNI = u.usu_Dni, .Nombre = u.usu_nomYape, .Apellido = u.usu_ape, .Direccion = u.usu_Direccon, .Localidad = u.usu_Localidad, .Provincia = u.usu_Provincia, .Telefono = u.usu_Telefono, .Email = u.usu_Email, .Contraseña = u.usu_Contraseña, .Estado = u.usu_Estado, .Tipo_Usuario = u.usu_TipoUsu, .Fecha_Inicio = u.usu_Fecha}).ToList
+                Dim consulta = (From u In Base.Usuario Where (((u.usu_Estado = u_estado1) And (u.usu_TipoUsu = u_tipoUser1)) Or
+                                                              ((u.usu_Estado = u_estado2) And (u.usu_TipoUsu = u_tipoUser2)) Or
+                                                              ((u.usu_Estado = u_estado3) And (u.usu_TipoUsu = u_tipoUser3)))
+                Select New With {.DNI = u.usu_Dni, .Nombre = u.usu_nomYape, .Apellido = u.usu_ape, .Direccion = u.usu_Direccon, .Localidad = u.usu_Localidad, .Provincia = u.usu_Provincia, .Telefono = u.usu_Telefono, .Email = u.usu_Email, .Contraseña = u.usu_Contraseña, .Estado = u.usu_Estado, .Tipo_Usuario = u.usu_TipoUsu, .Fecha_Inicio = u.usu_Fecha}).ToList
                 u_resultados.DataSource = consulta
             End Using
         Catch ex As Exception

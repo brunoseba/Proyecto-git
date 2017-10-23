@@ -179,10 +179,12 @@
         End Try
     End Sub
 
-    Public Sub BuscarPorTipoVehi(ByVal p_tipoVehi As String, ByVal p_data As DataGridView)
+    Public Sub BuscarPorRodaTipoVehi(ByVal p_rodado As String, ByVal p_tipoV As String, ByVal p_data As DataGridView, Optional ByVal p_rodado_O As String = "*", Optional ByVal p_tipoV_O As String = "*")
         Try
             Using Base As New NNeumaticosEntities1
-                Dim consulta = (From p In Base.Producto Where (p.tipoVehi_descripcion.Contains(p_tipoVehi)) Select ID = p.producto_id, Nombre = p.producto_nombre, Rodado = p.producto_rodado, Medida = p.producto_medida, Precio = p.producto_precio, Stock = p.producto_stock, Ruta = p.producto_imagen, Tipo_Vehiculo = p.tipoVehi_descripcion, Estado = p.producto_estado, Datos = p.Datos_cod).ToList
+                Dim consulta = (From p In Base.Producto Where (((p.producto_rodado = p_rodado) And (p.tipoVehi_descripcion = p_tipoV)) Or
+                                                               ((p.producto_rodado = p_rodado_O) Or (p.tipoVehi_descripcion = p_tipoV_O)))
+                                Select ID = p.producto_id, Nombre = p.producto_nombre, Rodado = p.producto_rodado, Medida = p.producto_medida, Precio = p.producto_precio, Stock = p.producto_stock, Ruta = p.producto_imagen, Tipo_Vehiculo = p.tipoVehi_descripcion, Estado = p.producto_estado, Datos = p.Datos_cod).ToList
                 p_data.DataSource = consulta
             End Using
         Catch ex As Exception
