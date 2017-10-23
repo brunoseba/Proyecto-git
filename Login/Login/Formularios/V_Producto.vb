@@ -5,17 +5,6 @@
         Me.Close()
     End Sub
 
-    Private Sub ButtonBuscarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonBuscarProducto.Click
-        cargarImagen()
-        'Dim prod As New Productos()
-        'prod.MostrarTodos(Me.DataGridViewResultadosProductos)
-        ''Cargo la FOTO'
-        'For Each fila As DataGridViewRow In DataGridViewResultadosProductos.Rows
-        ' PictureBox3.Load(fila.Cells("Ruta").Value)
-        ' fila.Cells("Imagen").Value = (PictureBox3.Image)
-        ' Next
-    End Sub
-
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.Close()
     End Sub
@@ -393,6 +382,10 @@
         Else
             MsgBox("El producto no se pudo dar de Alta", 16, "Atención")
         End If
+        Me.Close()
+    End Sub
+
+    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.Close()
     End Sub
 End Class

@@ -160,6 +160,9 @@ Public Class Ventana
 
     Private Sub AgregarProductoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AgregarProductoToolStripMenuItem.Click
         V_Producto.MaximizeBox = True
+        V_Producto.ComboBoxMedidaProducto.SelectedIndex = 0
+        V_Producto.ComboBoxRodadoProducto.SelectedIndex = 0
+        V_Producto.ComboBoxTipoVehiculo.SelectedIndex = 0
         V_Producto.Show()
         V_Producto.PanelAgregarProductos.Visible = True
         V_Producto.PanelProductosBuscar.Visible = False

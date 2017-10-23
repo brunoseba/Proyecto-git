@@ -54,10 +54,6 @@ Partial Class V_Producto
         Me.ButtonCancelarProducto = New System.Windows.Forms.Button()
         Me.ButtonAgregarProducto = New System.Windows.Forms.Button()
         Me.PanelProductosBuscar = New System.Windows.Forms.Panel()
-        Me.PanelMostrarDatosTecnicos = New System.Windows.Forms.Panel()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.PanelActualizarStock = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
@@ -71,6 +67,10 @@ Partial Class V_Producto
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.PanelMostrarDatosTecnicos = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.DataGridViewResultadosProductos = New System.Windows.Forms.DataGridView()
         Me.Datos_Tecnicos = New System.Windows.Forms.DataGridViewButtonColumn()
@@ -82,7 +82,6 @@ Partial Class V_Producto
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ButtonBuscarProducto = New System.Windows.Forms.Button()
         Me.LabelBuscarProducto = New System.Windows.Forms.Label()
         Me.LabelNombreProducto = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -98,11 +97,11 @@ Partial Class V_Producto
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelProductosBuscar.SuspendLayout()
+        Me.PanelActualizarStock.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
         Me.PanelMostrarDatosTecnicos.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelActualizarStock.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.DataGridViewResultadosProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -440,8 +439,8 @@ Partial Class V_Producto
         'PanelProductosBuscar
         '
         Me.PanelProductosBuscar.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.PanelProductosBuscar.Controls.Add(Me.PanelActualizarStock)
         Me.PanelProductosBuscar.Controls.Add(Me.PanelMostrarDatosTecnicos)
+        Me.PanelProductosBuscar.Controls.Add(Me.PanelActualizarStock)
         Me.PanelProductosBuscar.Controls.Add(Me.GroupBox4)
         Me.PanelProductosBuscar.Controls.Add(Me.GroupBox3)
         Me.PanelProductosBuscar.Location = New System.Drawing.Point(0, 0)
@@ -450,62 +449,18 @@ Partial Class V_Producto
         Me.PanelProductosBuscar.TabIndex = 0
         Me.PanelProductosBuscar.Visible = False
         '
-        'PanelMostrarDatosTecnicos
-        '
-        Me.PanelMostrarDatosTecnicos.Controls.Add(Me.Button3)
-        Me.PanelMostrarDatosTecnicos.Controls.Add(Me.GroupBox5)
-        Me.PanelMostrarDatosTecnicos.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelMostrarDatosTecnicos.Location = New System.Drawing.Point(12, 447)
-        Me.PanelMostrarDatosTecnicos.Name = "PanelMostrarDatosTecnicos"
-        Me.PanelMostrarDatosTecnicos.Size = New System.Drawing.Size(1338, 172)
-        Me.PanelMostrarDatosTecnicos.TabIndex = 2
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(619, 140)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(93, 28)
-        Me.Button3.TabIndex = 1
-        Me.Button3.Text = "Aceptar"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'GroupBox5
-        '
-        Me.GroupBox5.Controls.Add(Me.DataGridView1)
-        Me.GroupBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GroupBox5.Location = New System.Drawing.Point(4, 6)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(1331, 128)
-        Me.GroupBox5.TabIndex = 0
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Datos Técnicos"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 22)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(1319, 95)
-        Me.DataGridView1.TabIndex = 2
-        '
         'PanelActualizarStock
         '
         Me.PanelActualizarStock.Controls.Add(Me.Button2)
         Me.PanelActualizarStock.Controls.Add(Me.GroupBox6)
-        Me.PanelActualizarStock.Location = New System.Drawing.Point(12, 447)
+        Me.PanelActualizarStock.Location = New System.Drawing.Point(10, 502)
         Me.PanelActualizarStock.Name = "PanelActualizarStock"
-        Me.PanelActualizarStock.Size = New System.Drawing.Size(1339, 172)
+        Me.PanelActualizarStock.Size = New System.Drawing.Size(1339, 117)
         Me.PanelActualizarStock.TabIndex = 2
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(579, 140)
+        Me.Button2.Location = New System.Drawing.Point(584, 77)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(109, 32)
         Me.Button2.TabIndex = 1
@@ -526,9 +481,9 @@ Partial Class V_Producto
         Me.GroupBox6.Controls.Add(Me.Label2)
         Me.GroupBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.GroupBox6.Location = New System.Drawing.Point(16, 23)
+        Me.GroupBox6.Location = New System.Drawing.Point(19, 4)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(1314, 100)
+        Me.GroupBox6.Size = New System.Drawing.Size(1314, 69)
         Me.GroupBox6.TabIndex = 0
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Actualizar Stock"
@@ -537,7 +492,7 @@ Partial Class V_Producto
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(986, 45)
+        Me.Label10.Location = New System.Drawing.Point(986, 28)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(128, 24)
         Me.Label10.TabIndex = 8
@@ -545,7 +500,7 @@ Partial Class V_Producto
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(1120, 42)
+        Me.TextBox1.Location = New System.Drawing.Point(1120, 25)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 29)
         Me.TextBox1.TabIndex = 7
@@ -554,7 +509,7 @@ Partial Class V_Producto
         '
         Me.Label9.AutoSize = True
         Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label9.Location = New System.Drawing.Point(910, 45)
+        Me.Label9.Location = New System.Drawing.Point(910, 28)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(32, 24)
         Me.Label9.TabIndex = 6
@@ -564,7 +519,7 @@ Partial Class V_Producto
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(773, 45)
+        Me.Label4.Location = New System.Drawing.Point(773, 28)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(131, 24)
         Me.Label4.TabIndex = 5
@@ -574,7 +529,7 @@ Partial Class V_Producto
         '
         Me.Label8.AutoSize = True
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(698, 45)
+        Me.Label8.Location = New System.Drawing.Point(698, 28)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(32, 24)
         Me.Label8.TabIndex = 4
@@ -584,7 +539,7 @@ Partial Class V_Producto
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(440, 45)
+        Me.Label6.Location = New System.Drawing.Point(440, 28)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(69, 24)
         Me.Label6.TabIndex = 3
@@ -594,7 +549,7 @@ Partial Class V_Producto
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(589, 45)
+        Me.Label5.Location = New System.Drawing.Point(589, 28)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(89, 24)
         Me.Label5.TabIndex = 2
@@ -604,7 +559,7 @@ Partial Class V_Producto
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(340, 45)
+        Me.Label7.Location = New System.Drawing.Point(340, 28)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(85, 24)
         Me.Label7.TabIndex = 2
@@ -615,7 +570,7 @@ Partial Class V_Producto
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(177, 45)
+        Me.Label3.Location = New System.Drawing.Point(177, 28)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(105, 24)
         Me.Label3.TabIndex = 1
@@ -625,11 +580,55 @@ Partial Class V_Producto
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(80, 45)
+        Me.Label2.Location = New System.Drawing.Point(80, 28)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(91, 24)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Nombre:"
+        '
+        'PanelMostrarDatosTecnicos
+        '
+        Me.PanelMostrarDatosTecnicos.Controls.Add(Me.Button3)
+        Me.PanelMostrarDatosTecnicos.Controls.Add(Me.GroupBox5)
+        Me.PanelMostrarDatosTecnicos.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PanelMostrarDatosTecnicos.Location = New System.Drawing.Point(8, 499)
+        Me.PanelMostrarDatosTecnicos.Name = "PanelMostrarDatosTecnicos"
+        Me.PanelMostrarDatosTecnicos.Size = New System.Drawing.Size(1338, 122)
+        Me.PanelMostrarDatosTecnicos.TabIndex = 2
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(616, 89)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(93, 28)
+        Me.Button3.TabIndex = 1
+        Me.Button3.Text = "Aceptar"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.DataGridView1)
+        Me.GroupBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.GroupBox5.Location = New System.Drawing.Point(4, 6)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(1331, 78)
+        Me.GroupBox5.TabIndex = 0
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Datos Técnicos"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(5, 21)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.Size = New System.Drawing.Size(1319, 51)
+        Me.DataGridView1.TabIndex = 2
         '
         'GroupBox4
         '
@@ -640,7 +639,7 @@ Partial Class V_Producto
         Me.GroupBox4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.GroupBox4.Location = New System.Drawing.Point(16, 176)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(1332, 265)
+        Me.GroupBox4.Size = New System.Drawing.Size(1332, 317)
         Me.GroupBox4.TabIndex = 18
         Me.GroupBox4.TabStop = False
         '
@@ -658,7 +657,7 @@ Partial Class V_Producto
         Me.DataGridViewResultadosProductos.Location = New System.Drawing.Point(6, 20)
         Me.DataGridViewResultadosProductos.Name = "DataGridViewResultadosProductos"
         Me.DataGridViewResultadosProductos.ReadOnly = True
-        Me.DataGridViewResultadosProductos.Size = New System.Drawing.Size(1314, 231)
+        Me.DataGridViewResultadosProductos.Size = New System.Drawing.Size(1314, 291)
         Me.DataGridViewResultadosProductos.TabIndex = 2
         '
         'Datos_Tecnicos
@@ -734,7 +733,6 @@ Partial Class V_Producto
         '
         Me.GroupBox3.Controls.Add(Me.ComboBox3)
         Me.GroupBox3.Controls.Add(Me.ComboBox2)
-        Me.GroupBox3.Controls.Add(Me.ButtonBuscarProducto)
         Me.GroupBox3.Controls.Add(Me.LabelBuscarProducto)
         Me.GroupBox3.Controls.Add(Me.LabelNombreProducto)
         Me.GroupBox3.Controls.Add(Me.ComboBox1)
@@ -767,16 +765,6 @@ Partial Class V_Producto
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(121, 28)
         Me.ComboBox2.TabIndex = 13
-        '
-        'ButtonBuscarProducto
-        '
-        Me.ButtonBuscarProducto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.ButtonBuscarProducto.Location = New System.Drawing.Point(570, 96)
-        Me.ButtonBuscarProducto.Name = "ButtonBuscarProducto"
-        Me.ButtonBuscarProducto.Size = New System.Drawing.Size(112, 31)
-        Me.ButtonBuscarProducto.TabIndex = 11
-        Me.ButtonBuscarProducto.Text = "Buscar"
-        Me.ButtonBuscarProducto.UseVisualStyleBackColor = True
         '
         'LabelBuscarProducto
         '
@@ -865,8 +853,8 @@ Partial Class V_Producto
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1362, 624)
-        Me.Controls.Add(Me.PanelAgregarProductos)
         Me.Controls.Add(Me.PanelProductosBuscar)
+        Me.Controls.Add(Me.PanelAgregarProductos)
         Me.Name = "V_Producto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Producto"
@@ -878,12 +866,12 @@ Partial Class V_Producto
         Me.GroupBox1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelProductosBuscar.ResumeLayout(False)
-        Me.PanelMostrarDatosTecnicos.ResumeLayout(False)
-        Me.GroupBox5.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelActualizarStock.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
+        Me.PanelMostrarDatosTecnicos.ResumeLayout(False)
+        Me.GroupBox5.ResumeLayout(False)
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         CType(Me.DataGridViewResultadosProductos, System.ComponentModel.ISupportInitialize).EndInit()
@@ -913,7 +901,6 @@ Partial Class V_Producto
     Friend WithEvents DataGridViewDatosCodigo As System.Windows.Forms.DataGridView
     Friend WithEvents LabelAgregarProducto As System.Windows.Forms.Label
     Friend WithEvents PanelProductosBuscar As System.Windows.Forms.Panel
-    Friend WithEvents ButtonBuscarProducto As System.Windows.Forms.Button
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
     Friend WithEvents LabelTipoVehiculo As System.Windows.Forms.Label
