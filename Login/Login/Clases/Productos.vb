@@ -157,7 +157,6 @@
         End Try
     End Function
 
-    'Trae todos los productos para mostrar en el datagrid al principio'
     'Public Sub MostrarTodos(ByVal tabla1 As DataGridView) ', ByVal imagen As PictureBox
     Public Sub MostrarTodos(ByVal tabla As DataGridView)
         Try
@@ -169,6 +168,26 @@
         End Try
     End Sub
 
+    Public Sub BuscarPorNombre(ByVal p_nombre As String, ByVal p_resultados As DataGridView)
+        Try
+            Using base As New NNeumaticosEntities1
+                Dim consulta = (From p In base.Producto Where (p.producto_nombre.Contains(p_nombre)) Select ID = p.producto_id, Nombre = p.producto_nombre, Rodado = p.producto_rodado, Medida = p.producto_medida, Precio = p.producto_precio, Stock = p.producto_stock, Ruta = p.producto_imagen, Tipo_Vehiculo = p.tipoVehi_descripcion, Estado = p.producto_estado, Datos = p.Datos_cod).ToList
+                p_resultados.DataSource = consulta
+            End Using
+        Catch ex As Exception
+            MsgBox("No se pudo realizar la consulta")
+        End Try
+    End Sub
+
+    Public Sub BuscarPorTipoVehi(ByVal p_tipoVehi As String, ByVal p_data As DataGridView)
+        Try
+            Using Base As New NNeumaticosEntities1
+                Dim consulta = (From p In Base.Producto Where (p.tipoVehi_descripcion.Contains(p_tipoVehi)) Select ID = p.producto_id, Nombre = p.producto_nombre, Rodado = p.producto_rodado, Medida = p.producto_medida, Precio = p.producto_precio, Stock = p.producto_stock, Ruta = p.producto_imagen, Tipo_Vehiculo = p.tipoVehi_descripcion, Estado = p.producto_estado, Datos = p.Datos_cod).ToList
+                p_data.DataSource = consulta
+            End Using
+        Catch ex As Exception
+        End Try
+    End Sub
     '---ActualizarStock----
     Public Function ActualizarStock(ByVal pro_id As Integer, ByVal p_cantidad As Integer)
         Try

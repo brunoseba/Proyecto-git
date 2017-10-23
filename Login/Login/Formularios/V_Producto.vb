@@ -22,7 +22,7 @@
             MsgBox("No se actualizo el stock del Producto", 16, "Atención")
         End If
         Me.PanelActualizarStock.Visible = False
-            cargarImagen()
+            cargarLoad()
         End If
 
     End Sub
@@ -245,7 +245,7 @@
         Next
     End Sub
 
-    Public Sub cargarImagen()
+    Public Sub cargarLoad()
         Dim prod As New Productos()
         prod.MostrarTodos(Me.DataGridViewResultadosProductos)
 
@@ -259,7 +259,6 @@
             ima = Image.FromFile(fila.Cells("Ruta").Value)
             'asigno a la columna datagriedviewImage la imagen asignada fromfile
             fila.Cells("Imagen").Value = ima
-
         Next
     End Sub
 
@@ -387,5 +386,69 @@
 
     Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.Close()
+    End Sub
+
+    Private Sub TextBox6_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox6.TextChanged
+        ComboBoxMedidaProducto.SelectedIndex = 0
+        ComboBoxRodadoProducto.SelectedIndex = 0
+        ComboBoxTipoVehiculo.SelectedIndex = 0
+        If TextBox6.Text = "" Then
+            Dim prod As New Productos()
+            prod.MostrarTodos(Me.DataGridViewResultadosProductos)
+            cargaImagen()
+        Else
+            Dim prod As New Productos
+            prod.BuscarPorNombre(TextBox6.Text, DataGridViewResultadosProductos)
+            Dim ima As Image
+            For Each fila As DataGridViewRow In DataGridViewResultadosProductos.Rows
+                'Pone invisible el id y Ruta de la imagen
+                DataGridViewResultadosProductos.Columns("ID").Visible = False
+                DataGridViewResultadosProductos.Columns("Ruta").Visible = False
+                DataGridViewResultadosProductos.Columns("Datos").Visible = False
+                'Àsigno a imagen.fromfile el valor de la ruta de la imagen de la DB
+                ima = Image.FromFile(fila.Cells("Ruta").Value)
+                'asigno a la columna datagriedviewImage la imagen asignada fromfile
+                fila.Cells("Imagen").Value = ima
+            Next
+        End If
+    End Sub
+
+    Private Sub ComboBox2_SelectionChangeCommitted(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox3.SelectionChangeCommitted, ComboBox2.SelectionChangeCommitted, ComboBox1.SelectionChangeCommitted
+        TextBox6.Text = ""
+        Dim prod As New Productos
+        If (ComboBox3.SelectedIndex = 0) And (ComboBox2.SelectedIndex = 0) And (ComboBox1.SelectedIndex = 0) Then
+            Dim prods As New Productos()
+            prods.MostrarTodos(Me.DataGridViewResultadosProductos)
+            cargaImagen()
+        ElseIf (ComboBox3.SelectedIndex = 0) And (ComboBox2.SelectedIndex = 0) And (ComboBox1.SelectedIndex > 0) Then
+            prod.BuscarPorTipoVehi(ComboBox1.SelectedItem, DataGridViewResultadosProductos)
+            cargaImagen()
+        ElseIf (ComboBox3.SelectedIndex = 0) And (ComboBox2.SelectedIndex > 0) And (ComboBox1.SelectedIndex = 0) Then
+            MsgBox("Busca solo por rodado de vehiculo")
+        ElseIf (ComboBox3.SelectedIndex > 0) And (ComboBox2.SelectedIndex = 0) And (ComboBox1.SelectedIndex = 0) Then
+            MsgBox("Busca solo por medida del producto")
+        ElseIf (ComboBox3.SelectedIndex = 0) And (ComboBox2.SelectedIndex > 0) And (ComboBox1.SelectedIndex > 0) Then
+            MsgBox("Busca por rodado producto y tipo de vehiculo")
+        ElseIf (ComboBox3.SelectedIndex > 0) And (ComboBox2.SelectedIndex = 0) And (ComboBox1.SelectedIndex > 0) Then
+            MsgBox("Busca por medida del producto y tipo vehiculo")
+        ElseIf (ComboBox3.SelectedIndex > 0) And (ComboBox2.SelectedIndex > 0) And (ComboBox1.SelectedIndex = 0) Then
+            MsgBox("Busca por medida de producto y rodado de producto ")
+        Else
+            MsgBox("busca por los tres")
+        End If
+    End Sub
+
+    Public Sub cargaImagen()
+        Dim ima As Image
+        For Each fila As DataGridViewRow In DataGridViewResultadosProductos.Rows
+            'Pone invisible el id y Ruta de la imagen
+            DataGridViewResultadosProductos.Columns("ID").Visible = False
+            DataGridViewResultadosProductos.Columns("Ruta").Visible = False
+            DataGridViewResultadosProductos.Columns("Datos").Visible = False
+            'Àsigno a imagen.fromfile el valor de la ruta de la imagen de la DB
+            ima = Image.FromFile(fila.Cells("Ruta").Value)
+            'asigno a la columna datagriedviewImage la imagen asignada fromfile
+            fila.Cells("Imagen").Value = ima
+        Next
     End Sub
 End Class

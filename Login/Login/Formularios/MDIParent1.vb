@@ -112,7 +112,7 @@ Public Class Ventana
         V_Producto.PanelActualizarStock.Visible = False
         V_Producto.PanelAgregarProductos.Visible = False
         V_Producto.MdiParent = Me
-        V_Producto.cargarImagen()
+        V_Producto.cargarLoad()
     End Sub
 
     Private Sub MenuEmpresaVerDatos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuEmpresaVerDatos.Click

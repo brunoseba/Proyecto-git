@@ -444,21 +444,20 @@
     End Sub
 
     Private Sub CBEsta_SelectionChangeCommitted(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CBUsuario.SelectionChangeCommitted, CBEsta.SelectionChangeCommitted
+        Dim usua As New Ususario
         Me.TNombre.Text = ""
         Me.TDni.Text = ""
         Me.TApel.Text = ""
         If (Me.CBEsta.SelectedIndex = 0) And (Me.CBUsuario.SelectedIndex = 0) Then
             tod.MostrarTodos(Me.DataGridView1)
         ElseIf (Me.CBEsta.SelectedIndex = 0) And (Me.CBUsuario.SelectedIndex > 0) Then
-            Dim usua As New Ususario
             usua.BuscarPorEstadoTipoUser("a", Me.usuario(), Me.DataGridView1, "b", Me.usuario(), , )
         ElseIf (Me.CBEsta.SelectedIndex > 0) And (Me.CBUsuario.SelectedIndex = 0) Then
-            Dim usua As New Ususario
             usua.BuscarPorEstadoTipoUser(Me.estados(), "a", Me.DataGridView1, Me.estados(), "s", Me.estados(), "v")
         Else
-            Dim usua As New Ususario
             usua.BuscarPorEstadoTipoUser(Me.estados(), Me.usuario(), Me.DataGridView1, , , , )
         End If
 
     End Sub
+
 End Class
