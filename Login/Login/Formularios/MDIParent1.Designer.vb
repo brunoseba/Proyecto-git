@@ -38,7 +38,6 @@ Partial Class Ventana
         Me.AgregarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuFacturas = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VerFacturasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GenerarInformeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CancelarFacturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuEmpresa = New System.Windows.Forms.ToolStripMenuItem()
@@ -53,6 +52,8 @@ Partial Class Ventana
         Me.FacturasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PersonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.cargo = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.BarraEstado = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
@@ -63,7 +64,7 @@ Partial Class Ventana
         '
         'BarraMenu
         '
-        Me.BarraMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Productos, Me.MenuClientes, Me.MenuUsuarios, Me.MenuFacturas, Me.MenuEmpresa, Me.ReportesToolStripMenuItem, Me.ToolStripMenuItem1, Me.usuario})
+        Me.BarraMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Productos, Me.MenuClientes, Me.MenuUsuarios, Me.MenuFacturas, Me.MenuEmpresa, Me.ReportesToolStripMenuItem, Me.ToolStripMenuItem1, Me.usuario, Me.PersonaToolStripMenuItem, Me.cargo})
         Me.BarraMenu.Location = New System.Drawing.Point(0, 0)
         Me.BarraMenu.Name = "BarraMenu"
         Me.BarraMenu.Size = New System.Drawing.Size(991, 24)
@@ -84,14 +85,16 @@ Partial Class Ventana
         '
         Me.AgregarProductoToolStripMenuItem.Image = Global.Login.My.Resources.Resources.brick_add
         Me.AgregarProductoToolStripMenuItem.Name = "AgregarProductoToolStripMenuItem"
-        Me.AgregarProductoToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.AgregarProductoToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1
+        Me.AgregarProductoToolStripMenuItem.Size = New System.Drawing.Size(192, 22)
         Me.AgregarProductoToolStripMenuItem.Text = "Agregar Productos"
         '
         'BuscarProductosToolStripMenuItem
         '
         Me.BuscarProductosToolStripMenuItem.Image = Global.Login.My.Resources.Resources.search16_h
         Me.BuscarProductosToolStripMenuItem.Name = "BuscarProductosToolStripMenuItem"
-        Me.BuscarProductosToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.BuscarProductosToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2
+        Me.BuscarProductosToolStripMenuItem.Size = New System.Drawing.Size(192, 22)
         Me.BuscarProductosToolStripMenuItem.Text = "Buscar Productos"
         '
         'MenuClientes
@@ -100,6 +103,7 @@ Partial Class Ventana
         Me.MenuClientes.Image = Global.Login.My.Resources.Resources.user_green
         Me.MenuClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.MenuClientes.Name = "MenuClientes"
+        Me.MenuClientes.ShortcutKeys = System.Windows.Forms.Keys.F3
         Me.MenuClientes.Size = New System.Drawing.Size(77, 20)
         Me.MenuClientes.Text = "&Clientes"
         Me.MenuClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -110,24 +114,22 @@ Partial Class Ventana
         Me.MenuClientesAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.MenuClientesAgregar.ImageTransparentColor = System.Drawing.Color.Black
         Me.MenuClientesAgregar.Name = "MenuClientesAgregar"
-        Me.MenuClientesAgregar.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Z), System.Windows.Forms.Keys)
-        Me.MenuClientesAgregar.ShowShortcutKeys = False
-        Me.MenuClientesAgregar.Size = New System.Drawing.Size(154, 22)
+        Me.MenuClientesAgregar.ShortcutKeys = System.Windows.Forms.Keys.F3
+        Me.MenuClientesAgregar.Size = New System.Drawing.Size(180, 22)
         Me.MenuClientesAgregar.Text = "Agregar Clientes"
         '
         'ToolStripSeparator11
         '
         Me.ToolStripSeparator11.Name = "ToolStripSeparator11"
-        Me.ToolStripSeparator11.Size = New System.Drawing.Size(151, 6)
+        Me.ToolStripSeparator11.Size = New System.Drawing.Size(177, 6)
         '
         'MenuClientesMostrar
         '
         Me.MenuClientesMostrar.Image = Global.Login.My.Resources.Resources.search16_h1
         Me.MenuClientesMostrar.ImageTransparentColor = System.Drawing.Color.Black
         Me.MenuClientesMostrar.Name = "MenuClientesMostrar"
-        Me.MenuClientesMostrar.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Y), System.Windows.Forms.Keys)
-        Me.MenuClientesMostrar.ShowShortcutKeys = False
-        Me.MenuClientesMostrar.Size = New System.Drawing.Size(154, 22)
+        Me.MenuClientesMostrar.ShortcutKeys = System.Windows.Forms.Keys.F4
+        Me.MenuClientesMostrar.Size = New System.Drawing.Size(180, 22)
         Me.MenuClientesMostrar.Text = "Buscar Clientes"
         '
         'MenuUsuarios
@@ -144,19 +146,21 @@ Partial Class Ventana
         '
         Me.AgregarToolStripMenuItem.Image = Global.Login.My.Resources.Resources.user_add16
         Me.AgregarToolStripMenuItem.Name = "AgregarToolStripMenuItem"
-        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.AgregarToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5
+        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(183, 22)
         Me.AgregarToolStripMenuItem.Text = "Agregar Usuarios"
         '
         'BuscarToolStripMenuItem
         '
         Me.BuscarToolStripMenuItem.Image = Global.Login.My.Resources.Resources.search16_h
         Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
-        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.BuscarToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6
+        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(183, 22)
         Me.BuscarToolStripMenuItem.Text = "Buscar Usuarios"
         '
         'MenuFacturas
         '
-        Me.MenuFacturas.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VerFacturasToolStripMenuItem, Me.GenerarInformeToolStripMenuItem, Me.CancelarFacturaToolStripMenuItem})
+        Me.MenuFacturas.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GenerarInformeToolStripMenuItem, Me.CancelarFacturaToolStripMenuItem})
         Me.MenuFacturas.Image = Global.Login.My.Resources.Resources._16__Edit_3_
         Me.MenuFacturas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.MenuFacturas.Name = "MenuFacturas"
@@ -164,25 +168,22 @@ Partial Class Ventana
         Me.MenuFacturas.Text = "Facturas"
         Me.MenuFacturas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'VerFacturasToolStripMenuItem
-        '
-        Me.VerFacturasToolStripMenuItem.Image = Global.Login.My.Resources.Resources._16__Zoom_
-        Me.VerFacturasToolStripMenuItem.Name = "VerFacturasToolStripMenuItem"
-        Me.VerFacturasToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
-        Me.VerFacturasToolStripMenuItem.Text = "Ver Facturas"
-        '
         'GenerarInformeToolStripMenuItem
         '
         Me.GenerarInformeToolStripMenuItem.Image = Global.Login.My.Resources.Resources._16__Edit_2_
         Me.GenerarInformeToolStripMenuItem.Name = "GenerarInformeToolStripMenuItem"
-        Me.GenerarInformeToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
-        Me.GenerarInformeToolStripMenuItem.Text = "Generar Informe"
+        Me.GenerarInformeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F7
+        Me.GenerarInformeToolStripMenuItem.ShowShortcutKeys = False
+        Me.GenerarInformeToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.GenerarInformeToolStripMenuItem.Text = "Ver Factura"
         '
         'CancelarFacturaToolStripMenuItem
         '
         Me.CancelarFacturaToolStripMenuItem.Image = Global.Login.My.Resources.Resources.delete_square161
         Me.CancelarFacturaToolStripMenuItem.Name = "CancelarFacturaToolStripMenuItem"
-        Me.CancelarFacturaToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.CancelarFacturaToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F8
+        Me.CancelarFacturaToolStripMenuItem.ShowShortcutKeys = False
+        Me.CancelarFacturaToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.CancelarFacturaToolStripMenuItem.Text = "Cancelar Factura"
         '
         'MenuEmpresa
@@ -199,14 +200,18 @@ Partial Class Ventana
         '
         Me.MenuEmpresaVerDatos.Image = Global.Login.My.Resources.Resources._16__Zoom_1
         Me.MenuEmpresaVerDatos.Name = "MenuEmpresaVerDatos"
-        Me.MenuEmpresaVerDatos.Size = New System.Drawing.Size(158, 22)
+        Me.MenuEmpresaVerDatos.ShortcutKeys = System.Windows.Forms.Keys.F9
+        Me.MenuEmpresaVerDatos.ShowShortcutKeys = False
+        Me.MenuEmpresaVerDatos.Size = New System.Drawing.Size(151, 22)
         Me.MenuEmpresaVerDatos.Text = "Ver Datos"
         '
         'MenuEmpresaModificarDatos
         '
         Me.MenuEmpresaModificarDatos.Image = Global.Login.My.Resources.Resources.building_edit
         Me.MenuEmpresaModificarDatos.Name = "MenuEmpresaModificarDatos"
-        Me.MenuEmpresaModificarDatos.Size = New System.Drawing.Size(158, 22)
+        Me.MenuEmpresaModificarDatos.ShortcutKeys = System.Windows.Forms.Keys.F10
+        Me.MenuEmpresaModificarDatos.ShowShortcutKeys = False
+        Me.MenuEmpresaModificarDatos.Size = New System.Drawing.Size(151, 22)
         Me.MenuEmpresaModificarDatos.Text = "Modificar Datos"
         '
         'ReportesToolStripMenuItem
@@ -226,16 +231,18 @@ Partial Class Ventana
         'usuario
         '
         Me.usuario.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarSesiónToolStripMenuItem, Me.BackUp})
+        Me.usuario.Image = Global.Login.My.Resources.Resources.user_gray
         Me.usuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.usuario.Name = "usuario"
-        Me.usuario.Size = New System.Drawing.Size(59, 20)
+        Me.usuario.Size = New System.Drawing.Size(75, 20)
         Me.usuario.Text = "Usuario"
         '
         'CerrarSesiónToolStripMenuItem
         '
         Me.CerrarSesiónToolStripMenuItem.Image = Global.Login.My.Resources.Resources.delete_square16
         Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.CerrarSesiónToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F11
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
         'BackUp
@@ -243,7 +250,7 @@ Partial Class Ventana
         Me.BackUp.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductosToolStripMenuItem, Me.FacturasToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.UsuarioToolStripMenuItem})
         Me.BackUp.Image = Global.Login.My.Resources.Resources.Database_Blue
         Me.BackUp.Name = "BackUp"
-        Me.BackUp.Size = New System.Drawing.Size(143, 22)
+        Me.BackUp.Size = New System.Drawing.Size(168, 22)
         Me.BackUp.Text = "Back Up"
         '
         'ProductosToolStripMenuItem
@@ -269,6 +276,20 @@ Partial Class Ventana
         Me.UsuarioToolStripMenuItem.Name = "UsuarioToolStripMenuItem"
         Me.UsuarioToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
         Me.UsuarioToolStripMenuItem.Text = "Usuario"
+        '
+        'PersonaToolStripMenuItem
+        '
+        Me.PersonaToolStripMenuItem.Name = "PersonaToolStripMenuItem"
+        Me.PersonaToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
+        Me.PersonaToolStripMenuItem.Text = "persona"
+        Me.PersonaToolStripMenuItem.Visible = False
+        '
+        'cargo
+        '
+        Me.cargo.Name = "cargo"
+        Me.cargo.Size = New System.Drawing.Size(49, 20)
+        Me.cargo.Text = "cargo"
+        Me.cargo.Visible = False
         '
         'StatusStrip
         '
@@ -328,7 +349,6 @@ Partial Class Ventana
     Friend WithEvents MenuFacturas As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GenerarInformeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CancelarFacturaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents VerFacturasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MenuEmpresa As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MenuEmpresaVerDatos As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MenuEmpresaModificarDatos As System.Windows.Forms.ToolStripMenuItem
@@ -350,5 +370,7 @@ Partial Class Ventana
     Friend WithEvents FacturasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents UsuarioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PersonaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents cargo As System.Windows.Forms.ToolStripMenuItem
 
 End Class

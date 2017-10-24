@@ -1,5 +1,4 @@
 ﻿Public Class Cliente
-
     Private cliente_id As Long
     Private nomYape As String
     Private direccion As String
@@ -16,12 +15,9 @@
 #Region "Constructore"
 
     Public Sub New()
-
     End Sub
 
-
     Public Sub New(ByVal c_id As Long, ByVal c_nomYape As String, ByVal c_direc As String, ByVal c_tel As String, ByVal c_email As String, ByVal c_estado As Char, ByVal c_ape As String, ByVal c_local As String, ByVal c_prov As String, ByVal c_fecha As String, ByVal c_postal As String, ByVal c_celu As String)
-
         SetID(c_id)
         SetNomYape(c_nomYape)
         SetDireccion(c_direc)
@@ -34,9 +30,7 @@
         SetFecha(c_fecha)
         SetPostal(c_postal)
         SetCelular(c_celu)
-
     End Sub
-
 #End Region
 
 #Region "Set/Get"
@@ -89,8 +83,6 @@
         celular = c_celu
     End Sub
 
-
-
     Public Function GetID()
         Return cliente_id
     End Function
@@ -141,21 +133,69 @@
 #End Region
 
 #Region "Metodos"
-
     Public Sub Consulta(ByVal cliente As Long)
         Try
-
             Using Base As New NNeumaticosEntities1
-                Dim cliConsul = (From c In Base.Cliente Where (c.cliente_cuil = cliente And c.cliente_estado = "a")
-                               Select c).First
+                Dim cliConsul = (From c In Base.Cliente Where (c.cliente_cuil = cliente And c.cliente_estado = "a") Select c).First
             End Using
         Catch ex As Exception
         End Try
     End Sub
 
+#Region "Mostrar"
+    Public Sub mostrarEstado(ByVal estado As Char, ByVal data As DataGridView)
+        Try
+            Using Base As New NNeumaticosEntities1
+                Dim muestra = (From c In Base.Cliente Where (c.cliente_estado.StartsWith(estado)) Select c).ToList
+                data.DataSource = muestra
+            End Using
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Public Sub mostrarTdo(ByVal muetrasDato As DataGridView)
+        Try
+            Using Base As New NNeumaticosEntities1
+                Dim muestra = (From c In Base.Cliente Select c).ToList
+                muetrasDato.DataSource = muestra
+            End Using
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Public Sub mostrarApe(ByVal apellido As String, ByVal muetrasDato As DataGridView)
+        Try
+            Using Base As New NNeumaticosEntities1
+                Dim muestra = (From c In Base.Cliente Where (c.cliente_Ape.StartsWith(apellido)) Select c).ToList
+                muetrasDato.DataSource = muestra
+            End Using
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Public Sub mostrarNom(ByVal nombre As String, ByVal muetrasDato As DataGridView)
+        Try
+            Using Base As New NNeumaticosEntities1
+                Dim muestra = (From c In Base.Cliente Where (c.cliente_NomYape.StartsWith(nombre)) Select c).ToList
+                muetrasDato.DataSource = muestra
+            End Using
+        Catch ex As Exception
+        End Try
+    End Sub
+    Public Sub mostrarDni(ByVal dni As Long, ByVal muetrasDato As DataGridView)
+        Try
+            Using Base As New NNeumaticosEntities1
+                Dim muestra = (From c In Base.Cliente Where (c.cliente_cuil = dni) Select c).ToList
+                muetrasDato.DataSource = muestra
+            End Using
+        Catch ex As Exception
+        End Try
+    End Sub
+#End Region
+
+#Region "Agregar Modificar"
     Public Function AgregaCliente()
         Try
-
             Using Base As New NNeumaticosEntities1
                 Dim altas = New Cliente With
                            {.cliente_cuil = GetID(),
@@ -181,10 +221,8 @@
 
     Public Sub ModifCliente(ByVal cliente As Long, ByVal nombe As String, ByVal direc As String, ByVal tel As String, ByVal email As String, ByVal estado As Char, ByVal ape As String, ByVal local As String, ByVal prov As String, ByVal fecha As String, ByVal postal As String, ByVal celu As String)
         Try
-
             Using Base As New NNeumaticosEntities1
-                Dim modifica = (From c In Base.Cliente Where (cliente = c.cliente_cuil)
-                                Select c).First
+                Dim modifica = (From c In Base.Cliente Where (cliente = c.cliente_cuil) Select c).First
                 modifica.cliente_cuil = cliente
                 modifica.cliente_Direccion = direc
                 modifica.cliente_Telefono = tel
@@ -207,8 +245,7 @@
             Using Base As New NNeumaticosEntities1
                 Dim alta = (From c In Base.Cliente Where (cliente = c.cliente_cuil And c.cliente_estado = "b")
                             Select c).First
-
-                alta.cliente_estado = "a"
+                alta.cliente_estado = "A"
                 Base.SaveChanges()
             End Using
         Catch ex As Exception
@@ -220,14 +257,13 @@
         Try
 
             Using Base As New NNeumaticosEntities1
-                Dim baja = (From c In Base.Cliente Where (cliente = c.cliente_cuil And c.cliente_estado = "a")
-                            Select c).First
-
+                Dim baja = (From c In Base.Cliente Where (cliente = c.cliente_cuil And c.cliente_estado = "A") Select c).First
                 baja.cliente_estado = "b"
                 Base.SaveChanges()
             End Using
         Catch ex As Exception
         End Try
     End Sub
+#End Region
 #End Region
 End Class

@@ -6,10 +6,10 @@ Public Class Ventana
         Dim usu As New Ususario(Inicio_Sesion.Tusuario.Text)
         usu.Dato(usu.GetDni(), usu.GetNomYape())
         If usu.GetTipoUsu = "a" And usu.GetEstado = "a" Then
-
             Me.usuario.Text = ("Administrador :  " + usu.GetNomYape())
             Me.usuario.Image = My.Resources.user_gray
-
+            Me.cargo.Text = "admin"
+            Me.MenuClientes.Visible = False
         ElseIf usu.GetTipoUsu = "s" And usu.GetEstado = "a" Then
             'Principal.Show()
             Me.BackgroundImage = My.Resources.bridgestone_wallpapers_163
@@ -17,14 +17,15 @@ Public Class Ventana
             Me.usuario.Image = My.Resources.user_suit
             'Principal.MdiParent = Me
             Me.BackUp.Visible = False
-            Me.MenuClientes.Visible = True
-            Me.MenuUsuarios.Visible = False
+            Me.Productos.Visible = False
+            Me.MenuClientesAgregar.Visible = False
+            Me.AgregarToolStripMenuItem.Visible = False
             Me.MenuEmpresa.Visible = False
+            Me.cargo.Text = "supervisor"
 
         Else
 
             Me.BackgroundImage = My.Resources.BRIDGESTONE_MOTOGP__7_
-
             Me.usuario.Text = ("Vendedor :  " + usu.GetNomYape())
             Me.usuario.Image = My.Resources.user_orange
             Me.BackUp.Visible = False
@@ -35,8 +36,9 @@ Public Class Ventana
             Me.AgregarProductoToolStripMenuItem.Visible = False
             Me.BuscarProductosToolStripMenuItem.Visible = False
             Vendedor.Show()
-            Vendedor.PanelConfirmarCompra.Visible = False
             Vendedor.MdiParent = Me
+            Vendedor.cargarLoad()
+            Me.cargo.Text = "vende"
         End If
     End Sub
 
@@ -89,10 +91,6 @@ Public Class Ventana
 
     End Sub
 
-    Private Sub MenuClientes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuClientes.Click
-
-    End Sub
-
     Private Sub VerProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Vendedor.Show()
         Vendedor.PanelBuscarProductoVendedor.Visible = True
@@ -130,7 +128,7 @@ Public Class Ventana
         Empresas.MdiParent = Me
     End Sub
 
-    Private Sub VerFacturasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VerFacturasToolStripMenuItem.Click
+    Private Sub VerFacturasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         V_Factura.MaximizeBox = True
         V_Factura.Show()
         V_Factura.Panel_Cancelar_Factura.Visible = False

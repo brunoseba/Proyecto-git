@@ -117,72 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Dni.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="NomApe.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Direc.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Telef.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Email.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="tipoUsu.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Ape.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Local.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Prov.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Fecha.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Cpostal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Celu.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="ColVer.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAHD1kABU9aAAUP20ADj1wABJAdAAYQ3EAIURqAH5pcQC7RxsAvUUbAKpGJgCsSCUArEspALBI
-        IwClTDAAqVQ2AL5fNADDSx4AxEgeAIdPQQCJU0MAo11JAJ5lVwCGYmIAl3tvAMZ9XgCfgnMA/4xCAP6W
-        TQD/nk8A/ptSAP2eUgD+oVUA/qZYAP+rWgD+q1wA/rBdAP+1XgDRlnkA/rFgAP+1YgD+uGAA/79iAP6+
-        ZwD4rXcA/qh/AP+2eQD+x2wA/8loAP/AfwD/1HEADD2GAA9JhgAPR4kAD0mJABFKhgAUS4QAGkiBABBK
-        jwAPSpYAEU2VABxOkAARUpIAEleZABJXngAtaKEALm+qADNspgAzc60ATHqnAE16qAApdsoALHXIACd6
-        zQApfM4AKHzRAFaArQBagKoAe5a3ADKAzwBwm8gAfqjRAHey6gB9t+0Au46BALKdkwCHlKMAhZSpAPW6
-        gwD/0ZcA/MiqAP/kowCItN8AibbkAI265QCBuu4AlsTxAJvM+AClyu4Aps3uAKrM6gCzzugApM/2AKbQ
-        9gCu1PcA89bCAPbXxQD04tQA9uTWAM3f7gDZ6PcAAAAAACYvAABAUAAAWnAAAHSQAACOsAAAqc8AAMLw
-        AADR/xEA2P8xAN7/UQDj/3EA6f+RAO//sQD2/9EA////AAAAAAAvJgAAUEEAAHBbAACQdAAAsI4AAM+p
-        AADwwwAA/9IRAP/YMQD/3VEA/+RxAP/qkQD/8LEA//bRAP///wAAAAAALxQAAFAiAABwMAAAkD4AALBN
-        AADPWwAA8GkAAP95EQD/ijEA/51RAP+vcQD/wZEA/9KxAP/l0QD///8AAAAAAC8DAABQBAAAcAYAAJAJ
-        AACwCgAAzwwAAPAOAAD/IBIA/z4xAP9cUQD/enEA/5eRAP+2sQD/1NEA////AAAAAAAvAA4AUAAXAHAA
-        IQCQACsAsAA2AM8AQADwAEkA/xFaAP8xcAD/UYYA/3GcAP+RsgD/scgA/9HfAP///wAAAAAALwAgAFAA
-        NgBwAEwAkABiALAAeADPAI4A8ACkAP8RswD/Mb4A/1HHAP9x0QD/kdwA/7HlAP/R8AD///8AAAAAACwA
-        LwBLAFAAaQBwAIcAkAClALAAxADPAOEA8ADwEf8A8jH/APRR/wD2cf8A95H/APmx/wD70f8A////AAAA
-        AAAbAC8ALQBQAD8AcABSAJAAYwCwAHYAzwCIAPAAmRH/AKYx/wC0Uf8AwnH/AM+R/wDcsf8A69H/AP//
-        /wAAAAAACAAvAA4AUAAVAHAAGwCQACEAsAAmAM8ALADwAD4R/wBYMf8AcVH/AIxx/wCmkf8Av7H/ANrR
-        /wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAnEA0MCwsPGgAAAAAAAEoYESoqKioqKg4IUGYAAExgF1kj
-        IiEfIR4tFmBIAABLU1YmKSgkIiAdHFVUSQAAABVbWjAsKiUiIC8uFAAAAAAAEm1cMzErJjJrEwAAAAAA
-        AAAJbEdGRkdqCgAAAAAAAAAAG0RiaWlnRRkAAAAAAAAAAE5jZWhoZWRNAAAAAAAAAABCb2FfUl1uQwAA
-        AAAAAAAANE9eUQMGBwIAAAAAAAAAADxBNzU4OQUBAAAAAAAAAAAAPUBAPzUEVwAAAAAAAAAAAAA+OzY6
-        WAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AADwDwAAwAEAAIABAACAAQAAwAMAAOAHAADwDwAA8A8AAPAP
-        AADwDwAA8A8AAPAPAAD4DwAA/B8AAP//AAA=
-</value>
-  </data>
 </root>

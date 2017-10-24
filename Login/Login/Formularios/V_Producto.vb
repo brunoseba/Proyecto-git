@@ -1,5 +1,20 @@
 ﻿Public Class V_Producto
 
+    'Cuando carga la ventana
+    Private Sub V_Producto_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Dim d_Tec As New D_Tecnicos()
+        d_Tec.MostrarTodosDTecnicos(Me.DataGridViewDatosCodigo)
+    End Sub
+
+#Region "Botonces Click"
+
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+        TextBoxNombreProducto.Text = ""
+        TextBoxPrecio.Text = ""
+        TextBoxStock.Text = ""
+        LabelRutaArchivo.Text = "Ruta:"
+        PictureBox1.Image = My.Resources.image_not_found__1_
+    End Sub
 
     Private Sub ButtonCancelarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonCancelarProducto.Click
         Me.Close()
@@ -23,68 +38,6 @@
         End If
         Me.PanelActualizarStock.Visible = False
             cargarLoad()
-        End If
-
-    End Sub
-
-    Private Sub DataGridViewResultadosProductos_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridViewResultadosProductos.CellContentClick
-        Dim cell As DataGridViewButtonCell = TryCast(Me.DataGridViewResultadosProductos.CurrentCell, DataGridViewButtonCell)
-        If cell IsNot Nothing Then 'Verifica que la celdas tengan informacion
-            Dim bc As DataGridViewButtonColumn = TryCast(Me.DataGridViewResultadosProductos.Columns(e.ColumnIndex), DataGridViewButtonColumn) 'Genero una variable que contiene el boton en el datagrid
-            If bc IsNot Nothing Then
-                Dim s As String = Convert.ToString(cell.Value)
-                Select Case bc.Name
-                    Case "Datos_Tecnicos"
-                        Me.PanelActualizarStock.Visible = False
-                        Me.PanelAgregarProductos.Visible = False
-                        Me.PanelMostrarDatosTecnicos.Visible = True
-                        TextBox1.Text = ""
-                        TextBox1.BackColor = Color.White
-                        Dim d_Tec As New D_Tecnicos()
-                        d_Tec.MostrarUnicoDTecnicos(DataGridViewResultadosProductos.Item(13, DataGridViewResultadosProductos.CurrentRow.Index).Value, Me.DataGridView1)
-                End Select
-                Select Case bc.Name
-                    Case "A_Stock"
-                        Me.PanelAgregarProductos.Visible = False
-                        Me.PanelMostrarDatosTecnicos.Visible = False
-                        Me.PanelActualizarStock.Visible = True
-                        TextBox1.Text = ""
-                        TextBox1.BackColor = Color.White
-                        Label3.Text = DataGridViewResultadosProductos.Item(5, DataGridViewResultadosProductos.CurrentRow.Index).Value
-                        Label6.Text = DataGridViewResultadosProductos.Item(7, DataGridViewResultadosProductos.CurrentRow.Index).Value
-                        Label8.Text = DataGridViewResultadosProductos.Item(6, DataGridViewResultadosProductos.CurrentRow.Index).Value
-                        Label9.Text = DataGridViewResultadosProductos.Item(9, DataGridViewResultadosProductos.CurrentRow.Index).Value
-                End Select
-                Select Case bc.Name
-                    Case "Modificar"
-                        TextBox1.Text = ""
-                        TextBox1.BackColor = Color.White
-                        Me.PanelMostrarDatosTecnicos.Visible = False
-                        Me.PanelActualizarStock.Visible = False
-                        Me.PanelProductosBuscar.Visible = False
-                        Me.ButtonAgregarProducto.Visible = False
-                        Me.Button4.Visible = False
-                        Me.ButtonBajaProducto.Visible = True
-                        Me.ButtonAltaProducto.Visible = True
-                        Me.ButtonActualizarProducto.Visible = True
-                        Me.PanelAgregarProductos.Visible = True
-                        TextBoxNombreProducto.Text = DataGridViewResultadosProductos.Item(5, DataGridViewResultadosProductos.CurrentRow.Index).Value
-                        TextBoxPrecio.Text = Val(DataGridViewResultadosProductos.Item(8, DataGridViewResultadosProductos.CurrentRow.Index).Value)
-                        TextBoxStock.Text = DataGridViewResultadosProductos.Item(9, DataGridViewResultadosProductos.CurrentRow.Index).Value
-                        asignarMedida(ComboBoxMedidaProducto, DataGridViewResultadosProductos.Item(7, DataGridViewResultadosProductos.CurrentRow.Index).Value)
-                        asignarRodado(ComboBoxRodadoProducto, DataGridViewResultadosProductos.Item(6, DataGridViewResultadosProductos.CurrentRow.Index).Value)
-                        asignarTipoVehiculo(ComboBoxTipoVehiculo, DataGridViewResultadosProductos.Item(11, DataGridViewResultadosProductos.CurrentRow.Index).Value)
-                        PictureBox1.Load(DataGridViewResultadosProductos.Item(10, DataGridViewResultadosProductos.CurrentRow.Index).Value)
-                        LabelRutaArchivo.Text = DataGridViewResultadosProductos.Item(10, DataGridViewResultadosProductos.CurrentRow.Index).Value
-                        LabelestadoProducto.Text = DataGridViewResultadosProductos.Item(12, DataGridViewResultadosProductos.CurrentRow.Index).Value
-                        If LabelestadoProducto.Text = "A" Then
-                            ButtonAltaProducto.Visible = False
-                        Else
-                            ButtonBajaProducto.Visible = False
-                        End If
-                End Select
-
-            End If
         End If
     End Sub
 
@@ -167,6 +120,36 @@
             
         End If
     End Sub
+
+    Private Sub ButtonBajaProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonBajaProducto.Click
+        Dim prod As New Productos()
+        If (prod.BajaProducto(DataGridViewResultadosProductos.Item(4, DataGridViewResultadosProductos.CurrentRow.Index).Value)) Then
+            MsgBox("El Producto se dio de Baja Correctamente", 0 + 0 + 64)
+        Else
+            MsgBox("El producto no se pudo dar de Baja", 16, "Atención")
+        End If
+        Me.Close()
+    End Sub
+
+    Private Sub ButtonAltaProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonAltaProducto.Click
+        Dim prod As New Productos()
+        If (prod.AltaProducto(DataGridViewResultadosProductos.Item(4, DataGridViewResultadosProductos.CurrentRow.Index).Value)) Then
+            MsgBox("El Producto se dio de Alta Correctamente", 0 + 0 + 64)
+        Else
+            MsgBox("El producto no se pudo dar de Alta", 16, "Atención")
+        End If
+        Me.Close()
+    End Sub
+#End Region
+
+#Region "Comprobar Vacios, Numeros,letras"
+    Private Sub TextBox1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox1.TextChanged
+        If String.IsNullOrWhiteSpace(TextBox1.Text) Then
+            TextBox1.BackColor = Color.Red
+        Else
+            TextBox1.BackColor = Color.Green
+        End If
+    End Sub
     'Procedimiento que verifica que sea número'
     Public Sub ComprobarNumero(ByVal e As System.Windows.Forms.KeyPressEventArgs)
         'Verifica que sea numero lo que se ingresa'
@@ -181,6 +164,7 @@
         End If
 
     End Sub
+
 
     'Función comprobar si es letra lo que se presiona'
     Public Sub ComprobarLetra(ByVal e As System.Windows.Forms.KeyPressEventArgs)
@@ -215,36 +199,76 @@
             Return False
         End If
     End Function
-
     Private Sub TextBoxPrecio_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBoxStock.KeyPress, TextBoxPrecio.KeyPress
         Me.ComprobarNumero(e)
     End Sub
 
-    Private Sub ComboBoxMedidaProducto_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBoxMedidaProducto.SelectedIndexChanged
-        For Each fila As DataGridViewRow In DataGridViewDatosCodigo.Rows
-            If fila.Cells("Medida").Value = ComboBoxMedidaProducto.Text Then
-                TextBoxCod_Datos.Text = fila.Cells("Codigo").Value
-                fila.Cells("Codigo").Style.BackColor = Color.Aquamarine
-                fila.Cells("Medida").Style.BackColor = Color.Aquamarine
-                fila.Cells("Indice_Carga").Style.BackColor = Color.Aquamarine
-                fila.Cells("Velocidad").Style.BackColor = Color.Aquamarine
-                fila.Cells("Revision_Por_Km").Style.BackColor = Color.Aquamarine
-                fila.Cells("Ancho_Llanta").Style.BackColor = Color.Aquamarine
-                fila.Cells("Ancho_Sesion").Style.BackColor = Color.Aquamarine
-                fila.Cells("Diametro").Style.BackColor = Color.Aquamarine
-            Else
-                fila.Cells("Codigo").Style.BackColor = Color.White
-                fila.Cells("Medida").Style.BackColor = Color.White
-                fila.Cells("Indice_Carga").Style.BackColor = Color.White
-                fila.Cells("Velocidad").Style.BackColor = Color.White
-                fila.Cells("Revision_Por_Km").Style.BackColor = Color.White
-                fila.Cells("Ancho_Llanta").Style.BackColor = Color.White
-                fila.Cells("Ancho_Sesion").Style.BackColor = Color.White
-                fila.Cells("Diametro").Style.BackColor = Color.White
-            End If
-        Next
+    Private Sub TextBox1_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox1.KeyPress
+        ComprobarNumero(e)
+    End Sub
+#End Region
+
+
+#Region "Busquedas de productos por Nombre, rodado y tipo de vehiculo cuando se produce cambios en los textbox y combobox"
+    'Busqueda por Nombre cuando cambia de valor el textbox
+    Private Sub TextBox6_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox6.TextChanged
+        ComboBoxRodadoProducto.SelectedIndex = 0
+        ComboBoxTipoVehiculo.SelectedIndex = 0
+        If TextBox6.Text = "" Then
+            Dim prod As New Productos()
+            prod.MostrarTodos(Me.DataGridViewResultadosProductos)
+            cargaImagen()
+        Else
+            Dim prod As New Productos
+            prod.BuscarPorNombre(TextBox6.Text, DataGridViewResultadosProductos)
+            Dim ima As Image
+            For Each fila As DataGridViewRow In DataGridViewResultadosProductos.Rows
+                'Pone invisible el id y Ruta de la imagen
+                DataGridViewResultadosProductos.Columns("ID").Visible = False
+                DataGridViewResultadosProductos.Columns("Ruta").Visible = False
+                DataGridViewResultadosProductos.Columns("Datos").Visible = False
+                'Àsigno a imagen.fromfile el valor de la ruta de la imagen de la DB
+                ima = Image.FromFile(fila.Cells("Ruta").Value)
+                'asigno a la columna datagriedviewImage la imagen asignada fromfile
+                fila.Cells("Imagen").Value = ima
+            Next
+        End If
     End Sub
 
+    'Busqueda por Rodado y/o Tipo de vehiculo cuando cambia de valor de/los Combobox
+    Private Sub ComboBox2_SelectionChangeCommitted(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox2.SelectionChangeCommitted, ComboBox1.SelectionChangeCommitted
+        TextBox6.Text = ""
+        Dim prod As New Productos
+        If (ComboBox2.SelectedIndex = 0) And (ComboBox1.SelectedIndex = 0) Then
+            prod.MostrarTodos(Me.DataGridViewResultadosProductos)
+            cargaImagen()
+        ElseIf (ComboBox2.SelectedIndex = 0) And (ComboBox1.SelectedIndex > 0) Then
+            prod.BuscarPorRodaTipoVehi("a", ComboBox1.SelectedItem, DataGridViewResultadosProductos, , ComboBox1.SelectedItem)
+            cargaImagen()
+        ElseIf (ComboBox2.SelectedIndex > 0) And (ComboBox1.SelectedIndex = 0) Then
+            prod.BuscarPorRodaTipoVehi(ComboBox2.SelectedItem, "a", DataGridViewResultadosProductos, ComboBox2.SelectedItem, )
+            cargaImagen()
+        Else
+            prod.BuscarPorRodaTipoVehi(ComboBox2.SelectedItem, ComboBox1.SelectedItem, DataGridViewResultadosProductos)
+            cargaImagen()
+        End If
+    End Sub
+#End Region
+
+#Region "Manejo de Imagenes"
+    Public Sub cargaImagen()
+        Dim ima As Image
+        For Each fila As DataGridViewRow In DataGridViewResultadosProductos.Rows
+            'Pone invisible el id y Ruta de la imagen
+            DataGridViewResultadosProductos.Columns("ID").Visible = False
+            DataGridViewResultadosProductos.Columns("Ruta").Visible = False
+            DataGridViewResultadosProductos.Columns("Datos").Visible = False
+            'Àsigno a imagen.fromfile el valor de la ruta de la imagen de la DB
+            ima = Image.FromFile(fila.Cells("Ruta").Value)
+            'asigno a la columna datagriedviewImage la imagen asignada fromfile
+            fila.Cells("Imagen").Value = ima
+        Next
+    End Sub
     Public Sub cargarLoad()
         Dim prod As New Productos()
         prod.MostrarTodos(Me.DataGridViewResultadosProductos)
@@ -262,38 +286,9 @@
         Next
     End Sub
 
-    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
-        TextBoxNombreProducto.Text = ""
-        'ComboBoxRodadoProducto.SelectedIndex = 0
-        'ComboBoxMedidaProducto.SelectedIndex = 0
-        TextBoxPrecio.Text = ""
-        TextBoxStock.Text = ""
-        'ComboBoxTipoVehiculo.SelectedIndex = 0
-        LabelRutaArchivo.Text = "Ruta:"
-        PictureBox1.Image = My.Resources.image_not_found__1_
-    End Sub
+#End Region
 
-
-    Private Sub V_Producto_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Dim d_Tec As New D_Tecnicos()
-        d_Tec.MostrarTodosDTecnicos(Me.DataGridViewDatosCodigo)
-        'ComboBoxMedidaProducto.SelectedIndex = 0
-        'ComboBoxRodadoProducto.SelectedIndex = 0
-        ' ComboBoxTipoVehiculo.SelectedIndex = 0
-    End Sub
-
-    Private Sub TextBox1_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox1.KeyPress
-        ComprobarNumero(e)
-    End Sub
-
-    Private Sub TextBox1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox1.TextChanged
-        If String.IsNullOrWhiteSpace(TextBox1.Text) Then
-            TextBox1.BackColor = Color.Red
-        Else
-            TextBox1.BackColor = Color.Green
-        End If
-    End Sub
-
+#Region "Asigna valores a los comboBox para cargar y modificar los productos"
     Private Sub asignarMedida(ByVal combo As ComboBox, ByVal valor As String)
         If valor = "27x8.5" Then
             combo.SelectedIndex = 0
@@ -363,84 +358,94 @@
             combo.SelectedIndex = 3
         End If
     End Sub
+#End Region
 
-    Private Sub ButtonBajaProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonBajaProducto.Click
-        Dim prod As New Productos()
-        If (prod.BajaProducto(DataGridViewResultadosProductos.Item(4, DataGridViewResultadosProductos.CurrentRow.Index).Value)) Then
-            MsgBox("El Producto se dio de Baja Correctamente", 0 + 0 + 64)
-        Else
-            MsgBox("El producto no se pudo dar de Baja", 16, "Atención")
-        End If
-        Me.Close()
-    End Sub
+#Region "Utilizacion del datagrid pada actualizar Stock, ver Cod_tecnicos o midificar...Colorear la fila de acuerdo al dato tecnico elegido"
+    Private Sub DataGridViewResultadosProductos_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridViewResultadosProductos.CellContentClick
+        Dim cell As DataGridViewButtonCell = TryCast(Me.DataGridViewResultadosProductos.CurrentCell, DataGridViewButtonCell)
+        If cell IsNot Nothing Then 'Verifica que la celdas tengan informacion
+            Dim bc As DataGridViewButtonColumn = TryCast(Me.DataGridViewResultadosProductos.Columns(e.ColumnIndex), DataGridViewButtonColumn) 'Genero una variable que contiene el boton en el datagrid
+            If bc IsNot Nothing Then
+                Dim s As String = Convert.ToString(cell.Value)
+                Select Case bc.Name
+                    Case "Datos_Tecnicos"
+                        Me.PanelActualizarStock.Visible = False
+                        Me.PanelAgregarProductos.Visible = False
+                        Me.PanelMostrarDatosTecnicos.Visible = True
+                        TextBox1.Text = ""
+                        TextBox1.BackColor = Color.White
+                        Dim d_Tec As New D_Tecnicos()
+                        d_Tec.MostrarUnicoDTecnicos(DataGridViewResultadosProductos.Item(13, DataGridViewResultadosProductos.CurrentRow.Index).Value, Me.DataGridView1)
+                End Select
+                Select Case bc.Name
+                    Case "A_Stock"
+                        Me.PanelAgregarProductos.Visible = False
+                        Me.PanelMostrarDatosTecnicos.Visible = False
+                        Me.PanelActualizarStock.Visible = True
+                        TextBox1.Text = ""
+                        TextBox1.BackColor = Color.White
+                        Label3.Text = DataGridViewResultadosProductos.Item(5, DataGridViewResultadosProductos.CurrentRow.Index).Value
+                        Label6.Text = DataGridViewResultadosProductos.Item(7, DataGridViewResultadosProductos.CurrentRow.Index).Value
+                        Label8.Text = DataGridViewResultadosProductos.Item(6, DataGridViewResultadosProductos.CurrentRow.Index).Value
+                        Label9.Text = DataGridViewResultadosProductos.Item(9, DataGridViewResultadosProductos.CurrentRow.Index).Value
+                End Select
+                Select Case bc.Name
+                    Case "Modificar"
+                        TextBox1.Text = ""
+                        TextBox1.BackColor = Color.White
+                        Me.PanelMostrarDatosTecnicos.Visible = False
+                        Me.PanelActualizarStock.Visible = False
+                        Me.PanelProductosBuscar.Visible = False
+                        Me.ButtonAgregarProducto.Visible = False
+                        Me.Button4.Visible = False
+                        Me.ButtonBajaProducto.Visible = True
+                        Me.ButtonAltaProducto.Visible = True
+                        Me.ButtonActualizarProducto.Visible = True
+                        Me.PanelAgregarProductos.Visible = True
+                        TextBoxNombreProducto.Text = DataGridViewResultadosProductos.Item(5, DataGridViewResultadosProductos.CurrentRow.Index).Value
+                        TextBoxPrecio.Text = Val(DataGridViewResultadosProductos.Item(8, DataGridViewResultadosProductos.CurrentRow.Index).Value)
+                        TextBoxStock.Text = DataGridViewResultadosProductos.Item(9, DataGridViewResultadosProductos.CurrentRow.Index).Value
+                        asignarMedida(ComboBoxMedidaProducto, DataGridViewResultadosProductos.Item(7, DataGridViewResultadosProductos.CurrentRow.Index).Value)
+                        asignarRodado(ComboBoxRodadoProducto, DataGridViewResultadosProductos.Item(6, DataGridViewResultadosProductos.CurrentRow.Index).Value)
+                        asignarTipoVehiculo(ComboBoxTipoVehiculo, DataGridViewResultadosProductos.Item(11, DataGridViewResultadosProductos.CurrentRow.Index).Value)
+                        PictureBox1.Load(DataGridViewResultadosProductos.Item(10, DataGridViewResultadosProductos.CurrentRow.Index).Value)
+                        LabelRutaArchivo.Text = DataGridViewResultadosProductos.Item(10, DataGridViewResultadosProductos.CurrentRow.Index).Value
+                        LabelestadoProducto.Text = DataGridViewResultadosProductos.Item(12, DataGridViewResultadosProductos.CurrentRow.Index).Value
+                        If LabelestadoProducto.Text = "A" Then
+                            ButtonAltaProducto.Visible = False
+                        Else
+                            ButtonBajaProducto.Visible = False
+                        End If
+                End Select
 
-    Private Sub ButtonAltaProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonAltaProducto.Click
-        Dim prod As New Productos()
-        If (prod.AltaProducto(DataGridViewResultadosProductos.Item(4, DataGridViewResultadosProductos.CurrentRow.Index).Value)) Then
-            MsgBox("El Producto se dio de Alta Correctamente", 0 + 0 + 64)
-        Else
-            MsgBox("El producto no se pudo dar de Alta", 16, "Atención")
-        End If
-        Me.Close()
-    End Sub
-
-    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Me.Close()
-    End Sub
-
-    Private Sub TextBox6_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox6.TextChanged
-        ComboBoxRodadoProducto.SelectedIndex = 0
-        ComboBoxTipoVehiculo.SelectedIndex = 0
-        If TextBox6.Text = "" Then
-            Dim prod As New Productos()
-            prod.MostrarTodos(Me.DataGridViewResultadosProductos)
-            cargaImagen()
-        Else
-            Dim prod As New Productos
-            prod.BuscarPorNombre(TextBox6.Text, DataGridViewResultadosProductos)
-            Dim ima As Image
-            For Each fila As DataGridViewRow In DataGridViewResultadosProductos.Rows
-                'Pone invisible el id y Ruta de la imagen
-                DataGridViewResultadosProductos.Columns("ID").Visible = False
-                DataGridViewResultadosProductos.Columns("Ruta").Visible = False
-                DataGridViewResultadosProductos.Columns("Datos").Visible = False
-                'Àsigno a imagen.fromfile el valor de la ruta de la imagen de la DB
-                ima = Image.FromFile(fila.Cells("Ruta").Value)
-                'asigno a la columna datagriedviewImage la imagen asignada fromfile
-                fila.Cells("Imagen").Value = ima
-            Next
-        End If
-    End Sub
-
-    Private Sub ComboBox2_SelectionChangeCommitted(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox2.SelectionChangeCommitted, ComboBox1.SelectionChangeCommitted
-        TextBox6.Text = ""
-        Dim prod As New Productos
-        If (ComboBox2.SelectedIndex = 0) And (ComboBox1.SelectedIndex = 0) Then
-            prod.MostrarTodos(Me.DataGridViewResultadosProductos)
-            cargaImagen()
-        ElseIf (ComboBox2.SelectedIndex = 0) And (ComboBox1.SelectedIndex > 0) Then
-            prod.BuscarPorRodaTipoVehi("a", ComboBox1.SelectedItem, DataGridViewResultadosProductos, , ComboBox1.SelectedItem)
-            cargaImagen()
-        ElseIf (ComboBox2.SelectedIndex > 0) And (ComboBox1.SelectedIndex = 0) Then
-            prod.BuscarPorRodaTipoVehi(ComboBox2.SelectedItem, "a", DataGridViewResultadosProductos, ComboBox2.SelectedItem, )
-            cargaImagen()
-        Else
-            prod.BuscarPorRodaTipoVehi(ComboBox2.SelectedItem, ComboBox1.SelectedItem, DataGridViewResultadosProductos)
-            cargaImagen()
+            End If
         End If
     End Sub
 
-    Public Sub cargaImagen()
-        Dim ima As Image
-        For Each fila As DataGridViewRow In DataGridViewResultadosProductos.Rows
-            'Pone invisible el id y Ruta de la imagen
-            DataGridViewResultadosProductos.Columns("ID").Visible = False
-            DataGridViewResultadosProductos.Columns("Ruta").Visible = False
-            DataGridViewResultadosProductos.Columns("Datos").Visible = False
-            'Àsigno a imagen.fromfile el valor de la ruta de la imagen de la DB
-            ima = Image.FromFile(fila.Cells("Ruta").Value)
-            'asigno a la columna datagriedviewImage la imagen asignada fromfile
-            fila.Cells("Imagen").Value = ima
+    Private Sub ComboBoxMedidaProducto_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBoxMedidaProducto.SelectedIndexChanged
+        For Each fila As DataGridViewRow In DataGridViewDatosCodigo.Rows
+            If fila.Cells("Medida").Value = ComboBoxMedidaProducto.Text Then
+                TextBoxCod_Datos.Text = fila.Cells("Codigo").Value
+                fila.Cells("Codigo").Style.BackColor = Color.Aquamarine
+                fila.Cells("Medida").Style.BackColor = Color.Aquamarine
+                fila.Cells("Indice_Carga").Style.BackColor = Color.Aquamarine
+                fila.Cells("Velocidad").Style.BackColor = Color.Aquamarine
+                fila.Cells("Revision_Por_Km").Style.BackColor = Color.Aquamarine
+                fila.Cells("Ancho_Llanta").Style.BackColor = Color.Aquamarine
+                fila.Cells("Ancho_Sesion").Style.BackColor = Color.Aquamarine
+                fila.Cells("Diametro").Style.BackColor = Color.Aquamarine
+            Else
+                fila.Cells("Codigo").Style.BackColor = Color.White
+                fila.Cells("Medida").Style.BackColor = Color.White
+                fila.Cells("Indice_Carga").Style.BackColor = Color.White
+                fila.Cells("Velocidad").Style.BackColor = Color.White
+                fila.Cells("Revision_Por_Km").Style.BackColor = Color.White
+                fila.Cells("Ancho_Llanta").Style.BackColor = Color.White
+                fila.Cells("Ancho_Sesion").Style.BackColor = Color.White
+                fila.Cells("Diametro").Style.BackColor = Color.White
+            End If
         Next
     End Sub
+#End Region
+
 End Class
