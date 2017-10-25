@@ -22,7 +22,6 @@ Partial Class Vendedor
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -30,6 +29,7 @@ Partial Class Vendedor
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Vendedor))
         Me.PanelBuscarProductoVendedor = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -53,17 +53,14 @@ Partial Class Vendedor
         Me.Button1 = New System.Windows.Forms.Button()
         Me.LabelCuilCliente = New System.Windows.Forms.Label()
         Me.ComboBoxTipoPago = New System.Windows.Forms.ComboBox()
-        Me.ButtonVerificarCuil = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.DataGridViewBuscadorProducto = New System.Windows.Forms.DataGridView()
-        Me.Agregar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Datos_Tecn = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Imagen = New System.Windows.Forms.DataGridViewImageColumn()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.DataGridCompra = New System.Windows.Forms.DataGridView()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.pro_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pro_medida = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pro_rodado = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -73,7 +70,10 @@ Partial Class Vendedor
         Me.pro_total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Eliminar_C = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Agregar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Datos_Tecn = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Imagen = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.PanelBuscarProductoVendedor.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.PanelDatosTecnicosVendedor.SuspendLayout()
@@ -94,12 +94,11 @@ Partial Class Vendedor
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelBuscarProductoVendedor.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.PanelBuscarProductoVendedor.Controls.Add(Me.Label5)
         Me.PanelBuscarProductoVendedor.Controls.Add(Me.GroupBox1)
-        Me.PanelBuscarProductoVendedor.Controls.Add(Me.PanelDatosTecnicosVendedor)
         Me.PanelBuscarProductoVendedor.Controls.Add(Me.GroupBox5)
         Me.PanelBuscarProductoVendedor.Controls.Add(Me.GroupBox2)
         Me.PanelBuscarProductoVendedor.Controls.Add(Me.GroupBox3)
+        Me.PanelBuscarProductoVendedor.Controls.Add(Me.PanelDatosTecnicosVendedor)
         Me.PanelBuscarProductoVendedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PanelBuscarProductoVendedor.Location = New System.Drawing.Point(0, 0)
         Me.PanelBuscarProductoVendedor.Name = "PanelBuscarProductoVendedor"
@@ -195,32 +194,32 @@ Partial Class Vendedor
         '
         'PanelDatosTecnicosVendedor
         '
-        Me.PanelDatosTecnicosVendedor.Controls.Add(Me.Button5)
         Me.PanelDatosTecnicosVendedor.Controls.Add(Me.GroupBox8)
-        Me.PanelDatosTecnicosVendedor.Location = New System.Drawing.Point(9, 359)
+        Me.PanelDatosTecnicosVendedor.Location = New System.Drawing.Point(3, 477)
         Me.PanelDatosTecnicosVendedor.Name = "PanelDatosTecnicosVendedor"
-        Me.PanelDatosTecnicosVendedor.Size = New System.Drawing.Size(1341, 266)
+        Me.PanelDatosTecnicosVendedor.Size = New System.Drawing.Size(1341, 142)
         Me.PanelDatosTecnicosVendedor.TabIndex = 21
         Me.PanelDatosTecnicosVendedor.Visible = False
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(623, 190)
+        Me.Button5.Location = New System.Drawing.Point(616, 83)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(112, 48)
+        Me.Button5.Size = New System.Drawing.Size(112, 34)
         Me.Button5.TabIndex = 26
         Me.Button5.Text = "Aceptar"
         Me.Button5.UseVisualStyleBackColor = True
         '
         'GroupBox8
         '
+        Me.GroupBox8.Controls.Add(Me.Button5)
         Me.GroupBox8.Controls.Add(Me.Label1)
         Me.GroupBox8.Controls.Add(Me.DataGridDatosCodigo)
         Me.GroupBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GroupBox8.Location = New System.Drawing.Point(9, 30)
+        Me.GroupBox8.Location = New System.Drawing.Point(6, 6)
         Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Size = New System.Drawing.Size(1335, 126)
+        Me.GroupBox8.Size = New System.Drawing.Size(1335, 123)
         Me.GroupBox8.TabIndex = 25
         Me.GroupBox8.TabStop = False
         '
@@ -231,29 +230,28 @@ Partial Class Vendedor
         Me.DataGridDatosCodigo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridDatosCodigo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridDatosCodigo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridDatosCodigo.Location = New System.Drawing.Point(10, 24)
+        Me.DataGridDatosCodigo.Location = New System.Drawing.Point(10, 16)
         Me.DataGridDatosCodigo.Name = "DataGridDatosCodigo"
         Me.DataGridDatosCodigo.ReadOnly = True
-        Me.DataGridDatosCodigo.Size = New System.Drawing.Size(1320, 88)
+        Me.DataGridDatosCodigo.Size = New System.Drawing.Size(1320, 65)
         Me.DataGridDatosCodigo.TabIndex = 1
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.Label2)
         Me.GroupBox5.Controls.Add(Me.GroupBox6)
         Me.GroupBox5.Controls.Add(Me.Button2)
         Me.GroupBox5.Controls.Add(Me.TextBoxCuilCliente)
         Me.GroupBox5.Controls.Add(Me.Button1)
         Me.GroupBox5.Controls.Add(Me.LabelCuilCliente)
         Me.GroupBox5.Controls.Add(Me.ComboBoxTipoPago)
-        Me.GroupBox5.Controls.Add(Me.ButtonVerificarCuil)
         Me.GroupBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.GroupBox5.Location = New System.Drawing.Point(12, 524)
+        Me.GroupBox5.Location = New System.Drawing.Point(12, 518)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(1329, 95)
         Me.GroupBox5.TabIndex = 27
         Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "GroupBox5"
         '
         'GroupBox6
         '
@@ -294,7 +292,7 @@ Partial Class Vendedor
         '
         Me.Button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button2.Location = New System.Drawing.Point(829, 37)
+        Me.Button2.Location = New System.Drawing.Point(579, 36)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(104, 32)
         Me.Button2.TabIndex = 21
@@ -313,7 +311,7 @@ Partial Class Vendedor
         '
         Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button1.Location = New System.Drawing.Point(689, 38)
+        Me.Button1.Location = New System.Drawing.Point(836, 34)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(104, 32)
         Me.Button1.TabIndex = 20
@@ -335,30 +333,21 @@ Partial Class Vendedor
         Me.ComboBoxTipoPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxTipoPago.FormattingEnabled = True
         Me.ComboBoxTipoPago.Items.AddRange(New Object() {"Efectivo", "Tarjeta de Crédito", "Tarjeta de Débito"})
-        Me.ComboBoxTipoPago.Location = New System.Drawing.Point(486, 38)
+        Me.ComboBoxTipoPago.Location = New System.Drawing.Point(365, 38)
         Me.ComboBoxTipoPago.Name = "ComboBoxTipoPago"
         Me.ComboBoxTipoPago.Size = New System.Drawing.Size(185, 28)
         Me.ComboBoxTipoPago.TabIndex = 14
         '
-        'ButtonVerificarCuil
-        '
-        Me.ButtonVerificarCuil.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.ButtonVerificarCuil.Location = New System.Drawing.Point(333, 36)
-        Me.ButtonVerificarCuil.Name = "ButtonVerificarCuil"
-        Me.ButtonVerificarCuil.Size = New System.Drawing.Size(104, 33)
-        Me.ButtonVerificarCuil.TabIndex = 15
-        Me.ButtonVerificarCuil.Text = "Verificar"
-        Me.ButtonVerificarCuil.UseVisualStyleBackColor = True
-        '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.DataGridViewBuscadorProducto)
         Me.GroupBox2.Controls.Add(Me.PictureBox1)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.GroupBox2.Location = New System.Drawing.Point(9, 95)
+        Me.GroupBox2.Location = New System.Drawing.Point(9, 100)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1332, 264)
+        Me.GroupBox2.Size = New System.Drawing.Size(681, 380)
         Me.GroupBox2.TabIndex = 17
         Me.GroupBox2.TabStop = False
         '
@@ -367,7 +356,7 @@ Partial Class Vendedor
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(590, 76)
+        Me.Label5.Location = New System.Drawing.Point(269, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(93, 18)
         Me.Label5.TabIndex = 19
@@ -388,43 +377,8 @@ Partial Class Vendedor
         Me.DataGridViewBuscadorProducto.Location = New System.Drawing.Point(11, 18)
         Me.DataGridViewBuscadorProducto.Name = "DataGridViewBuscadorProducto"
         Me.DataGridViewBuscadorProducto.ReadOnly = True
-        Me.DataGridViewBuscadorProducto.Size = New System.Drawing.Size(1308, 238)
+        Me.DataGridViewBuscadorProducto.Size = New System.Drawing.Size(660, 354)
         Me.DataGridViewBuscadorProducto.TabIndex = 2
-        '
-        'Agregar
-        '
-        Me.Agregar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Agregar.DefaultCellStyle = DataGridViewCellStyle1
-        Me.Agregar.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Agregar.HeaderText = "Agregar"
-        Me.Agregar.Name = "Agregar"
-        Me.Agregar.ReadOnly = True
-        Me.Agregar.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Agregar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Agregar.Text = "Agregar"
-        Me.Agregar.UseColumnTextForButtonValue = True
-        Me.Agregar.Width = 84
-        '
-        'Datos_Tecn
-        '
-        Me.Datos_Tecn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Datos_Tecn.HeaderText = "Datos Técnicos"
-        Me.Datos_Tecn.MinimumWidth = 80
-        Me.Datos_Tecn.Name = "Datos_Tecn"
-        Me.Datos_Tecn.ReadOnly = True
-        Me.Datos_Tecn.Text = "Datos Técnicos"
-        Me.Datos_Tecn.UseColumnTextForButtonValue = True
-        Me.Datos_Tecn.Width = 120
-        '
-        'Imagen
-        '
-        Me.Imagen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Imagen.FillWeight = 55.3934!
-        Me.Imagen.HeaderText = "Imagen"
-        Me.Imagen.Name = "Imagen"
-        Me.Imagen.ReadOnly = True
         '
         'PictureBox1
         '
@@ -443,9 +397,9 @@ Partial Class Vendedor
         Me.GroupBox3.Controls.Add(Me.DataGridCompra)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GroupBox3.Location = New System.Drawing.Point(9, 357)
+        Me.GroupBox3.Location = New System.Drawing.Point(687, 100)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(1332, 164)
+        Me.GroupBox3.Size = New System.Drawing.Size(654, 380)
         Me.GroupBox3.TabIndex = 19
         Me.GroupBox3.TabStop = False
         '
@@ -454,7 +408,7 @@ Partial Class Vendedor
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label9.Location = New System.Drawing.Point(625, -3)
+        Me.Label9.Location = New System.Drawing.Point(293, -1)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(77, 18)
         Me.Label9.TabIndex = 20
@@ -472,8 +426,18 @@ Partial Class Vendedor
         Me.DataGridCompra.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.pro_nombre, Me.pro_medida, Me.pro_rodado, Me.pro_tipo_vehiculo, Me.pro_precio_unitario, Me.pro_cantidad, Me.pro_total, Me.DataGridViewImageColumn1, Me.Eliminar_C})
         Me.DataGridCompra.Location = New System.Drawing.Point(9, 20)
         Me.DataGridCompra.Name = "DataGridCompra"
-        Me.DataGridCompra.Size = New System.Drawing.Size(1317, 138)
+        Me.DataGridCompra.Size = New System.Drawing.Size(639, 354)
         Me.DataGridCompra.TabIndex = 20
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label1.Location = New System.Drawing.Point(611, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(117, 16)
+        Me.Label1.TabIndex = 27
+        Me.Label1.Text = "Datos Técnicos"
         '
         'pro_nombre
         '
@@ -542,22 +506,59 @@ Partial Class Vendedor
         '
         'Eliminar_C
         '
-        Me.Eliminar_C.HeaderText = "Eliminar "
+        Me.Eliminar_C.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.Eliminar_C.HeaderText = "-"
         Me.Eliminar_C.Name = "Eliminar_C"
         Me.Eliminar_C.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Eliminar_C.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Eliminar_C.Text = "Eliminar del Carrito"
+        Me.Eliminar_C.Text = "-"
         Me.Eliminar_C.UseColumnTextForButtonValue = True
+        Me.Eliminar_C.Width = 36
         '
-        'Label1
+        'Agregar
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(611, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(117, 16)
-        Me.Label1.TabIndex = 27
-        Me.Label1.Text = "Datos Técnicos"
+        Me.Agregar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Agregar.DefaultCellStyle = DataGridViewCellStyle1
+        Me.Agregar.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Agregar.HeaderText = "+"
+        Me.Agregar.Name = "Agregar"
+        Me.Agregar.ReadOnly = True
+        Me.Agregar.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Agregar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Agregar.Text = "+"
+        Me.Agregar.ToolTipText = "+"
+        Me.Agregar.UseColumnTextForButtonValue = True
+        Me.Agregar.Width = 42
+        '
+        'Datos_Tecn
+        '
+        Me.Datos_Tecn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Datos_Tecn.HeaderText = "DT"
+        Me.Datos_Tecn.Name = "Datos_Tecn"
+        Me.Datos_Tecn.ReadOnly = True
+        Me.Datos_Tecn.Text = "DT"
+        Me.Datos_Tecn.UseColumnTextForButtonValue = True
+        Me.Datos_Tecn.Width = 40
+        '
+        'Imagen
+        '
+        Me.Imagen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.Imagen.FillWeight = 55.3934!
+        Me.Imagen.HeaderText = "Imagen"
+        Me.Imagen.Name = "Imagen"
+        Me.Imagen.ReadOnly = True
+        Me.Imagen.Width = 62
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(180, 18)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(56, 16)
+        Me.Label2.TabIndex = 26
+        Me.Label2.Text = "Cliente"
         '
         'Vendedor
         '
@@ -571,7 +572,6 @@ Partial Class Vendedor
         Me.Text = "Vendedor"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PanelBuscarProductoVendedor.ResumeLayout(False)
-        Me.PanelBuscarProductoVendedor.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.PanelDatosTecnicosVendedor.ResumeLayout(False)
@@ -600,15 +600,6 @@ Partial Class Vendedor
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents DataGridCompra As System.Windows.Forms.DataGridView
-    Friend WithEvents pro_nombre As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents pro_medida As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents pro_rodado As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents pro_tipo_vehiculo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents pro_precio_unitario As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents pro_cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents pro_total As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewImageColumn1 As System.Windows.Forms.DataGridViewImageColumn
-    Friend WithEvents Eliminar_C As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents totalCompra As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
@@ -622,7 +613,6 @@ Partial Class Vendedor
     Friend WithEvents TextBoxCuilCliente As System.Windows.Forms.TextBox
     Friend WithEvents LabelCuilCliente As System.Windows.Forms.Label
     Friend WithEvents ComboBoxTipoPago As System.Windows.Forms.ComboBox
-    Friend WithEvents ButtonVerificarCuil As System.Windows.Forms.Button
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
     Friend WithEvents LabelBuscarProducto As System.Windows.Forms.Label
@@ -631,8 +621,18 @@ Partial Class Vendedor
     Friend WithEvents LabelRodado As System.Windows.Forms.Label
     Friend WithEvents LabelTipoVehiculo As System.Windows.Forms.Label
     Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents pro_nombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents pro_medida As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents pro_rodado As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents pro_tipo_vehiculo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents pro_precio_unitario As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents pro_cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents pro_total As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewImageColumn1 As System.Windows.Forms.DataGridViewImageColumn
+    Friend WithEvents Eliminar_C As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents Agregar As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents Datos_Tecn As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents Imagen As System.Windows.Forms.DataGridViewImageColumn
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class

@@ -1,7 +1,9 @@
 ﻿Public Class Vendedor
-
+    Dim clie As New Cliente()
     'Metodo cuando carga la ventana'
     Public Sub cargarLoad()
+
+
         ComboBoxTipoPago.SelectedIndex = 0
         ComboBox1.SelectedIndex = 0
         ComboBox2.SelectedIndex = 0
@@ -14,6 +16,19 @@
             DataGridViewBuscadorProducto.Columns("Ruta").Visible = False
             DataGridViewBuscadorProducto.Columns("Datos").Visible = False
             DataGridViewBuscadorProducto.Columns("Estado").Visible = False
+            DataGridViewBuscadorProducto.Columns("Nombre").Width = 110
+            DataGridViewBuscadorProducto.Columns("Nombre").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            DataGridViewBuscadorProducto.Columns("Rod").Width = 33
+            DataGridViewBuscadorProducto.Columns("Rod").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            DataGridViewBuscadorProducto.Columns("Medida").Width = 52
+            DataGridViewBuscadorProducto.Columns("Medida").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            DataGridViewBuscadorProducto.Columns("Precio").Width = 50
+            DataGridViewBuscadorProducto.Columns("Precio").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            DataGridViewBuscadorProducto.Columns("Stock").Width = 45
+            DataGridViewBuscadorProducto.Columns("Stock").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            DataGridViewBuscadorProducto.Columns("Tipo_Vehiculo").Width = 95
+            DataGridViewBuscadorProducto.Columns("Tipo_Vehiculo").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
             'Àsigno a imagen.fromfile el valor de la ruta de la imagen de la DB
             ima = Image.FromFile(fila.Cells("Ruta").Value)
             'asigno a la columna datagriedviewImage la imagen asignada fromfile
@@ -21,52 +36,14 @@
         Next
     End Sub
 
-
-    'Procedimiento para eliminar los productos del carrito en la ultima confirmacion de compra'
-    Private Sub DataGridViewCarrito_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
-        '  Dim cell As DataGridViewButtonCell = TryCast(DataGridViewCarrito.CurrentCell, DataGridViewButtonCell)
-        ' Dim res As MsgBoxResult
-        'If cell IsNot Nothing Then 'Verifica que la celdas tengan informacion
-        '       Dim bc As DataGridViewButtonColumn = TryCast(DataGridViewCarrito.Columns(e.ColumnIndex), DataGridViewButtonColumn) 'Genero una variable que contiene el boton en el datagrid
-        'If bc IsNot Nothing Then
-        'Dim s As String = Convert.ToString(cell.Value)
-        'Select Case bc.Name
-        '   Case "Eliminar_Carrito"
-        'Eliminar Poner el nombre de la columna donde se desa dar un evento()
-        'aquí dentro poner las acciones cuando se precione el botón eliminar()
-        'DataGrid.Item(DataGrid.CurrentCell, DataGrid.CurrentRow.Index).Value()
-        'res = MsgBox("¿Desea eliminar el producto?", 4 + 256 + 64, "Eliminar")
-        'If res = 6 Then
-        '                        DataGridViewCarrito.Rows.RemoveAt(e.RowIndex)
-        MsgBox("Producto Eliminado", 0 + 0 + 16, "Eliminado")
-        'End If
-        'Exit Select
-        'End Select
-
-        'End If
-        'End If
-    End Sub
-
     Private Sub ButtonVerificarCuil_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'Dim res As MsgBoxResult
-        'If TextBoxCuilCliente.Text = "20365397695" Then
-        'MsgBox("Cliente Registrado")
-        ''Else
-        'res = MsgBox("Cliente NO REGISTRADO ¿Desea agregarlo?", 4 + 256 + 64, "Agregar Cliente")
-        'If res = 6 Then
-        'PanelCarrito.Visible = False
-        'PanelClientes.Visible = True
-        'PanelMostrarCliente.Visible = False
-        'PanelAgregarModificarCliente.Visible = True
-        'End If
-
-        'End If
+       
     End Sub
 
 
     Private Sub DataGridViewBuscadorProducto_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridViewBuscadorProducto.CellContentClick
         Dim stock, unit, total As Integer
-        Dim nombre, medida, rodado, t_vehi, stringTotal, unitString As String
+        Dim nombre, medida, rodado, t_vehi, stringTotal, unitString, rutaImagen As String
         Dim cantidad_Cubiertas As String
         Dim cell As DataGridViewButtonCell = TryCast(Me.DataGridViewBuscadorProducto.CurrentCell, DataGridViewButtonCell)
         If cell IsNot Nothing Then 'Verifica que la celdas tengan informacion
@@ -79,17 +56,33 @@
                         If IsNumeric(cantidad_Cubiertas) Then
                             If cantidad_Cubiertas > 0 Then
                                 'Obtengo los datos de la fila del datagrid'
-                                stock = DataGridViewBuscadorProducto(4, DataGridViewBuscadorProducto.CurrentRow.Index).Value
+                                stock = DataGridViewBuscadorProducto(8, DataGridViewBuscadorProducto.CurrentRow.Index).Value
                                 If cantidad_Cubiertas < stock Then
-                                    nombre = DataGridViewBuscadorProducto(0, DataGridViewBuscadorProducto.CurrentRow.Index).Value
-                                    medida = DataGridViewBuscadorProducto(1, DataGridViewBuscadorProducto.CurrentRow.Index).Value
-                                    rodado = DataGridViewBuscadorProducto(2, DataGridViewBuscadorProducto.CurrentRow.Index).Value
-                                    t_vehi = DataGridViewBuscadorProducto(3, DataGridViewBuscadorProducto.CurrentRow.Index).Value
-                                    unit = DataGridViewBuscadorProducto(5, DataGridViewBuscadorProducto.CurrentRow.Index).Value
+                                    nombre = DataGridViewBuscadorProducto(4, DataGridViewBuscadorProducto.CurrentRow.Index).Value
+                                    medida = DataGridViewBuscadorProducto(6, DataGridViewBuscadorProducto.CurrentRow.Index).Value
+                                    rodado = DataGridViewBuscadorProducto(5, DataGridViewBuscadorProducto.CurrentRow.Index).Value
+                                    t_vehi = DataGridViewBuscadorProducto(10, DataGridViewBuscadorProducto.CurrentRow.Index).Value
+                                    rutaImagen = DataGridViewBuscadorProducto(9, DataGridViewBuscadorProducto.CurrentRow.Index).Value
+                                    unit = DataGridViewBuscadorProducto(7, DataGridViewBuscadorProducto.CurrentRow.Index).Value
                                     total = unit * cantidad_Cubiertas
                                     unitString = "$ " + Str(unit)
                                     stringTotal = "$ " + Str(total)
+                                    PictureBox1.Load(rutaImagen)
+                                    'If DataGridCompra.RowCount = 0 Then
                                     DataGridCompra.Rows.Add(nombre, medida, rodado, t_vehi, unitString, cantidad_Cubiertas, stringTotal, PictureBox1.Image)
+                                    'Else
+                                    '   For Each fila As DataGridViewRow In DataGridCompra.Rows
+                                    'Pone invisible el id y Ruta de la imagen
+                                    'If nombre = DataGridCompra(0, DataGridCompra.CurrentRow.Index).Value Then
+
+                                    ' DataGridCompra(5, DataGridCompra.CurrentRow.Index).Value = Val(DataGridCompra(5, DataGridCompra.CurrentRow.Index).Value) + Val(cantidad_Cubiertas)
+                                    'Else
+                                    ' DataGridCompra.Rows.Add(nombre, medida, rodado, t_vehi, unitString, cantidad_Cubiertas, stringTotal, PictureBox1.Image)
+                                    '   Exit For
+                                    'End If
+                                    '   Next
+                                    '   End If
+
                                     Me.calcularTotal()
                                 Else
                                     MsgBox("No hay stock disponible para monto ingresado", 0 + 0 + 16, "Error stock")
@@ -101,7 +94,7 @@
                         Else
                             MsgBox("El valor ingresado no es un Número", 0 + 0 + 16, "Valor Incorrecto")
                         End If
-                        Exit Select
+                            Exit Select
                 End Select
                 Select Case bc.Name
                     Case "Datos_Tecn"
@@ -144,11 +137,8 @@
         Dim res As MsgBoxResult
         res = MsgBox("¿Desea Confirmar la Compra?", 4 + 256 + 64, "Confirmar")
         If res = 6 Then
-            DataGridViewBuscadorProducto.Rows.Clear()
             DataGridCompra.Rows.Clear()
             totalCompra.Text = "0"
-            PanelBuscarProductoVendedor.Visible = False
-
         End If
 
     End Sub
@@ -258,5 +248,43 @@
             prod.BuscarPorRodaTipoVehi(ComboBox2.SelectedItem, ComboBox1.SelectedItem, DataGridViewBuscadorProducto)
             cargaImagen()
         End If
+    End Sub
+
+    Private Sub TextBoxCuilCliente_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBoxCuilCliente.TextChanged
+        Dim res As MsgBoxResult
+        If TextBoxCuilCliente.TextLength = 11 Then
+            Label2.Text = clie.verificarExistencia(TextBoxCuilCliente.Text, Label2.Text)
+
+            If Label2.Text <> "Cliente" And Label2.Text <> "False" Then
+                MsgBox("El cliente " + Label2.Text + " se encuentra registrado")
+            Else
+                Label2.Text = "Cliente"
+                res = MsgBox("Cliente NO REGISTRADO ¿Desea agregarlo?", 4 + 256 + 64, "Agregar Cliente")
+                If res = 6 Then
+                    CuadroCliente.MaximizeBox = True
+                    CuadroCliente.Show()
+                    CuadroCliente.PanelRegistro.Visible = True
+                    CuadroCliente.PanelBusca.Visible = False
+                    CuadroCliente.PanelVer.Visible = False
+
+                End If
+            End If
+        End If
+    End Sub
+    'Procedimiento que verifica que sea número'
+    Public Sub ComprobarNumero(ByVal e As System.Windows.Forms.KeyPressEventArgs)
+        'Verifica que sea numero lo que se ingresa'
+        If e.KeyChar.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar = "-" Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+    Private Sub TextBoxCuilCliente_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBoxCuilCliente.KeyPress
+        ComprobarNumero(e)
     End Sub
 End Class

@@ -264,6 +264,18 @@
         Catch ex As Exception
         End Try
     End Sub
+
+    Public Function verificarExistencia(ByVal cliente As Long, ByVal nomApe As String)
+        Try
+            Using Base As New NNeumaticosEntities1
+                Dim cliConsul = (From c In Base.Cliente Where (c.cliente_cuil = cliente And c.cliente_estado = "A") Select c.cliente_NomYape, c.cliente_Ape).First
+                nomApe = cliConsul.cliente_NomYape + " " + cliConsul.cliente_Ape
+            End Using
+            Return nomApe
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
 #End Region
 #End Region
 End Class

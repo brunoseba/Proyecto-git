@@ -161,7 +161,7 @@
     Public Sub MostrarTodos(ByVal tabla As DataGridView)
         Try
             Using Base As New NNeumaticosEntities1
-                Dim todos = (From p In Base.Producto Select ID = p.producto_id, Nombre = p.producto_nombre, Rodado = p.producto_rodado, Medida = p.producto_medida, Precio = p.producto_precio, Stock = p.producto_stock, Ruta = p.producto_imagen, Tipo_Vehiculo = p.tipoVehi_descripcion, Estado = p.producto_estado, Datos = p.Datos_cod).ToList
+                Dim todos = (From p In Base.Producto Select ID = p.producto_id, Nombre = p.producto_nombre, Rod = p.producto_rodado, Medida = p.producto_medida, Precio = p.producto_precio, Stock = p.producto_stock, Ruta = p.producto_imagen, Tipo_Vehiculo = p.tipoVehi_descripcion, Estado = p.producto_estado, Datos = p.Datos_cod).ToList
                 tabla.DataSource = todos
             End Using
         Catch ex As Exception
