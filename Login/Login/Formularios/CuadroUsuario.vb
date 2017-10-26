@@ -71,7 +71,7 @@
                             BAlta.Visible = True
                             BBaja.Visible = False
                         End If
-                        PanelVer.Visible = True
+                        PanelModificarUser.Visible = True
                         Exit Select
                 End Select
             End If
@@ -79,7 +79,7 @@
     End Sub
 
     Private Sub BuscaModifica_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.PanelVer.Visible = False
+        Me.PanelModificarUser.Visible = False
         Me.CBEsta.SelectedIndex = 0
         DataGridView1.RowTemplate.Height = 50
         tod.MostrarTodos(Me.DataGridView1)
@@ -89,7 +89,7 @@
 
     Private Sub BSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BSalir.Click
         PanelBusca.Visible = True
-        PanelVer.Visible = False
+        PanelModificarUser.Visible = False
         tod.MostrarTodos(DataGridView1)
     End Sub
 
@@ -111,11 +111,11 @@
             usu.EliminaUsuario(Val(TextBoxUDni.Text), esta)
             MsgBox("El Usuario " + TextBoxUNombre.Text + "se ha dado de Baja", 0 + 0 + 16, "BAJA")
             PanelBusca.Visible = True
-            PanelVer.Visible = False
+            PanelModificarUser.Visible = False
             tod.MostrarTodos(DataGridView1)
             'DataGridView1.Rows.Clear()
         End If
-        
+
     End Sub
 
     Private Sub BAlta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BAlta.Click
@@ -128,7 +128,7 @@
             usu.EliminaUsuario(Val(TextBoxUDni.Text), esta)
             MsgBox("El Usuario " + TextBoxUNombre.Text + "se ha dado de Alta", 0 + 0 + 48, "ALTA")
             PanelBusca.Visible = True
-            PanelVer.Visible = False
+            PanelModificarUser.Visible = False
             tod.MostrarTodos(DataGridView1)
             'DataGridView1.Rows.Clear()
         End If
@@ -204,8 +204,6 @@
         If e.KeyChar.IsDigit(e.KeyChar) Then
             e.Handled = False
         ElseIf e.KeyChar.IsControl(e.KeyChar) Then
-            e.Handled = False
-        ElseIf e.KeyChar = "-" Then
             e.Handled = False
         Else
             e.Handled = True
@@ -284,6 +282,41 @@
         End If
     End Function
 
+    Private Function ComprobarVacioModificarUsuario() As Boolean
+        If String.IsNullOrWhiteSpace(TextBoxUPass.Text) Then
+            MsgBox("Debe completar el campo Contraseña")
+            TextBoxUPass.BackColor = Color.Salmon
+            TextBoxUPass.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TextBoxUDireccion.Text) Then
+            MsgBox("Debe completar el campo Dirección")
+            TextBoxUDireccion.BackColor = Color.Salmon
+            TextBoxUDireccion.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TextBoxUTelefono.Text) Then
+            MsgBox("Debe completar el campo Teléfono")
+            TextBoxUTelefono.BackColor = Color.Salmon
+            TextBoxUTelefono.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TextBoxUProvincia.Text) Then
+            MsgBox("Debe completar el campo Provincia")
+            TextBoxUProvincia.BackColor = Color.Salmon
+            TextBoxUProvincia.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TextBoxULocalidad.Text) Then
+            MsgBox("Debe completar el campo Localidad")
+            TextBoxULocalidad.BackColor = Color.Salmon
+            TextBoxULocalidad.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TextBoxUEmail.Text) Then
+            MsgBox("Debe completar el campo E-mail")
+            TextBoxUEmail.BackColor = Color.Salmon
+            TextBoxUEmail.Focus()
+            Return True
+        Else
+            Return False
+        End If
+    End Function
     Private Sub TDni_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TDni.KeyPress
         Me.ComprobarNumero(e)
     End Sub
@@ -304,7 +337,7 @@
         TEmail.Text = ""
     End Sub
 
-  
+
     Private Sub TextBoxUDni_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBoxUTelefono.KeyPress, TextBoxUDni.KeyPress
         Me.ComprobarNumero(e)
     End Sub
@@ -315,20 +348,21 @@
     End Sub
 
     Private Sub BModifica_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BModifica.Click
-        MsgBox("Comprobar si no estan vacios")
-        Dim usuarioModificar As New Ususario()
-        If (usuarioModificar.ModificarUsuario(Val(TextBoxUDni.Text), TextBoxUNombre.Text, TextBoxUDireccion.Text, TextBoxULocalidad.Text, TextBoxUProvincia.Text, TextBoxUTelefono.Text, TextBoxUEmail.Text, TextBoxUPass.Text, esta(), usua2(), DateTime.Text, TextBoxUApellido.Text)) Then
-            MsgBox("El usuario fue modificado con exito")
-            PanelBusca.Visible = True
-            PanelVer.Visible = False
-            tod.MostrarTodos(DataGridView1)
-            Me.TDni.Text = ""
-            Me.TNombre.Text = ""
-            Me.TApel.Text = ""
-            Me.CBUsu.SelectedIndex = 0
-            Me.CBEsta.SelectedIndex = 0
-        Else
-            MsgBox("El usuario no fue modificado.")
+        If Not ComprobarVacioModificarUsuario() Then
+            Dim usuarioModificar As New Ususario()
+            If (usuarioModificar.ModificarUsuario(Val(TextBoxUDni.Text), TextBoxUNombre.Text, TextBoxUDireccion.Text, TextBoxULocalidad.Text, TextBoxUProvincia.Text, TextBoxUTelefono.Text, TextBoxUEmail.Text, TextBoxUPass.Text, esta(), usua2(), DateTime.Text, TextBoxUApellido.Text)) Then
+                MsgBox("El usuario fue modificado con exito")
+                PanelBusca.Visible = True
+                PanelModificarUser.Visible = False
+                tod.MostrarTodos(DataGridView1)
+                Me.TDni.Text = ""
+                Me.TNombre.Text = ""
+                Me.TApel.Text = ""
+                Me.CBUsu.SelectedIndex = 0
+                Me.CBEsta.SelectedIndex = 0
+            Else
+                MsgBox("El usuario no fue modificado.")
+            End If
         End If
     End Sub
 
@@ -401,6 +435,100 @@
             For Each fila As DataGridViewRow In DataGridView1.Rows
                 DataGridView1.Columns("ColVer").Visible = False
             Next
+        End If
+    End Sub
+
+    Private Sub TextBoxUDireccion_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBoxUTelefono.TextChanged, TextBoxUProvincia.TextChanged, TextBoxUPass.TextChanged, TextBoxULocalidad.TextChanged, TextBoxUEmail.TextChanged, TextBoxUDireccion.TextChanged
+        If String.IsNullOrWhiteSpace(TextBoxUPass.Text) Then
+            TextBoxUPass.BackColor = Color.White
+        Else
+            Me.TextBoxUPass.BackColor = Color.Aquamarine
+        End If
+        If TextBoxUEmail.Text = "" Then
+            Me.TextBoxUEmail.BackColor = Color.White
+        Else
+            Me.TextBoxUEmail.BackColor = Color.Aquamarine
+        End If
+        If TextBoxUTelefono.Text = "" Then
+            Me.TextBoxUTelefono.BackColor = Color.White
+        Else
+            Me.TextBoxUTelefono.BackColor = Color.Aquamarine
+        End If
+        If TextBoxUDireccion.Text = "" Then
+            Me.TextBoxUDireccion.BackColor = Color.White
+        Else
+            Me.TextBoxUDireccion.BackColor = Color.Aquamarine
+        End If
+        If TextBoxUProvincia.Text = "" Then
+            Me.TextBoxUProvincia.BackColor = Color.White
+        Else
+            Me.TextBoxUProvincia.BackColor = Color.Aquamarine
+        End If
+        If TextBoxULocalidad.Text = "" Then
+            Me.TextBoxULocalidad.BackColor = Color.White
+        Else
+            Me.TextBoxULocalidad.BackColor = Color.Aquamarine
+        End If
+    End Sub
+
+    Private Sub TDni1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TTelef.TextChanged, TProv1.TextChanged, TNomApe.TextChanged, TLocal.TextChanged, TEmail.TextChanged, TDni1.TextChanged, TDire.TextChanged, TContra.TextChanged, TApellido.TextChanged
+        If String.IsNullOrWhiteSpace(TDni1.Text) Then
+            TDni1.BackColor = Color.White
+        Else
+            TDni1.BackColor = Color.Aquamarine
+        End If
+
+        If String.IsNullOrWhiteSpace(TContra.Text) Then
+            TContra.BackColor = Color.White
+        Else
+            TContra.BackColor = Color.Aquamarine
+        End If
+        If String.IsNullOrWhiteSpace(TDire.Text) Then
+            TDire.BackColor = Color.White
+        Else
+            TDire.BackColor = Color.Aquamarine
+        End If
+
+        If String.IsNullOrWhiteSpace(TNomApe.Text) Then
+            TNomApe.BackColor = Color.White
+        Else
+            TNomApe.BackColor = Color.Aquamarine
+        End If
+
+        If String.IsNullOrWhiteSpace(TTelef.Text) Then
+            TTelef.BackColor = Color.White
+        Else
+            TTelef.BackColor = Color.Aquamarine
+        End If
+
+        If String.IsNullOrWhiteSpace(TApellido.Text) Then
+            TApellido.BackColor = Color.White
+        Else
+            TApellido.BackColor = Color.Aquamarine
+        End If
+
+        If String.IsNullOrWhiteSpace(TProv1.Text) Then
+            TProv1.BackColor = Color.White
+        Else
+            TProv1.BackColor = Color.Aquamarine
+        End If
+
+        If String.IsNullOrWhiteSpace(TLocal.Text) Then
+            TLocal.BackColor = Color.White
+        Else
+            TLocal.BackColor = Color.Aquamarine
+        End If
+
+        If String.IsNullOrWhiteSpace(TEmail.Text) Then
+            TEmail.BackColor = Color.White
+        Else
+            TEmail.BackColor = Color.Aquamarine
+        End If
+    End Sub
+
+    Private Sub CuadroUsuario_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If (e.KeyData = Keys.F10) And (BSalir3.Visible) = True Then
+            Me.Close()
         End If
     End Sub
 End Class

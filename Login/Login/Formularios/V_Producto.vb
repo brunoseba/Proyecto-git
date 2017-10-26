@@ -4,16 +4,13 @@
     Private Sub V_Producto_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim d_Tec As New D_Tecnicos()
         d_Tec.MostrarTodosDTecnicos(Me.DataGridViewDatosCodigo)
+       
     End Sub
 
 #Region "Botonces Click"
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
-        TextBoxNombreProducto.Text = ""
-        TextBoxPrecio.Text = ""
-        TextBoxStock.Text = ""
-        LabelRutaArchivo.Text = "Ruta:"
-        PictureBox1.Image = My.Resources.image_not_found__1_
+        limpiarCamposVentanaProductos()
     End Sub
 
     Private Sub ButtonCancelarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonCancelarProducto.Click
@@ -47,12 +44,15 @@
 
     Private Sub ButtonActualizarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonActualizarProducto.Click
         Dim prod As New Productos()
-        If (prod.ModificarProducto(DataGridViewResultadosProductos.Item(4, DataGridViewResultadosProductos.CurrentRow.Index).Value, TextBoxNombreProducto.Text, ComboBoxRodadoProducto.SelectedItem, ComboBoxMedidaProducto.SelectedItem, Val(TextBoxPrecio.Text), Val(TextBoxCod_Datos.Text), Val(TextBoxStock.Text), LabelRutaArchivo.Text, "A", ComboBoxTipoVehiculo.SelectedItem)) Then
-            MsgBox("Producto se modifico con Éxito", 0 + 0 + 64)
-        Else
-            MsgBox("No se pudo modificar el Producto", 16, "Atención")
+        If Not ComprobarVacioNuevoProducto() Then
+            If (prod.ModificarProducto(DataGridViewResultadosProductos.Item(4, DataGridViewResultadosProductos.CurrentRow.Index).Value, TextBoxNombreProducto.Text, ComboBoxRodadoProducto.SelectedItem, ComboBoxMedidaProducto.SelectedItem, Val(TextBoxPrecio.Text), Val(TextBoxCod_Datos.Text), Val(TextBoxStock.Text), LabelRutaArchivo.Text, "A", ComboBoxTipoVehiculo.SelectedItem)) Then
+                MsgBox("Producto se modifico con Éxito", 0 + 0 + 64)
+                Me.Close()
+            Else
+                MsgBox("No se pudo modificar el Producto", 16, "Atención")
+            End If
         End If
-        Me.Close()
+
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
@@ -64,61 +64,7 @@
     End Sub
 
     Private Sub ButtonAgregarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonAgregarProducto.Click
-        If Not ComprobarVacioNuevoProducto() Then
-            TextBoxNombreProducto.BackColor = Color.LightGreen
-            TextBoxPrecio.BackColor = Color.LightGreen
-            TextBoxCod_Datos.BackColor = Color.LightGreen
-            TextBoxStock.BackColor = Color.LightGreen
-            Dim prod As New Productos(TextBoxNombreProducto.Text, ComboBoxRodadoProducto.SelectedItem, ComboBoxMedidaProducto.SelectedItem, Val(TextBoxPrecio.Text), Val(TextBoxCod_Datos.Text), Val(TextBoxStock.Text), LabelRutaArchivo.Text, "A", ComboBoxTipoVehiculo.SelectedItem)
-            Dim res, res2, res_img As MsgBoxResult
-
-            res = MsgBox("Desea Agregar un nuevo Producto?", 4 + 0 + 32, "Aviso")
-            If res = vbYes Then
-                If Me.LabelRutaArchivo.Text = "Ruta:" Then
-                    res_img = MsgBox("El producto no tiene imagen asignada, ¿Desea agregar una?", 4 + 0 + 32, "Aviso")
-                    If res_img = vbNo Then
-                        prod.AgregarProducto()
-                        MsgBox("Producto Agregado", 0 + 0 + 64)
-                        res2 = MsgBox("¿Desea Agregar otro Producto?", 4 + 0 + 32, "Aviso")
-                        If res2 = vbYes Then
-                            TextBoxNombreProducto.Text = ""
-                            TextBoxCod_Datos.Text = ""
-                            TextBoxStock.Text = ""
-                            TextBoxPrecio.Text = ""
-                            LabelRutaArchivo.Text = "Ruta:"
-                            TextBoxNombreProducto.BackColor = Color.White
-                            TextBoxPrecio.BackColor = Color.White
-                            TextBoxCod_Datos.BackColor = Color.White
-                            TextBoxStock.BackColor = Color.White
-                            PictureBox1.Image = My.Resources.image_not_found__1_
-                        Else
-                            Me.Close()
-                        End If
-                    End If
-                Else
-                    prod.AgregarProducto()
-                    MsgBox("Producto Agregado", 0 + 0 + 64)
-                    res2 = MsgBox("¿Desea Agregar otro Producto?", 4 + 0 + 32, "Aviso")
-                    If res2 = vbYes Then
-                        TextBoxNombreProducto.Text = ""
-                        TextBoxCod_Datos.Text = ""
-                        TextBoxStock.Text = ""
-                        TextBoxPrecio.Text = ""
-                        LabelRutaArchivo.Text = "Ruta:"
-                        TextBoxNombreProducto.BackColor = Color.White
-                        TextBoxPrecio.BackColor = Color.White
-                        TextBoxCod_Datos.BackColor = Color.White
-                        TextBoxStock.BackColor = Color.White
-                        PictureBox1.Image = My.Resources.image_not_found__1_
-                    Else
-                        Me.Close()
-                    End If
-                End If
-            Else
-                MsgBox("No se agrego el Producto", 16, "Atención")
-            End If
-            
-        End If
+        Me.agregarProducto()
     End Sub
 
     Private Sub ButtonBajaProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonBajaProducto.Click
@@ -156,8 +102,6 @@
         If e.KeyChar.IsDigit(e.KeyChar) Then
             e.Handled = False
         ElseIf e.KeyChar.IsControl(e.KeyChar) Then
-            e.Handled = False
-        ElseIf e.KeyChar = "-" Then
             e.Handled = False
         Else
             e.Handled = True
@@ -372,6 +316,7 @@
                         Me.PanelActualizarStock.Visible = False
                         Me.PanelAgregarProductos.Visible = False
                         Me.PanelMostrarDatosTecnicos.Visible = True
+                        ' Button5.Visible = False
                         TextBox1.Text = ""
                         TextBox1.BackColor = Color.White
                         Dim d_Tec As New D_Tecnicos()
@@ -448,4 +393,109 @@
     End Sub
 #End Region
 
+ 
+    Private Sub TextBoxNombreProducto_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBoxStock.TextChanged, TextBoxPrecio.TextChanged, TextBoxNombreProducto.TextChanged
+        If TextBoxNombreProducto.Text = "" Then
+            Me.TextBoxNombreProducto.BackColor = Color.White
+        Else
+            Me.TextBoxNombreProducto.BackColor = Color.Aquamarine
+        End If
+
+        If TextBoxStock.Text = "" Then
+            Me.TextBoxStock.BackColor = Color.White
+        Else
+            Me.TextBoxStock.BackColor = Color.Aquamarine
+        End If
+
+        If TextBoxPrecio.Text = "" Then
+            Me.TextBoxPrecio.BackColor = Color.White
+        Else
+            Me.TextBoxPrecio.BackColor = Color.Aquamarine
+        End If
+
+    End Sub
+
+    Private Sub V_Producto_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyData = Keys.F10 Then
+            Me.Close()
+        End If
+        If (e.KeyData = Keys.Control + Keys.Delete) And (ButtonAgregarProducto.Visible = True) Then
+            limpiarCamposVentanaProductos()
+        End If
+        If (e.KeyData = Keys.Control + Keys.Enter) And (ButtonAgregarProducto.Visible = True) Then
+            Me.agregarProducto()
+        End If
+    End Sub
+
+
+    Private Sub limpiarCamposVentanaProductos()
+        TextBoxNombreProducto.Text = ""
+        TextBoxPrecio.Text = ""
+        TextBoxStock.Text = ""
+        LabelRutaArchivo.Text = "Ruta:"
+        PictureBox1.Image = My.Resources.Screenshot_1
+    End Sub
+
+    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
+        Me.Close()
+    End Sub
+    'Metodo Agregar Producto'
+    Private Sub agregarProducto()
+        If Not ComprobarVacioNuevoProducto() Then
+            TextBoxNombreProducto.BackColor = Color.LightGreen
+            TextBoxPrecio.BackColor = Color.LightGreen
+            TextBoxCod_Datos.BackColor = Color.LightGreen
+            TextBoxStock.BackColor = Color.LightGreen
+            Dim res, res2, res_img As MsgBoxResult
+            res = MsgBox("Desea Agregar un nuevo Producto?", 4 + 0 + 32, "Aviso")
+            If res = vbYes Then
+                If Me.LabelRutaArchivo.Text = "Ruta:" Then
+                    res_img = MsgBox("El producto no tiene imagen asignada, ¿Desea agregar una?", 4 + 0 + 32, "Aviso")
+                    If res_img = vbNo Then
+                        LabelRutaArchivo.Text = "C:\Users\Seitzinger\Pictures\Screenshot_1.png"
+                        Dim prod As New Productos(TextBoxNombreProducto.Text, ComboBoxRodadoProducto.SelectedItem, ComboBoxMedidaProducto.SelectedItem, Val(TextBoxPrecio.Text), Val(TextBoxCod_Datos.Text), Val(TextBoxStock.Text), LabelRutaArchivo.Text, "A", ComboBoxTipoVehiculo.SelectedItem)
+                        prod.AgregarProducto()
+                        MsgBox("Producto Agregado", 0 + 0 + 64)
+                        res2 = MsgBox("¿Desea Agregar otro Producto?", 4 + 0 + 32, "Aviso")
+                        If res2 = vbYes Then
+                            TextBoxNombreProducto.Text = ""
+                            TextBoxCod_Datos.Text = ""
+                            TextBoxStock.Text = ""
+                            TextBoxPrecio.Text = ""
+                            LabelRutaArchivo.Text = "Ruta:"
+                            TextBoxNombreProducto.BackColor = Color.White
+                            TextBoxPrecio.BackColor = Color.White
+                            TextBoxCod_Datos.BackColor = Color.White
+                            TextBoxStock.BackColor = Color.White
+                            PictureBox1.Image = My.Resources.image_not_found__1_
+                        Else
+                            Me.Close()
+                        End If
+                    End If
+                Else
+                    Dim prod As New Productos(TextBoxNombreProducto.Text, ComboBoxRodadoProducto.SelectedItem, ComboBoxMedidaProducto.SelectedItem, Val(TextBoxPrecio.Text), Val(TextBoxCod_Datos.Text), Val(TextBoxStock.Text), LabelRutaArchivo.Text, "A", ComboBoxTipoVehiculo.SelectedItem)
+                    prod.AgregarProducto()
+                    MsgBox("Producto Agregado", 0 + 0 + 64)
+                    res2 = MsgBox("¿Desea Agregar otro Producto?", 4 + 0 + 32, "Aviso")
+                    If res2 = vbYes Then
+                        TextBoxNombreProducto.Text = ""
+                        TextBoxCod_Datos.Text = ""
+                        TextBoxStock.Text = ""
+                        TextBoxPrecio.Text = ""
+                        LabelRutaArchivo.Text = "Ruta:"
+                        TextBoxNombreProducto.BackColor = Color.White
+                        TextBoxPrecio.BackColor = Color.White
+                        TextBoxCod_Datos.BackColor = Color.White
+                        TextBoxStock.BackColor = Color.White
+                        PictureBox1.Image = My.Resources.image_not_found__1_
+                    Else
+                        Me.Close()
+                    End If
+                End If
+            Else
+                MsgBox("No se agrego el Producto", 16, "Atención")
+            End If
+
+        End If
+    End Sub
 End Class

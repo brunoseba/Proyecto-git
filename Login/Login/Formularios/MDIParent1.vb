@@ -10,6 +10,8 @@ Public Class Ventana
             Me.usuario.Image = My.Resources.user_gray
             Me.cargo.Text = "admin"
             Me.MenuClientes.Visible = False
+            Me.MenuClientes.Enabled = False
+
         ElseIf usu.GetTipoUsu = "s" And usu.GetEstado = "a" Then
             'Principal.Show()
             Me.BackgroundImage = My.Resources.bridgestone_wallpapers_163
@@ -17,24 +19,34 @@ Public Class Ventana
             Me.usuario.Image = My.Resources.user_suit
             'Principal.MdiParent = Me
             Me.BackUp.Visible = False
+            Me.BackUp.Enabled = False
             Me.Productos.Visible = False
+            Me.Productos.Enabled = False
             Me.MenuClientesAgregar.Visible = False
+            Me.MenuClientesAgregar.Enabled = False
             Me.AgregarToolStripMenuItem.Visible = False
+            Me.AgregarToolStripMenuItem.Enabled = False
             Me.MenuEmpresa.Visible = False
+            Me.MenuEmpresa.Enabled = False
             Me.cargo.Text = "supervisor"
-
         Else
-
             Me.BackgroundImage = My.Resources.BRIDGESTONE_MOTOGP__7_
             Me.usuario.Text = ("Vendedor :  " + usu.GetNomYape())
             Me.usuario.Image = My.Resources.user_orange
             Me.BackUp.Visible = False
+            Me.BackUp.Enabled = False
             Me.MenuUsuarios.Visible = False
+            Me.MenuUsuarios.Enabled = False
             Me.MenuEmpresa.Visible = False
+            Me.MenuEmpresa.Enabled = False
             Me.MenuFacturas.Visible = False
+            Me.MenuFacturas.Enabled = False
             Me.Productos.Visible = False
+            Me.Productos.Enabled = False
             Me.AgregarProductoToolStripMenuItem.Visible = False
+            Me.AgregarProductoToolStripMenuItem.Enabled = False
             Me.BuscarProductosToolStripMenuItem.Visible = False
+            Me.BuscarProductosToolStripMenuItem.Enabled = False
             Vendedor.Show()
             Vendedor.MdiParent = Me
             Vendedor.cargarLoad()
@@ -70,6 +82,7 @@ Public Class Ventana
     Private Sub BuscarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarToolStripMenuItem.Click
         CuadroUsuario.MaximizeBox = True
         CuadroUsuario.Show()
+        CuadroUsuario.BSalir3.Visible = False
         CuadroUsuario.PanelBusca.Visible = True
         CuadroUsuario.CBUsuario.SelectedIndex = 0
         CuadroUsuario.MdiParent = Me
@@ -85,8 +98,11 @@ Public Class Ventana
     Private Sub AgregarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AgregarToolStripMenuItem.Click
         CuadroUsuario.MaximizeBox = True
         CuadroUsuario.Show()
+        CuadroUsuario.BSalir3.Visible = True
         CuadroUsuario.PanelRegistro.Visible = True
         CuadroUsuario.PanelBusca.Visible = False
+        CuadroUsuario.CBUsu.SelectedIndex = 2
+        CuadroUsuario.CBEsta1.SelectedIndex = 0
         CuadroUsuario.MdiParent = Me
 
     End Sub
@@ -160,9 +176,20 @@ Public Class Ventana
         V_Producto.ComboBoxMedidaProducto.SelectedIndex = 0
         V_Producto.ComboBoxRodadoProducto.SelectedIndex = 0
         V_Producto.ComboBoxTipoVehiculo.SelectedIndex = 0
+        V_Producto.TextBoxNombreProducto.Text = ""
+        V_Producto.TextBoxPrecio.Text = ""
+        V_Producto.TextBoxStock.Text = ""
+        V_Producto.LabelRutaArchivo.Text = "Ruta:"
+        V_Producto.PictureBox1.Image = My.Resources.image_not_found__1_
         V_Producto.Show()
         V_Producto.PanelAgregarProductos.Visible = True
         V_Producto.PanelProductosBuscar.Visible = False
+        V_Producto.TextBoxNombreProducto.Focus()
+        V_Producto.ButtonAgregarProducto.Visible = True
+        V_Producto.Button4.Visible = True
+        V_Producto.ButtonBajaProducto.Visible = False
+        V_Producto.ButtonAltaProducto.Visible = False
+        V_Producto.ButtonActualizarProducto.Visible = False
         V_Producto.MdiParent = Me
     End Sub
 

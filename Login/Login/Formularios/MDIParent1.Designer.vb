@@ -200,18 +200,16 @@ Partial Class Ventana
         '
         Me.MenuEmpresaVerDatos.Image = Global.Login.My.Resources.Resources._16__Zoom_1
         Me.MenuEmpresaVerDatos.Name = "MenuEmpresaVerDatos"
-        Me.MenuEmpresaVerDatos.ShortcutKeys = System.Windows.Forms.Keys.F9
         Me.MenuEmpresaVerDatos.ShowShortcutKeys = False
-        Me.MenuEmpresaVerDatos.Size = New System.Drawing.Size(151, 22)
+        Me.MenuEmpresaVerDatos.Size = New System.Drawing.Size(152, 22)
         Me.MenuEmpresaVerDatos.Text = "Ver Datos"
         '
         'MenuEmpresaModificarDatos
         '
         Me.MenuEmpresaModificarDatos.Image = Global.Login.My.Resources.Resources.building_edit
         Me.MenuEmpresaModificarDatos.Name = "MenuEmpresaModificarDatos"
-        Me.MenuEmpresaModificarDatos.ShortcutKeys = System.Windows.Forms.Keys.F10
         Me.MenuEmpresaModificarDatos.ShowShortcutKeys = False
-        Me.MenuEmpresaModificarDatos.Size = New System.Drawing.Size(151, 22)
+        Me.MenuEmpresaModificarDatos.Size = New System.Drawing.Size(152, 22)
         Me.MenuEmpresaModificarDatos.Text = "Modificar Datos"
         '
         'ReportesToolStripMenuItem

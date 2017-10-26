@@ -25,10 +25,10 @@
     Private Function estado()
         Dim var As Char
         If CBEstado.SelectedItem = "Activo" Then
-            var = "a"
+            var = "A"
 
         Else
-            var = "b"
+            var = "B"
 
         End If
         Return var
@@ -37,9 +37,9 @@
 
     Public Function estados() As Char
         If CBEstaCli.SelectedItem = "Alta" Then
-            Return "a"
+            Return "A"
         ElseIf CBEstaCli.SelectedItem = "Baja" Then
-            Return "b"
+            Return "B"
         Else
             Return ""
         End If
@@ -117,7 +117,7 @@
         Me.Close()
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim cliente As New Cliente
         cliente.mostrarApe(TApellido2.Text, DataGridCliente)
         Dim dni As Long

@@ -243,7 +243,7 @@
     Public Sub AltaCliente(ByVal cliente As Long)
         Try
             Using Base As New NNeumaticosEntities1
-                Dim alta = (From c In Base.Cliente Where (cliente = c.cliente_cuil And c.cliente_estado = "b")
+                Dim alta = (From c In Base.Cliente Where (cliente = c.cliente_cuil And c.cliente_estado = "B")
                             Select c).First
                 alta.cliente_estado = "A"
                 Base.SaveChanges()
@@ -258,7 +258,7 @@
 
             Using Base As New NNeumaticosEntities1
                 Dim baja = (From c In Base.Cliente Where (cliente = c.cliente_cuil And c.cliente_estado = "A") Select c).First
-                baja.cliente_estado = "b"
+                baja.cliente_estado = "B"
                 Base.SaveChanges()
             End Using
         Catch ex As Exception

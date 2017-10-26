@@ -29,13 +29,13 @@ Partial Class V_Producto
         Me.Button4 = New System.Windows.Forms.Button()
         Me.ButtonActualizarProducto = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.DataGridViewDatosCodigo = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.LabelestadoProducto = New System.Windows.Forms.Label()
         Me.TextBoxCod_Datos = New System.Windows.Forms.TextBox()
         Me.TextBoxStock = New System.Windows.Forms.TextBox()
         Me.LabelRutaArchivo = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TextBoxPrecio = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.LabelAgregarProducto = New System.Windows.Forms.Label()
@@ -57,10 +57,12 @@ Partial Class V_Producto
         Me.PanelMostrarDatosTecnicos = New System.Windows.Forms.Panel()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.PanelActualizarStock = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -71,6 +73,7 @@ Partial Class V_Producto
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.DataGridViewResultadosProductos = New System.Windows.Forms.DataGridView()
         Me.Datos_Tecnicos = New System.Windows.Forms.DataGridViewButtonColumn()
@@ -78,7 +81,6 @@ Partial Class V_Producto
         Me.Modificar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Imagen = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.LabelBuscarProducto = New System.Windows.Forms.Label()
@@ -89,11 +91,12 @@ Partial Class V_Producto
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PanelAgregarProductos.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridViewDatosCodigo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelProductosBuscar.SuspendLayout()
         Me.PanelMostrarDatosTecnicos.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -102,8 +105,9 @@ Partial Class V_Producto
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.DataGridViewResultadosProductos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelAgregarProductos
@@ -150,7 +154,7 @@ Partial Class V_Producto
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(141, 38)
         Me.Button4.TabIndex = 26
-        Me.Button4.Text = "Limpiar Campos"
+        Me.Button4.Text = "Limpiar Campos (ctrl+supr)"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'ButtonActualizarProducto
@@ -165,6 +169,7 @@ Partial Class V_Producto
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.DataGridViewDatosCodigo)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.Black
@@ -173,7 +178,17 @@ Partial Class V_Producto
         Me.GroupBox2.Size = New System.Drawing.Size(1335, 355)
         Me.GroupBox2.TabIndex = 24
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Datos Técnicos"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label11.Location = New System.Drawing.Point(587, -3)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(160, 24)
+        Me.Label11.TabIndex = 27
+        Me.Label11.Text = "Datos Técnicos:"
         '
         'DataGridViewDatosCodigo
         '
@@ -234,17 +249,18 @@ Partial Class V_Producto
         '
         Me.TextBoxCod_Datos.Enabled = False
         Me.TextBoxCod_Datos.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxCod_Datos.Location = New System.Drawing.Point(130, 121)
+        Me.TextBoxCod_Datos.Location = New System.Drawing.Point(177, 123)
         Me.TextBoxCod_Datos.Name = "TextBoxCod_Datos"
         Me.TextBoxCod_Datos.Size = New System.Drawing.Size(72, 26)
         Me.TextBoxCod_Datos.TabIndex = 25
+        Me.TextBoxCod_Datos.Text = "1"
         '
         'TextBoxStock
         '
         Me.TextBoxStock.Location = New System.Drawing.Point(343, 124)
         Me.TextBoxStock.Name = "TextBoxStock"
         Me.TextBoxStock.Size = New System.Drawing.Size(100, 22)
-        Me.TextBoxStock.TabIndex = 24
+        Me.TextBoxStock.TabIndex = 5
         '
         'LabelRutaArchivo
         '
@@ -255,23 +271,13 @@ Partial Class V_Producto
         Me.LabelRutaArchivo.TabIndex = 23
         Me.LabelRutaArchivo.Text = "Ruta:"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Login.My.Resources.Resources.Screenshot_1
-        Me.PictureBox1.Location = New System.Drawing.Point(1182, 41)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(114, 98)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox1.TabIndex = 22
-        Me.PictureBox1.TabStop = False
-        '
         'TextBoxPrecio
         '
         Me.TextBoxPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxPrecio.Location = New System.Drawing.Point(948, 41)
         Me.TextBoxPrecio.Name = "TextBoxPrecio"
         Me.TextBoxPrecio.Size = New System.Drawing.Size(152, 26)
-        Me.TextBoxPrecio.TabIndex = 11
+        Me.TextBoxPrecio.TabIndex = 4
         '
         'Button1
         '
@@ -279,7 +285,7 @@ Partial Class V_Producto
         Me.Button1.Location = New System.Drawing.Point(989, 116)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(111, 29)
-        Me.Button1.TabIndex = 21
+        Me.Button1.TabIndex = 7
         Me.Button1.Text = "Cargar Imagen"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -321,16 +327,17 @@ Partial Class V_Producto
         Me.TextBoxNombreProducto.Location = New System.Drawing.Point(115, 43)
         Me.TextBoxNombreProducto.Name = "TextBoxNombreProducto"
         Me.TextBoxNombreProducto.Size = New System.Drawing.Size(152, 26)
-        Me.TextBoxNombreProducto.TabIndex = 5
+        Me.TextBoxNombreProducto.TabIndex = 1
         '
         'ComboBoxTipoVehiculo
         '
+        Me.ComboBoxTipoVehiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxTipoVehiculo.FormattingEnabled = True
         Me.ComboBoxTipoVehiculo.Items.AddRange(New Object() {"Automóviles", "Camiones/Colectivos", "Camionetas", "Tractores"})
         Me.ComboBoxTipoVehiculo.Location = New System.Drawing.Point(650, 121)
         Me.ComboBoxTipoVehiculo.Name = "ComboBoxTipoVehiculo"
         Me.ComboBoxTipoVehiculo.Size = New System.Drawing.Size(168, 24)
-        Me.ComboBoxTipoVehiculo.TabIndex = 19
+        Me.ComboBoxTipoVehiculo.TabIndex = 6
         '
         'Label23
         '
@@ -389,12 +396,13 @@ Partial Class V_Producto
         '
         'ComboBoxRodadoProducto
         '
+        Me.ComboBoxRodadoProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxRodadoProducto.FormattingEnabled = True
         Me.ComboBoxRodadoProducto.Items.AddRange(New Object() {"12", "13", "14", "15", "16", "17", "18", "19", "20", "22.5", "26", "28", "36", "38"})
         Me.ComboBoxRodadoProducto.Location = New System.Drawing.Point(434, 46)
         Me.ComboBoxRodadoProducto.Name = "ComboBoxRodadoProducto"
         Me.ComboBoxRodadoProducto.Size = New System.Drawing.Size(121, 24)
-        Me.ComboBoxRodadoProducto.TabIndex = 12
+        Me.ComboBoxRodadoProducto.TabIndex = 2
         '
         'Label22
         '
@@ -403,18 +411,19 @@ Partial Class V_Producto
         Me.Label22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label22.Location = New System.Drawing.Point(13, 124)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(117, 24)
+        Me.Label22.Size = New System.Drawing.Size(160, 24)
         Me.Label22.TabIndex = 14
-        Me.Label22.Text = "Cod_Datos:"
+        Me.Label22.Text = "Datos Técnicos:"
         '
         'ComboBoxMedidaProducto
         '
+        Me.ComboBoxMedidaProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxMedidaProducto.FormattingEnabled = True
         Me.ComboBoxMedidaProducto.Items.AddRange(New Object() {"27x8.5", "31x10", "32x11.5", "215/60", "215/120", "235/60", "235/120", "255/75", "255/100", "290/24", "290/90", "310/54"})
         Me.ComboBoxMedidaProducto.Location = New System.Drawing.Point(697, 44)
         Me.ComboBoxMedidaProducto.Name = "ComboBoxMedidaProducto"
         Me.ComboBoxMedidaProducto.Size = New System.Drawing.Size(121, 24)
-        Me.ComboBoxMedidaProducto.TabIndex = 13
+        Me.ComboBoxMedidaProducto.TabIndex = 3
         '
         'ButtonCancelarProducto
         '
@@ -422,16 +431,16 @@ Partial Class V_Producto
         Me.ButtonCancelarProducto.Name = "ButtonCancelarProducto"
         Me.ButtonCancelarProducto.Size = New System.Drawing.Size(114, 38)
         Me.ButtonCancelarProducto.TabIndex = 3
-        Me.ButtonCancelarProducto.Text = "Cancelar"
+        Me.ButtonCancelarProducto.Text = "Salir (F10)"
         Me.ButtonCancelarProducto.UseVisualStyleBackColor = True
         '
         'ButtonAgregarProducto
         '
         Me.ButtonAgregarProducto.Location = New System.Drawing.Point(622, 620)
         Me.ButtonAgregarProducto.Name = "ButtonAgregarProducto"
-        Me.ButtonAgregarProducto.Size = New System.Drawing.Size(141, 38)
+        Me.ButtonAgregarProducto.Size = New System.Drawing.Size(166, 38)
         Me.ButtonAgregarProducto.TabIndex = 2
-        Me.ButtonAgregarProducto.Text = "Agregar Producto"
+        Me.ButtonAgregarProducto.Text = "Agregar Producto (Ctrl+ Enter)"
         Me.ButtonAgregarProducto.UseVisualStyleBackColor = True
         '
         'PanelProductosBuscar
@@ -439,6 +448,7 @@ Partial Class V_Producto
         Me.PanelProductosBuscar.BackColor = System.Drawing.Color.DarkSlateGray
         Me.PanelProductosBuscar.Controls.Add(Me.PanelMostrarDatosTecnicos)
         Me.PanelProductosBuscar.Controls.Add(Me.PanelActualizarStock)
+        Me.PanelProductosBuscar.Controls.Add(Me.Button5)
         Me.PanelProductosBuscar.Controls.Add(Me.GroupBox4)
         Me.PanelProductosBuscar.Controls.Add(Me.GroupBox3)
         Me.PanelProductosBuscar.Location = New System.Drawing.Point(0, 0)
@@ -468,6 +478,7 @@ Partial Class V_Producto
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.Label12)
         Me.GroupBox5.Controls.Add(Me.DataGridView1)
         Me.GroupBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
@@ -476,7 +487,17 @@ Partial Class V_Producto
         Me.GroupBox5.Size = New System.Drawing.Size(1331, 78)
         Me.GroupBox5.TabIndex = 0
         Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Datos Técnicos"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label12.Location = New System.Drawing.Point(584, -6)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(161, 25)
+        Me.Label12.TabIndex = 19
+        Me.Label12.Text = "Datos Técnicos"
         '
         'DataGridView1
         '
@@ -511,6 +532,7 @@ Partial Class V_Producto
         '
         'GroupBox6
         '
+        Me.GroupBox6.Controls.Add(Me.Label13)
         Me.GroupBox6.Controls.Add(Me.Label10)
         Me.GroupBox6.Controls.Add(Me.TextBox1)
         Me.GroupBox6.Controls.Add(Me.Label9)
@@ -528,7 +550,17 @@ Partial Class V_Producto
         Me.GroupBox6.Size = New System.Drawing.Size(1314, 69)
         Me.GroupBox6.TabIndex = 0
         Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Actualizar Stock"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label13.Location = New System.Drawing.Point(540, -4)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(167, 25)
+        Me.Label13.TabIndex = 19
+        Me.Label13.Text = "Actualizar Stock"
         '
         'Label10
         '
@@ -553,9 +585,9 @@ Partial Class V_Producto
         Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label9.Location = New System.Drawing.Point(910, 28)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(32, 24)
+        Me.Label9.Size = New System.Drawing.Size(21, 24)
         Me.Label9.TabIndex = 6
-        Me.Label9.Text = "16"
+        Me.Label9.Text = "0"
         '
         'Label4
         '
@@ -573,9 +605,9 @@ Partial Class V_Producto
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label8.Location = New System.Drawing.Point(698, 28)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(32, 24)
+        Me.Label8.Size = New System.Drawing.Size(21, 24)
         Me.Label8.TabIndex = 4
-        Me.Label8.Text = "16"
+        Me.Label8.Text = "0"
         '
         'Label6
         '
@@ -583,9 +615,9 @@ Partial Class V_Producto
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label6.Location = New System.Drawing.Point(440, 28)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(69, 24)
+        Me.Label6.Size = New System.Drawing.Size(21, 24)
         Me.Label6.TabIndex = 3
-        Me.Label6.Text = "175X6"
+        Me.Label6.Text = "0"
         '
         'Label5
         '
@@ -614,9 +646,9 @@ Partial Class V_Producto
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(177, 28)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(105, 24)
+        Me.Label3.Size = New System.Drawing.Size(50, 24)
         Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Potenza GII"
+        Me.Label3.Text = "xxxx"
         '
         'Label2
         '
@@ -628,6 +660,15 @@ Partial Class V_Producto
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Nombre:"
         '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(608, 533)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(114, 38)
+        Me.Button5.TabIndex = 19
+        Me.Button5.Text = "Salir (F10)"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.DataGridViewResultadosProductos)
@@ -635,9 +676,9 @@ Partial Class V_Producto
         Me.GroupBox4.Controls.Add(Me.PictureBox2)
         Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.GroupBox4.Location = New System.Drawing.Point(16, 176)
+        Me.GroupBox4.Location = New System.Drawing.Point(16, 129)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(1332, 317)
+        Me.GroupBox4.Size = New System.Drawing.Size(1332, 364)
         Me.GroupBox4.TabIndex = 18
         Me.GroupBox4.TabStop = False
         '
@@ -655,7 +696,7 @@ Partial Class V_Producto
         Me.DataGridViewResultadosProductos.Location = New System.Drawing.Point(6, 20)
         Me.DataGridViewResultadosProductos.Name = "DataGridViewResultadosProductos"
         Me.DataGridViewResultadosProductos.ReadOnly = True
-        Me.DataGridViewResultadosProductos.Size = New System.Drawing.Size(1314, 291)
+        Me.DataGridViewResultadosProductos.Size = New System.Drawing.Size(1314, 338)
         Me.DataGridViewResultadosProductos.TabIndex = 2
         '
         'Datos_Tecnicos
@@ -716,17 +757,6 @@ Partial Class V_Producto
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Resultados"
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.Login.My.Resources.Resources.RE_050_RFT
-        Me.PictureBox2.Location = New System.Drawing.Point(1121, 57)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(80, 80)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox2.TabIndex = 18
-        Me.PictureBox2.TabStop = False
-        Me.PictureBox2.Visible = False
-        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.ComboBox2)
@@ -740,12 +770,13 @@ Partial Class V_Producto
         Me.GroupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.GroupBox3.Location = New System.Drawing.Point(21, 12)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(1323, 148)
+        Me.GroupBox3.Size = New System.Drawing.Size(1323, 110)
         Me.GroupBox3.TabIndex = 12
         Me.GroupBox3.TabStop = False
         '
         'ComboBox2
         '
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"Todos", "13", "14", "15", "16", "17", "18", "19", "20", "22.5", "26", "28", "36", "38"})
         Me.ComboBox2.Location = New System.Drawing.Point(662, 50)
@@ -777,6 +808,7 @@ Partial Class V_Producto
         'ComboBox1
         '
         Me.ComboBox1.DisplayMember = "Automovil"
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Todos", "Automóviles", "Camiones/Colectivos", "Camionetas", "Tractores"})
@@ -825,26 +857,49 @@ Partial Class V_Producto
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.Login.My.Resources.Resources.RE_050_RFT
+        Me.PictureBox2.Location = New System.Drawing.Point(1121, 57)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(80, 80)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox2.TabIndex = 18
+        Me.PictureBox2.TabStop = False
+        Me.PictureBox2.Visible = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Login.My.Resources.Resources.Screenshot_1
+        Me.PictureBox1.Location = New System.Drawing.Point(1182, 41)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(114, 98)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox1.TabIndex = 22
+        Me.PictureBox1.TabStop = False
+        '
         'V_Producto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1362, 624)
-        Me.Controls.Add(Me.PanelProductosBuscar)
         Me.Controls.Add(Me.PanelAgregarProductos)
+        Me.Controls.Add(Me.PanelProductosBuscar)
+        Me.KeyPreview = True
         Me.Name = "V_Producto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Producto"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PanelAgregarProductos.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         CType(Me.DataGridViewDatosCodigo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelProductosBuscar.ResumeLayout(False)
         Me.PanelMostrarDatosTecnicos.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelActualizarStock.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
@@ -852,9 +907,10 @@ Partial Class V_Producto
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         CType(Me.DataGridViewResultadosProductos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -924,4 +980,8 @@ Partial Class V_Producto
     Friend WithEvents Modificar As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents Imagen As System.Windows.Forms.DataGridViewImageColumn
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents Label12 As System.Windows.Forms.Label
 End Class

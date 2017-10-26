@@ -71,17 +71,17 @@
                                     'If DataGridCompra.RowCount = 0 Then
                                     DataGridCompra.Rows.Add(nombre, medida, rodado, t_vehi, unitString, cantidad_Cubiertas, stringTotal, PictureBox1.Image)
                                     'Else
-                                    '   For Each fila As DataGridViewRow In DataGridCompra.Rows
+                                    'For Each fila As DataGridViewRow In DataGridCompra.Rows
                                     'Pone invisible el id y Ruta de la imagen
-                                    'If nombre = DataGridCompra(0, DataGridCompra.CurrentRow.Index).Value Then
+                                    '   If nombre = DataGridCompra(0, DataGridCompra.CurrentRow.Index).Value Then
 
                                     ' DataGridCompra(5, DataGridCompra.CurrentRow.Index).Value = Val(DataGridCompra(5, DataGridCompra.CurrentRow.Index).Value) + Val(cantidad_Cubiertas)
                                     'Else
-                                    ' DataGridCompra.Rows.Add(nombre, medida, rodado, t_vehi, unitString, cantidad_Cubiertas, stringTotal, PictureBox1.Image)
-                                    '   Exit For
+                                    '   DataGridCompra.Rows.Add(nombre, medida, rodado, t_vehi, unitString, cantidad_Cubiertas, stringTotal, PictureBox1.Image)
+                                    '  Exit For
                                     'End If
                                     '   Next
-                                    '   End If
+                                    'End If
 
                                     Me.calcularTotal()
                                 Else
@@ -131,13 +131,12 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        For Each fila As DataGridViewRow In DataGridCompra.Rows
-            'DataGridViewCarrito.Rows.Add(fila.Cells("pro_nombre").Value, fila.Cells("pro_medida").Value, fila.Cells("pro_rodado").Value, fila.Cells("pro_tipo_vehiculo").Value, fila.Cells("pro_precio_unitario").Value, fila.Cells("pro_cantidad").Value, fila.Cells("pro_total").Value, PictureBox1.Image)
-        Next
         Dim res As MsgBoxResult
         res = MsgBox("¿Desea Confirmar la Compra?", 4 + 256 + 64, "Confirmar")
         If res = 6 Then
             DataGridCompra.Rows.Clear()
+            TextBoxCuilCliente.Text = 0
+            ComboBoxTipoPago.SelectedIndex = 0
             totalCompra.Text = "0"
         End If
 
@@ -254,7 +253,6 @@
         Dim res As MsgBoxResult
         If TextBoxCuilCliente.TextLength = 11 Then
             Label2.Text = clie.verificarExistencia(TextBoxCuilCliente.Text, Label2.Text)
-
             If Label2.Text <> "Cliente" And Label2.Text <> "False" Then
                 MsgBox("El cliente " + Label2.Text + " se encuentra registrado")
             Else
@@ -266,7 +264,6 @@
                     CuadroCliente.PanelRegistro.Visible = True
                     CuadroCliente.PanelBusca.Visible = False
                     CuadroCliente.PanelVer.Visible = False
-
                 End If
             End If
         End If
@@ -286,5 +283,9 @@
     End Sub
     Private Sub TextBoxCuilCliente_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBoxCuilCliente.KeyPress
         ComprobarNumero(e)
+    End Sub
+
+    Private Sub Vendedor_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

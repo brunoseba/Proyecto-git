@@ -38,13 +38,11 @@ Partial Class CuadroUsuario
         Me.ColVer = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.PanelBusca = New System.Windows.Forms.Panel()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.BSalir2 = New System.Windows.Forms.Button()
-        Me.PanelVer = New System.Windows.Forms.Panel()
+        Me.PanelModificarUser = New System.Windows.Forms.Panel()
         Me.DateTime = New System.Windows.Forms.TextBox()
         Me.TextBoxULocalidad = New System.Windows.Forms.TextBox()
         Me.TextBoxUProvincia = New System.Windows.Forms.TextBox()
         Me.BModifica = New System.Windows.Forms.Button()
-        Me.BBaja = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.TextBoxUestado = New System.Windows.Forms.TextBox()
@@ -67,8 +65,6 @@ Partial Class CuadroUsuario
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.BSalir = New System.Windows.Forms.Button()
-        Me.BAlta = New System.Windows.Forms.Button()
         Me.PanelRegistro = New System.Windows.Forms.Panel()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -88,8 +84,6 @@ Partial Class CuadroUsuario
         Me.TContra = New System.Windows.Forms.TextBox()
         Me.TTelef = New System.Windows.Forms.TextBox()
         Me.TDire = New System.Windows.Forms.TextBox()
-        Me.BSalir3 = New System.Windows.Forms.Button()
-        Me.BGuardar = New System.Windows.Forms.Button()
         Me.TEmail = New System.Windows.Forms.TextBox()
         Me.TLocal = New System.Windows.Forms.TextBox()
         Me.TProv1 = New System.Windows.Forms.TextBox()
@@ -98,11 +92,18 @@ Partial Class CuadroUsuario
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.BBaja = New System.Windows.Forms.Button()
+        Me.BSalir = New System.Windows.Forms.Button()
+        Me.BAlta = New System.Windows.Forms.Button()
+        Me.BSalir2 = New System.Windows.Forms.Button()
+        Me.BSalir3 = New System.Windows.Forms.Button()
+        Me.BGuardar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBusca.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
-        Me.PanelVer.SuspendLayout()
+        Me.PanelModificarUser.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.PanelRegistro.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -149,6 +150,7 @@ Partial Class CuadroUsuario
         '
         'CBEsta
         '
+        Me.CBEsta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBEsta.FormattingEnabled = True
         Me.CBEsta.Items.AddRange(New Object() {"Ambos", "Alta", "Baja"})
         Me.CBEsta.Location = New System.Drawing.Point(879, 49)
@@ -180,6 +182,7 @@ Partial Class CuadroUsuario
         'CBUsuario
         '
         Me.CBUsuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CBUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBUsuario.FormattingEnabled = True
         Me.CBUsuario.Items.AddRange(New Object() {"Todos", "Administrador", "Supervisor", "Vendedor"})
         Me.CBUsuario.Location = New System.Drawing.Point(1108, 49)
@@ -254,7 +257,7 @@ Partial Class CuadroUsuario
         Me.PanelBusca.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PanelBusca.BackColor = System.Drawing.Color.Brown
+        Me.PanelBusca.BackColor = System.Drawing.Color.DarkSlateGray
         Me.PanelBusca.Controls.Add(Me.GroupBox4)
         Me.PanelBusca.Controls.Add(Me.BSalir2)
         Me.PanelBusca.Controls.Add(Me.GroupBox1)
@@ -265,6 +268,7 @@ Partial Class CuadroUsuario
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.Label30)
         Me.GroupBox4.Controls.Add(Me.DataGridView1)
         Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.Location = New System.Drawing.Point(16, 140)
@@ -272,41 +276,28 @@ Partial Class CuadroUsuario
         Me.GroupBox4.Size = New System.Drawing.Size(1294, 374)
         Me.GroupBox4.TabIndex = 3
         Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Usuarios"
         '
-        'BSalir2
+        'PanelModificarUser
         '
-        Me.BSalir2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.BSalir2.Image = Global.Login.My.Resources.Resources.cancel_square16
-        Me.BSalir2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BSalir2.Location = New System.Drawing.Point(659, 583)
-        Me.BSalir2.Name = "BSalir2"
-        Me.BSalir2.Size = New System.Drawing.Size(75, 36)
-        Me.BSalir2.TabIndex = 2
-        Me.BSalir2.Text = "Salir"
-        Me.BSalir2.UseVisualStyleBackColor = True
-        '
-        'PanelVer
-        '
-        Me.PanelVer.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.PanelModificarUser.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PanelVer.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.PanelVer.Controls.Add(Me.DateTime)
-        Me.PanelVer.Controls.Add(Me.TextBoxULocalidad)
-        Me.PanelVer.Controls.Add(Me.TextBoxUProvincia)
-        Me.PanelVer.Controls.Add(Me.BModifica)
-        Me.PanelVer.Controls.Add(Me.BBaja)
-        Me.PanelVer.Controls.Add(Me.GroupBox2)
-        Me.PanelVer.Controls.Add(Me.Label11)
-        Me.PanelVer.Controls.Add(Me.Label12)
-        Me.PanelVer.Controls.Add(Me.Label14)
-        Me.PanelVer.Controls.Add(Me.BSalir)
-        Me.PanelVer.Controls.Add(Me.BAlta)
-        Me.PanelVer.Location = New System.Drawing.Point(0, 0)
-        Me.PanelVer.Name = "PanelVer"
-        Me.PanelVer.Size = New System.Drawing.Size(1340, 644)
-        Me.PanelVer.TabIndex = 3
+        Me.PanelModificarUser.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.PanelModificarUser.Controls.Add(Me.DateTime)
+        Me.PanelModificarUser.Controls.Add(Me.TextBoxULocalidad)
+        Me.PanelModificarUser.Controls.Add(Me.TextBoxUProvincia)
+        Me.PanelModificarUser.Controls.Add(Me.BModifica)
+        Me.PanelModificarUser.Controls.Add(Me.BBaja)
+        Me.PanelModificarUser.Controls.Add(Me.GroupBox2)
+        Me.PanelModificarUser.Controls.Add(Me.Label11)
+        Me.PanelModificarUser.Controls.Add(Me.Label12)
+        Me.PanelModificarUser.Controls.Add(Me.Label14)
+        Me.PanelModificarUser.Controls.Add(Me.BSalir)
+        Me.PanelModificarUser.Controls.Add(Me.BAlta)
+        Me.PanelModificarUser.Location = New System.Drawing.Point(0, 0)
+        Me.PanelModificarUser.Name = "PanelModificarUser"
+        Me.PanelModificarUser.Size = New System.Drawing.Size(1340, 644)
+        Me.PanelModificarUser.TabIndex = 3
         '
         'DateTime
         '
@@ -342,19 +333,6 @@ Partial Class CuadroUsuario
         Me.BModifica.Text = "MODIFICAR USUARIO"
         Me.BModifica.UseVisualStyleBackColor = True
         '
-        'BBaja
-        '
-        Me.BBaja.Image = Global.Login.My.Resources.Resources.usuario_Baja
-        Me.BBaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BBaja.Location = New System.Drawing.Point(514, 542)
-        Me.BBaja.Name = "BBaja"
-        Me.BBaja.Size = New System.Drawing.Size(136, 51)
-        Me.BBaja.TabIndex = 52
-        Me.BBaja.Text = "BAJA USUARIO"
-        Me.BBaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BBaja.UseVisualStyleBackColor = True
-        Me.BBaja.Visible = False
-        '
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -388,6 +366,7 @@ Partial Class CuadroUsuario
         '
         'ComboBox1
         '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Tipo Usuario", "Administrador", "Supervisor", "Vendedor"})
         Me.ComboBox1.Location = New System.Drawing.Point(468, 209)
@@ -432,6 +411,7 @@ Partial Class CuadroUsuario
         '
         'TextBoxUApellido
         '
+        Me.TextBoxUApellido.Enabled = False
         Me.TextBoxUApellido.Location = New System.Drawing.Point(734, 39)
         Me.TextBoxUApellido.Name = "TextBoxUApellido"
         Me.TextBoxUApellido.Size = New System.Drawing.Size(176, 26)
@@ -440,8 +420,8 @@ Partial Class CuadroUsuario
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.ForeColor = System.Drawing.Color.White
+        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label31.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label31.Location = New System.Drawing.Point(633, 41)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(93, 24)
@@ -450,6 +430,7 @@ Partial Class CuadroUsuario
         '
         'TextBoxUNombre
         '
+        Me.TextBoxUNombre.Enabled = False
         Me.TextBoxUNombre.Location = New System.Drawing.Point(426, 41)
         Me.TextBoxUNombre.Name = "TextBoxUNombre"
         Me.TextBoxUNombre.Size = New System.Drawing.Size(176, 26)
@@ -457,6 +438,7 @@ Partial Class CuadroUsuario
         '
         'TextBoxUDni
         '
+        Me.TextBoxUDni.Enabled = False
         Me.TextBoxUDni.Location = New System.Drawing.Point(104, 41)
         Me.TextBoxUDni.Name = "TextBoxUDni"
         Me.TextBoxUDni.Size = New System.Drawing.Size(132, 26)
@@ -465,8 +447,8 @@ Partial Class CuadroUsuario
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(48, 43)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(50, 24)
@@ -476,8 +458,8 @@ Partial Class CuadroUsuario
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label5.Location = New System.Drawing.Point(329, 43)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(91, 24)
@@ -487,8 +469,8 @@ Partial Class CuadroUsuario
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label6.Location = New System.Drawing.Point(48, 129)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(105, 24)
@@ -500,8 +482,8 @@ Partial Class CuadroUsuario
         Me.Label13.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.White
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label13.Location = New System.Drawing.Point(937, 129)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(75, 24)
@@ -511,8 +493,8 @@ Partial Class CuadroUsuario
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label7.Location = New System.Drawing.Point(507, 129)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(99, 24)
@@ -522,8 +504,8 @@ Partial Class CuadroUsuario
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label8.Location = New System.Drawing.Point(982, 41)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(122, 24)
@@ -533,7 +515,8 @@ Partial Class CuadroUsuario
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label9.Location = New System.Drawing.Point(726, 209)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(80, 24)
@@ -543,7 +526,8 @@ Partial Class CuadroUsuario
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label10.Location = New System.Drawing.Point(375, 212)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(87, 24)
@@ -555,11 +539,11 @@ Partial Class CuadroUsuario
         Me.Label11.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(864, 369)
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label11.Location = New System.Drawing.Point(846, 369)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(112, 20)
+        Me.Label11.Size = New System.Drawing.Size(131, 24)
         Me.Label11.TabIndex = 44
         Me.Label11.Text = "Fecha Inicio:"
         '
@@ -568,11 +552,11 @@ Partial Class CuadroUsuario
         Me.Label12.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(504, 369)
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label12.Location = New System.Drawing.Point(489, 364)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(91, 20)
+        Me.Label12.Size = New System.Drawing.Size(106, 24)
         Me.Label12.TabIndex = 41
         Me.Label12.Text = "Localidad:"
         '
@@ -581,37 +565,13 @@ Partial Class CuadroUsuario
         Me.Label14.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.White
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label14.Location = New System.Drawing.Point(146, 369)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(102, 24)
         Me.Label14.TabIndex = 42
         Me.Label14.Text = "Provincia:"
-        '
-        'BSalir
-        '
-        Me.BSalir.Image = Global.Login.My.Resources.Resources.cancel_square16
-        Me.BSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BSalir.Location = New System.Drawing.Point(971, 553)
-        Me.BSalir.Name = "BSalir"
-        Me.BSalir.Size = New System.Drawing.Size(89, 40)
-        Me.BSalir.TabIndex = 1
-        Me.BSalir.Text = "Salir"
-        Me.BSalir.UseVisualStyleBackColor = True
-        '
-        'BAlta
-        '
-        Me.BAlta.Image = Global.Login.My.Resources.Resources.usuario_Alta1
-        Me.BAlta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BAlta.Location = New System.Drawing.Point(283, 542)
-        Me.BAlta.Name = "BAlta"
-        Me.BAlta.Size = New System.Drawing.Size(135, 51)
-        Me.BAlta.TabIndex = 0
-        Me.BAlta.Text = "ALTA USUARIO"
-        Me.BAlta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BAlta.UseVisualStyleBackColor = True
-        Me.BAlta.Visible = False
         '
         'PanelRegistro
         '
@@ -679,16 +639,16 @@ Partial Class CuadroUsuario
         '
         'TApellido
         '
-        Me.TApellido.Location = New System.Drawing.Point(624, 153)
+        Me.TApellido.Location = New System.Drawing.Point(622, 99)
         Me.TApellido.Name = "TApellido"
         Me.TApellido.Size = New System.Drawing.Size(236, 26)
-        Me.TApellido.TabIndex = 11
+        Me.TApellido.TabIndex = 4
         '
         'Label27
         '
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(493, 156)
+        Me.Label27.Location = New System.Drawing.Point(491, 102)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(85, 18)
         Me.Label27.TabIndex = 10
@@ -728,7 +688,7 @@ Partial Class CuadroUsuario
         Me.CBUsu.Location = New System.Drawing.Point(161, 202)
         Me.CBUsu.Name = "CBUsu"
         Me.CBUsu.Size = New System.Drawing.Size(195, 28)
-        Me.CBUsu.TabIndex = 6
+        Me.CBUsu.TabIndex = 7
         Me.CBUsu.Text = "Tipo usuario"
         '
         'Label18
@@ -748,14 +708,14 @@ Partial Class CuadroUsuario
         Me.CBEsta1.Location = New System.Drawing.Point(622, 213)
         Me.CBEsta1.Name = "CBEsta1"
         Me.CBEsta1.Size = New System.Drawing.Size(170, 28)
-        Me.CBEsta1.TabIndex = 7
+        Me.CBEsta1.TabIndex = 8
         Me.CBEsta1.Text = "Selecione.."
         '
         'Label19
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(488, 97)
+        Me.Label19.Location = New System.Drawing.Point(490, 159)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(87, 18)
         Me.Label19.TabIndex = 5
@@ -809,10 +769,10 @@ Partial Class CuadroUsuario
         'TTelef
         '
         Me.TTelef.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TTelef.Location = New System.Drawing.Point(622, 97)
+        Me.TTelef.Location = New System.Drawing.Point(622, 155)
         Me.TTelef.Name = "TTelef"
         Me.TTelef.Size = New System.Drawing.Size(238, 26)
-        Me.TTelef.TabIndex = 4
+        Me.TTelef.TabIndex = 6
         '
         'TDire
         '
@@ -821,37 +781,13 @@ Partial Class CuadroUsuario
         Me.TDire.Size = New System.Drawing.Size(238, 26)
         Me.TDire.TabIndex = 5
         '
-        'BSalir3
-        '
-        Me.BSalir3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BSalir3.Image = Global.Login.My.Resources.Resources.cancel_square16
-        Me.BSalir3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BSalir3.Location = New System.Drawing.Point(757, 542)
-        Me.BSalir3.Name = "BSalir3"
-        Me.BSalir3.Size = New System.Drawing.Size(100, 47)
-        Me.BSalir3.TabIndex = 38
-        Me.BSalir3.Text = "Salir"
-        Me.BSalir3.UseVisualStyleBackColor = True
-        '
-        'BGuardar
-        '
-        Me.BGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BGuardar.Image = Global.Login.My.Resources.Resources.SaveHL
-        Me.BGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BGuardar.Location = New System.Drawing.Point(568, 542)
-        Me.BGuardar.Name = "BGuardar"
-        Me.BGuardar.Size = New System.Drawing.Size(117, 47)
-        Me.BGuardar.TabIndex = 37
-        Me.BGuardar.Text = "Guardar"
-        Me.BGuardar.UseVisualStyleBackColor = True
-        '
         'TEmail
         '
         Me.TEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TEmail.Location = New System.Drawing.Point(388, 452)
         Me.TEmail.Name = "TEmail"
         Me.TEmail.Size = New System.Drawing.Size(243, 26)
-        Me.TEmail.TabIndex = 36
+        Me.TEmail.TabIndex = 11
         '
         'TLocal
         '
@@ -859,7 +795,7 @@ Partial Class CuadroUsuario
         Me.TLocal.Location = New System.Drawing.Point(848, 391)
         Me.TLocal.Name = "TLocal"
         Me.TLocal.Size = New System.Drawing.Size(243, 26)
-        Me.TLocal.TabIndex = 35
+        Me.TLocal.TabIndex = 10
         '
         'TProv1
         '
@@ -867,7 +803,7 @@ Partial Class CuadroUsuario
         Me.TProv1.Location = New System.Drawing.Point(388, 395)
         Me.TProv1.Name = "TProv1"
         Me.TProv1.Size = New System.Drawing.Size(243, 26)
-        Me.TProv1.TabIndex = 34
+        Me.TProv1.TabIndex = 9
         '
         'Label23
         '
@@ -887,7 +823,7 @@ Partial Class CuadroUsuario
         Me.DateTime1.Location = New System.Drawing.Point(848, 450)
         Me.DateTime1.Name = "DateTime1"
         Me.DateTime1.Size = New System.Drawing.Size(141, 26)
-        Me.DateTime1.TabIndex = 40
+        Me.DateTime1.TabIndex = 12
         '
         'Label24
         '
@@ -922,15 +858,96 @@ Partial Class CuadroUsuario
         Me.Label26.TabIndex = 31
         Me.Label26.Text = "Provincia:"
         '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label30.Location = New System.Drawing.Point(627, -8)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(83, 24)
+        Me.Label30.TabIndex = 11
+        Me.Label30.Text = "Usuarios"
+        '
+        'BBaja
+        '
+        Me.BBaja.Image = Global.Login.My.Resources.Resources.usuario_Baja
+        Me.BBaja.Location = New System.Drawing.Point(514, 542)
+        Me.BBaja.Name = "BBaja"
+        Me.BBaja.Size = New System.Drawing.Size(50, 51)
+        Me.BBaja.TabIndex = 52
+        Me.BBaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BBaja.UseVisualStyleBackColor = True
+        Me.BBaja.Visible = False
+        '
+        'BSalir
+        '
+        Me.BSalir.Image = Global.Login.My.Resources.Resources.cancel_square16
+        Me.BSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BSalir.Location = New System.Drawing.Point(971, 553)
+        Me.BSalir.Name = "BSalir"
+        Me.BSalir.Size = New System.Drawing.Size(89, 40)
+        Me.BSalir.TabIndex = 1
+        Me.BSalir.Text = "Volver"
+        Me.BSalir.UseVisualStyleBackColor = True
+        '
+        'BAlta
+        '
+        Me.BAlta.Image = Global.Login.My.Resources.Resources.usuario_Alta1
+        Me.BAlta.Location = New System.Drawing.Point(382, 542)
+        Me.BAlta.Name = "BAlta"
+        Me.BAlta.Size = New System.Drawing.Size(50, 51)
+        Me.BAlta.TabIndex = 0
+        Me.BAlta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BAlta.UseVisualStyleBackColor = True
+        Me.BAlta.Visible = False
+        '
+        'BSalir2
+        '
+        Me.BSalir2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.BSalir2.Image = Global.Login.My.Resources.Resources.cancel_square16
+        Me.BSalir2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BSalir2.Location = New System.Drawing.Point(659, 583)
+        Me.BSalir2.Name = "BSalir2"
+        Me.BSalir2.Size = New System.Drawing.Size(75, 36)
+        Me.BSalir2.TabIndex = 2
+        Me.BSalir2.Text = "Salir"
+        Me.BSalir2.UseVisualStyleBackColor = True
+        '
+        'BSalir3
+        '
+        Me.BSalir3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BSalir3.Image = Global.Login.My.Resources.Resources.cancel_square16
+        Me.BSalir3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BSalir3.Location = New System.Drawing.Point(757, 542)
+        Me.BSalir3.Name = "BSalir3"
+        Me.BSalir3.Size = New System.Drawing.Size(126, 47)
+        Me.BSalir3.TabIndex = 38
+        Me.BSalir3.Text = "Salir (F10)"
+        Me.BSalir3.UseVisualStyleBackColor = True
+        '
+        'BGuardar
+        '
+        Me.BGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BGuardar.Image = Global.Login.My.Resources.Resources.SaveHL
+        Me.BGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BGuardar.Location = New System.Drawing.Point(568, 542)
+        Me.BGuardar.Name = "BGuardar"
+        Me.BGuardar.Size = New System.Drawing.Size(117, 47)
+        Me.BGuardar.TabIndex = 37
+        Me.BGuardar.Text = "Guardar"
+        Me.BGuardar.UseVisualStyleBackColor = True
+        '
         'CuadroUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1330, 644)
+        Me.Controls.Add(Me.PanelModificarUser)
         Me.Controls.Add(Me.PanelBusca)
-        Me.Controls.Add(Me.PanelVer)
         Me.Controls.Add(Me.PanelRegistro)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "CuadroUsuario"
@@ -943,8 +960,9 @@ Partial Class CuadroUsuario
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelBusca.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
-        Me.PanelVer.ResumeLayout(False)
-        Me.PanelVer.PerformLayout()
+        Me.GroupBox4.PerformLayout()
+        Me.PanelModificarUser.ResumeLayout(False)
+        Me.PanelModificarUser.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.PanelRegistro.ResumeLayout(False)
@@ -963,7 +981,7 @@ Partial Class CuadroUsuario
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents CBUsuario As System.Windows.Forms.ComboBox
     Friend WithEvents PanelBusca As System.Windows.Forms.Panel
-    Friend WithEvents PanelVer As System.Windows.Forms.Panel
+    Friend WithEvents PanelModificarUser As System.Windows.Forms.Panel
     Friend WithEvents BSalir As System.Windows.Forms.Button
     Friend WithEvents BAlta As System.Windows.Forms.Button
     Friend WithEvents BSalir2 As System.Windows.Forms.Button
@@ -1029,4 +1047,5 @@ Partial Class CuadroUsuario
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents ColVer As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents DateTime As System.Windows.Forms.TextBox
+    Friend WithEvents Label30 As System.Windows.Forms.Label
 End Class
