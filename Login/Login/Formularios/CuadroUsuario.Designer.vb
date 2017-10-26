@@ -38,11 +38,14 @@ Partial Class CuadroUsuario
         Me.ColVer = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.PanelBusca = New System.Windows.Forms.Panel()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.BSalir2 = New System.Windows.Forms.Button()
         Me.PanelModificarUser = New System.Windows.Forms.Panel()
         Me.DateTime = New System.Windows.Forms.TextBox()
         Me.TextBoxULocalidad = New System.Windows.Forms.TextBox()
         Me.TextBoxUProvincia = New System.Windows.Forms.TextBox()
         Me.BModifica = New System.Windows.Forms.Button()
+        Me.BBaja = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.TextBoxUestado = New System.Windows.Forms.TextBox()
@@ -65,6 +68,8 @@ Partial Class CuadroUsuario
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.BSalir = New System.Windows.Forms.Button()
+        Me.BAlta = New System.Windows.Forms.Button()
         Me.PanelRegistro = New System.Windows.Forms.Panel()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -84,6 +89,8 @@ Partial Class CuadroUsuario
         Me.TContra = New System.Windows.Forms.TextBox()
         Me.TTelef = New System.Windows.Forms.TextBox()
         Me.TDire = New System.Windows.Forms.TextBox()
+        Me.BSalir3 = New System.Windows.Forms.Button()
+        Me.BGuardar = New System.Windows.Forms.Button()
         Me.TEmail = New System.Windows.Forms.TextBox()
         Me.TLocal = New System.Windows.Forms.TextBox()
         Me.TProv1 = New System.Windows.Forms.TextBox()
@@ -92,13 +99,6 @@ Partial Class CuadroUsuario
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.BBaja = New System.Windows.Forms.Button()
-        Me.BSalir = New System.Windows.Forms.Button()
-        Me.BAlta = New System.Windows.Forms.Button()
-        Me.BSalir2 = New System.Windows.Forms.Button()
-        Me.BSalir3 = New System.Windows.Forms.Button()
-        Me.BGuardar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBusca.SuspendLayout()
@@ -277,6 +277,29 @@ Partial Class CuadroUsuario
         Me.GroupBox4.TabIndex = 3
         Me.GroupBox4.TabStop = False
         '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label30.Location = New System.Drawing.Point(627, -8)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(83, 24)
+        Me.Label30.TabIndex = 11
+        Me.Label30.Text = "Usuarios"
+        '
+        'BSalir2
+        '
+        Me.BSalir2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.BSalir2.Image = Global.Login.My.Resources.Resources.cancel_square16
+        Me.BSalir2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BSalir2.Location = New System.Drawing.Point(659, 583)
+        Me.BSalir2.Name = "BSalir2"
+        Me.BSalir2.Size = New System.Drawing.Size(75, 36)
+        Me.BSalir2.TabIndex = 2
+        Me.BSalir2.Text = "Salir"
+        Me.BSalir2.UseVisualStyleBackColor = True
+        '
         'PanelModificarUser
         '
         Me.PanelModificarUser.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -332,6 +355,17 @@ Partial Class CuadroUsuario
         Me.BModifica.TabIndex = 53
         Me.BModifica.Text = "MODIFICAR USUARIO"
         Me.BModifica.UseVisualStyleBackColor = True
+        '
+        'BBaja
+        '
+        Me.BBaja.Image = Global.Login.My.Resources.Resources.usuario_Baja
+        Me.BBaja.Location = New System.Drawing.Point(514, 542)
+        Me.BBaja.Name = "BBaja"
+        Me.BBaja.Size = New System.Drawing.Size(50, 51)
+        Me.BBaja.TabIndex = 52
+        Me.BBaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BBaja.UseVisualStyleBackColor = True
+        Me.BBaja.Visible = False
         '
         'GroupBox2
         '
@@ -573,6 +607,28 @@ Partial Class CuadroUsuario
         Me.Label14.TabIndex = 42
         Me.Label14.Text = "Provincia:"
         '
+        'BSalir
+        '
+        Me.BSalir.Image = Global.Login.My.Resources.Resources.cancel_square16
+        Me.BSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BSalir.Location = New System.Drawing.Point(971, 553)
+        Me.BSalir.Name = "BSalir"
+        Me.BSalir.Size = New System.Drawing.Size(89, 40)
+        Me.BSalir.TabIndex = 1
+        Me.BSalir.Text = "Volver"
+        Me.BSalir.UseVisualStyleBackColor = True
+        '
+        'BAlta
+        '
+        Me.BAlta.Image = Global.Login.My.Resources.Resources.usuario_Alta1
+        Me.BAlta.Location = New System.Drawing.Point(382, 542)
+        Me.BAlta.Name = "BAlta"
+        Me.BAlta.Size = New System.Drawing.Size(50, 51)
+        Me.BAlta.TabIndex = 0
+        Me.BAlta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BAlta.UseVisualStyleBackColor = True
+        Me.BAlta.Visible = False
+        '
         'PanelRegistro
         '
         Me.PanelRegistro.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -781,6 +837,30 @@ Partial Class CuadroUsuario
         Me.TDire.Size = New System.Drawing.Size(238, 26)
         Me.TDire.TabIndex = 5
         '
+        'BSalir3
+        '
+        Me.BSalir3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BSalir3.Image = Global.Login.My.Resources.Resources.cancel_square16
+        Me.BSalir3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BSalir3.Location = New System.Drawing.Point(757, 542)
+        Me.BSalir3.Name = "BSalir3"
+        Me.BSalir3.Size = New System.Drawing.Size(126, 47)
+        Me.BSalir3.TabIndex = 38
+        Me.BSalir3.Text = "Salir (F10)"
+        Me.BSalir3.UseVisualStyleBackColor = True
+        '
+        'BGuardar
+        '
+        Me.BGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BGuardar.Image = Global.Login.My.Resources.Resources.SaveHL
+        Me.BGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BGuardar.Location = New System.Drawing.Point(568, 542)
+        Me.BGuardar.Name = "BGuardar"
+        Me.BGuardar.Size = New System.Drawing.Size(117, 47)
+        Me.BGuardar.TabIndex = 37
+        Me.BGuardar.Text = "Guardar"
+        Me.BGuardar.UseVisualStyleBackColor = True
+        '
         'TEmail
         '
         Me.TEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -858,93 +938,13 @@ Partial Class CuadroUsuario
         Me.Label26.TabIndex = 31
         Me.Label26.Text = "Provincia:"
         '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label30.Location = New System.Drawing.Point(627, -8)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(83, 24)
-        Me.Label30.TabIndex = 11
-        Me.Label30.Text = "Usuarios"
-        '
-        'BBaja
-        '
-        Me.BBaja.Image = Global.Login.My.Resources.Resources.usuario_Baja
-        Me.BBaja.Location = New System.Drawing.Point(514, 542)
-        Me.BBaja.Name = "BBaja"
-        Me.BBaja.Size = New System.Drawing.Size(50, 51)
-        Me.BBaja.TabIndex = 52
-        Me.BBaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BBaja.UseVisualStyleBackColor = True
-        Me.BBaja.Visible = False
-        '
-        'BSalir
-        '
-        Me.BSalir.Image = Global.Login.My.Resources.Resources.cancel_square16
-        Me.BSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BSalir.Location = New System.Drawing.Point(971, 553)
-        Me.BSalir.Name = "BSalir"
-        Me.BSalir.Size = New System.Drawing.Size(89, 40)
-        Me.BSalir.TabIndex = 1
-        Me.BSalir.Text = "Volver"
-        Me.BSalir.UseVisualStyleBackColor = True
-        '
-        'BAlta
-        '
-        Me.BAlta.Image = Global.Login.My.Resources.Resources.usuario_Alta1
-        Me.BAlta.Location = New System.Drawing.Point(382, 542)
-        Me.BAlta.Name = "BAlta"
-        Me.BAlta.Size = New System.Drawing.Size(50, 51)
-        Me.BAlta.TabIndex = 0
-        Me.BAlta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BAlta.UseVisualStyleBackColor = True
-        Me.BAlta.Visible = False
-        '
-        'BSalir2
-        '
-        Me.BSalir2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.BSalir2.Image = Global.Login.My.Resources.Resources.cancel_square16
-        Me.BSalir2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BSalir2.Location = New System.Drawing.Point(659, 583)
-        Me.BSalir2.Name = "BSalir2"
-        Me.BSalir2.Size = New System.Drawing.Size(75, 36)
-        Me.BSalir2.TabIndex = 2
-        Me.BSalir2.Text = "Salir"
-        Me.BSalir2.UseVisualStyleBackColor = True
-        '
-        'BSalir3
-        '
-        Me.BSalir3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BSalir3.Image = Global.Login.My.Resources.Resources.cancel_square16
-        Me.BSalir3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BSalir3.Location = New System.Drawing.Point(757, 542)
-        Me.BSalir3.Name = "BSalir3"
-        Me.BSalir3.Size = New System.Drawing.Size(126, 47)
-        Me.BSalir3.TabIndex = 38
-        Me.BSalir3.Text = "Salir (F10)"
-        Me.BSalir3.UseVisualStyleBackColor = True
-        '
-        'BGuardar
-        '
-        Me.BGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BGuardar.Image = Global.Login.My.Resources.Resources.SaveHL
-        Me.BGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BGuardar.Location = New System.Drawing.Point(568, 542)
-        Me.BGuardar.Name = "BGuardar"
-        Me.BGuardar.Size = New System.Drawing.Size(117, 47)
-        Me.BGuardar.TabIndex = 37
-        Me.BGuardar.Text = "Guardar"
-        Me.BGuardar.UseVisualStyleBackColor = True
-        '
         'CuadroUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1330, 644)
-        Me.Controls.Add(Me.PanelModificarUser)
         Me.Controls.Add(Me.PanelBusca)
+        Me.Controls.Add(Me.PanelModificarUser)
         Me.Controls.Add(Me.PanelRegistro)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True

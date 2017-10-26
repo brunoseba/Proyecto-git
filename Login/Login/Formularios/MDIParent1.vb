@@ -10,43 +10,43 @@ Public Class Ventana
             Me.usuario.Image = My.Resources.user_gray
             Me.cargo.Text = "admin"
             Me.MenuClientes.Visible = False
-            Me.MenuClientes.Enabled = False
-
+            Me.MenuClientesAgregar.Enabled = False
+            Me.MenuClientesMostrar.Enabled = False
+            Me.MenuFacturas.Visible = False
+            Me.GenerarInformeToolStripMenuItem.Enabled = False
+            Me.CancelarFacturaToolStripMenuItem.Enabled = False
         ElseIf usu.GetTipoUsu = "s" And usu.GetEstado = "a" Then
-            'Principal.Show()
             Me.BackgroundImage = My.Resources.bridgestone_wallpapers_163
             Me.usuario.Text = ("Supervisor :  " + usu.GetNomYape())
             Me.usuario.Image = My.Resources.user_suit
-            'Principal.MdiParent = Me
             Me.BackUp.Visible = False
             Me.BackUp.Enabled = False
             Me.Productos.Visible = False
-            Me.Productos.Enabled = False
-            Me.MenuClientesAgregar.Visible = False
-            Me.MenuClientesAgregar.Enabled = False
+            Me.AgregarProductoToolStripMenuItem.Enabled = False
+            Me.BuscarProductosToolStripMenuItem.Enabled = False
             Me.AgregarToolStripMenuItem.Visible = False
             Me.AgregarToolStripMenuItem.Enabled = False
+            Me.MenuClientesAgregar.Visible = False
+            Me.MenuClientesAgregar.Enabled = False
             Me.MenuEmpresa.Visible = False
             Me.MenuEmpresa.Enabled = False
             Me.cargo.Text = "supervisor"
         Else
-            Me.BackgroundImage = My.Resources.BRIDGESTONE_MOTOGP__7_
+            'Me.BackgroundImage = My.Resources.BRIDGESTONE_MOTOGP__7_
             Me.usuario.Text = ("Vendedor :  " + usu.GetNomYape())
             Me.usuario.Image = My.Resources.user_orange
             Me.BackUp.Visible = False
             Me.BackUp.Enabled = False
-            Me.MenuUsuarios.Visible = False
-            Me.MenuUsuarios.Enabled = False
-            Me.MenuEmpresa.Visible = False
-            Me.MenuEmpresa.Enabled = False
-            Me.MenuFacturas.Visible = False
-            Me.MenuFacturas.Enabled = False
             Me.Productos.Visible = False
-            Me.Productos.Enabled = False
-            Me.AgregarProductoToolStripMenuItem.Visible = False
             Me.AgregarProductoToolStripMenuItem.Enabled = False
-            Me.BuscarProductosToolStripMenuItem.Visible = False
             Me.BuscarProductosToolStripMenuItem.Enabled = False
+            Me.MenuUsuarios.Visible = False
+            Me.AgregarToolStripMenuItem.Enabled = False
+            Me.BuscarToolStripMenuItem.Enabled = False
+            Me.MenuFacturas.Visible = False
+            Me.GenerarInformeToolStripMenuItem.Enabled = False
+            Me.CancelarFacturaToolStripMenuItem.Enabled = False
+            Me.MenuEmpresa.Visible = False
             Vendedor.Show()
             Vendedor.MdiParent = Me
             Vendedor.cargarLoad()
@@ -86,7 +86,7 @@ Public Class Ventana
         CuadroUsuario.PanelBusca.Visible = True
         CuadroUsuario.CBUsuario.SelectedIndex = 0
         CuadroUsuario.MdiParent = Me
-
+        CuadroUsuario.resaltarBaja(CuadroUsuario.DataGridView1)
     End Sub
 
 
@@ -98,6 +98,7 @@ Public Class Ventana
     Private Sub AgregarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AgregarToolStripMenuItem.Click
         CuadroUsuario.MaximizeBox = True
         CuadroUsuario.Show()
+        CuadroUsuario.TDni1.Focus()
         CuadroUsuario.BSalir3.Visible = True
         CuadroUsuario.PanelRegistro.Visible = True
         CuadroUsuario.PanelBusca.Visible = False
@@ -126,6 +127,7 @@ Public Class Ventana
         V_Producto.PanelAgregarProductos.Visible = False
         V_Producto.MdiParent = Me
         V_Producto.cargarLoad()
+        V_Producto.resaltarProductosBaja(V_Producto.DataGridViewResultadosProductos)
     End Sub
 
     Private Sub MenuEmpresaVerDatos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuEmpresaVerDatos.Click

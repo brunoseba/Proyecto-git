@@ -83,6 +83,7 @@
         Me.CBEsta.SelectedIndex = 0
         DataGridView1.RowTemplate.Height = 50
         tod.MostrarTodos(Me.DataGridView1)
+        Me.resaltarBaja(Me.DataGridView1)
         mostrarAlSupervisor()
 
     End Sub
@@ -374,9 +375,11 @@
         Dim usua As New Ususario
         If Me.TDni.Text = "" Then
             tod.MostrarTodos(Me.DataGridView1)
+            Me.resaltarBaja(Me.DataGridView1)
             mostrarAlSupervisor()
         Else
             usua.BuscarPorDni(TDni.Text, DataGridView1)
+            Me.resaltarBaja(Me.DataGridView1)
             mostrarAlSupervisor()
         End If
     End Sub
@@ -389,9 +392,11 @@
         Dim usua As New Ususario
         If (Me.TNombre.Text = "") Then
             tod.MostrarTodos(Me.DataGridView1)
+            Me.resaltarBaja(Me.DataGridView1)
             mostrarAlSupervisor()
         Else
             usua.BuscarPorNombre(Me.TNombre.Text, Me.DataGridView1)
+            Me.resaltarBaja(Me.DataGridView1)
             mostrarAlSupervisor()
         End If
     End Sub
@@ -404,9 +409,11 @@
         Dim usua As New Ususario
         If (Me.TApel.Text = "") Then
             tod.MostrarTodos(Me.DataGridView1)
+            Me.resaltarBaja(Me.DataGridView1)
             mostrarAlSupervisor()
         Else
             usua.BuscarPorApellido(Me.TApel.Text, Me.DataGridView1)
+            Me.resaltarBaja(Me.DataGridView1)
             mostrarAlSupervisor()
         End If
     End Sub
@@ -418,15 +425,19 @@
         Me.TApel.Text = ""
         If (Me.CBEsta.SelectedIndex = 0) And (Me.CBUsuario.SelectedIndex = 0) Then
             tod.MostrarTodos(Me.DataGridView1)
+            Me.resaltarBaja(Me.DataGridView1)
             mostrarAlSupervisor()
         ElseIf (Me.CBEsta.SelectedIndex = 0) And (Me.CBUsuario.SelectedIndex > 0) Then
             usua.BuscarPorEstadoTipoUser("a", Me.usuario(), Me.DataGridView1, "b", Me.usuario(), , )
+            Me.resaltarBaja(Me.DataGridView1)
             mostrarAlSupervisor()
         ElseIf (Me.CBEsta.SelectedIndex > 0) And (Me.CBUsuario.SelectedIndex = 0) Then
             usua.BuscarPorEstadoTipoUser(Me.estados(), "a", Me.DataGridView1, Me.estados(), "s", Me.estados(), "v")
+            Me.resaltarBaja(Me.DataGridView1)
             mostrarAlSupervisor()
         Else
             usua.BuscarPorEstadoTipoUser(Me.estados(), Me.usuario(), Me.DataGridView1, , , , )
+            Me.resaltarBaja(Me.DataGridView1)
             mostrarAlSupervisor()
         End If
     End Sub
@@ -472,10 +483,15 @@
     End Sub
 
     Private Sub TDni1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TTelef.TextChanged, TProv1.TextChanged, TNomApe.TextChanged, TLocal.TextChanged, TEmail.TextChanged, TDni1.TextChanged, TDire.TextChanged, TContra.TextChanged, TApellido.TextChanged
+        Dim usus As New Ususario()
         If String.IsNullOrWhiteSpace(TDni1.Text) Then
             TDni1.BackColor = Color.White
         Else
             TDni1.BackColor = Color.Aquamarine
+            If usus.Verificar_Existencia(Val(TDni1.Text)) Then
+                MsgBox("Este Usuario ya se encuentra Registrado", 0 + 0 + 64)
+                TDni1.Text = ""
+            End If
         End If
 
         If String.IsNullOrWhiteSpace(TContra.Text) Then
@@ -524,11 +540,20 @@
         Else
             TEmail.BackColor = Color.Aquamarine
         End If
+
     End Sub
 
     Private Sub CuadroUsuario_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyData = Keys.F10) And (BSalir3.Visible) = True Then
             Me.Close()
         End If
+    End Sub
+
+    Public Sub resaltarBaja(ByVal data As DataGridView)
+        For Each fila As DataGridViewRow In data.Rows
+            If fila.Cells("Estado").Value = "b" Then
+                fila.Cells("Estado").Style.BackColor = Color.Red
+            End If
+        Next
     End Sub
 End Class

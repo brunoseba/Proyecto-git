@@ -36,6 +36,7 @@ Partial Class V_Producto
         Me.TextBoxCod_Datos = New System.Windows.Forms.TextBox()
         Me.TextBoxStock = New System.Windows.Forms.TextBox()
         Me.LabelRutaArchivo = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TextBoxPrecio = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.LabelAgregarProducto = New System.Windows.Forms.Label()
@@ -81,6 +82,7 @@ Partial Class V_Producto
         Me.Modificar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Imagen = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.LabelBuscarProducto = New System.Windows.Forms.Label()
@@ -91,12 +93,11 @@ Partial Class V_Producto
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PanelAgregarProductos.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridViewDatosCodigo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelProductosBuscar.SuspendLayout()
         Me.PanelMostrarDatosTecnicos.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -105,9 +106,8 @@ Partial Class V_Producto
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.DataGridViewResultadosProductos, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelAgregarProductos
@@ -270,6 +270,16 @@ Partial Class V_Producto
         Me.LabelRutaArchivo.Size = New System.Drawing.Size(44, 16)
         Me.LabelRutaArchivo.TabIndex = 23
         Me.LabelRutaArchivo.Text = "Ruta:"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Login.My.Resources.Resources.Screenshot_1
+        Me.PictureBox1.Location = New System.Drawing.Point(1182, 41)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(114, 98)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox1.TabIndex = 22
+        Me.PictureBox1.TabStop = False
         '
         'TextBoxPrecio
         '
@@ -757,6 +767,17 @@ Partial Class V_Producto
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Resultados"
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.Login.My.Resources.Resources.RE_050_RFT
+        Me.PictureBox2.Location = New System.Drawing.Point(1121, 57)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(80, 80)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox2.TabIndex = 18
+        Me.PictureBox2.TabStop = False
+        Me.PictureBox2.Visible = False
+        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.ComboBox2)
@@ -857,34 +878,13 @@ Partial Class V_Producto
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.Login.My.Resources.Resources.RE_050_RFT
-        Me.PictureBox2.Location = New System.Drawing.Point(1121, 57)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(80, 80)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox2.TabIndex = 18
-        Me.PictureBox2.TabStop = False
-        Me.PictureBox2.Visible = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Login.My.Resources.Resources.Screenshot_1
-        Me.PictureBox1.Location = New System.Drawing.Point(1182, 41)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(114, 98)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox1.TabIndex = 22
-        Me.PictureBox1.TabStop = False
-        '
         'V_Producto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1362, 624)
-        Me.Controls.Add(Me.PanelAgregarProductos)
         Me.Controls.Add(Me.PanelProductosBuscar)
+        Me.Controls.Add(Me.PanelAgregarProductos)
         Me.KeyPreview = True
         Me.Name = "V_Producto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -896,6 +896,7 @@ Partial Class V_Producto
         CType(Me.DataGridViewDatosCodigo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelProductosBuscar.ResumeLayout(False)
         Me.PanelMostrarDatosTecnicos.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
@@ -907,10 +908,9 @@ Partial Class V_Producto
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         CType(Me.DataGridViewResultadosProductos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

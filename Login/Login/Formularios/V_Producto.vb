@@ -52,7 +52,6 @@
                 MsgBox("No se pudo modificar el Producto", 16, "Atención")
             End If
         End If
-
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
@@ -108,8 +107,6 @@
         End If
 
     End Sub
-
-
     'Función comprobar si es letra lo que se presiona'
     Public Sub ComprobarLetra(ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar.IsLetter(e.KeyChar) Then
@@ -146,13 +143,10 @@
     Private Sub TextBoxPrecio_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBoxStock.KeyPress, TextBoxPrecio.KeyPress
         Me.ComprobarNumero(e)
     End Sub
-
     Private Sub TextBox1_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox1.KeyPress
         ComprobarNumero(e)
     End Sub
 #End Region
-
-
 #Region "Busquedas de productos por Nombre, rodado y tipo de vehiculo cuando se produce cambios en los textbox y combobox"
     'Busqueda por Nombre cuando cambia de valor el textbox
     Private Sub TextBox6_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox6.TextChanged
@@ -161,10 +155,12 @@
         If TextBox6.Text = "" Then
             Dim prod As New Productos()
             prod.MostrarTodos(Me.DataGridViewResultadosProductos)
+            resaltarProductosBaja(DataGridViewResultadosProductos)
             cargaImagen()
         Else
             Dim prod As New Productos
             prod.BuscarPorNombre(TextBox6.Text, DataGridViewResultadosProductos)
+            resaltarProductosBaja(DataGridViewResultadosProductos)
             Dim ima As Image
             For Each fila As DataGridViewRow In DataGridViewResultadosProductos.Rows
                 'Pone invisible el id y Ruta de la imagen
@@ -185,15 +181,19 @@
         Dim prod As New Productos
         If (ComboBox2.SelectedIndex = 0) And (ComboBox1.SelectedIndex = 0) Then
             prod.MostrarTodos(Me.DataGridViewResultadosProductos)
+            resaltarProductosBaja(DataGridViewResultadosProductos)
             cargaImagen()
         ElseIf (ComboBox2.SelectedIndex = 0) And (ComboBox1.SelectedIndex > 0) Then
             prod.BuscarPorRodaTipoVehi("a", ComboBox1.SelectedItem, DataGridViewResultadosProductos, , ComboBox1.SelectedItem)
+            resaltarProductosBaja(DataGridViewResultadosProductos)
             cargaImagen()
         ElseIf (ComboBox2.SelectedIndex > 0) And (ComboBox1.SelectedIndex = 0) Then
             prod.BuscarPorRodaTipoVehi(ComboBox2.SelectedItem, "a", DataGridViewResultadosProductos, ComboBox2.SelectedItem, )
+            resaltarProductosBaja(DataGridViewResultadosProductos)
             cargaImagen()
         Else
             prod.BuscarPorRodaTipoVehi(ComboBox2.SelectedItem, ComboBox1.SelectedItem, DataGridViewResultadosProductos)
+            resaltarProductosBaja(DataGridViewResultadosProductos)
             cargaImagen()
         End If
     End Sub
@@ -216,7 +216,7 @@
     Public Sub cargarLoad()
         Dim prod As New Productos()
         prod.MostrarTodos(Me.DataGridViewResultadosProductos)
-
+        resaltarProductosBaja(DataGridViewResultadosProductos)
         Dim ima As Image
         For Each fila As DataGridViewRow In DataGridViewResultadosProductos.Rows
             'Pone invisible el id y Ruta de la imagen
@@ -392,8 +392,6 @@
         Next
     End Sub
 #End Region
-
- 
     Private Sub TextBoxNombreProducto_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBoxStock.TextChanged, TextBoxPrecio.TextChanged, TextBoxNombreProducto.TextChanged
         If TextBoxNombreProducto.Text = "" Then
             Me.TextBoxNombreProducto.BackColor = Color.White
@@ -434,6 +432,7 @@
         TextBoxStock.Text = ""
         LabelRutaArchivo.Text = "Ruta:"
         PictureBox1.Image = My.Resources.Screenshot_1
+        MsgBox("Se limpiaron todos los campos")
     End Sub
 
     Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
@@ -497,5 +496,13 @@
             End If
 
         End If
+    End Sub
+
+    Public Sub resaltarProductosBaja(ByVal data As DataGridView)
+        For Each fila As DataGridViewRow In data.Rows
+            If fila.Cells("Estado").Value = "B" Then
+                fila.Cells("Estado").Style.BackColor = Color.Red
+            End If
+        Next
     End Sub
 End Class
