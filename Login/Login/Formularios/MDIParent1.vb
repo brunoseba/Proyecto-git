@@ -70,7 +70,9 @@ Public Class Ventana
         CuadroCliente.Show()
         CuadroCliente.PanelBusca.Visible = True
         CuadroCliente.PanelRegistro.Visible = False
+        CuadroCliente.CBEstaCli.SelectedIndex = 0
         CuadroCliente.MdiParent = Me
+        CuadroCliente.resaltarClienteBaja(CuadroCliente.DataGridCliente)
     End Sub
 
 

@@ -22,7 +22,7 @@ Partial Class CuadroCliente
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelRegistro = New System.Windows.Forms.Panel()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TEmail = New System.Windows.Forms.TextBox()
@@ -87,8 +87,10 @@ Partial Class CuadroCliente
         Me.Button1 = New System.Windows.Forms.Button()
         Me.BAlta = New System.Windows.Forms.Button()
         Me.PanelBusca = New System.Windows.Forms.Panel()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.BSalir2 = New System.Windows.Forms.Button()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.TApellido2 = New System.Windows.Forms.TextBox()
         Me.CBEstaCli = New System.Windows.Forms.ComboBox()
         Me.Label24 = New System.Windows.Forms.Label()
@@ -792,6 +794,7 @@ Partial Class CuadroCliente
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelBusca.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.PanelBusca.Controls.Add(Me.Label19)
         Me.PanelBusca.Controls.Add(Me.BSalir2)
         Me.PanelBusca.Controls.Add(Me.GroupBox5)
         Me.PanelBusca.Controls.Add(Me.DataGridCliente)
@@ -800,10 +803,21 @@ Partial Class CuadroCliente
         Me.PanelBusca.Size = New System.Drawing.Size(1370, 627)
         Me.PanelBusca.TabIndex = 5
         '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label19.Location = New System.Drawing.Point(573, 107)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(231, 25)
+        Me.Label19.TabIndex = 11
+        Me.Label19.Text = "Clientes Registrados"
+        '
         'BSalir2
         '
         Me.BSalir2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.BSalir2.Location = New System.Drawing.Point(675, 563)
+        Me.BSalir2.Location = New System.Drawing.Point(656, 558)
         Me.BSalir2.Name = "BSalir2"
         Me.BSalir2.Size = New System.Drawing.Size(75, 36)
         Me.BSalir2.TabIndex = 2
@@ -814,6 +828,7 @@ Partial Class CuadroCliente
         '
         Me.GroupBox5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox5.Controls.Add(Me.Label16)
         Me.GroupBox5.Controls.Add(Me.TApellido2)
         Me.GroupBox5.Controls.Add(Me.CBEstaCli)
         Me.GroupBox5.Controls.Add(Me.Label24)
@@ -826,23 +841,34 @@ Partial Class CuadroCliente
         Me.GroupBox5.ForeColor = System.Drawing.Color.White
         Me.GroupBox5.Location = New System.Drawing.Point(10, 8)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(1337, 106)
+        Me.GroupBox5.Size = New System.Drawing.Size(1337, 83)
         Me.GroupBox5.TabIndex = 0
         Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Buscar Cliente"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label16.Location = New System.Drawing.Point(584, 0)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(178, 25)
+        Me.Label16.TabIndex = 10
+        Me.Label16.Text = "Buscar Clientes"
         '
         'TApellido2
         '
-        Me.TApellido2.Location = New System.Drawing.Point(762, 35)
+        Me.TApellido2.Location = New System.Drawing.Point(747, 42)
         Me.TApellido2.Name = "TApellido2"
         Me.TApellido2.Size = New System.Drawing.Size(178, 24)
         Me.TApellido2.TabIndex = 9
         '
         'CBEstaCli
         '
+        Me.CBEstaCli.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBEstaCli.FormattingEnabled = True
-        Me.CBEstaCli.Items.AddRange(New Object() {"", "Alta", "Baja"})
-        Me.CBEstaCli.Location = New System.Drawing.Point(1096, 35)
+        Me.CBEstaCli.Items.AddRange(New Object() {"Todos", "Alta", "Baja"})
+        Me.CBEstaCli.Location = New System.Drawing.Point(1096, 42)
         Me.CBEstaCli.Name = "CBEstaCli"
         Me.CBEstaCli.Size = New System.Drawing.Size(121, 26)
         Me.CBEstaCli.TabIndex = 8
@@ -850,34 +876,36 @@ Partial Class CuadroCliente
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.ForeColor = System.Drawing.Color.White
-        Me.Label24.Location = New System.Drawing.Point(1016, 37)
+        Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label24.Location = New System.Drawing.Point(1016, 41)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(73, 18)
+        Me.Label24.Size = New System.Drawing.Size(73, 24)
         Me.Label24.TabIndex = 7
-        Me.Label24.Text = "ESTADO:"
+        Me.Label24.Text = "Estado:"
         '
         'Label25
         '
         Me.Label25.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label25.AutoSize = True
-        Me.Label25.ForeColor = System.Drawing.Color.White
-        Me.Label25.Location = New System.Drawing.Point(657, 37)
+        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label25.Location = New System.Drawing.Point(657, 41)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(87, 18)
+        Me.Label25.Size = New System.Drawing.Size(84, 24)
         Me.Label25.TabIndex = 6
-        Me.Label25.Text = "APELLIDO :"
+        Me.Label25.Text = "Apellido:"
         '
         'TNombreCli
         '
-        Me.TNombreCli.Location = New System.Drawing.Point(419, 35)
+        Me.TNombreCli.Location = New System.Drawing.Point(419, 42)
         Me.TNombreCli.Name = "TNombreCli"
         Me.TNombreCli.Size = New System.Drawing.Size(153, 24)
         Me.TNombreCli.TabIndex = 3
         '
         'TDniCli
         '
-        Me.TDniCli.Location = New System.Drawing.Point(71, 34)
+        Me.TDniCli.Location = New System.Drawing.Point(72, 44)
         Me.TDniCli.Name = "TDniCli"
         Me.TDniCli.Size = New System.Drawing.Size(165, 24)
         Me.TDniCli.TabIndex = 2
@@ -885,20 +913,22 @@ Partial Class CuadroCliente
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.ForeColor = System.Drawing.Color.White
-        Me.Label26.Location = New System.Drawing.Point(320, 38)
+        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label26.Location = New System.Drawing.Point(320, 42)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(83, 18)
+        Me.Label26.Size = New System.Drawing.Size(84, 24)
         Me.Label26.TabIndex = 1
-        Me.Label26.Text = "NOMBRE :"
+        Me.Label26.Text = "Nombre:"
         '
         'Label27
         '
         Me.Label27.AutoSize = True
-        Me.Label27.ForeColor = System.Drawing.Color.White
-        Me.Label27.Location = New System.Drawing.Point(27, 38)
+        Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label27.Location = New System.Drawing.Point(27, 42)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(37, 18)
+        Me.Label27.Size = New System.Drawing.Size(46, 24)
         Me.Label27.TabIndex = 0
         Me.Label27.Text = "DNI:"
         '
@@ -912,15 +942,15 @@ Partial Class CuadroCliente
         Me.DataGridCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridCliente.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColVer})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridCliente.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridCliente.Location = New System.Drawing.Point(26, 135)
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridCliente.DefaultCellStyle = DataGridViewCellStyle10
+        Me.DataGridCliente.Location = New System.Drawing.Point(28, 140)
         Me.DataGridCliente.Name = "DataGridCliente"
         Me.DataGridCliente.ReadOnly = True
         Me.DataGridCliente.Size = New System.Drawing.Size(1314, 401)
@@ -968,6 +998,7 @@ Partial Class CuadroCliente
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.PanelBusca.ResumeLayout(False)
+        Me.PanelBusca.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
         CType(Me.DataGridCliente, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1050,4 +1081,6 @@ Partial Class CuadroCliente
     Friend WithEvents TB6 As System.Windows.Forms.TextBox
     Friend WithEvents BCancela As System.Windows.Forms.Button
     Friend WithEvents BAcepta As System.Windows.Forms.Button
+    Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents Label16 As System.Windows.Forms.Label
 End Class

@@ -143,10 +143,10 @@
     End Sub
 
 #Region "Mostrar"
-    Public Sub mostrarEstado(ByVal estado As Char, ByVal data As DataGridView)
+    Public Sub mostrarEstado(ByVal estados As Char, ByVal data As DataGridView)
         Try
             Using Base As New NNeumaticosEntities1
-                Dim muestra = (From c In Base.Cliente Where (c.cliente_estado.StartsWith(estado)) Select c).ToList
+                Dim muestra = (From c In Base.Cliente Where (c.cliente_estado.StartsWith(estados)) Select CUIL = c.cliente_cuil, Nombre = c.cliente_NomYape, Apellido = c.cliente_Ape, Direccion = c.cliente_Direccion, Telefono = c.cliente_Telefono, Email = c.cliente_Email, Estado = c.cliente_estado, localidad = c.cliente_Localidad, Provincia = c.cliente_Provincia, Fecha = c.cliente_Fecha, CP = c.cliente_Cpostal, Celular = c.cliente_Celular).ToList
                 data.DataSource = muestra
             End Using
         Catch ex As Exception
@@ -156,27 +156,27 @@
     Public Sub mostrarTdo(ByVal muetrasDato As DataGridView)
         Try
             Using Base As New NNeumaticosEntities1
-                Dim muestra = (From c In Base.Cliente Select c).ToList
+                Dim muestra = (From c In Base.Cliente Select CUIL = c.cliente_cuil, Nombre = c.cliente_NomYape, Apellido = c.cliente_Ape, Direccion = c.cliente_Direccion, Telefono = c.cliente_Telefono, Email = c.cliente_Email, Estado = c.cliente_estado, localidad = c.cliente_Localidad, Provincia = c.cliente_Provincia, Fecha = c.cliente_Fecha, CP = c.cliente_Cpostal, Celular = c.cliente_Celular).ToList
                 muetrasDato.DataSource = muestra
             End Using
         Catch ex As Exception
         End Try
     End Sub
 
-    Public Sub mostrarApe(ByVal apellido As String, ByVal muetrasDato As DataGridView)
+    Public Sub mostrarApe(ByVal apellidos As String, ByVal muetrasDato As DataGridView)
         Try
             Using Base As New NNeumaticosEntities1
-                Dim muestra = (From c In Base.Cliente Where (c.cliente_Ape.StartsWith(apellido)) Select c).ToList
+                Dim muestra = (From c In Base.Cliente Where (c.cliente_Ape.StartsWith(apellidos)) Select CUIL = c.cliente_cuil, Nombre = c.cliente_NomYape, Apellido = c.cliente_Ape, Direccion = c.cliente_Direccion, Telefono = c.cliente_Telefono, Email = c.cliente_Email, Estado = c.cliente_estado, localidad = c.cliente_Localidad, Provincia = c.cliente_Provincia, Fecha = c.cliente_Fecha, CP = c.cliente_Cpostal, Celular = c.cliente_Celular).ToList
                 muetrasDato.DataSource = muestra
             End Using
         Catch ex As Exception
         End Try
     End Sub
 
-    Public Sub mostrarNom(ByVal nombre As String, ByVal muetrasDato As DataGridView)
+    Public Sub mostrarNom(ByVal nombres As String, ByVal muetrasDato As DataGridView)
         Try
             Using Base As New NNeumaticosEntities1
-                Dim muestra = (From c In Base.Cliente Where (c.cliente_NomYape.StartsWith(nombre)) Select c).ToList
+                Dim muestra = (From c In Base.Cliente Where (c.cliente_NomYape.StartsWith(nombres)) Select CUIL = c.cliente_cuil, Nombre = c.cliente_NomYape, Apellido = c.cliente_Ape, Direccion = c.cliente_Direccion, Telefono = c.cliente_Telefono, Email = c.cliente_Email, Estado = c.cliente_estado, localidad = c.cliente_Localidad, Provincia = c.cliente_Provincia, Fecha = c.cliente_Fecha, CP = c.cliente_Cpostal, Celular = c.cliente_Celular).ToList
                 muetrasDato.DataSource = muestra
             End Using
         Catch ex As Exception
@@ -185,7 +185,7 @@
     Public Sub mostrarDni(ByVal dni As Long, ByVal muetrasDato As DataGridView)
         Try
             Using Base As New NNeumaticosEntities1
-                Dim muestra = (From c In Base.Cliente Where (c.cliente_cuil = dni) Select c).ToList
+                Dim muestra = (From c In Base.Cliente Where (c.cliente_cuil = dni) Select CUIL = c.cliente_cuil, Nombre = c.cliente_NomYape, Apellido = c.cliente_Ape, Direccion = c.cliente_Direccion, Telefono = c.cliente_Telefono, Email = c.cliente_Email, Estado = c.cliente_estado, localidad = c.cliente_Localidad, Provincia = c.cliente_Provincia, Fecha = c.cliente_Fecha, CP = c.cliente_Cpostal, Celular = c.cliente_Celular).ToList
                 muetrasDato.DataSource = muestra
             End Using
         Catch ex As Exception

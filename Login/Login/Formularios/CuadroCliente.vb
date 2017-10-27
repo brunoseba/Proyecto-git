@@ -12,12 +12,11 @@
 #Region "Funciones y Procedimientos"
 
     Public Sub noMuestra()
-        Me.DataGridCliente.Columns(13).Visible = False
+        Me.DataGridCliente.Columns(12).Visible = False
         Me.DataGridCliente.Columns(11).Visible = False
         Me.DataGridCliente.Columns(10).Visible = False
         Me.DataGridCliente.Columns(9).Visible = False
         Me.DataGridCliente.Columns(8).Visible = False
-        'Me.DataGridCliente.Columns(7).Visible = False//este noo
         Me.DataGridCliente.Columns(5).Visible = False
     End Sub
 
@@ -26,10 +25,8 @@
         Dim var As Char
         If CBEstado.SelectedItem = "Activo" Then
             var = "A"
-
         Else
             var = "B"
-
         End If
         Return var
     End Function
@@ -53,8 +50,6 @@
             e.Handled = False
         ElseIf e.KeyChar.IsControl(e.KeyChar) Then
             e.Handled = False
-        ElseIf e.KeyChar = "-" Then
-            e.Handled = False
         Else
             e.Handled = True
         End If
@@ -73,12 +68,7 @@
             e.Handled = True
         End If
     End Sub
-
-
-
-
 #End Region
-
 
     Private Sub BGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BGuardar.Click
         If Not ComprobarVacioNuevoClientes() Then 'And Not CompruebaCamposCompletos() 
@@ -117,55 +107,7 @@
         Me.Close()
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Dim cliente As New Cliente
-        cliente.mostrarApe(TApellido2.Text, DataGridCliente)
-        Dim dni As Long
-        Dim nom As String
-        Dim apel As String
-        Dim esta As Char
-        dni = Val(TDniCli.Text)
-        nom = TNombreCli.Text
-        apel = TApellido2.Text
-        esta = estados()
-        DataGridCliente.RowTemplate.Height = 50
-        'usu.muestra(DataGridView1, Val(TDni.Text), TNombre.Text, usuario())
-
-        'Si está enlazado a un origen de datos, y la propiedad AutoGenerateColumns tiene su valor por defecto (True), 
-        'la manera más sencilla de limpiar el control DataGridView es estableciendo el valor Nothing a su propiedad DataSource:
-
-        'DataGridView1.DataSource = Nothing
-
-
-
-        '--limpiar su filas llamando al método Clear de la propiedad Rows:--
-        'DataGridView1.Rows.Clear()
-
-
-        'DataGridCliente.Rows.Clear()
-        Try
-            Using Base As New NNeumaticosEntities1
-
-                Dim mues = (From c In Base.Cliente Where (c.cliente_cuil = dni Or c.cliente_NomYape = nom Or c.cliente_Ape = apel Or c.cliente_estado = esta) Select c).ToList
-                'Dim mues = (From c In Base.Cliente Select c).ToList
-
-                'Dni = u.usu_Dni, NombreyApellido = u.usu_nomYape, Direccion = u.usu_Direccon, Localidad = u.usu_Localidad, Telefono = u.usu_Telefono, Email = u.usu_Email, Contraseña = u.usu_Contraseña, Estado = u.usu_Estado, TipoUsuario = u.usu_TipoUsu).ToList
-
-                'tabla.DataSource = mues
-                For Each c In mues
-                    DataGridCliente.Rows.Add(c.cliente_cuil, c.cliente_NomYape & " " & c.cliente_Ape, c.cliente_Direccion, c.cliente_Telefono, c.cliente_Email, c.cliente_estado, c.cliente_Ape, c.cliente_Localidad, c.cliente_Provincia, c.cliente_Fecha, c.cliente_Cpostal, c.cliente_Celular)
-                Next
-
-            End Using
-        Catch ex As Exception
-            MessageBox.Show("Error al Cargar los Datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-
-    End Sub
-
-
-
-    Private Sub BSalir2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BSalir2.Click
+       Private Sub BSalir2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BSalir2.Click
         Me.Close()
     End Sub
 
@@ -187,16 +129,15 @@
                         'Var1 = DataGridView1.Rows(e.RowIndex).Cells(10).Value
                         TB1.Text = (DataGridCliente.Item(1, DataGridCliente.CurrentRow.Index).Value).ToString
                         TB2.Text = (DataGridCliente.Item(2, DataGridCliente.CurrentRow.Index).Value).ToString
-                        TB6.Text = (DataGridCliente.Item(3, DataGridCliente.CurrentRow.Index).Value).ToString
-                        TB4.Text = (DataGridCliente.Item(4, DataGridCliente.CurrentRow.Index).Value).ToString
-                        TB10.Text = (DataGridCliente.Item(5, DataGridCliente.CurrentRow.Index).Value).ToString
-                        'Lcontra.Text = (DataGridCliente.Item(6, DataGridCliente.CurrentRow.Index).Value).ToString
-                        If ((DataGridCliente.Item(6, DataGridCliente.CurrentRow.Index).Value).ToString) = "A" Then
+                        TB6.Text = (DataGridCliente.Item(4, DataGridCliente.CurrentRow.Index).Value).ToString
+                        TB4.Text = (DataGridCliente.Item(5, DataGridCliente.CurrentRow.Index).Value).ToString
+                        TB10.Text = (DataGridCliente.Item(6, DataGridCliente.CurrentRow.Index).Value).ToString
+                        If ((DataGridCliente.Item(7, DataGridCliente.CurrentRow.Index).Value).ToString) = "A" Then
                             TB11.Text = "ALTA"
                         Else
                             TB11.Text = "BAJA"
                         End If
-                        TB3.Text = (DataGridCliente.Item(7, DataGridCliente.CurrentRow.Index).Value).ToString
+                        TB3.Text = (DataGridCliente.Item(3, DataGridCliente.CurrentRow.Index).Value).ToString
                         TB8.Text = (DataGridCliente.Item(8, DataGridCliente.CurrentRow.Index).Value).ToString
                         TB7.Text = (DataGridCliente.Item(9, DataGridCliente.CurrentRow.Index).Value).ToString
                         TB12.Text = (DataGridCliente.Item(10, DataGridCliente.CurrentRow.Index).Value).ToString
@@ -234,28 +175,9 @@
         End If
     End Sub
 
-    Private Sub TDniCli_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TDniCli.KeyDown
-        If e.KeyCode = 13 Then
-            Call Button2_Click(sender, e)
-        End If
-    End Sub
-
-    Private Sub TNombreCli_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TNombreCli.KeyDown
-        If e.KeyCode = 13 Then
-            Call Button2_Click(sender, e)
-        End If
-    End Sub
-
-
-    Private Sub CBEstaCli_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles CBEstaCli.KeyDown
-        If e.KeyCode = 13 Then
-            Call Button2_Click(sender, e)
-        End If
-    End Sub
-
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Call CuadroCliente_Load(sender, e)
-
+        resaltarClienteBaja(Me.DataGridCliente)
         PanelBusca.Visible = True
         PanelVer.Visible = False
 
@@ -283,31 +205,21 @@
 
 
     Private Sub TApellido2_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TApellido2.TextChanged
-        'DataGridCliente.Rows.Clear()
         DataGridCliente.RowTemplate.Height = 50
-
         If TApellido2.Text <> "" Then
             TNombreCli.Enabled = False
             TDniCli.Enabled = False
             CBEstaCli.Enabled = False
-
             Dim cliente As New Cliente
             cliente.mostrarApe(TApellido2.Text, DataGridCliente)
-
-            Me.DataGridCliente.Columns(1).Name = "Cuil / Dni"
-            Me.DataGridCliente.Columns(2).Name = "Nombre"
-            Me.DataGridCliente.Columns(3).Name = "Direccion"
-            Me.DataGridCliente.Columns(4).Name = "Telefono-Fijo"
-            Me.DataGridCliente.Columns(5).Name = "Estado"
-
-
+            resaltarClienteBaja(Me.DataGridCliente)
             noMuestra()
         Else
             Call CuadroCliente_Load(sender, e)
             TNombreCli.Enabled = True
             TDniCli.Enabled = True
             CBEstaCli.Enabled = True
-
+            resaltarClienteBaja(Me.DataGridCliente)
         End If
     End Sub
 
@@ -316,6 +228,7 @@
         Dim cli As New Cliente
         DataGridCliente.RowTemplate.Height = 50
         cli.mostrarTdo(DataGridCliente)
+        'resaltarClienteBaja(Me.DataGridCliente)
         noMuestra()
 
     End Sub
@@ -324,50 +237,39 @@
 
     Private Sub TDniCli_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TDniCli.TextChanged
         DataGridCliente.RowTemplate.Height = 50
-
         If TDniCli.Text <> "" Then
             TNombreCli.Enabled = False
             TApellido2.Enabled = False
             CBEstaCli.Enabled = False
-
             Dim cliente As New Cliente
             cliente.mostrarDni(TDniCli.Text, DataGridCliente)
-
+            resaltarClienteBaja(Me.DataGridCliente)
             noMuestra()
-
         Else
             Call CuadroCliente_Load(sender, e)
             TNombreCli.Enabled = True
             TApellido2.Enabled = True
             CBEstaCli.Enabled = True
-
+            resaltarClienteBaja(Me.DataGridCliente)
         End If
     End Sub
 
     Private Sub TNombreCli_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TNombreCli.TextChanged
         DataGridCliente.RowTemplate.Height = 50
-
         If TNombreCli.Text <> "" Then
             TApellido2.Enabled = False
             TDniCli.Enabled = False
             CBEstaCli.Enabled = False
-
             Dim cliente As New Cliente
             cliente.mostrarNom(TNombreCli.Text, DataGridCliente)
-
-            Me.DataGridCliente.Columns(1).Name = "Cuil / Dni"
-            Me.DataGridCliente.Columns(2).Name = "Nombre"
-            Me.DataGridCliente.Columns(3).Name = "Direccion"
-            Me.DataGridCliente.Columns(4).Name = "Telefono-Fijo"
-            Me.DataGridCliente.Columns(5).Name = "Estado"
-
+            Me.resaltarClienteBaja(Me.DataGridCliente)
             noMuestra()
-
         Else
             Call CuadroCliente_Load(sender, e)
             TApellido2.Enabled = True
             TDniCli.Enabled = True
             CBEstaCli.Enabled = True
+            resaltarClienteBaja(Me.DataGridCliente)
 
         End If
     End Sub
@@ -376,27 +278,24 @@
         Dim cli As New Cliente
         If CBEstaCli.SelectedItem = "Alta" Then
             cli.mostrarEstado("a", DataGridCliente)
-
+            resaltarClienteBaja(Me.DataGridCliente)
             TApellido2.Enabled = False
             TDniCli.Enabled = False
             TNombreCli.Enabled = False
-
             noMuestra()
-
         ElseIf CBEstaCli.SelectedItem = "Baja" Then
             cli.mostrarEstado("b", DataGridCliente)
-
+            resaltarClienteBaja(Me.DataGridCliente)
             TApellido2.Enabled = False
             TDniCli.Enabled = False
             TNombreCli.Enabled = False
-
             noMuestra()
-
         Else
             Call CuadroCliente_Load(sender, e)
             TApellido2.Enabled = True
             TDniCli.Enabled = True
             TNombreCli.Enabled = True
+            resaltarClienteBaja(Me.DataGridCliente)
         End If
     End Sub
 
@@ -681,4 +580,19 @@
 
 #End Region
 
+    Private Sub TNombreCli_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TNombreCli.KeyPress, TApellido2.KeyPress
+        ComprobarLetra(e)
+    End Sub
+
+    Private Sub TDniCli_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TDniCli.KeyPress
+        ComprobarNumero(e)
+    End Sub
+
+    Public Sub resaltarClienteBaja(ByVal data As DataGridView)
+        For Each fila As DataGridViewRow In data.Rows
+            If fila.Cells("Estado").Value = "B" Then
+                fila.Cells("Estado").Style.BackColor = Color.Red
+            End If
+        Next
+    End Sub
 End Class
