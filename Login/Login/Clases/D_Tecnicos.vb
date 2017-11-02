@@ -87,6 +87,9 @@
 #End Region
 
 #Region "Procedimientos"
+    'Metodo MostrarTodosDTecnicos.
+    'Parametros: datagrid.
+    'Resultado: Muestra todos los datos tecnicos'
     Public Function MostrarTodosDTecnicos(ByVal dataTecnicos As DataGridView)
         Try
             Using Mostrar As New NNeumaticosEntities1
@@ -100,6 +103,9 @@
         End Try
     End Function
 
+    'Metodo MostrarUnicoTodosDTecnicos.
+    'Parametros: codigo y datagrid.
+    'Resultado: devuelve un solo dato tecnico que recibe como parametro'
     Public Function MostrarUnicoDTecnicos(ByVal cod As Integer, ByVal dataTecnicos As DataGridView)
         Try
             Using Mostrar As New NNeumaticosEntities1
