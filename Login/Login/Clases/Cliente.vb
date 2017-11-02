@@ -133,6 +133,9 @@
 #End Region
 
 #Region "Metodos"
+    'Metodo Consulta 
+    'Parametros: Recibe un dato tipo long
+    'Return: devuelve el cliente que coincide con ese cuil y que su estado sea activo  
     Public Sub Consulta(ByVal cliente As Long)
         Try
             Using Base As New NNeumaticosEntities1
@@ -143,6 +146,9 @@
     End Sub
 
 #Region "Mostrar"
+    'Metodo MostrarEstado.
+    'Parametros: Recibe un dato tipo char, y un datagrid.
+    'Return: devuelve el cliente que coincide con ese tipo de estado.
     Public Sub mostrarEstado(ByVal estados As Char, ByVal data As DataGridView)
         Try
             Using Base As New NNeumaticosEntities1
@@ -153,6 +159,9 @@
         End Try
     End Sub
 
+    'Metodo MostrarTdo.
+    'Parametros: Recibe un dato tipo datagrid.
+    'Return: devuelve todos los clientes.
     Public Sub mostrarTdo(ByVal muetrasDato As DataGridView)
         Try
             Using Base As New NNeumaticosEntities1
@@ -163,6 +172,9 @@
         End Try
     End Sub
 
+    'Metodo mostrarApe.
+    'Parametros: Recibe un dato tipo string(apellido) y un datagrid.
+    'Return: devuelve los clientes que coincide con ese apellido.
     Public Sub mostrarApe(ByVal apellidos As String, ByVal muetrasDato As DataGridView)
         Try
             Using Base As New NNeumaticosEntities1
@@ -173,6 +185,9 @@
         End Try
     End Sub
 
+    'Metodo mostrarNom.
+    'Parametros: Recibe un dato tipo string(nombre) y un datagrid.
+    'Return: devuelve los clientes que coincide con ese nombre.
     Public Sub mostrarNom(ByVal nombres As String, ByVal muetrasDato As DataGridView)
         Try
             Using Base As New NNeumaticosEntities1
@@ -182,6 +197,10 @@
         Catch ex As Exception
         End Try
     End Sub
+
+    'Metodo mostrarDni.
+    'Parametros: Recibe un dato tipo long(dni) y un datagrid.
+    'Return: devuelve los clientes que coincide con ese dni.
     Public Sub mostrarDni(ByVal dni As Long, ByVal muetrasDato As DataGridView)
         Try
             Using Base As New NNeumaticosEntities1
@@ -194,6 +213,8 @@
 #End Region
 
 #Region "Agregar Modificar"
+    'Metodo AgregaCliente.
+    'Parametros: Recibe todos los datos para agregar un nuevo cliente.
     Public Function AgregaCliente()
         Try
             Using Base As New NNeumaticosEntities1
@@ -219,6 +240,8 @@
         End Try
     End Function
 
+    'Metodo ModifCliente.
+    'Parametros: Recibe todos los datos para modificar un cliente.
     Public Sub ModifCliente(ByVal cliente As Long, ByVal nombe As String, ByVal direc As String, ByVal tel As String, ByVal email As String, ByVal estado As Char, ByVal ape As String, ByVal local As String, ByVal prov As String, ByVal fecha As String, ByVal postal As String, ByVal celu As String)
         Try
             Using Base As New NNeumaticosEntities1
@@ -240,6 +263,8 @@
         End Try
     End Sub
 
+    'Metodo AltaCliente.
+    'Parametros: Recibe cuil cliente, para darlo de alta.
     Public Sub AltaCliente(ByVal cliente As Long)
         Try
             Using Base As New NNeumaticosEntities1
@@ -253,9 +278,10 @@
         End Try
     End Sub
 
+    'Metodo BajaCliente.
+    'Parametros: Recibe cuil cliente, para darlo de baja.
     Public Sub BajaCliente(ByVal cliente As Long)
         Try
-
             Using Base As New NNeumaticosEntities1
                 Dim baja = (From c In Base.Cliente Where (cliente = c.cliente_cuil And c.cliente_estado = "A") Select c).First
                 baja.cliente_estado = "B"
@@ -265,6 +291,8 @@
         End Try
     End Sub
 
+    'Metodo verificarExistencia.
+    'Parametros: Recibe cuil cliente, para comprobar si existe antes de crear uno nuevo.
     Public Function verificarExistencia(ByVal cliente As Long, ByVal nomApe As String)
         Try
             Using Base As New NNeumaticosEntities1
