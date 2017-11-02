@@ -154,12 +154,12 @@
         ComboBoxTipoVehiculo.SelectedIndex = 0
         If TextBox6.Text = "" Then
             Dim prod As New Productos()
-            prod.MostrarTodos(Me.DataGridViewResultadosProductos)
+            prod.MostrarTodos(Me.DataGridViewResultadosProductos, Ventana.cargo.Text)
             resaltarProductosBaja(DataGridViewResultadosProductos)
             cargaImagen()
         Else
             Dim prod As New Productos
-            prod.BuscarPorNombre(TextBox6.Text, DataGridViewResultadosProductos)
+            prod.BuscarPorNombre(TextBox6.Text, DataGridViewResultadosProductos, Ventana.cargo.Text)
             resaltarProductosBaja(DataGridViewResultadosProductos)
             Dim ima As Image
             For Each fila As DataGridViewRow In DataGridViewResultadosProductos.Rows
@@ -180,11 +180,11 @@
         TextBox6.Text = ""
         Dim prod As New Productos
         If (ComboBox2.SelectedIndex = 0) And (ComboBox1.SelectedIndex = 0) Then
-            prod.MostrarTodos(Me.DataGridViewResultadosProductos)
+            prod.MostrarTodos(Me.DataGridViewResultadosProductos, Ventana.cargo.Text)
             resaltarProductosBaja(DataGridViewResultadosProductos)
             cargaImagen()
         ElseIf (ComboBox2.SelectedIndex = 0) And (ComboBox1.SelectedIndex > 0) Then
-            prod.BuscarPorRodaTipoVehi("a", ComboBox1.SelectedItem, DataGridViewResultadosProductos, , ComboBox1.SelectedItem)
+            prod.BuscarPorRodaTipoVehi("a", ComboBox1.SelectedItem, DataGridViewResultadosProductos, Ventana.cargo.Text, , ComboBox1.SelectedItem)
             resaltarProductosBaja(DataGridViewResultadosProductos)
             cargaImagen()
         ElseIf (ComboBox2.SelectedIndex > 0) And (ComboBox1.SelectedIndex = 0) Then
@@ -192,7 +192,7 @@
             resaltarProductosBaja(DataGridViewResultadosProductos)
             cargaImagen()
         Else
-            prod.BuscarPorRodaTipoVehi(ComboBox2.SelectedItem, ComboBox1.SelectedItem, DataGridViewResultadosProductos)
+            prod.BuscarPorRodaTipoVehi(ComboBox2.SelectedItem, ComboBox1.SelectedItem, DataGridViewResultadosProductos, Ventana.cargo.Text)
             resaltarProductosBaja(DataGridViewResultadosProductos)
             cargaImagen()
         End If
@@ -215,7 +215,7 @@
     End Sub
     Public Sub cargarLoad()
         Dim prod As New Productos()
-        prod.MostrarTodos(Me.DataGridViewResultadosProductos)
+        prod.MostrarTodos(Me.DataGridViewResultadosProductos, Ventana.cargo.Text)
         resaltarProductosBaja(DataGridViewResultadosProductos)
         Dim ima As Image
         For Each fila As DataGridViewRow In DataGridViewResultadosProductos.Rows

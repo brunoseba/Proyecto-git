@@ -7,7 +7,7 @@
         ComboBox2.SelectedIndex = 0
         DataGridCompra.Columns("pro_id").Visible = False
         Dim prod As New Productos()
-        prod.MostrarTodos(Me.DataGridViewBuscadorProducto)
+        prod.MostrarTodos(Me.DataGridViewBuscadorProducto, Ventana.cargo.Text)
         Dim ima As Image
         For Each fila As DataGridViewRow In DataGridViewBuscadorProducto.Rows
             'Pone invisible el id y Ruta de la imagen
@@ -68,7 +68,7 @@
                                     Dim prod As New Productos()
                                     prod.descontarStock(id, cantidad_Cubiertas)
                                     'Actualizar datagridview'
-                                    prod.MostrarTodos(DataGridViewBuscadorProducto)
+                                    prod.MostrarTodos(DataGridViewBuscadorProducto, Ventana.cargo.Text)
                                     Me.cargaImagen()
                                     'Pregunta si existe el producto'    
                                     Dim existe As Boolean = DataGridCompra.Rows.Cast(Of DataGridViewRow).Any(Function(x) CInt(x.Cells("pro_id").Value) = id)
@@ -127,7 +127,7 @@
 
                             Dim prod As New Productos()
                             prod.ActualizarStock(id, cantidad)
-                            prod.MostrarTodos(DataGridViewBuscadorProducto)
+                            prod.MostrarTodos(DataGridViewBuscadorProducto, Ventana.cargo.Text)
                             cargaImagen()
                         End If
                         Exit Select
@@ -194,7 +194,7 @@
             For Each fila As DataGridViewRow In DataGridCompra.Rows
                 Dim prod As New Productos()
                 prod.ActualizarStock(fila.Cells("pro_id").Value, fila.Cells("pro_cantidad").Value)
-                prod.MostrarTodos(DataGridViewBuscadorProducto)
+                prod.MostrarTodos(DataGridViewBuscadorProducto, Ventana.cargo.Text)
                 cargaImagen()
             Next
                 DataGridCompra.Rows.Clear()
@@ -245,11 +245,11 @@
         ComboBox2.SelectedIndex = 0
         If TextBox6.Text = "" Then
             Dim prod As New Productos()
-            prod.MostrarTodos(Me.DataGridViewBuscadorProducto)
+            prod.MostrarTodos(Me.DataGridViewBuscadorProducto, Ventana.cargo.Text)
             cargaImagen()
         Else
             Dim prod As New Productos
-            prod.BuscarPorNombre(TextBox6.Text, DataGridViewBuscadorProducto)
+            prod.BuscarPorNombre(TextBox6.Text, DataGridViewBuscadorProducto, Ventana.cargo.Text)
             Dim ima As Image
             For Each fila As DataGridViewRow In DataGridViewBuscadorProducto.Rows
                 'Pone invisible el id y Ruta de la imagen
@@ -284,16 +284,16 @@
         TextBox6.Text = ""
         Dim prod As New Productos
         If (ComboBox2.SelectedIndex = 0) And (ComboBox1.SelectedIndex = 0) Then
-            prod.MostrarTodos(Me.DataGridViewBuscadorProducto)
+            prod.MostrarTodos(Me.DataGridViewBuscadorProducto, Ventana.cargo.Text)
             cargaImagen()
         ElseIf (ComboBox2.SelectedIndex = 0) And (ComboBox1.SelectedIndex > 0) Then
-            prod.BuscarPorRodaTipoVehi("a", ComboBox1.SelectedItem, DataGridViewBuscadorProducto, , ComboBox1.SelectedItem)
+            prod.BuscarPorRodaTipoVehi("a", ComboBox1.SelectedItem, DataGridViewBuscadorProducto, Ventana.cargo.Text, , ComboBox1.SelectedItem)
             cargaImagen()
         ElseIf (ComboBox2.SelectedIndex > 0) And (ComboBox1.SelectedIndex = 0) Then
-            prod.BuscarPorRodaTipoVehi(ComboBox2.SelectedItem, "a", DataGridViewBuscadorProducto, ComboBox2.SelectedItem, )
+            prod.BuscarPorRodaTipoVehi(ComboBox2.SelectedItem, "a", DataGridViewBuscadorProducto, Ventana.cargo.Text, ComboBox2.SelectedItem, )
             cargaImagen()
         Else
-            prod.BuscarPorRodaTipoVehi(ComboBox2.SelectedItem, ComboBox1.SelectedItem, DataGridViewBuscadorProducto)
+            prod.BuscarPorRodaTipoVehi(ComboBox2.SelectedItem, ComboBox1.SelectedItem, DataGridViewBuscadorProducto, Ventana.cargo.Text)
             cargaImagen()
         End If
     End Sub
@@ -345,7 +345,7 @@
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         Dim ultimaFactura As String
-        Dim fatura As New Facturas(TextBCuilCliente.Text(), TextBoxCuitEmpresa.Text, TextBDniVendedor.Text, DateTimePicker1.Text, TextBTipoPago.Text, "A", LabelTotal.Text)
+        Dim fatura As New Facturas(TextBCuilCliente.Text(), TextBoxCuitEmpresa.Text, TextBDniVendedor.Text, DateTimePicker1.Text, TextBTipoPago.Text, "Confirmada", LabelTotal.Text)
         If fatura.agregarFactura() Then
             MsgBox("Factura generada correctamente", 0 + 0 + 64, "Aviso")
             ultimaFactura = fatura.ObtenerUltimaFactura()
@@ -397,7 +397,7 @@
             Dim produ As String
             produ = InputBox("Ingrese la cantidad de cubiertas", "Atención")
             Dim prod As New Productos
-            prod.BuscarPorNombre(produ, DataGridViewBuscadorProducto)
+            prod.BuscarPorNombre(produ, DataGridViewBuscadorProducto, Ventana.cargo.Text)
             Dim ima As Image
             For Each fila As DataGridViewRow In DataGridViewBuscadorProducto.Rows
                 'Pone invisible el id y Ruta de la imagen
@@ -429,4 +429,5 @@
         TextBNomyApeVendedor.Text = ""
         TextBTipoPago.Text = ""
     End Sub
+
 End Class

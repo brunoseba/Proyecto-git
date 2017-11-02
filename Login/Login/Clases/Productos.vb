@@ -157,35 +157,54 @@
         End Try
     End Function
 
-    'Public Sub MostrarTodos(ByVal tabla1 As DataGridView) ', ByVal imagen As PictureBox
-    Public Sub MostrarTodos(ByVal tabla As DataGridView)
+
+    Public Sub MostrarTodos(ByVal tabla As DataGridView, ByVal user As String)
         Try
             Using Base As New NNeumaticosEntities1
-                Dim todos = (From p In Base.Producto Select ID = p.producto_id, Nombre = p.producto_nombre, Rod = p.producto_rodado, Medida = p.producto_medida, Precio = p.producto_precio, Stock = p.producto_stock, Ruta = p.producto_imagen, Tipo_Vehiculo = p.tipoVehi_descripcion, Estado = p.producto_estado, Datos = p.Datos_cod).ToList
-                tabla.DataSource = todos
+                If user = "admin" Then
+                    Dim todos = (From p In Base.Producto Select ID = p.producto_id, Nombre = p.producto_nombre, Rod = p.producto_rodado, Medida = p.producto_medida, Precio = p.producto_precio, Stock = p.producto_stock, Ruta = p.producto_imagen, Tipo_Vehiculo = p.tipoVehi_descripcion, Estado = p.producto_estado, Datos = p.Datos_cod).ToList
+                    tabla.DataSource = todos
+                Else
+                    Dim todos = (From p In Base.Producto Where (p.producto_estado <> "B") Select ID = p.producto_id, Nombre = p.producto_nombre, Rod = p.producto_rodado, Medida = p.producto_medida, Precio = p.producto_precio, Stock = p.producto_stock, Ruta = p.producto_imagen, Tipo_Vehiculo = p.tipoVehi_descripcion, Estado = p.producto_estado, Datos = p.Datos_cod).ToList
+                    tabla.DataSource = todos
+                End If
+
             End Using
         Catch ex As Exception
         End Try
     End Sub
 
-    Public Sub BuscarPorNombre(ByVal p_nombre As String, ByVal p_resultados As DataGridView)
+    Public Sub BuscarPorNombre(ByVal p_nombre As String, ByVal p_resultados As DataGridView, ByVal user As String)
         Try
             Using base As New NNeumaticosEntities1
-                Dim consulta = (From p In base.Producto Where (p.producto_nombre.Contains(p_nombre)) Select ID = p.producto_id, Nombre = p.producto_nombre, Rodado = p.producto_rodado, Medida = p.producto_medida, Precio = p.producto_precio, Stock = p.producto_stock, Ruta = p.producto_imagen, Tipo_Vehiculo = p.tipoVehi_descripcion, Estado = p.producto_estado, Datos = p.Datos_cod).ToList
-                p_resultados.DataSource = consulta
+                If user = "admin" Then
+                    Dim consulta = (From p In base.Producto Where (p.producto_nombre.Contains(p_nombre)) Select ID = p.producto_id, Nombre = p.producto_nombre, Rodado = p.producto_rodado, Medida = p.producto_medida, Precio = p.producto_precio, Stock = p.producto_stock, Ruta = p.producto_imagen, Tipo_Vehiculo = p.tipoVehi_descripcion, Estado = p.producto_estado, Datos = p.Datos_cod).ToList
+                    p_resultados.DataSource = consulta
+                Else
+                    Dim consulta = (From p In base.Producto Where (p.producto_nombre.Contains(p_nombre) And p.producto_estado <> "B") Select ID = p.producto_id, Nombre = p.producto_nombre, Rodado = p.producto_rodado, Medida = p.producto_medida, Precio = p.producto_precio, Stock = p.producto_stock, Ruta = p.producto_imagen, Tipo_Vehiculo = p.tipoVehi_descripcion, Estado = p.producto_estado, Datos = p.Datos_cod).ToList
+                    p_resultados.DataSource = consulta
+                End If
+
             End Using
         Catch ex As Exception
             MsgBox("No se pudo realizar la consulta")
         End Try
     End Sub
 
-    Public Sub BuscarPorRodaTipoVehi(ByVal p_rodado As String, ByVal p_tipoV As String, ByVal p_data As DataGridView, Optional ByVal p_rodado_O As String = "*", Optional ByVal p_tipoV_O As String = "*")
+    Public Sub BuscarPorRodaTipoVehi(ByVal p_rodado As String, ByVal p_tipoV As String, ByVal p_data As DataGridView, ByVal user As String, Optional ByVal p_rodado_O As String = "*", Optional ByVal p_tipoV_O As String = "*")
         Try
             Using Base As New NNeumaticosEntities1
-                Dim consulta = (From p In Base.Producto Where (((p.producto_rodado = p_rodado) And (p.tipoVehi_descripcion = p_tipoV)) Or
-                                                               ((p.producto_rodado = p_rodado_O) Or (p.tipoVehi_descripcion = p_tipoV_O)))
-                                Select ID = p.producto_id, Nombre = p.producto_nombre, Rodado = p.producto_rodado, Medida = p.producto_medida, Precio = p.producto_precio, Stock = p.producto_stock, Ruta = p.producto_imagen, Tipo_Vehiculo = p.tipoVehi_descripcion, Estado = p.producto_estado, Datos = p.Datos_cod).ToList
-                p_data.DataSource = consulta
+                If user = "Admin" Then
+                    Dim consulta = (From p In Base.Producto Where (((p.producto_rodado = p_rodado) And (p.tipoVehi_descripcion = p_tipoV)) Or
+                                                                   ((p.producto_rodado = p_rodado_O) Or (p.tipoVehi_descripcion = p_tipoV_O)))
+                                    Select ID = p.producto_id, Nombre = p.producto_nombre, Rodado = p.producto_rodado, Medida = p.producto_medida, Precio = p.producto_precio, Stock = p.producto_stock, Ruta = p.producto_imagen, Tipo_Vehiculo = p.tipoVehi_descripcion, Estado = p.producto_estado, Datos = p.Datos_cod).ToList
+                    p_data.DataSource = consulta
+                Else
+                    Dim consulta = (From p In Base.Producto Where (((p.producto_rodado = p_rodado And p.producto_estado <> "B") And (p.tipoVehi_descripcion = p_tipoV And (p.producto_estado <> "B"))) Or
+                                                                   ((p.producto_rodado = p_rodado_O And (p.producto_estado <> "B")) Or (p.tipoVehi_descripcion = p_tipoV_O) And (p.producto_estado <> "B")))
+                                    Select ID = p.producto_id, Nombre = p.producto_nombre, Rodado = p.producto_rodado, Medida = p.producto_medida, Precio = p.producto_precio, Stock = p.producto_stock, Ruta = p.producto_imagen, Tipo_Vehiculo = p.tipoVehi_descripcion, Estado = p.producto_estado, Datos = p.Datos_cod).ToList
+                    p_data.DataSource = consulta
+                End If
             End Using
         Catch ex As Exception
         End Try

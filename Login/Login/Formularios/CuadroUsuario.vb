@@ -357,6 +357,7 @@
                 PanelBusca.Visible = True
                 PanelModificarUser.Visible = False
                 tod.MostrarTodos(DataGridView1)
+                Me.resaltarBaja(Me.DataGridView1)
                 Me.TDni.Text = ""
                 Me.TNombre.Text = ""
                 Me.TApel.Text = ""
