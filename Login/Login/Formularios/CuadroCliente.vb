@@ -134,8 +134,12 @@
                         TB10.Text = (DataGridCliente.Item(6, DataGridCliente.CurrentRow.Index).Value).ToString
                         If ((DataGridCliente.Item(7, DataGridCliente.CurrentRow.Index).Value).ToString) = "A" Then
                             TB11.Text = "ALTA"
+                            BBaja.Visible = True
+                            BAlta.Visible = False
                         Else
                             TB11.Text = "BAJA"
+                            BAlta.Visible = True
+                            BBaja.Visible = False
                         End If
                         TB3.Text = (DataGridCliente.Item(3, DataGridCliente.CurrentRow.Index).Value).ToString
                         TB8.Text = (DataGridCliente.Item(8, DataGridCliente.CurrentRow.Index).Value).ToString
@@ -227,6 +231,8 @@
     Private Sub CuadroCliente_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim cli As New Cliente
         DataGridCliente.RowTemplate.Height = 50
+        CBEstado.SelectedIndex = 0
+        CBProvincia.SelectedIndex = 0
         cli.mostrarTdo(DataGridCliente)
         'resaltarClienteBaja(Me.DataGridCliente)
         noMuestra()
@@ -337,36 +343,39 @@
     Private Sub BAcepta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BAcepta.Click
         Dim cli As New Cliente
         Dim res As MsgBoxResult
-        res = MsgBox("Desea Guardar los Cambios?", 4 + 256 + 32, "Modificar")
-        If res = vbYes Then
-            'cli.ModifCliente(TB1.Text, TB4.Text, TB5.Text, TB6.Text, TB7.Text, TB8.Text, TB9.Text, TB10.Text)
-            cli.ModifCliente(TB1.Text, TB2.Text, TB6.Text, TB4.Text, TB10.Text, TB11.Text, TB3.Text, TB8.Text, TB7.Text, TB12.Text, TB9.Text, TB5.Text)
-            MsgBox("Los datos se han Modificado", 0 + 0 + 64, "info")
-            TB1.Enabled = False
-            TB2.Enabled = False
-            TB3.Enabled = False
-            TB4.Enabled = False
-            TB5.Enabled = False
-            TB6.Enabled = False
-            TB7.Enabled = False
-            TB8.Enabled = False
-            TB9.Enabled = False
-            TB10.Enabled = False
-            TB11.Enabled = False
-            TB12.Enabled = False
-
-
-            BCancela.Visible = False
-            BAcepta.Visible = False
-
-            BAlta.Visible = True
-            BBaja.Visible = True
-            BModifica.Visible = True
+        If Not ComprobarVacioModificarClientes() Then
+            res = MsgBox("Desea Guardar los Cambios?", 4 + 256 + 32, "Modificar")
+            If res = vbYes Then
+                cli.ModifCliente(TB1.Text, TB2.Text, TB6.Text, TB4.Text, TB10.Text, TB11.Text, TB3.Text, TB8.Text, TB7.Text, TB12.Text, TB9.Text, TB5.Text)
+                MsgBox("Los datos se han Modificado", 0 + 0 + 64, "info")
+                TB1.Enabled = False
+                TB2.Enabled = False
+                TB3.Enabled = False
+                TB4.Enabled = False
+                TB5.Enabled = False
+                TB6.Enabled = False
+                TB7.Enabled = False
+                TB8.Enabled = False
+                TB9.Enabled = False
+                TB10.Enabled = False
+                If TB11.Text = "ALTA" Then
+                    BBaja.Visible = True
+                    BAlta.Visible = False
+                Else
+                    BBaja.Visible = False
+                    BAlta.Visible = True
+                End If
+                TB11.Enabled = False
+                TB12.Enabled = False
+                BCancela.Visible = False
+                BAcepta.Visible = False
+                BModifica.Visible = True
+            End If
+        Else
 
         End If
 
     End Sub
-
 #End Region
 
 
@@ -418,7 +427,7 @@
                 TB11.Text = "BAJA"
 
                 MsgBox("El Cliente fue dado de Baja", 0 + 0 + 64, "Baja")
-
+                Me.Close()
             End If
 
         Else
@@ -436,7 +445,8 @@
             If res = vbYes Then
                 cli.AltaCliente(TB1.Text)
                 TB11.Text = "ALTA"
-                MsgBox("El Cliente fue dado de Baja", 0 + 0 + 64, "Aaja")
+                MsgBox("El Cliente fue dado deAlta", 0 + 0 + 64, "Alta")
+                Me.Close()
             End If
         Else
             MsgBox("El cliente ya esta dado de Alta", 0 + 0 + 64, "info")
@@ -562,22 +572,46 @@
         Me.ComprobarNumero(e)
     End Sub
 
-    'Comprobacion de lo que se ingresa si es letra en los campos "NOMBRE, LOCALIDAD Y APELLIDO" en nuevo CLiente'
-    'Private Sub TApellido_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TNomApe.KeyPress, TLocal.KeyPress, TApellido.KeyPress
-    'Me.ComprobarLetra(e)
-    'End Sub
-
-
-    'Comprobacion de lo que se ingresa si es numero en los campos "TELEFONO, CP, DNI,CELULAR" en modificar CLiente'
-    'Private Sub TextBox7_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox9.KeyPress, TextBox7.KeyPress, TextBox5.KeyPress, TextBox3.KeyPress
-    'Me.ComprobarNumero(e)
-    'End Sub
-    'Comprobacion de lo que se ingresa si es letra en los campos "NOMBRE, LOCALIDAD Y APELLIDO" en modificar CLiente'
-    'Private Sub TextBox6_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox8.KeyPress, TextBox6.KeyPress, TextBox2.KeyPress
-    'Me.ComprobarLetra(e)
-    'End Sub
-
-
+    Private Function ComprobarVacioModificarClientes() As Boolean
+        If String.IsNullOrWhiteSpace(TB5.Text) Then
+            MsgBox("Debe completar el campo Celular")
+            TB5.BackColor = Color.Salmon
+            TB5.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TB6.Text) Then
+            MsgBox("Debe completar el campo Dirección")
+            TB6.BackColor = Color.Salmon
+            TB6.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TB4.Text) Then
+            MsgBox("Debe completar el campo Teléfono")
+            TB4.BackColor = Color.Salmon
+            TB4.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TB7.Text) Then
+            MsgBox("Debe completar el campo Provincia")
+            TB7.BackColor = Color.Salmon
+            TB7.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TB8.Text) Then
+            MsgBox("Debe completar el campo Localidad")
+            TB8.BackColor = Color.Salmon
+            TB8.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TB9.Text) Then
+            MsgBox("Debe completar el campo CP")
+            TB9.BackColor = Color.Salmon
+            TB9.Focus()
+            Return True
+        ElseIf String.IsNullOrWhiteSpace(TB10.Text) Then
+            MsgBox("Debe completar el campo E-mail")
+            TB10.BackColor = Color.Salmon
+            TB10.Focus()
+            Return True
+        Else
+            Return False
+        End If
+    End Function
 #End Region
 
     Private Sub TNombreCli_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TNombreCli.KeyPress, TApellido2.KeyPress
@@ -594,5 +628,70 @@
                 fila.Cells("Estado").Style.BackColor = Color.Red
             End If
         Next
+    End Sub
+
+    Private Sub TB2_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TB8.KeyPress, TB7.KeyPress, TB3.KeyPress, TB2.KeyPress
+        ComprobarLetra(e)
+    End Sub
+
+    Private Sub TB1_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TB9.KeyPress, TB5.KeyPress, TB4.KeyPress, TB1.KeyPress
+        ComprobarNumero(e)
+    End Sub
+
+    Private Sub TB5_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TB9.TextChanged, TB8.TextChanged, TB7.TextChanged, TB6.TextChanged, TB5.TextChanged, TB4.TextChanged, TB10.TextChanged
+        If TB5.Text = "" Then
+            Me.TB5.BackColor = Color.White
+        Else
+            Me.TB5.BackColor = Color.Aquamarine
+        End If
+
+        If TB6.Text = "" Then
+            Me.TB6.BackColor = Color.White
+        Else
+            Me.TB6.BackColor = Color.Aquamarine
+        End If
+
+        If TB4.Text = "" Then
+            Me.TB4.BackColor = Color.White
+        Else
+            Me.TB4.BackColor = Color.Aquamarine
+        End If
+
+        If TB7.Text = "" Then
+            Me.TB7.BackColor = Color.White
+        Else
+            Me.TB7.BackColor = Color.Aquamarine
+        End If
+        If TB8.Text = "" Then
+            Me.TB8.BackColor = Color.White
+        Else
+            Me.TB8.BackColor = Color.Aquamarine
+        End If
+        If TB9.Text = "" Then
+            Me.TB9.BackColor = Color.White
+        Else
+            Me.TB9.BackColor = Color.Aquamarine
+        End If
+        If TB10.Text = "" Then
+            Me.TB10.BackColor = Color.White
+        Else
+            Me.TB10.BackColor = Color.Aquamarine
+        End If
+    End Sub
+
+    Private Sub TDni_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TDni.TextChanged
+        Dim clien As New Cliente()
+        Dim nombreApeCliente As String
+        nombreApeCliente = ""
+        If (TDni.TextLength = 11) Then
+            nombreApeCliente = clien.verificarExistencia(TDni.Text, nombreApeCliente)
+            If nombreApeCliente <> "False" Then
+                MsgBox("El cliente: " + nombreApeCliente + " se encuentra registrado")
+            End If
+        End If
+    End Sub
+
+    Private Sub TApellido_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TNomApe.KeyPress, TLocal.KeyPress, TApellido.KeyPress
+        ComprobarLetra(e)
     End Sub
 End Class

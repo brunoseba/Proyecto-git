@@ -54,6 +54,8 @@ Partial Class Ventana
         Me.UsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PersonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.cargo = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DniToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UserFacturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.BarraEstado = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
@@ -64,7 +66,7 @@ Partial Class Ventana
         '
         'BarraMenu
         '
-        Me.BarraMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Productos, Me.MenuClientes, Me.MenuUsuarios, Me.MenuFacturas, Me.MenuEmpresa, Me.ReportesToolStripMenuItem, Me.ToolStripMenuItem1, Me.usuario, Me.PersonaToolStripMenuItem, Me.cargo})
+        Me.BarraMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Productos, Me.MenuClientes, Me.MenuUsuarios, Me.MenuFacturas, Me.MenuEmpresa, Me.ReportesToolStripMenuItem, Me.ToolStripMenuItem1, Me.usuario, Me.PersonaToolStripMenuItem, Me.cargo, Me.DniToolStripMenuItem, Me.UserFacturaToolStripMenuItem})
         Me.BarraMenu.Location = New System.Drawing.Point(0, 0)
         Me.BarraMenu.Name = "BarraMenu"
         Me.BarraMenu.Size = New System.Drawing.Size(991, 24)
@@ -173,8 +175,7 @@ Partial Class Ventana
         Me.GenerarInformeToolStripMenuItem.Image = Global.Login.My.Resources.Resources._16__Edit_2_
         Me.GenerarInformeToolStripMenuItem.Name = "GenerarInformeToolStripMenuItem"
         Me.GenerarInformeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F7
-        Me.GenerarInformeToolStripMenuItem.ShowShortcutKeys = False
-        Me.GenerarInformeToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.GenerarInformeToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.GenerarInformeToolStripMenuItem.Text = "Ver Factura"
         '
         'CancelarFacturaToolStripMenuItem
@@ -182,9 +183,8 @@ Partial Class Ventana
         Me.CancelarFacturaToolStripMenuItem.Image = Global.Login.My.Resources.Resources.delete_square161
         Me.CancelarFacturaToolStripMenuItem.Name = "CancelarFacturaToolStripMenuItem"
         Me.CancelarFacturaToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F8
-        Me.CancelarFacturaToolStripMenuItem.ShowShortcutKeys = False
-        Me.CancelarFacturaToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
-        Me.CancelarFacturaToolStripMenuItem.Text = "Cancelar Factura"
+        Me.CancelarFacturaToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
+        Me.CancelarFacturaToolStripMenuItem.Text = "Anular Factura"
         '
         'MenuEmpresa
         '
@@ -289,6 +289,20 @@ Partial Class Ventana
         Me.cargo.Text = "cargo"
         Me.cargo.Visible = False
         '
+        'DniToolStripMenuItem
+        '
+        Me.DniToolStripMenuItem.Name = "DniToolStripMenuItem"
+        Me.DniToolStripMenuItem.Size = New System.Drawing.Size(36, 20)
+        Me.DniToolStripMenuItem.Text = "dni"
+        Me.DniToolStripMenuItem.Visible = False
+        '
+        'UserFacturaToolStripMenuItem
+        '
+        Me.UserFacturaToolStripMenuItem.Name = "UserFacturaToolStripMenuItem"
+        Me.UserFacturaToolStripMenuItem.Size = New System.Drawing.Size(80, 20)
+        Me.UserFacturaToolStripMenuItem.Text = "userFactura"
+        Me.UserFacturaToolStripMenuItem.Visible = False
+        '
         'StatusStrip
         '
         Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BarraEstado})
@@ -370,5 +384,7 @@ Partial Class Ventana
     Friend WithEvents UsuarioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PersonaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents cargo As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DniToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents UserFacturaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

@@ -50,6 +50,8 @@ Public Class Ventana
             Vendedor.Show()
             Vendedor.MdiParent = Me
             Vendedor.cargarLoad()
+            Me.UserFacturaToolStripMenuItem.Text = usu.GetNomYape()
+            Me.DniToolStripMenuItem.Text = usu.GetDni()
             Me.cargo.Text = "vende"
         End If
     End Sub
@@ -153,7 +155,6 @@ Public Class Ventana
         V_Factura.Show()
         V_Factura.Panel_Cancelar_Factura.Visible = False
         V_Factura.Panel_Informe_Factura.Visible = False
-        V_Factura.Panel_VerFacturas.Visible = True
         V_Factura.MdiParent = Me
     End Sub
 
@@ -161,15 +162,20 @@ Public Class Ventana
         V_Factura.MaximizeBox = True
         V_Factura.Show()
         V_Factura.Panel_Cancelar_Factura.Visible = False
-        V_Factura.Panel_VerFacturas.Visible = False
         V_Factura.Panel_Informe_Factura.Visible = True
         V_Factura.MdiParent = Me
+        Dim fatura As New Facturas()
+        fatura.MostrarTodasFacturas(V_Factura.DataGridView1)
+        For Each fila As DataGridViewRow In V_Factura.DataGridView1.Rows
+            If fila.Cells("Estado").Value = "Anulada" Then
+                fila.Cells("Estado").Style.BackColor = Color.Tomato
+            End If
+        Next
     End Sub
 
     Private Sub CancelarFacturaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelarFacturaToolStripMenuItem.Click
         V_Factura.MaximizeBox = True
         V_Factura.Show()
-        V_Factura.Panel_VerFacturas.Visible = False
         V_Factura.Panel_Informe_Factura.Visible = False
         V_Factura.Panel_Cancelar_Factura.Visible = True
         V_Factura.MdiParent = Me

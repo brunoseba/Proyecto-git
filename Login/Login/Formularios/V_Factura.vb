@@ -1,13 +1,10 @@
 ﻿Public Class V_Factura
 
-    Private Sub ButtonAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonAceptar.Click
+
+    Private Sub ButtonAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.Close()
     End Sub
 
-    Private Sub Label5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label5.Click
-        MsgBox("Ingrese el número de Factura sin guinoes y/o espacios", 64, "Atención")
-
-    End Sub
 
     Private Sub ButtonAceptarF_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonAceptarF.Click
         Me.Close()
@@ -17,22 +14,13 @@
         Me.Close()
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        DataGridCFProductos.Rows.Add("0239456", "Sanchez Pedro", "Raul Perez", "21/09/2017", "Efectivo", "$2500")
-    End Sub
-
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        Dim contraseña As String
-       contraseña = InputBox("Ingrese Contraseña del Administrador:", "Baja de Factura")
-        If contraseña = "*****" Then
-            MsgBox("La factura fue dada de Baja Correctamente", 64, "Atención")
+        Dim fatura As New Facturas()
+        If fatura.anularFactura(TextBoxBuscarFacturaCancelar.Text) Then
+            MsgBox("La factura se anuló Correctamente", 64, "Atención")
         Else
-            MsgBox("Contraseña Incorrecta", 8, "Atención")
+            MsgBox("No se pudo anular la factura, el número de factura ingresado no existe", 64, "Atención")
         End If
-    End Sub
-
-    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        MsgBox("Informe Generado Correctamente", 64, "Atención")
     End Sub
 
     'Procedimiento que verifica que sea número'
@@ -67,11 +55,167 @@
         Me.ComprobarNumero(e)
     End Sub
 
-    Private Sub TextBoxInformeNFactura_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBoxInformeNFactura.KeyPress
+    Private Sub TextBoxInformeNFactura_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         Me.ComprobarNumero(e)
     End Sub
 
-    Private Sub TextBox1_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox1.KeyPress
+    Private Sub TextBox1_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         Me.ComprobarNumero(e)
+    End Sub
+
+    Private Sub TextBoxInformeNFactura_KeyPress_1(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBoxInformeNFactura.KeyPress, TextBox3.KeyPress, TextBox2.KeyPress
+        Me.ComprobarNumero(e)
+    End Sub
+
+    Private Sub TextBoxInformeNFactura_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBoxInformeNFactura.TextChanged
+        Dim fact As New Facturas()
+        TextBox2.Text = ""
+        TextBox3.Text = ""
+        ComboBoxTipoPago.SelectedIndex = 0
+        If TextBoxInformeNFactura.Text = "" Then
+            fact.MostrarTodasFacturas(Me.DataGridView1)
+            For Each fila As DataGridViewRow In Me.DataGridView1.Rows
+                If fila.Cells("Estado").Value = "Anulada" Then
+                    fila.Cells("Estado").Style.BackColor = Color.Tomato
+                End If
+            Next
+        Else
+            fact.buscarPorNumeroFactura(TextBoxInformeNFactura.Text, DataGridView1)
+            For Each fila As DataGridViewRow In Me.DataGridView1.Rows
+                If fila.Cells("Estado").Value = "Anulada" Then
+                    fila.Cells("Estado").Style.BackColor = Color.Tomato
+                End If
+            Next
+        End If
+    End Sub
+    Private Sub V_Factura_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        ComboBoxTipoPago.SelectedIndex = 0
+    End Sub
+
+
+    Private Sub TextBox2_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox2.TextChanged
+        Dim fact As New Facturas()
+        TextBoxInformeNFactura.Text = ""
+        TextBox3.Text = ""
+        ComboBoxTipoPago.SelectedIndex = 0
+        If TextBox2.Text = "" Then
+            fact.MostrarTodasFacturas(Me.DataGridView1)
+            For Each fila As DataGridViewRow In Me.DataGridView1.Rows
+                If fila.Cells("Estado").Value = "Anulada" Then
+                    fila.Cells("Estado").Style.BackColor = Color.Tomato
+                End If
+            Next
+        Else
+            fact.buscarPorDniVendedor(TextBox2.Text, DataGridView1)
+            For Each fila As DataGridViewRow In Me.DataGridView1.Rows
+                If fila.Cells("Estado").Value = "Anulada" Then
+                    fila.Cells("Estado").Style.BackColor = Color.Tomato
+                End If
+            Next
+        End If
+    End Sub
+
+   
+    Private Sub TextBox3_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox3.TextChanged
+        Dim fact As New Facturas()
+        TextBoxInformeNFactura.Text = ""
+        TextBox2.Text = ""
+        ComboBoxTipoPago.SelectedIndex = 0
+        If TextBox3.Text = "" Then
+            fact.MostrarTodasFacturas(Me.DataGridView1)
+            For Each fila As DataGridViewRow In Me.DataGridView1.Rows
+                If fila.Cells("Estado").Value = "Anulada" Then
+                    fila.Cells("Estado").Style.BackColor = Color.Tomato
+                End If
+            Next
+        Else
+            fact.buscarPorCliente(TextBox3.Text, DataGridView1)
+            For Each fila As DataGridViewRow In Me.DataGridView1.Rows
+                If fila.Cells("Estado").Value = "Anulada" Then
+                    fila.Cells("Estado").Style.BackColor = Color.Tomato
+                End If
+            Next
+        End If
+    End Sub
+
+    Private Sub ComboBoxTipoPago_SelectionChangeCommitted(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBoxTipoPago.SelectionChangeCommitted
+        Dim fact As New Facturas()
+        TextBoxInformeNFactura.Text = ""
+        TextBox2.Text = ""
+        TextBox3.Text = ""
+        If ComboBoxTipoPago.SelectedIndex = 0 Then
+            fact.MostrarTodasFacturas(Me.DataGridView1)
+            For Each fila As DataGridViewRow In Me.DataGridView1.Rows
+                If fila.Cells("Estado").Value = "Anulada" Then
+                    fila.Cells("Estado").Style.BackColor = Color.Tomato
+                End If
+            Next
+        Else
+            fact.mostrarTipoPago(ComboBoxTipoPago.SelectedItem, DataGridView1)
+            For Each fila As DataGridViewRow In Me.DataGridView1.Rows
+                If fila.Cells("Estado").Value = "Anulada" Then
+                    fila.Cells("Estado").Style.BackColor = Color.Tomato
+                End If
+            Next
+        End If
+    End Sub
+
+    Private Sub DateTimeFDesde_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DateTimeFHasta.ValueChanged, DateTimeFDesde.ValueChanged
+        Dim fact As New Facturas()
+        TextBoxInformeNFactura.Text = ""
+        TextBox2.Text = ""
+        TextBox3.Text = ""
+        ComboBoxTipoPago.SelectedIndex = 0
+        fact.mostrarPorFecha(DateTimeFDesde.Text, DateTimeFHasta.Text, DataGridView1)
+        For Each fila As DataGridViewRow In Me.DataGridView1.Rows
+            If fila.Cells("Estado").Value = "Anulada" Then
+                fila.Cells("Estado").Style.BackColor = Color.Tomato
+            End If
+        Next
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        Dim cell As DataGridViewButtonCell = TryCast(Me.DataGridView1.CurrentCell, DataGridViewButtonCell)
+        If cell IsNot Nothing Then 'Verifica que la celdas tengan informacion
+            Dim bc As DataGridViewButtonColumn = TryCast(Me.DataGridView1.Columns(e.ColumnIndex), DataGridViewButtonColumn) 'Genero una variable que contiene el boton en el datagrid
+            If bc IsNot Nothing Then
+                Dim s As String = Convert.ToString(cell.Value)
+                Select Case bc.Name
+                    Case "Ver_detalles"
+                        Dim deta As New Detalles()
+                        deta.MostrarTodosProductos(DataGridView1.Item(1, DataGridView1.CurrentRow.Index).Value, Me.DataGridView2)
+                        Exit Select
+                End Select
+            End If
+        End If
+    End Sub
+
+    Private Sub TextBoxBuscarFacturaCancelar_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBoxBuscarFacturaCancelar.TextChanged
+        Dim fact As New Facturas()
+        If TextBoxBuscarFacturaCancelar.Text <> "" Then
+            fact.buscarPorNumeroFactura(TextBoxBuscarFacturaCancelar.Text, DataGridCFProductos)
+        For Each fila As DataGridViewRow In Me.DataGridCFProductos.Rows
+            If fila.Cells("Estado").Value = "Anulada" Then
+                fila.Cells("Estado").Style.BackColor = Color.Tomato
+            End If
+            Next
+        End If
+
+    End Sub
+
+    Private Sub DataGridCFProductos_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridCFProductos.CellContentClick
+        Dim cell As DataGridViewButtonCell = TryCast(Me.DataGridCFProductos.CurrentCell, DataGridViewButtonCell)
+        If cell IsNot Nothing Then 'Verifica que la celdas tengan informacion
+            Dim bc As DataGridViewButtonColumn = TryCast(Me.DataGridCFProductos.Columns(e.ColumnIndex), DataGridViewButtonColumn) 'Genero una variable que contiene el boton en el datagrid
+            If bc IsNot Nothing Then
+                Dim s As String = Convert.ToString(cell.Value)
+                Select Case bc.Name
+                    Case "CF_Producto"
+                        Dim deta As New Detalles()
+                        deta.MostrarTodosProductos(DataGridCFProductos.Item(1, DataGridCFProductos.CurrentRow.Index).Value, Me.DataGridView3)
+                        Exit Select
+                End Select
+            End If
+        End If
     End Sub
 End Class

@@ -83,6 +83,7 @@
         Me.CBEsta.SelectedIndex = 0
         DataGridView1.RowTemplate.Height = 50
         tod.MostrarTodos(Me.DataGridView1)
+        Me.ocultarContraseña(Me.DataGridView1)
         Me.resaltarBaja(Me.DataGridView1)
         mostrarAlSupervisor()
 
@@ -138,7 +139,7 @@
 
     Private Sub BGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BGuardar.Click
         If Not ComprobarVacioNuevoUsuario() Then
-            Dim usus As New Ususario(Val(TDni1.Text), TNomApe.Text, TDire.Text, TLocal.Text, TProv1.Text, TTelef.Text, TEmail.Text, TContra.Text, esta(), usua(), DateTime.Text, TApellido.Text)
+            Dim usus As New Ususario(Val(TDni1.Text), TNomApe.Text, TDire.Text, TLocal.Text, TProv1.Text, TTelef.Text, TEmail.Text, TContra.Text, esta(), usua(), DateTime1.Text, TApellido.Text)
             TDni1.BackColor = Color.LightGreen
             TContra.BackColor = Color.LightGreen
             TDire.BackColor = Color.LightGreen
@@ -554,6 +555,11 @@
             If fila.Cells("Estado").Value = "b" Then
                 fila.Cells("Estado").Style.BackColor = Color.Red
             End If
+        Next
+    End Sub
+    Public Sub ocultarContraseña(ByVal data As DataGridView)
+        For Each fila As DataGridViewRow In data.Rows
+            data.Columns("Contraseña").Visible = False
         Next
     End Sub
 End Class

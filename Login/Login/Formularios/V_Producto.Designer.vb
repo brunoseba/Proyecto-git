@@ -258,6 +258,7 @@ Partial Class V_Producto
         'TextBoxStock
         '
         Me.TextBoxStock.Location = New System.Drawing.Point(343, 124)
+        Me.TextBoxStock.MaxLength = 8
         Me.TextBoxStock.Name = "TextBoxStock"
         Me.TextBoxStock.Size = New System.Drawing.Size(100, 22)
         Me.TextBoxStock.TabIndex = 5
@@ -285,6 +286,7 @@ Partial Class V_Producto
         '
         Me.TextBoxPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxPrecio.Location = New System.Drawing.Point(948, 41)
+        Me.TextBoxPrecio.MaxLength = 12
         Me.TextBoxPrecio.Name = "TextBoxPrecio"
         Me.TextBoxPrecio.Size = New System.Drawing.Size(152, 26)
         Me.TextBoxPrecio.TabIndex = 4
@@ -335,6 +337,7 @@ Partial Class V_Producto
         '
         Me.TextBoxNombreProducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxNombreProducto.Location = New System.Drawing.Point(115, 43)
+        Me.TextBoxNombreProducto.MaxLength = 59
         Me.TextBoxNombreProducto.Name = "TextBoxNombreProducto"
         Me.TextBoxNombreProducto.Size = New System.Drawing.Size(152, 26)
         Me.TextBoxNombreProducto.TabIndex = 1
@@ -863,6 +866,7 @@ Partial Class V_Producto
         '
         Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox6.Location = New System.Drawing.Point(219, 52)
+        Me.TextBox6.MaxLength = 59
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(157, 26)
         Me.TextBox6.TabIndex = 7

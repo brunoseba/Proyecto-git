@@ -31,6 +31,7 @@ Partial Class Empresas
         Me.TextBoxDireccionEmpresa = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.TextBoxCuitEmpresa = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBoxNombreEmpresa = New System.Windows.Forms.TextBox()
         Me.ButtonSalirEmpresa = New System.Windows.Forms.Button()
@@ -50,7 +51,6 @@ Partial Class Empresas
         Me.LabelNombre = New System.Windows.Forms.Label()
         Me.ButtonEAceptar = New System.Windows.Forms.Button()
         Me.LabelETitulo = New System.Windows.Forms.Label()
-        Me.TextBoxCuitEmpresa = New System.Windows.Forms.TextBox()
         Me.Panel_modificar_Empresa.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.Panel_Ver_Datos_Empresa.SuspendLayout()
@@ -92,6 +92,7 @@ Partial Class Empresas
         '
         Me.TextBoxEmailEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxEmailEmpresa.Location = New System.Drawing.Point(947, 67)
+        Me.TextBoxEmailEmpresa.MaxLength = 29
         Me.TextBoxEmailEmpresa.Name = "TextBoxEmailEmpresa"
         Me.TextBoxEmailEmpresa.Size = New System.Drawing.Size(253, 26)
         Me.TextBoxEmailEmpresa.TabIndex = 7
@@ -122,6 +123,7 @@ Partial Class Empresas
         '
         Me.TextBoxTelefonoEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxTelefonoEmpresa.Location = New System.Drawing.Point(787, 172)
+        Me.TextBoxTelefonoEmpresa.MaxLength = 19
         Me.TextBoxTelefonoEmpresa.Name = "TextBoxTelefonoEmpresa"
         Me.TextBoxTelefonoEmpresa.Size = New System.Drawing.Size(207, 26)
         Me.TextBoxTelefonoEmpresa.TabIndex = 9
@@ -130,6 +132,7 @@ Partial Class Empresas
         '
         Me.TextBoxDireccionEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxDireccionEmpresa.Location = New System.Drawing.Point(325, 172)
+        Me.TextBoxDireccionEmpresa.MaxLength = 50
         Me.TextBoxDireccionEmpresa.Name = "TextBoxDireccionEmpresa"
         Me.TextBoxDireccionEmpresa.Size = New System.Drawing.Size(247, 26)
         Me.TextBoxDireccionEmpresa.TabIndex = 8
@@ -156,6 +159,15 @@ Partial Class Empresas
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "Dirección:"
         '
+        'TextBoxCuitEmpresa
+        '
+        Me.TextBoxCuitEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxCuitEmpresa.Location = New System.Drawing.Point(127, 67)
+        Me.TextBoxCuitEmpresa.MaxLength = 12
+        Me.TextBoxCuitEmpresa.Name = "TextBoxCuitEmpresa"
+        Me.TextBoxCuitEmpresa.Size = New System.Drawing.Size(207, 26)
+        Me.TextBoxCuitEmpresa.TabIndex = 5
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -171,6 +183,7 @@ Partial Class Empresas
         '
         Me.TextBoxNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxNombreEmpresa.Location = New System.Drawing.Point(588, 67)
+        Me.TextBoxNombreEmpresa.MaxLength = 29
         Me.TextBoxNombreEmpresa.Name = "TextBoxNombreEmpresa"
         Me.TextBoxNombreEmpresa.Size = New System.Drawing.Size(207, 26)
         Me.TextBoxNombreEmpresa.TabIndex = 6
@@ -360,14 +373,6 @@ Partial Class Empresas
         Me.LabelETitulo.Size = New System.Drawing.Size(359, 38)
         Me.LabelETitulo.TabIndex = 0
         Me.LabelETitulo.Text = "Datos de la Empresa"
-        '
-        'TextBoxCuitEmpresa
-        '
-        Me.TextBoxCuitEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxCuitEmpresa.Location = New System.Drawing.Point(127, 67)
-        Me.TextBoxCuitEmpresa.Name = "TextBoxCuitEmpresa"
-        Me.TextBoxCuitEmpresa.Size = New System.Drawing.Size(207, 26)
-        Me.TextBoxCuitEmpresa.TabIndex = 5
         '
         'Empresas
         '

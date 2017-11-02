@@ -135,6 +135,7 @@ Partial Class CuadroUsuario
         'TApel
         '
         Me.TApel.Location = New System.Drawing.Point(619, 49)
+        Me.TApel.MaxLength = 29
         Me.TApel.Name = "TApel"
         Me.TApel.Size = New System.Drawing.Size(154, 24)
         Me.TApel.TabIndex = 10
@@ -193,6 +194,7 @@ Partial Class CuadroUsuario
         'TNombre
         '
         Me.TNombre.Location = New System.Drawing.Point(372, 49)
+        Me.TNombre.MaxLength = 49
         Me.TNombre.Name = "TNombre"
         Me.TNombre.Size = New System.Drawing.Size(125, 24)
         Me.TNombre.TabIndex = 3
@@ -200,6 +202,7 @@ Partial Class CuadroUsuario
         'TDni
         '
         Me.TDni.Location = New System.Drawing.Point(112, 49)
+        Me.TDni.MaxLength = 8
         Me.TDni.Name = "TDni"
         Me.TDni.Size = New System.Drawing.Size(145, 24)
         Me.TDni.TabIndex = 2
@@ -696,6 +699,7 @@ Partial Class CuadroUsuario
         'TApellido
         '
         Me.TApellido.Location = New System.Drawing.Point(622, 99)
+        Me.TApellido.MaxLength = 29
         Me.TApellido.Name = "TApellido"
         Me.TApellido.Size = New System.Drawing.Size(236, 26)
         Me.TApellido.TabIndex = 4
@@ -713,6 +717,7 @@ Partial Class CuadroUsuario
         'TDni1
         '
         Me.TDni1.Location = New System.Drawing.Point(161, 35)
+        Me.TDni1.MaxLength = 8
         Me.TDni1.Name = "TDni1"
         Me.TDni1.Size = New System.Drawing.Size(238, 26)
         Me.TDni1.TabIndex = 1
@@ -739,13 +744,13 @@ Partial Class CuadroUsuario
         '
         'CBUsu
         '
+        Me.CBUsu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBUsu.FormattingEnabled = True
         Me.CBUsu.Items.AddRange(New Object() {"Administrador", "Supervisor", "Vendedor"})
         Me.CBUsu.Location = New System.Drawing.Point(161, 202)
         Me.CBUsu.Name = "CBUsu"
         Me.CBUsu.Size = New System.Drawing.Size(195, 28)
         Me.CBUsu.TabIndex = 7
-        Me.CBUsu.Text = "Tipo usuario"
         '
         'Label18
         '
@@ -759,13 +764,13 @@ Partial Class CuadroUsuario
         '
         'CBEsta1
         '
+        Me.CBEsta1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBEsta1.FormattingEnabled = True
         Me.CBEsta1.Items.AddRange(New Object() {"Activo", "Inactivo"})
         Me.CBEsta1.Location = New System.Drawing.Point(622, 213)
         Me.CBEsta1.Name = "CBEsta1"
         Me.CBEsta1.Size = New System.Drawing.Size(170, 28)
         Me.CBEsta1.TabIndex = 8
-        Me.CBEsta1.Text = "Selecione.."
         '
         'Label19
         '
@@ -810,6 +815,7 @@ Partial Class CuadroUsuario
         'TNomApe
         '
         Me.TNomApe.Location = New System.Drawing.Point(622, 37)
+        Me.TNomApe.MaxLength = 49
         Me.TNomApe.Name = "TNomApe"
         Me.TNomApe.Size = New System.Drawing.Size(238, 26)
         Me.TNomApe.TabIndex = 2
@@ -817,6 +823,7 @@ Partial Class CuadroUsuario
         'TContra
         '
         Me.TContra.Location = New System.Drawing.Point(161, 96)
+        Me.TContra.MaxLength = 49
         Me.TContra.Name = "TContra"
         Me.TContra.Size = New System.Drawing.Size(238, 26)
         Me.TContra.TabIndex = 3
@@ -826,6 +833,7 @@ Partial Class CuadroUsuario
         '
         Me.TTelef.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TTelef.Location = New System.Drawing.Point(622, 155)
+        Me.TTelef.MaxLength = 29
         Me.TTelef.Name = "TTelef"
         Me.TTelef.Size = New System.Drawing.Size(238, 26)
         Me.TTelef.TabIndex = 6
@@ -833,6 +841,7 @@ Partial Class CuadroUsuario
         'TDire
         '
         Me.TDire.Location = New System.Drawing.Point(161, 150)
+        Me.TDire.MaxLength = 49
         Me.TDire.Name = "TDire"
         Me.TDire.Size = New System.Drawing.Size(238, 26)
         Me.TDire.TabIndex = 5
@@ -865,6 +874,7 @@ Partial Class CuadroUsuario
         '
         Me.TEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TEmail.Location = New System.Drawing.Point(388, 452)
+        Me.TEmail.MaxLength = 99
         Me.TEmail.Name = "TEmail"
         Me.TEmail.Size = New System.Drawing.Size(243, 26)
         Me.TEmail.TabIndex = 11
@@ -873,6 +883,7 @@ Partial Class CuadroUsuario
         '
         Me.TLocal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TLocal.Location = New System.Drawing.Point(848, 391)
+        Me.TLocal.MaxLength = 49
         Me.TLocal.Name = "TLocal"
         Me.TLocal.Size = New System.Drawing.Size(243, 26)
         Me.TLocal.TabIndex = 10
@@ -881,6 +892,7 @@ Partial Class CuadroUsuario
         '
         Me.TProv1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TProv1.Location = New System.Drawing.Point(388, 395)
+        Me.TProv1.MaxLength = 49
         Me.TProv1.Name = "TProv1"
         Me.TProv1.Size = New System.Drawing.Size(243, 26)
         Me.TProv1.TabIndex = 9

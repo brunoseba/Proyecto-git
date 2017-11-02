@@ -30,6 +30,14 @@ Partial Class Vendedor
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Vendedor))
         Me.PanelBuscarProductoVendedor = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -40,11 +48,6 @@ Partial Class Vendedor
         Me.LabelRodado = New System.Windows.Forms.Label()
         Me.LabelTipoVehiculo = New System.Windows.Forms.Label()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.PanelDatosTecnicosVendedor = New System.Windows.Forms.Panel()
-        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.DataGridDatosCodigo = New System.Windows.Forms.DataGridView()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
@@ -55,6 +58,11 @@ Partial Class Vendedor
         Me.Button1 = New System.Windows.Forms.Button()
         Me.LabelCuilCliente = New System.Windows.Forms.Label()
         Me.ComboBoxTipoPago = New System.Windows.Forms.ComboBox()
+        Me.PanelDatosTecnicosVendedor = New System.Windows.Forms.Panel()
+        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.DataGridDatosCodigo = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.DataGridViewBuscadorProducto = New System.Windows.Forms.DataGridView()
@@ -65,6 +73,7 @@ Partial Class Vendedor
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.DataGridCompra = New System.Windows.Forms.DataGridView()
+        Me.pro_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pro_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pro_medida = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pro_rodado = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -74,18 +83,71 @@ Partial Class Vendedor
         Me.pro_total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Eliminar_C = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.PanelFactura = New System.Windows.Forms.Panel()
+        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.TextBDniVendedor = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.TextBNomyApeVendedor = New System.Windows.Forms.TextBox()
+        Me.GroupBox9 = New System.Windows.Forms.GroupBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.TextBCuilCliente = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TextBNomApeCliente = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.LabelTotal = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.TextBTipoPago = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.DataGridViewFactura = New System.Windows.Forms.DataGridView()
+        Me.idProdFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TipoVehiculo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Rodado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Med = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Precio_Unitario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.TextBoxEmailEmpresa = New System.Windows.Forms.TextBox()
+        Me.TextBoxTelefonoEmpresa = New System.Windows.Forms.TextBox()
+        Me.TextBoxDireccionEmpresa = New System.Windows.Forms.TextBox()
+        Me.TextBoxCuitEmpresa = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PanelBuscarProductoVendedor.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
         Me.PanelDatosTecnicosVendedor.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
         CType(Me.DataGridDatosCodigo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox5.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridViewBuscadorProducto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DataGridCompra, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelFactura.SuspendLayout()
+        Me.GroupBox11.SuspendLayout()
+        Me.GroupBox9.SuspendLayout()
+        Me.GroupBox10.SuspendLayout()
+        CType(Me.DataGridViewFactura, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox7.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelBuscarProductoVendedor
@@ -95,8 +157,8 @@ Partial Class Vendedor
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelBuscarProductoVendedor.BackColor = System.Drawing.Color.DarkSlateGray
         Me.PanelBuscarProductoVendedor.Controls.Add(Me.GroupBox1)
-        Me.PanelBuscarProductoVendedor.Controls.Add(Me.PanelDatosTecnicosVendedor)
         Me.PanelBuscarProductoVendedor.Controls.Add(Me.GroupBox5)
+        Me.PanelBuscarProductoVendedor.Controls.Add(Me.PanelDatosTecnicosVendedor)
         Me.PanelBuscarProductoVendedor.Controls.Add(Me.GroupBox2)
         Me.PanelBuscarProductoVendedor.Controls.Add(Me.GroupBox3)
         Me.PanelBuscarProductoVendedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -124,6 +186,7 @@ Partial Class Vendedor
         '
         'ComboBox2
         '
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"Todos", "13", "14", "15", "16", "17", "18", "19", "20", "22.5", "26", "28", "36", "38"})
         Me.ComboBox2.Location = New System.Drawing.Point(662, 37)
@@ -155,6 +218,7 @@ Partial Class Vendedor
         'ComboBox1
         '
         Me.ComboBox1.DisplayMember = "Automovil"
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Todos", "Automóviles", "Camiones/Colectivos", "Camionetas", "Tractores"})
@@ -188,63 +252,10 @@ Partial Class Vendedor
         '
         Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox6.Location = New System.Drawing.Point(219, 39)
+        Me.TextBox6.MaxLength = 59
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(157, 26)
         Me.TextBox6.TabIndex = 7
-        '
-        'PanelDatosTecnicosVendedor
-        '
-        Me.PanelDatosTecnicosVendedor.Controls.Add(Me.GroupBox8)
-        Me.PanelDatosTecnicosVendedor.Location = New System.Drawing.Point(3, 477)
-        Me.PanelDatosTecnicosVendedor.Name = "PanelDatosTecnicosVendedor"
-        Me.PanelDatosTecnicosVendedor.Size = New System.Drawing.Size(1341, 142)
-        Me.PanelDatosTecnicosVendedor.TabIndex = 21
-        Me.PanelDatosTecnicosVendedor.Visible = False
-        '
-        'GroupBox8
-        '
-        Me.GroupBox8.Controls.Add(Me.Button5)
-        Me.GroupBox8.Controls.Add(Me.Label1)
-        Me.GroupBox8.Controls.Add(Me.DataGridDatosCodigo)
-        Me.GroupBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GroupBox8.Location = New System.Drawing.Point(6, 6)
-        Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Size = New System.Drawing.Size(1335, 123)
-        Me.GroupBox8.TabIndex = 25
-        Me.GroupBox8.TabStop = False
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(616, 83)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(112, 34)
-        Me.Button5.TabIndex = 26
-        Me.Button5.Text = "Aceptar"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(611, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(117, 16)
-        Me.Label1.TabIndex = 27
-        Me.Label1.Text = "Datos Técnicos"
-        '
-        'DataGridDatosCodigo
-        '
-        Me.DataGridDatosCodigo.AllowUserToAddRows = False
-        Me.DataGridDatosCodigo.AllowUserToDeleteRows = False
-        Me.DataGridDatosCodigo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridDatosCodigo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.DataGridDatosCodigo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridDatosCodigo.Location = New System.Drawing.Point(10, 16)
-        Me.DataGridDatosCodigo.Name = "DataGridDatosCodigo"
-        Me.DataGridDatosCodigo.ReadOnly = True
-        Me.DataGridDatosCodigo.Size = New System.Drawing.Size(1320, 65)
-        Me.DataGridDatosCodigo.TabIndex = 1
         '
         'GroupBox5
         '
@@ -322,6 +333,7 @@ Partial Class Vendedor
         '
         Me.TextBoxCuilCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxCuilCliente.Location = New System.Drawing.Point(142, 41)
+        Me.TextBoxCuilCliente.MaxLength = 11
         Me.TextBoxCuilCliente.Name = "TextBoxCuilCliente"
         Me.TextBoxCuilCliente.Size = New System.Drawing.Size(126, 26)
         Me.TextBoxCuilCliente.TabIndex = 13
@@ -349,6 +361,7 @@ Partial Class Vendedor
         '
         'ComboBoxTipoPago
         '
+        Me.ComboBoxTipoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxTipoPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxTipoPago.FormattingEnabled = True
         Me.ComboBoxTipoPago.Items.AddRange(New Object() {"Efectivo", "Tarjeta de Crédito", "Tarjeta de Débito"})
@@ -356,6 +369,60 @@ Partial Class Vendedor
         Me.ComboBoxTipoPago.Name = "ComboBoxTipoPago"
         Me.ComboBoxTipoPago.Size = New System.Drawing.Size(185, 28)
         Me.ComboBoxTipoPago.TabIndex = 14
+        '
+        'PanelDatosTecnicosVendedor
+        '
+        Me.PanelDatosTecnicosVendedor.Controls.Add(Me.GroupBox8)
+        Me.PanelDatosTecnicosVendedor.Location = New System.Drawing.Point(3, 477)
+        Me.PanelDatosTecnicosVendedor.Name = "PanelDatosTecnicosVendedor"
+        Me.PanelDatosTecnicosVendedor.Size = New System.Drawing.Size(1341, 142)
+        Me.PanelDatosTecnicosVendedor.TabIndex = 21
+        Me.PanelDatosTecnicosVendedor.Visible = False
+        '
+        'GroupBox8
+        '
+        Me.GroupBox8.Controls.Add(Me.Button5)
+        Me.GroupBox8.Controls.Add(Me.Label1)
+        Me.GroupBox8.Controls.Add(Me.DataGridDatosCodigo)
+        Me.GroupBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.GroupBox8.Location = New System.Drawing.Point(6, 6)
+        Me.GroupBox8.Name = "GroupBox8"
+        Me.GroupBox8.Size = New System.Drawing.Size(1335, 123)
+        Me.GroupBox8.TabIndex = 25
+        Me.GroupBox8.TabStop = False
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(616, 83)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(112, 34)
+        Me.Button5.TabIndex = 26
+        Me.Button5.Text = "Aceptar"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label1.Location = New System.Drawing.Point(611, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(117, 16)
+        Me.Label1.TabIndex = 27
+        Me.Label1.Text = "Datos Técnicos"
+        '
+        'DataGridDatosCodigo
+        '
+        Me.DataGridDatosCodigo.AllowUserToAddRows = False
+        Me.DataGridDatosCodigo.AllowUserToDeleteRows = False
+        Me.DataGridDatosCodigo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridDatosCodigo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DataGridDatosCodigo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridDatosCodigo.Location = New System.Drawing.Point(10, 16)
+        Me.DataGridDatosCodigo.Name = "DataGridDatosCodigo"
+        Me.DataGridDatosCodigo.ReadOnly = True
+        Me.DataGridDatosCodigo.Size = New System.Drawing.Size(1320, 65)
+        Me.DataGridDatosCodigo.TabIndex = 1
         '
         'GroupBox2
         '
@@ -395,7 +462,6 @@ Partial Class Vendedor
         Me.DataGridViewBuscadorProducto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Agregar, Me.Datos_Tecn, Me.Imagen})
         Me.DataGridViewBuscadorProducto.Location = New System.Drawing.Point(11, 18)
         Me.DataGridViewBuscadorProducto.Name = "DataGridViewBuscadorProducto"
-        Me.DataGridViewBuscadorProducto.ReadOnly = True
         Me.DataGridViewBuscadorProducto.Size = New System.Drawing.Size(660, 354)
         Me.DataGridViewBuscadorProducto.TabIndex = 2
         '
@@ -408,7 +474,6 @@ Partial Class Vendedor
         Me.Agregar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.Agregar.HeaderText = "+"
         Me.Agregar.Name = "Agregar"
-        Me.Agregar.ReadOnly = True
         Me.Agregar.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.Agregar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.Agregar.Text = "+"
@@ -421,7 +486,6 @@ Partial Class Vendedor
         Me.Datos_Tecn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Datos_Tecn.HeaderText = "DT"
         Me.Datos_Tecn.Name = "Datos_Tecn"
-        Me.Datos_Tecn.ReadOnly = True
         Me.Datos_Tecn.Text = "DT"
         Me.Datos_Tecn.UseColumnTextForButtonValue = True
         Me.Datos_Tecn.Width = 40
@@ -432,7 +496,6 @@ Partial Class Vendedor
         Me.Imagen.FillWeight = 55.3934!
         Me.Imagen.HeaderText = "Imagen"
         Me.Imagen.Name = "Imagen"
-        Me.Imagen.ReadOnly = True
         Me.Imagen.Width = 62
         '
         'PictureBox1
@@ -478,11 +541,16 @@ Partial Class Vendedor
         Me.DataGridCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridCompra.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridCompra.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.pro_nombre, Me.pro_medida, Me.pro_rodado, Me.pro_tipo_vehiculo, Me.pro_precio_unitario, Me.pro_cantidad, Me.pro_total, Me.DataGridViewImageColumn1, Me.Eliminar_C})
+        Me.DataGridCompra.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.pro_id, Me.pro_nombre, Me.pro_medida, Me.pro_rodado, Me.pro_tipo_vehiculo, Me.pro_precio_unitario, Me.pro_cantidad, Me.pro_total, Me.DataGridViewImageColumn1, Me.Eliminar_C})
         Me.DataGridCompra.Location = New System.Drawing.Point(9, 20)
         Me.DataGridCompra.Name = "DataGridCompra"
         Me.DataGridCompra.Size = New System.Drawing.Size(639, 354)
         Me.DataGridCompra.TabIndex = 20
+        '
+        'pro_id
+        '
+        Me.pro_id.HeaderText = "id"
+        Me.pro_id.Name = "pro_id"
         '
         'pro_nombre
         '
@@ -560,13 +628,483 @@ Partial Class Vendedor
         Me.Eliminar_C.UseColumnTextForButtonValue = True
         Me.Eliminar_C.Width = 36
         '
+        'PanelFactura
+        '
+        Me.PanelFactura.Controls.Add(Me.GroupBox11)
+        Me.PanelFactura.Controls.Add(Me.GroupBox9)
+        Me.PanelFactura.Controls.Add(Me.Label19)
+        Me.PanelFactura.Controls.Add(Me.GroupBox10)
+        Me.PanelFactura.Controls.Add(Me.GroupBox7)
+        Me.PanelFactura.Controls.Add(Me.GroupBox4)
+        Me.PanelFactura.Controls.Add(Me.PictureBox2)
+        Me.PanelFactura.Location = New System.Drawing.Point(0, 0)
+        Me.PanelFactura.Name = "PanelFactura"
+        Me.PanelFactura.Size = New System.Drawing.Size(1364, 636)
+        Me.PanelFactura.TabIndex = 20
+        '
+        'GroupBox11
+        '
+        Me.GroupBox11.Controls.Add(Me.Label12)
+        Me.GroupBox11.Controls.Add(Me.TextBDniVendedor)
+        Me.GroupBox11.Controls.Add(Me.Label16)
+        Me.GroupBox11.Controls.Add(Me.Label14)
+        Me.GroupBox11.Controls.Add(Me.TextBNomyApeVendedor)
+        Me.GroupBox11.Location = New System.Drawing.Point(700, 164)
+        Me.GroupBox11.Name = "GroupBox11"
+        Me.GroupBox11.Size = New System.Drawing.Size(641, 72)
+        Me.GroupBox11.TabIndex = 13
+        Me.GroupBox11.TabStop = False
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(47, 31)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(128, 20)
+        Me.Label12.TabIndex = 8
+        Me.Label12.Text = "DNI Vendedor:"
+        '
+        'TextBDniVendedor
+        '
+        Me.TextBDniVendedor.BackColor = System.Drawing.Color.Aquamarine
+        Me.TextBDniVendedor.Enabled = False
+        Me.TextBDniVendedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBDniVendedor.Location = New System.Drawing.Point(181, 29)
+        Me.TextBDniVendedor.Name = "TextBDniVendedor"
+        Me.TextBDniVendedor.Size = New System.Drawing.Size(127, 24)
+        Me.TextBDniVendedor.TabIndex = 10
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.IndianRed
+        Me.Label16.Location = New System.Drawing.Point(6, -2)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(113, 25)
+        Me.Label16.TabIndex = 10
+        Me.Label16.Text = "Vendedor"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(348, 31)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(76, 20)
+        Me.Label14.TabIndex = 9
+        Me.Label14.Text = "Nombre:"
+        '
+        'TextBNomyApeVendedor
+        '
+        Me.TextBNomyApeVendedor.BackColor = System.Drawing.Color.Aquamarine
+        Me.TextBNomyApeVendedor.Enabled = False
+        Me.TextBNomyApeVendedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBNomyApeVendedor.Location = New System.Drawing.Point(433, 29)
+        Me.TextBNomyApeVendedor.Name = "TextBNomyApeVendedor"
+        Me.TextBNomyApeVendedor.Size = New System.Drawing.Size(185, 24)
+        Me.TextBNomyApeVendedor.TabIndex = 11
+        '
+        'GroupBox9
+        '
+        Me.GroupBox9.Controls.Add(Me.Label13)
+        Me.GroupBox9.Controls.Add(Me.TextBCuilCliente)
+        Me.GroupBox9.Controls.Add(Me.Label10)
+        Me.GroupBox9.Controls.Add(Me.TextBNomApeCliente)
+        Me.GroupBox9.Controls.Add(Me.Label15)
+        Me.GroupBox9.Location = New System.Drawing.Point(25, 164)
+        Me.GroupBox9.Name = "GroupBox9"
+        Me.GroupBox9.Size = New System.Drawing.Size(670, 72)
+        Me.GroupBox9.TabIndex = 12
+        Me.GroupBox9.TabStop = False
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(6, 31)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(116, 20)
+        Me.Label13.TabIndex = 1
+        Me.Label13.Text = "CUIL Cliente:"
+        '
+        'TextBCuilCliente
+        '
+        Me.TextBCuilCliente.BackColor = System.Drawing.Color.Aquamarine
+        Me.TextBCuilCliente.Enabled = False
+        Me.TextBCuilCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBCuilCliente.Location = New System.Drawing.Point(128, 31)
+        Me.TextBCuilCliente.Name = "TextBCuilCliente"
+        Me.TextBCuilCliente.Size = New System.Drawing.Size(147, 24)
+        Me.TextBCuilCliente.TabIndex = 5
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(290, 31)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(158, 20)
+        Me.Label10.TabIndex = 2
+        Me.Label10.Text = "Nombre y Apellido:"
+        '
+        'TextBNomApeCliente
+        '
+        Me.TextBNomApeCliente.BackColor = System.Drawing.Color.Aquamarine
+        Me.TextBNomApeCliente.Enabled = False
+        Me.TextBNomApeCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBNomApeCliente.Location = New System.Drawing.Point(454, 31)
+        Me.TextBNomApeCliente.Name = "TextBNomApeCliente"
+        Me.TextBNomApeCliente.Size = New System.Drawing.Size(200, 24)
+        Me.TextBNomApeCliente.TabIndex = 7
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.IndianRed
+        Me.Label15.Location = New System.Drawing.Point(-5, 0)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(86, 25)
+        Me.Label15.TabIndex = 8
+        Me.Label15.Text = "Cliente"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.IndianRed
+        Me.Label19.Location = New System.Drawing.Point(19, 248)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(98, 25)
+        Me.Label19.TabIndex = 9
+        Me.Label19.Text = "Detalles"
+        '
+        'GroupBox10
+        '
+        Me.GroupBox10.Controls.Add(Me.Label20)
+        Me.GroupBox10.Controls.Add(Me.LabelTotal)
+        Me.GroupBox10.Controls.Add(Me.Label18)
+        Me.GroupBox10.Controls.Add(Me.TextBTipoPago)
+        Me.GroupBox10.Controls.Add(Me.Label17)
+        Me.GroupBox10.Controls.Add(Me.Button4)
+        Me.GroupBox10.Controls.Add(Me.Button3)
+        Me.GroupBox10.Controls.Add(Me.DataGridViewFactura)
+        Me.GroupBox10.Location = New System.Drawing.Point(15, 267)
+        Me.GroupBox10.Name = "GroupBox10"
+        Me.GroupBox10.Size = New System.Drawing.Size(1321, 356)
+        Me.GroupBox10.TabIndex = 4
+        Me.GroupBox10.TabStop = False
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.Color.Tomato
+        Me.Label20.Location = New System.Drawing.Point(1104, 302)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(25, 25)
+        Me.Label20.TabIndex = 13
+        Me.Label20.Text = "$"
+        '
+        'LabelTotal
+        '
+        Me.LabelTotal.AutoSize = True
+        Me.LabelTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelTotal.ForeColor = System.Drawing.Color.Tomato
+        Me.LabelTotal.Location = New System.Drawing.Point(1130, 302)
+        Me.LabelTotal.Name = "LabelTotal"
+        Me.LabelTotal.Size = New System.Drawing.Size(25, 25)
+        Me.LabelTotal.TabIndex = 12
+        Me.LabelTotal.Text = "0"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(1020, 303)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(72, 25)
+        Me.Label18.TabIndex = 10
+        Me.Label18.Text = "Total:"
+        '
+        'TextBTipoPago
+        '
+        Me.TextBTipoPago.BackColor = System.Drawing.Color.Aquamarine
+        Me.TextBTipoPago.Enabled = False
+        Me.TextBTipoPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBTipoPago.Location = New System.Drawing.Point(213, 304)
+        Me.TextBTipoPago.Name = "TextBTipoPago"
+        Me.TextBTipoPago.Size = New System.Drawing.Size(170, 24)
+        Me.TextBTipoPago.TabIndex = 9
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(50, 305)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(119, 20)
+        Me.Label17.TabIndex = 8
+        Me.Label17.Text = "Tipo de Pago:"
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(432, 297)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(100, 37)
+        Me.Button4.TabIndex = 2
+        Me.Button4.Text = "Volver"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(748, 297)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(137, 37)
+        Me.Button3.TabIndex = 1
+        Me.Button3.Text = "Aceptar"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'DataGridViewFactura
+        '
+        Me.DataGridViewFactura.AllowUserToAddRows = False
+        Me.DataGridViewFactura.AllowUserToDeleteRows = False
+        Me.DataGridViewFactura.AllowUserToOrderColumns = True
+        Me.DataGridViewFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridViewFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewFactura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idProdFactura, Me.Cantidad, Me.Nombre, Me.TipoVehiculo, Me.Rodado, Me.Med, Me.Precio_Unitario, Me.Total, Me.eliminar})
+        Me.DataGridViewFactura.Location = New System.Drawing.Point(10, 15)
+        Me.DataGridViewFactura.Name = "DataGridViewFactura"
+        Me.DataGridViewFactura.Size = New System.Drawing.Size(1305, 264)
+        Me.DataGridViewFactura.TabIndex = 0
+        '
+        'idProdFactura
+        '
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.idProdFactura.DefaultCellStyle = DataGridViewCellStyle9
+        Me.idProdFactura.HeaderText = "ID"
+        Me.idProdFactura.Name = "idProdFactura"
+        Me.idProdFactura.Visible = False
+        '
+        'Cantidad
+        '
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Cantidad.DefaultCellStyle = DataGridViewCellStyle10
+        Me.Cantidad.HeaderText = "Cantidad"
+        Me.Cantidad.Name = "Cantidad"
+        '
+        'Nombre
+        '
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Nombre.DefaultCellStyle = DataGridViewCellStyle11
+        Me.Nombre.HeaderText = "Nombre Producto"
+        Me.Nombre.Name = "Nombre"
+        '
+        'TipoVehiculo
+        '
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TipoVehiculo.DefaultCellStyle = DataGridViewCellStyle12
+        Me.TipoVehiculo.HeaderText = "Tipo Vehiculo"
+        Me.TipoVehiculo.Name = "TipoVehiculo"
+        '
+        'Rodado
+        '
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Rodado.DefaultCellStyle = DataGridViewCellStyle13
+        Me.Rodado.HeaderText = "Rodado"
+        Me.Rodado.Name = "Rodado"
+        Me.Rodado.ToolTipText = "Rodado"
+        '
+        'Med
+        '
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Med.DefaultCellStyle = DataGridViewCellStyle14
+        Me.Med.HeaderText = "Medida"
+        Me.Med.Name = "Med"
+        '
+        'Precio_Unitario
+        '
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Precio_Unitario.DefaultCellStyle = DataGridViewCellStyle15
+        Me.Precio_Unitario.HeaderText = "P Unitario"
+        Me.Precio_Unitario.Name = "Precio_Unitario"
+        Me.Precio_Unitario.ToolTipText = "P Unitario"
+        '
+        'Total
+        '
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Total.DefaultCellStyle = DataGridViewCellStyle16
+        Me.Total.HeaderText = "Total"
+        Me.Total.Name = "Total"
+        '
+        'eliminar
+        '
+        Me.eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.eliminar.HeaderText = "-"
+        Me.eliminar.Name = "eliminar"
+        Me.eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.eliminar.Text = "-"
+        Me.eliminar.ToolTipText = "-"
+        Me.eliminar.Width = 50
+        '
+        'GroupBox7
+        '
+        Me.GroupBox7.Controls.Add(Me.TextBoxEmailEmpresa)
+        Me.GroupBox7.Controls.Add(Me.TextBoxTelefonoEmpresa)
+        Me.GroupBox7.Controls.Add(Me.TextBoxDireccionEmpresa)
+        Me.GroupBox7.Controls.Add(Me.TextBoxCuitEmpresa)
+        Me.GroupBox7.Controls.Add(Me.Label7)
+        Me.GroupBox7.Controls.Add(Me.Label11)
+        Me.GroupBox7.Controls.Add(Me.Label6)
+        Me.GroupBox7.Controls.Add(Me.Label4)
+        Me.GroupBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox7.ForeColor = System.Drawing.Color.IndianRed
+        Me.GroupBox7.Location = New System.Drawing.Point(729, 30)
+        Me.GroupBox7.Name = "GroupBox7"
+        Me.GroupBox7.Size = New System.Drawing.Size(621, 90)
+        Me.GroupBox7.TabIndex = 2
+        Me.GroupBox7.TabStop = False
+        Me.GroupBox7.Text = "Empresa"
+        '
+        'TextBoxEmailEmpresa
+        '
+        Me.TextBoxEmailEmpresa.BackColor = System.Drawing.Color.Aquamarine
+        Me.TextBoxEmailEmpresa.Enabled = False
+        Me.TextBoxEmailEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxEmailEmpresa.Location = New System.Drawing.Point(380, 51)
+        Me.TextBoxEmailEmpresa.Name = "TextBoxEmailEmpresa"
+        Me.TextBoxEmailEmpresa.Size = New System.Drawing.Size(236, 24)
+        Me.TextBoxEmailEmpresa.TabIndex = 8
+        '
+        'TextBoxTelefonoEmpresa
+        '
+        Me.TextBoxTelefonoEmpresa.BackColor = System.Drawing.Color.Aquamarine
+        Me.TextBoxTelefonoEmpresa.Enabled = False
+        Me.TextBoxTelefonoEmpresa.Location = New System.Drawing.Point(380, 22)
+        Me.TextBoxTelefonoEmpresa.Name = "TextBoxTelefonoEmpresa"
+        Me.TextBoxTelefonoEmpresa.Size = New System.Drawing.Size(139, 26)
+        Me.TextBoxTelefonoEmpresa.TabIndex = 7
+        '
+        'TextBoxDireccionEmpresa
+        '
+        Me.TextBoxDireccionEmpresa.BackColor = System.Drawing.Color.Aquamarine
+        Me.TextBoxDireccionEmpresa.Enabled = False
+        Me.TextBoxDireccionEmpresa.Location = New System.Drawing.Point(90, 53)
+        Me.TextBoxDireccionEmpresa.Name = "TextBoxDireccionEmpresa"
+        Me.TextBoxDireccionEmpresa.Size = New System.Drawing.Size(200, 26)
+        Me.TextBoxDireccionEmpresa.TabIndex = 6
+        '
+        'TextBoxCuitEmpresa
+        '
+        Me.TextBoxCuitEmpresa.BackColor = System.Drawing.Color.Aquamarine
+        Me.TextBoxCuitEmpresa.Enabled = False
+        Me.TextBoxCuitEmpresa.Location = New System.Drawing.Point(90, 21)
+        Me.TextBoxCuitEmpresa.Name = "TextBoxCuitEmpresa"
+        Me.TextBoxCuitEmpresa.Size = New System.Drawing.Size(200, 26)
+        Me.TextBoxCuitEmpresa.TabIndex = 5
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label7.Location = New System.Drawing.Point(296, 24)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(84, 20)
+        Me.Label7.TabIndex = 2
+        Me.Label7.Text = "Teléfono:"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label11.Location = New System.Drawing.Point(296, 53)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(64, 20)
+        Me.Label11.TabIndex = 4
+        Me.Label11.Text = "E-mail:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label6.Location = New System.Drawing.Point(6, 56)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(89, 20)
+        Me.Label6.TabIndex = 1
+        Me.Label6.Text = "Dirección:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label4.Location = New System.Drawing.Point(6, 25)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(55, 20)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "CUIT:"
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox4.Controls.Add(Me.Label3)
+        Me.GroupBox4.Location = New System.Drawing.Point(412, 29)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(223, 100)
+        Me.GroupBox4.TabIndex = 1
+        Me.GroupBox4.TabStop = False
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Enabled = False
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker1.Location = New System.Drawing.Point(35, 65)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(157, 26)
+        Me.DateTimePicker1.TabIndex = 1
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(82, 11)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(57, 55)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "A"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.Login.My.Resources.Resources.logo1
+        Me.PictureBox2.Location = New System.Drawing.Point(58, 28)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(139, 106)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 0
+        Me.PictureBox2.TabStop = False
+        '
         'Vendedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1362, 631)
         Me.Controls.Add(Me.PanelBuscarProductoVendedor)
+        Me.Controls.Add(Me.PanelFactura)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.KeyPreview = True
         Me.MinimizeBox = False
         Me.Name = "Vendedor"
         Me.Text = "Vendedor"
@@ -574,14 +1112,14 @@ Partial Class Vendedor
         Me.PanelBuscarProductoVendedor.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.PanelDatosTecnicosVendedor.ResumeLayout(False)
-        Me.GroupBox8.ResumeLayout(False)
-        Me.GroupBox8.PerformLayout()
-        CType(Me.DataGridDatosCodigo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
+        Me.PanelDatosTecnicosVendedor.ResumeLayout(False)
+        Me.GroupBox8.ResumeLayout(False)
+        Me.GroupBox8.PerformLayout()
+        CType(Me.DataGridDatosCodigo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.DataGridViewBuscadorProducto, System.ComponentModel.ISupportInitialize).EndInit()
@@ -589,6 +1127,20 @@ Partial Class Vendedor
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.DataGridCompra, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelFactura.ResumeLayout(False)
+        Me.PanelFactura.PerformLayout()
+        Me.GroupBox11.ResumeLayout(False)
+        Me.GroupBox11.PerformLayout()
+        Me.GroupBox9.ResumeLayout(False)
+        Me.GroupBox9.PerformLayout()
+        Me.GroupBox10.ResumeLayout(False)
+        Me.GroupBox10.PerformLayout()
+        CType(Me.DataGridViewFactura, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox7.ResumeLayout(False)
+        Me.GroupBox7.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -622,6 +1174,43 @@ Partial Class Vendedor
     Friend WithEvents LabelTipoVehiculo As System.Windows.Forms.Label
     Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Agregar As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents Datos_Tecn As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents Imagen As System.Windows.Forms.DataGridViewImageColumn
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents PanelFactura As System.Windows.Forms.Panel
+    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents GroupBox10 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox7 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
+    Friend WithEvents TextBoxEmailEmpresa As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxTelefonoEmpresa As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxDireccionEmpresa As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxCuitEmpresa As System.Windows.Forms.TextBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents TextBCuilCliente As System.Windows.Forms.TextBox
+    Friend WithEvents TextBNomApeCliente As System.Windows.Forms.TextBox
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents TextBDniVendedor As System.Windows.Forms.TextBox
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents TextBNomyApeVendedor As System.Windows.Forms.TextBox
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents DataGridViewFactura As System.Windows.Forms.DataGridView
+    Friend WithEvents LabelTotal As System.Windows.Forms.Label
+    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents TextBTipoPago As System.Windows.Forms.TextBox
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents pro_id As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents pro_nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents pro_medida As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents pro_rodado As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -631,8 +1220,17 @@ Partial Class Vendedor
     Friend WithEvents pro_total As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewImageColumn1 As System.Windows.Forms.DataGridViewImageColumn
     Friend WithEvents Eliminar_C As System.Windows.Forms.DataGridViewButtonColumn
-    Friend WithEvents Agregar As System.Windows.Forms.DataGridViewButtonColumn
-    Friend WithEvents Datos_Tecn As System.Windows.Forms.DataGridViewButtonColumn
-    Friend WithEvents Imagen As System.Windows.Forms.DataGridViewImageColumn
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox11 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox9 As System.Windows.Forms.GroupBox
+    Friend WithEvents idProdFactura As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TipoVehiculo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Rodado As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Med As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Precio_Unitario As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Total As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents eliminar As System.Windows.Forms.DataGridViewButtonColumn
 End Class

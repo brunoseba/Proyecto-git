@@ -232,7 +232,7 @@
         End Try
     End Function
     '---borrado fisico----
-    Public Sub Eliminar(ByVal pro_id)
+    Public Sub Eliminar(ByVal pro_id As Integer)
         Try
             Using Base As New NNeumaticosEntities1
 
@@ -244,5 +244,19 @@
         Catch ex As Exception
         End Try
     End Sub
+
+    'Descontar Stock'
+    Public Function descontarStock(ByVal pro_id As Integer, ByVal cantidad As Integer)
+        Try
+            Using Base As New NNeumaticosEntities1
+                Dim consulta = (From p In Base.Producto Where (pro_id = p.producto_id) Select p).First()
+                consulta.producto_stock = (consulta.producto_stock - cantidad)
+                Base.SaveChanges()
+            End Using
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
 #End Region
 End Class
