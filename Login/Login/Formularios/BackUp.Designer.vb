@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class BackUp
+Partial Class Backup
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -31,6 +31,15 @@ Partial Class BackUp
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TNombre = New System.Windows.Forms.TextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TRuta2 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label3
@@ -107,12 +116,86 @@ Partial Class BackUp
         Me.TNombre.Size = New System.Drawing.Size(127, 20)
         Me.TNombre.TabIndex = 10
         '
-        'BackUp
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Controls.Add(Me.Button3)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.TRuta2)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Location = New System.Drawing.Point(20, 12)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(379, 153)
+        Me.Panel1.TabIndex = 11
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(72, 117)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 11
+        Me.Button2.Text = "Aceptar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(223, 117)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 10
+        Me.Button3.Text = "Cancelar"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.Window
+        Me.Label5.Location = New System.Drawing.Point(148, 12)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(89, 20)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "Restaurar"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(304, 55)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Examinar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'TRuta2
+        '
+        Me.TRuta2.Location = New System.Drawing.Point(54, 59)
+        Me.TRuta2.Name = "TRuta2"
+        Me.TRuta2.Size = New System.Drawing.Size(244, 20)
+        Me.TRuta2.TabIndex = 7
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.Window
+        Me.Label4.Location = New System.Drawing.Point(-3, 62)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(53, 18)
+        Me.Label4.TabIndex = 6
+        Me.Label4.Text = "Ruta :"
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'Backup
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.DarkSlateGray
         Me.ClientSize = New System.Drawing.Size(410, 168)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.TNombre)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -123,9 +206,11 @@ Partial Class BackUp
         Me.Controls.Add(Me.Label3)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "BackUp"
+        Me.Name = "Backup"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "BackUp"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -139,5 +224,13 @@ Partial Class BackUp
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents TNombre As System.Windows.Forms.TextBox
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents TRuta2 As System.Windows.Forms.TextBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     'Friend WithEvents BackUpCompletoTableAdapter1 As Login.DataSet1TableAdapters.BackUpCompletoTableAdapter
 End Class

@@ -451,7 +451,7 @@
                 If Me.LabelRutaArchivo.Text = "Ruta:" Then
                     res_img = MsgBox("El producto no tiene imagen asignada, ¿Desea agregar una?", 4 + 0 + 32, "Aviso")
                     If res_img = vbNo Then
-                        LabelRutaArchivo.Text = "C:\Users\Seitzinger\Pictures\Screenshot_1.png"
+                        LabelRutaArchivo.Text = "C:\Users\Bruno\Pictures\Screenshot_1.png"
                         Dim prod As New Productos(TextBoxNombreProducto.Text, ComboBoxRodadoProducto.SelectedItem, ComboBoxMedidaProducto.SelectedItem, Val(TextBoxPrecio.Text), Val(TextBoxCod_Datos.Text), Val(TextBoxStock.Text), LabelRutaArchivo.Text, "A", ComboBoxTipoVehiculo.SelectedItem)
                         prod.AgregarProducto()
                         MsgBox("Producto Agregado", 0 + 0 + 64)

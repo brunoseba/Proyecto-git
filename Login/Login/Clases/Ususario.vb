@@ -352,5 +352,23 @@
 
         End Try
     End Sub
+
+
+
+
+    Public Sub Back(ByVal ruta)
+        Try
+            Using Base As New NNeumaticosEntities1
+                Base.Backup(ruta)
+            End Using
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+
+
+
+
 #End Region
 End Class

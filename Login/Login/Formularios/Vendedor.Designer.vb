@@ -157,8 +157,8 @@ Partial Class Vendedor
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelBuscarProductoVendedor.BackColor = System.Drawing.Color.DarkSlateGray
         Me.PanelBuscarProductoVendedor.Controls.Add(Me.GroupBox1)
-        Me.PanelBuscarProductoVendedor.Controls.Add(Me.GroupBox5)
         Me.PanelBuscarProductoVendedor.Controls.Add(Me.PanelDatosTecnicosVendedor)
+        Me.PanelBuscarProductoVendedor.Controls.Add(Me.GroupBox5)
         Me.PanelBuscarProductoVendedor.Controls.Add(Me.GroupBox2)
         Me.PanelBuscarProductoVendedor.Controls.Add(Me.GroupBox3)
         Me.PanelBuscarProductoVendedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

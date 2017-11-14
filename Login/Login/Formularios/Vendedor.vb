@@ -344,8 +344,9 @@
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+
         Dim ultimaFactura As String
-        Dim fatura As New Facturas(TextBCuilCliente.Text(), TextBoxCuitEmpresa.Text, TextBDniVendedor.Text, DateTimePicker1.Text, TextBTipoPago.Text, "Confirmada", LabelTotal.Text)
+        Dim fatura As New Facturas(TextBCuilCliente.Text, TextBoxCuitEmpresa.Text, TextBDniVendedor.Text, DateTimePicker1.Text, TextBTipoPago.Text, "A", LabelTotal.Text)
         If fatura.agregarFactura() Then
             MsgBox("Factura generada correctamente", 0 + 0 + 64, "Aviso")
             ultimaFactura = fatura.ObtenerUltimaFactura()
@@ -354,9 +355,20 @@
                 deta.agregarDetalles()
             Next
             limpiarCampos()
+
+
+            'MUESTRA LA FACTURA PARA IMPRIMIR
+            FacturaImprime.Show()
+            'FacturaImprime.MdiParent = Me
+            'FacturaImprime.MaximizeBox = True
+            '----------------------------------
+
         Else
             MsgBox("No se pudo generar la Factura, intente mas tarde", 0 + 0 + 64, "Aviso")
         End If
+
+        
+
     End Sub
 
     Private Sub DataGridViewFactura_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridViewFactura.CellContentClick

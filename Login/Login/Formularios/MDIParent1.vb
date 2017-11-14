@@ -2,6 +2,16 @@
 
 Public Class Ventana
 
+    Public Function numeroFac()
+        Dim fac As New Facturas
+        Dim factura As String
+        factura = fac.ObtenerUltimaFactura()
+
+        Return factura
+    End Function
+
+
+
     Private Sub Ventana_Principal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim usu As New Ususario(Inicio_Sesion.Tusuario.Text)
         usu.Dato(usu.GetDni(), usu.GetNomYape())
@@ -19,8 +29,8 @@ Public Class Ventana
             Me.BackgroundImage = My.Resources.bridgestone_wallpapers_163
             Me.usuario.Text = ("Supervisor :  " + usu.GetNomYape())
             Me.usuario.Image = My.Resources.user_suit
-            Me.BackUp.Visible = False
-            Me.BackUp.Enabled = False
+            Me.Back.Visible = False
+            Me.Back.Enabled = False
             Me.Productos.Visible = False
             Me.AgregarProductoToolStripMenuItem.Enabled = False
             Me.BuscarProductosToolStripMenuItem.Enabled = False
@@ -30,13 +40,14 @@ Public Class Ventana
             Me.MenuClientesAgregar.Enabled = False
             Me.MenuEmpresa.Visible = False
             Me.MenuEmpresa.Enabled = False
+
             Me.cargo.Text = "supervisor"
         Else
             'Me.BackgroundImage = My.Resources.BRIDGESTONE_MOTOGP__7_
             Me.usuario.Text = ("Vendedor :  " + usu.GetNomYape())
             Me.usuario.Image = My.Resources.user_orange
-            Me.BackUp.Visible = False
-            Me.BackUp.Enabled = False
+            Me.Back.Visible = False
+            Me.Back.Enabled = False
             Me.Productos.Visible = False
             Me.AgregarProductoToolStripMenuItem.Enabled = False
             Me.BuscarProductosToolStripMenuItem.Enabled = False
@@ -213,4 +224,38 @@ Public Class Ventana
         V_Producto.MdiParent = Me
     End Sub
 
+    Private Sub ReportesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ReportesToolStripMenuItem.Click
+        'FacturaImprime.Show()
+        'FacturaImprime.MdiParent = Me
+        If cargo.Text = "supervisor" Then
+            CuadroReporteSuper.Show()
+            CuadroReporteSuper.MdiParent = Me
+            CuadroReporteSuper.MaximizeBox = True
+
+        ElseIf cargo.Text = "vende" Then
+            CuadroReporte.Show()
+            CuadroReporte.MdiParent = Me
+            CuadroReporte.MaximizeBox = True
+            'CuadroReporte.MaximizeBox = True
+
+        ElseIf cargo.Text = "admin" Then
+            CuadroReporteAdmin.Show()
+            CuadroReporteAdmin.MdiParent = Me
+            CuadroReporteAdmin.MaximizeBox = True
+        End If
+    End Sub
+
+    Private Sub ProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ProductosToolStripMenuItem.Click
+        Backup.Show()
+        Backup.Panel1.Visible = False
+    End Sub
+
+    Private Sub FacturasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FacturasToolStripMenuItem.Click
+        Backup.Show()
+        Backup.Panel1.Visible = True
+    End Sub
+
+    Private Sub cargo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cargo.Click
+
+    End Sub
 End Class

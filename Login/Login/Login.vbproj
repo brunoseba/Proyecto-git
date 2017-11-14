@@ -52,6 +52,8 @@
     <Reference Include="itextsharp">
       <HintPath>C:\Users\Bruno\Downloads\itextsharp-all-5.5.10\itextsharp-dll-core\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -81,10 +83,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Detalles.vb" />
+    <Compile Include="Formularios\CuadroReporteAdmin.Designer.vb">
+      <DependentUpon>CuadroReporteAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\CuadroReporteAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\CuadroReporteSuper.Designer.vb">
+      <DependentUpon>CuadroReporteSuper.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\CuadroReporteSuper.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.vb">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FacturaImprime.Designer.vb">
+      <DependentUpon>FacturaImprime.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FacturaImprime.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\BackUp.Designer.vb">
       <DependentUpon>BackUp.vb</DependentUpon>
@@ -95,6 +118,12 @@
     <Compile Include="Clases\D_Tecnicos.vb" />
     <Compile Include="Clases\Empresas.vb" />
     <Compile Include="Clases\Factura.vb" />
+    <Compile Include="Formularios\CuadroReporte.Designer.vb">
+      <DependentUpon>CuadroReporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\CuadroReporte.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\CuadroUsuario.Designer.vb">
       <DependentUpon>CuadroUsuario.vb</DependentUpon>
     </Compile>
@@ -175,8 +204,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formularios\CuadroReporteAdmin.resx">
+      <DependentUpon>CuadroReporteAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\CuadroReporteSuper.resx">
+      <DependentUpon>CuadroReporteSuper.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FacturaImprime.resx">
+      <DependentUpon>FacturaImprime.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\BackUp.resx">
       <DependentUpon>BackUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\CuadroReporte.resx">
+      <DependentUpon>CuadroReporte.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\CuadroUsuario.resx">
       <DependentUpon>CuadroUsuario.vb</DependentUpon>
@@ -211,6 +252,16 @@
     <EmbeddedResource Include="Formularios\Vendedor.resx">
       <DependentUpon>Vendedor.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RepoFactura.rdlc" />
+    <EmbeddedResource Include="ReportAdmin1.rdlc" />
+    <EmbeddedResource Include="ReporteAdmin2.rdlc" />
+    <EmbeddedResource Include="ReporteAdmin3.rdlc" />
+    <EmbeddedResource Include="ReportefacturaVende.rdlc" />
+    <EmbeddedResource Include="ReporteSuper1.rdlc" />
+    <EmbeddedResource Include="ReporteSuper2.rdlc" />
+    <EmbeddedResource Include="ReporteSuper3.rdlc" />
+    <EmbeddedResource Include="ReporteVende.rdlc" />
+    <EmbeddedResource Include="ReporteVende2.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

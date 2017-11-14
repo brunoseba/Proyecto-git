@@ -887,8 +887,8 @@ Partial Class V_Producto
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1362, 624)
-        Me.Controls.Add(Me.PanelProductosBuscar)
         Me.Controls.Add(Me.PanelAgregarProductos)
+        Me.Controls.Add(Me.PanelProductosBuscar)
         Me.KeyPreview = True
         Me.Name = "V_Producto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

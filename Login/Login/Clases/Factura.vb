@@ -95,11 +95,11 @@
                 {
                 .cliente_cuil = GetClienteCuil(),
                 .empresa_cuit = GetEmpresaCuil(),
-                .usu_Dni = GetUserDni(),
                 .factura_Fecha = GetFecha(),
                 .factura_tipoPago = GetTipoPago(),
                 .factura_estado = GetEstado(),
-                .factura_Total = GetTotal()}
+                .factura_Total = GetTotal(),
+                .factura_vendedor = GetUserDni()}
                 Base.Factura.AddObject(agregar)
                 Base.SaveChanges()
                 Return True
@@ -124,7 +124,7 @@
     Public Sub MostrarTodasFacturas(ByVal data As DataGridView)
         Try
             Using Base As New NNeumaticosEntities1
-                Dim consulta = (From f In Base.Factura Order By f.factura_num Descending Select N_Factura = f.factura_num, CUIL_Cliente = f.cliente_cuil, DNI_Vendedor = f.usu_Dni, Tipo_Pago = f.factura_tipoPago, Fecha = f.factura_Fecha, Monto = f.factura_Total, Estado = f.factura_estado)
+                Dim consulta = (From f In Base.Factura Order By f.factura_num Descending Select N_Factura = f.factura_num, CUIL_Cliente = f.cliente_cuil, DNI_Vendedor = f.factura_vendedor, Tipo_Pago = f.factura_tipoPago, Fecha = f.factura_Fecha, Monto = f.factura_Total, Estado = f.factura_estado)
                 data.DataSource = consulta
             End Using
         Catch ex As Exception
@@ -134,7 +134,7 @@
     Public Sub buscarPorNumeroFactura(ByVal numFactura As Integer, ByVal data As DataGridView)
         Try
             Using Base As New NNeumaticosEntities1
-                Dim busqueda = (From f In Base.Factura Order By f.factura_num Descending Where (numFactura = f.factura_num) Select N_Factura = f.factura_num, CUIL_Cliente = f.cliente_cuil, DNI_Vendedor = f.usu_Dni, Tipo_Pago = f.factura_tipoPago, Fecha = f.factura_Fecha, Monto = f.factura_Total, Estado = f.factura_estado).ToList()
+                Dim busqueda = (From f In Base.Factura Order By f.factura_num Descending Where (numFactura = f.factura_num) Select N_Factura = f.factura_num, CUIL_Cliente = f.cliente_cuil, DNI_Vendedor = f.factura_vendedor, Tipo_Pago = f.factura_tipoPago, Fecha = f.factura_Fecha, Monto = f.factura_Total, Estado = f.factura_estado).ToList()
                 data.DataSource = busqueda
             End Using
         Catch ex As Exception
@@ -143,7 +143,7 @@
     Public Sub buscarPorCliente(ByVal cuil As Long, ByVal data As DataGridView)
         Try
             Using Base As New NNeumaticosEntities1
-                Dim busqueda = (From f In Base.Factura Order By f.factura_num Descending Where (cuil = f.cliente_cuil) Select N_Factura = f.factura_num, CUIL_Cliente = f.cliente_cuil, DNI_Vendedor = f.usu_Dni, Tipo_Pago = f.factura_tipoPago, Fecha = f.factura_Fecha, Monto = f.factura_Total, Estado = f.factura_estado).ToList()
+                Dim busqueda = (From f In Base.Factura Order By f.factura_num Descending Where (cuil = f.cliente_cuil) Select N_Factura = f.factura_num, CUIL_Cliente = f.cliente_cuil, DNI_Vendedor = f.factura_vendedor, Tipo_Pago = f.factura_tipoPago, Fecha = f.factura_Fecha, Monto = f.factura_Total, Estado = f.factura_estado).ToList()
                 data.DataSource = busqueda
             End Using
         Catch ex As Exception
@@ -153,7 +153,7 @@
     Public Sub buscarPorDniVendedor(ByVal dni As Long, ByVal data As DataGridView)
         Try
             Using Base As New NNeumaticosEntities1
-                Dim busqueda = (From f In Base.Factura Order By f.factura_num Descending Where (dni = f.usu_Dni) Select N_Factura = f.factura_num, CUIL_Cliente = f.cliente_cuil, DNI_Vendedor = f.usu_Dni, Tipo_Pago = f.factura_tipoPago, Fecha = f.factura_Fecha, Monto = f.factura_Total, Estado = f.factura_estado).ToList()
+                Dim busqueda = (From f In Base.Factura Order By f.factura_num Descending Where (dni = f.factura_vendedor) Select N_Factura = f.factura_num, CUIL_Cliente = f.cliente_cuil, DNI_Vendedor = f.factura_vendedor, Tipo_Pago = f.factura_tipoPago, Fecha = f.factura_Fecha, Monto = f.factura_Total, Estado = f.factura_estado).ToList()
                 data.DataSource = busqueda
             End Using
         Catch ex As Exception
@@ -163,7 +163,7 @@
     Public Sub mostrarTipoPago(ByVal tipoPago As String, ByVal data As DataGridView)
         Try
             Using Base As New NNeumaticosEntities1
-                Dim busqueda = (From f In Base.Factura Order By f.factura_num Descending Where (tipoPago = f.factura_tipoPago) Select N_Factura = f.factura_num, CUIL_Cliente = f.cliente_cuil, DNI_Vendedor = f.usu_Dni, Tipo_Pago = f.factura_tipoPago, Fecha = f.factura_Fecha, Monto = f.factura_Total, Estado = f.factura_estado).ToList()
+                Dim busqueda = (From f In Base.Factura Order By f.factura_num Descending Where (tipoPago = f.factura_tipoPago) Select N_Factura = f.factura_num, CUIL_Cliente = f.cliente_cuil, DNI_Vendedor = f.factura_vendedor, Tipo_Pago = f.factura_tipoPago, Fecha = f.factura_Fecha, Monto = f.factura_Total, Estado = f.factura_estado).ToList()
                 data.DataSource = busqueda
             End Using
         Catch ex As Exception
@@ -172,7 +172,7 @@
     Public Sub mostrarPorFecha(ByVal fechaDesde As String, ByVal fechaHasta As String, ByVal data As DataGridView)
         Try
             Using Base As New NNeumaticosEntities1
-                Dim busqueda = (From f In Base.Factura Order By f.factura_num Descending Where (fechaDesde > f.factura_Fecha And fechaHasta < f.factura_Fecha) Select N_Factura = f.factura_num, CUIL_Cliente = f.cliente_cuil, DNI_Vendedor = f.usu_Dni, Tipo_Pago = f.factura_tipoPago, Fecha = f.factura_Fecha, Monto = f.factura_Total, Estado = f.factura_estado).ToList()
+                Dim busqueda = (From f In Base.Factura Order By f.factura_num Descending Where (fechaDesde > f.factura_Fecha And fechaHasta < f.factura_Fecha) Select N_Factura = f.factura_num, CUIL_Cliente = f.cliente_cuil, DNI_Vendedor = f.factura_vendedor, Tipo_Pago = f.factura_tipoPago, Fecha = f.factura_Fecha, Monto = f.factura_Total, Estado = f.factura_estado).ToList()
                 data.DataSource = busqueda
             End Using
         Catch ex As Exception

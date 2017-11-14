@@ -47,11 +47,9 @@ Partial Class Ventana
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.usuario = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BackUp = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Back = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FacturasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PersonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.cargo = New System.Windows.Forms.ToolStripMenuItem()
         Me.DniToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -201,7 +199,7 @@ Partial Class Ventana
         Me.MenuEmpresaVerDatos.Image = Global.Login.My.Resources.Resources._16__Zoom_1
         Me.MenuEmpresaVerDatos.Name = "MenuEmpresaVerDatos"
         Me.MenuEmpresaVerDatos.ShowShortcutKeys = False
-        Me.MenuEmpresaVerDatos.Size = New System.Drawing.Size(152, 22)
+        Me.MenuEmpresaVerDatos.Size = New System.Drawing.Size(151, 22)
         Me.MenuEmpresaVerDatos.Text = "Ver Datos"
         '
         'MenuEmpresaModificarDatos
@@ -209,7 +207,7 @@ Partial Class Ventana
         Me.MenuEmpresaModificarDatos.Image = Global.Login.My.Resources.Resources.building_edit
         Me.MenuEmpresaModificarDatos.Name = "MenuEmpresaModificarDatos"
         Me.MenuEmpresaModificarDatos.ShowShortcutKeys = False
-        Me.MenuEmpresaModificarDatos.Size = New System.Drawing.Size(152, 22)
+        Me.MenuEmpresaModificarDatos.Size = New System.Drawing.Size(151, 22)
         Me.MenuEmpresaModificarDatos.Text = "Modificar Datos"
         '
         'ReportesToolStripMenuItem
@@ -228,7 +226,7 @@ Partial Class Ventana
         '
         'usuario
         '
-        Me.usuario.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarSesiónToolStripMenuItem, Me.BackUp})
+        Me.usuario.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarSesiónToolStripMenuItem, Me.Back})
         Me.usuario.Image = Global.Login.My.Resources.Resources.user_gray
         Me.usuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.usuario.Name = "usuario"
@@ -243,37 +241,25 @@ Partial Class Ventana
         Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
-        'BackUp
+        'Back
         '
-        Me.BackUp.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductosToolStripMenuItem, Me.FacturasToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.UsuarioToolStripMenuItem})
-        Me.BackUp.Image = Global.Login.My.Resources.Resources.Database_Blue
-        Me.BackUp.Name = "BackUp"
-        Me.BackUp.Size = New System.Drawing.Size(168, 22)
-        Me.BackUp.Text = "Back Up"
+        Me.Back.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductosToolStripMenuItem, Me.FacturasToolStripMenuItem})
+        Me.Back.Image = Global.Login.My.Resources.Resources.Database_Blue
+        Me.Back.Name = "Back"
+        Me.Back.Size = New System.Drawing.Size(168, 22)
+        Me.Back.Text = "Backup"
         '
         'ProductosToolStripMenuItem
         '
         Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
-        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
-        Me.ProductosToolStripMenuItem.Text = "Productos"
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+        Me.ProductosToolStripMenuItem.Text = "Generar Backup"
         '
         'FacturasToolStripMenuItem
         '
         Me.FacturasToolStripMenuItem.Name = "FacturasToolStripMenuItem"
-        Me.FacturasToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
-        Me.FacturasToolStripMenuItem.Text = "Facturas"
-        '
-        'ClientesToolStripMenuItem
-        '
-        Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
-        Me.ClientesToolStripMenuItem.Text = "Clientes"
-        '
-        'UsuarioToolStripMenuItem
-        '
-        Me.UsuarioToolStripMenuItem.Name = "UsuarioToolStripMenuItem"
-        Me.UsuarioToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
-        Me.UsuarioToolStripMenuItem.Text = "Usuario"
+        Me.FacturasToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+        Me.FacturasToolStripMenuItem.Text = "Restaurar Backup"
         '
         'PersonaToolStripMenuItem
         '
@@ -377,11 +363,9 @@ Partial Class Ventana
     Friend WithEvents AgregarProductoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BuscarProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ReportesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents BackUp As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Back As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents FacturasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents UsuarioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PersonaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents cargo As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DniToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
